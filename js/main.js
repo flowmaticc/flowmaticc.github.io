@@ -5,7 +5,7 @@ const themeToggle = document.getElementById('themeToggle');
 const htmlElement = document.documentElement;
 
 // Cargar tema guardado
-const savedTheme = localStorage.getItem('theme') || 'dark';
+const savedTheme = localStorage.getItem('theme') || 'light';
 htmlElement.setAttribute('data-theme', savedTheme);
 updateThemeIcon(savedTheme);
 
