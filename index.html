@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Flowmatic · Automatiza tu flujo de trabajo</title>
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="container navbar__container">
+        <div class="logo">
+            <span class="logo__icon">⚡</span>
+            <span class="logo__text">Flowmatic</span>
+        </div>
+        
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <!-- Menú de navegación -->
+        <div class="nav-links" id="navLinks">
+            <a href="#product" class="nav-link">
+                <i class="fas fa-box"></i> Producto
+            </a>
+            <a href="#pricing" class="nav-link">
+                <i class="fas fa-tag"></i> Precios
+            </a>
+            
+            <!-- Menú desplegable de Utilidades -->
+            <div class="dropdown">
+                <button class="dropdown-btn nav-link">
+                    <i class="fas fa-toolbox"></i> Utilidades <i class="fas fa-chevron-down dropdown-icon"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="utilities/google-auth.html" class="dropdown-item">
+                        <i class="fas fa-qrcode"></i> Google Auth Extractor
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item">
+                        <i class="fab fa-github"></i> Más en GitHub
+                    </a>
+                </div>
+            </div>
+             
+            <a href="https://github.com/joseqwrtt" target="_blank" class="nav-link">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Resto del contenido igual -->
+    <header class="hero">
+        <div class="container hero__container">
+            <div class="hero__badge">
+                <span class="badge">✨ Automatización inteligente</span>
+            </div>
+            <h1 class="hero__title">
+                Escribe <span class="gradient-text">/</span> y tu plantilla aparece
+            </h1>
+            <p class="hero__subtitle">
+                Plantillas Macro vive en segundo plano. En cualquier aplicación, escribe "/" + el nombre de tu plantilla y se pega al instante. Sin copiar, sin abrir archivos, sin interrumpir tu flujo.
+            </p>
+            <div class="hero__buttons">
+                <a href="https://github.com/joseqwrtt/update_app/releases/latest" class="btn btn-primary btn-large">
+                    <i class="fas fa-download"></i> Descargar gratis
+                </a>
+                <a href="#pricing" class="btn btn-outline btn-large">
+                    <i class="fas fa-tag"></i> Ver precios
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de características -->
+    <section class="features-section" id="product">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Diseñado para tu flujo de trabajo</h2>
+                <p class="section-subtitle">Sin interrupciones, sin pasos extra. Solo escribe y pega.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Instantáneo</h3>
+                    <p>Escribe <code>/nombre</code> y tu plantilla aparece al instante. Sin menús, sin clics extra.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🪄</div>
+                    <h3>Formato completo</h3>
+                    <p>DOCX, ODT y TXT con negrita, tablas, imágenes — todo el formato se mantiene.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% local</h3>
+                    <p>Tus plantillas están en tu equipo. Sin nubes, sin servidores, sin suscripciones ocultas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de precios -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Elige tu plan</h2>
+                <p class="section-subtitle">Sin permanencia · Cancela cuando quieras</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Mensual</h3>
+                    <div class="price">3,9€<span>/mes</span></div>
+                    <ul>
+                        <li>✓ Todas las funciones</li>
+                        <li>✓ Sin compromiso</li>
+                        <li>✓ Cancela cuando quieras</li>
+                    </ul>
+                    <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button">Suscribirme</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Más popular</div>
+                    <h3>Trimestral</h3>
+                    <div class="price">9,9€<span>/3 meses</span></div>
+                    <div class="save">3,3€/mes · Ahorra 15%</div>
+                    <ul>
+                        <li>✓ Todas las funciones</li>
+                        <li>✓ Renovación trimestral</li>
+                        <li>✓ Cancela cuando quieras</li>
+                    </ul>
+                    <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-primary btn-block lemonsqueezy-button">Elegir Trimestral</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Anual</h3>
+                    <div class="price">35€<span>/año</span></div>
+                    <div class="save">2,9€/mes · Ahorra 25%</div>
+                    <ul>
+                        <li>✓ Todas las funciones</li>
+                        <li>✓ Renovación anual</li>
+                        <li>✓ Mejor valor</li>
+                    </ul>
+                    <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button">Elegir Anual</a>
+                </div>
+            </div>
+            <p class="pricing-note">🔒 Pago seguro vía Lemon Squeezy · 14 días de prueba gratuita · Cancela cuando quieras</p>
+        </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta__title">¿Listo para trabajar más rápido?</h2>
+            <p class="cta__text">Descarga Plantillas Macro gratis y prueba todas las funciones durante 14 días.</p>
+            <a href="https://github.com/joseqwrtt/update_app/releases/latest" class="btn btn-primary btn-large">
+                <i class="fas fa-download"></i> Descargar ahora
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__info">
+                <p>Flowmatic — Automatiza tu flujo de trabajo</p>
+                <p class="footer__copyright">© 2026 — Hecho con ☕</p>
+            </div>
+            <div class="footer__links">
+                <a href="mailto:gestiona.optimiza@gmail.com" class="footer-link">
+                    <i class="fas fa-envelope"></i> gestiona.optimiza@gmail.com
+                </a>
+                <a href="https://github.com/joseqwrtt" target="_blank" class="footer-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="utilities/google-auth.html" class="footer-link">
+                    <i class="fas fa-toolbox"></i> Utilidades
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=1.0"></script>
+
+    <script>
+        // Forzar recarga si hay nueva versión disponible
+        const VERSION = '1.0'; // Cambia este número cada vez que actualices
+        
+        const cachedVersion = localStorage.getItem('app_version');
+        if (cachedVersion !== VERSION) {
+            localStorage.setItem('app_version', VERSION);
+            location.reload(true); // Recarga forzada desde el servidor
+        }
+    </script>
+</body>
+</html>
