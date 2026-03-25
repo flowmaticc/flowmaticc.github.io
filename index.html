@@ -63,7 +63,6 @@
     </div>
     </nav>
 
-    <!-- Resto del contenido igual -->
     <header class="hero">
         <div class="container hero__container">
             <div class="hero__badge">
@@ -75,6 +74,15 @@
             <p class="hero__subtitle">
                 Plantillas Macro vive en segundo plano. En cualquier aplicación, escribe "/" + el nombre de tu plantilla y se pega al instante. Sin copiar, sin abrir archivos, sin interrumpir tu flujo.
             </p>
+            
+            <!-- VIDEO DEMOSTRATIVO - 1.03 MB .webm -->
+            <div class="hero__video">
+                <video autoplay loop muted playsinline class="demo-video">
+                    <source src="demo.webm" type="video/webm">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+            </div>
+            
             <div class="hero__buttons">
                 <a href="https://github.com/joseqwrtt/update_app/releases/download/3.0.0.10/PlantillasMacro.zip" class="btn btn-primary btn-large">
                     <i class="fas fa-download"></i> Descargar gratis
@@ -194,7 +202,7 @@
 
     <script>
         // Forzar recarga si hay nueva versión disponible
-        const VERSION = '1.0'; // Cambia este número cada vez que actualices
+        const VERSION = '1.1'; // Cambia este número cada vez que actualices
         
         const cachedVersion = localStorage.getItem('app_version');
         if (cachedVersion !== VERSION) {
