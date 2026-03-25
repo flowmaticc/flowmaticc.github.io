@@ -1179,3 +1179,49 @@ body {
 body.menu-open {
     overflow: hidden;
 }
+
+/* ===== VIDEO DEMOSTRATIVO ===== */
+.hero__video {
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+}
+
+.demo-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.demo-video:hover {
+    transform: scale(1.01);
+}
+
+/* Responsive para video */
+@media (max-width: 768px) {
+    .hero__video {
+        margin: 1.5rem auto;
+        border-radius: 16px;
+    }
+    
+    .demo-video {
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__video {
+        margin: 1rem auto;
+        border-radius: 12px;
+    }
+    
+    .demo-video {
+        border-radius: 12px;
+    }
+}
