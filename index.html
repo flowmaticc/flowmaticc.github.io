@@ -364,22 +364,27 @@ extra_js: |
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
   margin-top: 1.5rem;
-  padding: 0.9rem 1.5rem;
+  padding: 0.65rem 1.25rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 10px;
-  max-width: 520px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   font-size: 0.875rem;
   color: var(--text-secondary);
+  line-height: 1.4;
 }
 .pricing-volume i {
   color: var(--accent);
-  font-size: 1rem;
+  font-size: 0.9rem;
   flex-shrink: 0;
+}
+.pricing-volume span {
+  white-space: nowrap;
 }
 .pricing-volume a {
   color: var(--accent);
@@ -388,9 +393,6 @@ extra_js: |
   white-space: nowrap;
 }
 .pricing-volume a:hover { text-decoration: underline; }
-@media (max-width: 560px) {
-  .pricing-volume { flex-direction: column; text-align: center; gap: 0.4rem; }
-}
 </style>
 
 
