@@ -1,0 +1,49 @@
+<nav class="navbar">
+  <div class="container navbar__container">
+
+    <div class="logo">
+      <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:0.5rem;">
+        <span class="logo__icon">⚡</span>
+        <span class="logo__text">Flowmatic</span>
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="/#product" class="nav-link {% if page.nav_active == 'product' %}active{% endif %}">
+        <i class="fas fa-box"></i> Producto
+      </a>
+      <a href="/#pricing" class="nav-link {% if page.nav_active == 'pricing' %}active{% endif %}">
+        <i class="fas fa-tag"></i> Precios
+      </a>
+
+      <div class="dropdown">
+        <button class="dropdown-btn nav-link {% if page.nav_active == 'utilities' %}active{% endif %}">
+          <i class="fas fa-toolbox"></i> Utilidades <i class="fas fa-chevron-down dropdown-icon"></i>
+        </button>
+        <div class="dropdown-menu">
+          <a href="/utilities/google-auth/" class="dropdown-item {% if page.url contains 'google-auth' %}active{% endif %}">
+            <i class="fas fa-qrcode"></i> Google Auth Extractor
+          </a>
+          <a href="/utilities/extension/" class="dropdown-item {% if page.url contains 'extension' %}active{% endif %}">
+            <i class="fas fa-puzzle-piece"></i> Position Caret
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item">
+            <i class="fab fa-github"></i> Más en GitHub
+          </a>
+        </div>
+      </div>
+
+      <a href="https://github.com/joseqwrtt" target="_blank" class="nav-link">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </div>
+</nav>

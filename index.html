@@ -1,259 +1,141 @@
-<!DOCTYPE html>
-<html lang="es" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Plantillas Macro — Expande plantillas Word y ODT al instante en Windows</title>
-    <meta name="description" content="Escribe / y tu plantilla DOCX, ODT o TXT se pega al instante en cualquier aplicación de Windows. Sin copiar archivos, sin interrumpir tu flujo. Prueba gratis 14 días.">
-    <meta name="keywords" content="expansor de plantillas, plantillas Word Windows, macro texto Windows, pegar plantillas automático, text expander español, DOCX ODT plantillas, automatizar escritura Windows, Plantillas Macro, Flowmatic">
-    <meta name="author" content="Flowmatic">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="yqHXaGKonTghJah8uunuYcSTmPQe9Clq7jUvrR8WaPI" />
-    <link rel="canonical" href="https://flowmaticc.github.io/">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://flowmaticc.github.io/">
-    <meta property="og:title" content="Plantillas Macro — Expande plantillas Word y ODT al instante">
-    <meta property="og:description" content="Escribe / en cualquier aplicación de Windows y tu plantilla DOCX, ODT o TXT se pega al instante con todo el formato. 14 días gratis, sin tarjeta.">
-    <meta property="og:image" content="https://flowmaticc.github.io/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="es_ES">
-    <meta property="og:site_name" content="Flowmatic · Plantillas Macro">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Plantillas Macro — Expande plantillas Word y ODT al instante">
-    <meta name="twitter:description" content="Escribe / en cualquier app de Windows y tu plantilla se pega al instante. DOCX, ODT y TXT con formato completo. Prueba gratis.">
-    <meta name="twitter:image" content="https://flowmaticc.github.io/og-image.png">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Plantillas Macro",
-      "operatingSystem": "Windows",
-      "applicationCategory": "ProductivityApplication",
-      "description": "Expansor de plantillas para Windows. Escribe / y tu plantilla DOCX, ODT o TXT se pega al instante en cualquier aplicación con todo el formato intacto.",
-      "url": "https://flowmaticc.github.io/",
-      "downloadUrl": "https://github.com/joseqwrtt/update_app/releases/download/3.0.0.10/PlantillasMacro.zip",
-      "softwareVersion": "3.0.0",
-      "offers": [
-        { "@type": "Offer", "name": "Plan Mensual",    "price": "3.90",  "priceCurrency": "EUR", "priceValidUntil": "2027-12-31" },
-        { "@type": "Offer", "name": "Plan Trimestral", "price": "9.90",  "priceCurrency": "EUR", "priceValidUntil": "2027-12-31" },
-        { "@type": "Offer", "name": "Plan Anual",      "price": "35.00", "priceCurrency": "EUR", "priceValidUntil": "2027-12-31" }
-      ],
-      "featureList": [
-        "Expansión de plantillas DOCX con formato completo",
-        "Soporte para archivos ODT y TXT",
-        "Detector de comandos global con tecla detonante personalizable",
-        "Popup de búsqueda en tiempo real",
-        "Sincronización con OneDrive, Dropbox y Google Drive",
-        "100% local, sin nube obligatoria",
-        "Compatible con monitores múltiples"
-      ],
-      "publisher": {
-        "@type": "Organization",
-        "name": "Flowmatic",
-        "url": "https://flowmaticc.github.io/",
-        "email": "gestiona.optimiza@gmail.com"
-      }
-    }
-    </script>
-    <link rel="stylesheet" href="css/style.css?v=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-    <meta name="theme-color" content="#0a0a0f">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-</head>
-<body>
-    <nav class="navbar">
-    <div class="container navbar__container">
+---
+layout: default
+title: "Plantillas Macro — Expande plantillas Word y ODT al instante en Windows"
+description: "Escribe / y tu plantilla DOCX, ODT o TXT se pega al instante en cualquier aplicación de Windows. Sin copiar archivos, sin interrumpir tu flujo. Prueba gratis 14 días."
+canonical: "https://flowmaticc.github.io/"
+lemon: true
+schema: |
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Plantillas Macro",
+    "operatingSystem": "Windows",
+    "applicationCategory": "ProductivityApplication",
+    "description": "Expansor de plantillas para Windows.",
+    "url": "https://flowmaticc.github.io/",
+    "downloadUrl": "https://github.com/joseqwrtt/update_app/releases/download/3.0.0.10/PlantillasMacro.zip",
+    "softwareVersion": "3.0.0",
+    "offers": [
+      { "@type": "Offer", "name": "Plan Mensual",    "price": "3.90",  "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Plan Trimestral", "price": "9.90",  "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Plan Anual",      "price": "35.00", "priceCurrency": "EUR" }
+    ],
+    "publisher": { "@type": "Organization", "name": "Flowmatic", "url": "https://flowmaticc.github.io/" }
+  }
+extra_js: |
+  const VERSION = '1.3';
+  const cachedVersion = localStorage.getItem('app_version');
+  if (cachedVersion !== VERSION) {
+    localStorage.setItem('app_version', VERSION);
+    location.reload(true);
+  }
+---
 
-        <!-- ✅ Logo con enlace al inicio -->
-        <div class="logo">
-            <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:0.5rem;">
-                <span class="logo__icon">⚡</span>
-                <span class="logo__text">Flowmatic</span>
-            </a>
-        </div>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
-            <span></span><span></span><span></span>
-        </button>
-
-        <div class="nav-links" id="navLinks">
-            <a href="#product" class="nav-link"><i class="fas fa-box"></i> Producto</a>
-            <a href="#pricing" class="nav-link"><i class="fas fa-tag"></i> Precios</a>
-
-            <div class="dropdown">
-                <button class="dropdown-btn nav-link">
-                    <i class="fas fa-toolbox"></i> Utilidades <i class="fas fa-chevron-down dropdown-icon"></i>
-                </button>
-                <div class="dropdown-menu">
-                    <a href="utilities/google-auth.html" class="dropdown-item">
-                        <i class="fas fa-qrcode"></i> Google Auth Extractor
-                    </a>
-                    <a href="utilities/extension.html" class="dropdown-item">
-                        <i class="fas fa-puzzle-piece"></i> Position Caret
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item">
-                        <i class="fab fa-github"></i> Más en GitHub
-                    </a>
-                </div>
-            </div>
-
-            <a href="https://github.com/joseqwrtt" target="_blank" class="nav-link">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
+<header class="hero">
+  <div class="container hero__container">
+    <div class="hero__badge">
+      <span class="badge">✨ Automatización inteligente</span>
     </div>
-    </nav>
+    <h1 class="hero__title">
+      Escribe <span class="gradient-text">/</span> y tu plantilla aparece
+    </h1>
+    <p class="hero__subtitle">
+      Plantillas Macro vive en segundo plano. En cualquier aplicación, escribe "/" + el nombre de tu plantilla y se pega al instante. Sin copiar, sin abrir archivos, sin interrumpir tu flujo.
+    </p>
+    <div class="hero__video">
+      <video autoplay loop muted playsinline class="demo-video">
+        <source src="/videos/Sistema-Macro.webm" type="video/webm">
+        Tu navegador no soporta videos HTML5.
+      </video>
+    </div>
+    <div class="hero__buttons">
+      <a href="https://github.com/joseqwrtt/update_app/releases/download/3.0.0.10/PlantillasMacro.zip" class="btn btn-primary btn-large">
+        <i class="fas fa-download"></i> Descargar gratis
+      </a>
+      <a href="#pricing" class="btn btn-outline btn-large">
+        <i class="fas fa-tag"></i> Ver precios
+      </a>
+    </div>
+  </div>
+</header>
 
-    <header class="hero">
-        <div class="container hero__container">
-            <div class="hero__badge">
-                <span class="badge">✨ Automatización inteligente</span>
-            </div>
-            <h1 class="hero__title">
-                Escribe <span class="gradient-text">/</span> y tu plantilla aparece
-            </h1>
-            <p class="hero__subtitle">
-                Plantillas Macro vive en segundo plano. En cualquier aplicación, escribe "/" + el nombre de tu plantilla y se pega al instante. Sin copiar, sin abrir archivos, sin interrumpir tu flujo.
-            </p>
-            <div class="hero__video">
-                <video autoplay loop muted playsinline class="demo-video">
-                    <source src="videos/Sistema-Macro.webm" type="video/webm">
-                    Tu navegador no soporta videos HTML5.
-                </video>
-            </div>
-            <div class="hero__buttons">
-                <a href="https://github.com/joseqwrtt/update_app/releases/download/3.0.0.10/PlantillasMacro.zip" class="btn btn-primary btn-large">
-                    <i class="fas fa-download"></i> Descargar gratis
-                </a>
-                <a href="#pricing" class="btn btn-outline btn-large">
-                    <i class="fas fa-tag"></i> Ver precios
-                </a>
-            </div>
-        </div>
-    </header>
+<section class="features-section" id="product">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Diseñado para tu flujo de trabajo</h2>
+      <p class="section-subtitle">Sin interrupciones, sin pasos extra. Solo escribe y pega.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>Instantáneo</h3>
+        <p>Escribe <code>/nombre</code> y tu plantilla aparece al instante. Sin menús, sin clics extra.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🪄</div>
+        <h3>Formato completo</h3>
+        <p>DOCX, ODT y TXT con negrita, tablas, imágenes — todo el formato se mantiene.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>100% local</h3>
+        <p>Tus plantillas están en tu equipo. Sin nubes, sin servidores, sin suscripciones ocultas.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="features-section" id="product">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Diseñado para tu flujo de trabajo</h2>
-                <p class="section-subtitle">Sin interrupciones, sin pasos extra. Solo escribe y pega.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Instantáneo</h3>
-                    <p>Escribe <code>/nombre</code> y tu plantilla aparece al instante. Sin menús, sin clics extra.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🪄</div>
-                    <h3>Formato completo</h3>
-                    <p>DOCX, ODT y TXT con negrita, tablas, imágenes — todo el formato se mantiene.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>100% local</h3>
-                    <p>Tus plantillas están en tu equipo. Sin nubes, sin servidores, sin suscripciones ocultas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Elige tu plan</h2>
+      <p class="section-subtitle">Sin permanencia · Cancela cuando quieras</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Mensual</h3>
+        <div class="price">3,90€<span>/mes</span></div>
+        <ul>
+          <li>✓ Todas las funciones</li>
+          <li>✓ Sin compromiso</li>
+          <li>✓ Cancela cuando quieras</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button">Suscribirme</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="popular-badge">Más popular</div>
+        <h3>Trimestral</h3>
+        <div class="price">9,90€<span>/3 meses</span></div>
+        <div class="save">3,30€/mes · Ahorra 15%</div>
+        <ul>
+          <li>✓ Todas las funciones</li>
+          <li>✓ Renovación trimestral</li>
+          <li>✓ Cancela cuando quieras</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-primary btn-block lemonsqueezy-button">Elegir Trimestral</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Anual</h3>
+        <div class="price">35€<span>/año</span></div>
+        <div class="save">2,90€/mes · Ahorra 25%</div>
+        <ul>
+          <li>✓ Todas las funciones</li>
+          <li>✓ Renovación anual</li>
+          <li>✓ Mejor valor</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button">Elegir Anual</a>
+      </div>
+    </div>
+    <p class="pricing-note">🔒 Pago seguro vía Lemon Squeezy · 14 días de prueba gratuita · Cancela cuando quieras</p>
+  </div>
+</section>
 
-    <section class="pricing-section" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Elige tu plan</h2>
-                <p class="section-subtitle">Sin permanencia · Cancela cuando quieras</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Mensual</h3>
-                    <div class="price">3,90€<span>/mes</span></div>
-                    <ul>
-                        <li>✓ Todas las funciones</li>
-                        <li>✓ Sin compromiso</li>
-                        <li>✓ Cancela cuando quieras</li>
-                    </ul>
-                    <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button">Suscribirme</a>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="popular-badge">Más popular</div>
-                    <h3>Trimestral</h3>
-                    <div class="price">9,90€<span>/3 meses</span></div>
-                    <div class="save">3,30€/mes · Ahorra 15%</div>
-                    <ul>
-                        <li>✓ Todas las funciones</li>
-                        <li>✓ Renovación trimestral</li>
-                        <li>✓ Cancela cuando quieras</li>
-                    </ul>
-                    <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-primary btn-block lemonsqueezy-button">Elegir Trimestral</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Anual</h3>
-                    <div class="price">35€<span>/año</span></div>
-                    <div class="save">2,90€/mes · Ahorra 25%</div>
-                    <ul>
-                        <li>✓ Todas las funciones</li>
-                        <li>✓ Renovación anual</li>
-                        <li>✓ Mejor valor</li>
-                    </ul>
-                    <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button">Elegir Anual</a>
-                </div>
-            </div>
-            <p class="pricing-note">🔒 Pago seguro vía Lemon Squeezy · 14 días de prueba gratuita · Cancela cuando quieras</p>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="cta__title">¿Listo para trabajar más rápido?</h2>
-            <p class="cta__text">Descarga Plantillas Macro gratis y prueba todas las funciones durante 14 días.</p>
-            <a href="https://github.com/joseqwrtt/update_app/releases/download/3.0.0.10/PlantillasMacro.zip" class="btn btn-primary btn-large">
-                <i class="fas fa-download"></i> Descargar ahora
-            </a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container footer__container">
-            <div class="footer__info">
-                <p>Flowmatic — Automatiza tu flujo de trabajo</p>
-                <p class="footer__copyright">© 2026 — Hecho con ☕</p>
-            </div>
-            <div class="footer__links">
-                <!-- ✅ Email directo sin obfuscación de Cloudflare -->
-                <a href="mailto:gestiona.optimiza@gmail.com" class="footer-link">
-                    <i class="fas fa-envelope"></i> gestiona.optimiza@gmail.com
-                </a>
-                <a href="https://github.com/joseqwrtt" target="_blank" class="footer-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="utilities/google-auth.html" class="footer-link">
-                    <i class="fas fa-toolbox"></i> Utilidades
-                </a>
-                <a href="utilities/extension.html" class="footer-link">
-                    <i class="fas fa-puzzle-piece"></i> Position Caret
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js?v=1.0"></script>
-    <script>
-        const VERSION = '1.3';
-        const cachedVersion = localStorage.getItem('app_version');
-        if (cachedVersion !== VERSION) {
-            localStorage.setItem('app_version', VERSION);
-            location.reload(true);
-        }
-    </script>
-</body>
-</html>
+<section class="cta-section">
+  <div class="container">
+    <h2 class="cta__title">¿Listo para trabajar más rápido?</h2>
+    <p class="cta__text">Descarga Plantillas Macro gratis y prueba todas las funciones durante 14 días.</p>
+    <a href="https://github.com/joseqwrtt/update_app/releases/download/3.0.0.10/PlantillasMacro.zip" class="btn btn-primary btn-large">
+      <i class="fas fa-download"></i> Descargar ahora
+    </a>
+  </div>
+</section>

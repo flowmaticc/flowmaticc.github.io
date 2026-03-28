@@ -1,0 +1,27 @@
+title: "Flowmatic · Plantillas Macro"
+description: "Expansor de plantillas Word y ODT para Windows"
+url: "https://flowmaticc.github.io"
+baseurl: ""
+
+# Plugins habilitados en GitHub Pages
+plugins:
+  - jekyll-sitemap
+
+# Excluir archivos del build
+exclude:
+  - README.md
+  - "*.bat"
+  - node_modules/
+
+# Colecciones
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
