@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Caret — Extensión para navegador · Flowmatic</title>
+    <meta name="description" content="Extensión gratuita para Chrome, Edge y Brave que mejora la precisión del popup de Plantillas Macro en cualquier web. Instala en un clic.">
+    <link rel="canonical" href="https://flowmaticc.github.io/utilities/extension.html">
+
+    <link rel="stylesheet" href="../css/style.css?v=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="theme-color" content="#0a0a0f">
+
+    <style>
+        /* ── Variables coherentes con tu web ── */
+        :root {
+            --ext-accent:   #3b82f6;
+            --ext-accent2:  #60a5fa;
+            --ext-green:    #22c55e;
+            --ext-orange:   #f59e0b;
+            --ext-bg:       #0a0a0f;
+            --ext-surface:  #111118;
+            --ext-card:     #16161f;
+            --ext-border:   #1e1e2e;
+            --ext-text:     #e2e8f0;
+            --ext-muted:    #64748b;
+        }
+
+        /* ── Hero extensión ── */
+        .ext-hero {
+            padding: 100px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .ext-hero::before {
+            content: '';
+            position: absolute;
+            top: -120px; left: 50%;
+            transform: translateX(-50%);
+            width: 600px; height: 400px;
+            background: radial-gradient(ellipse, rgba(59,130,246,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .ext-breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--ext-muted);
+            margin-bottom: 28px;
+        }
+        .ext-breadcrumb a { color: var(--ext-muted); text-decoration: none; }
+        .ext-breadcrumb a:hover { color: var(--ext-accent2); }
+        .ext-breadcrumb span { color: var(--ext-border); }
+
+        .ext-badge-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .ext-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            border-radius: 99px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .ext-pill.free {
+            background: rgba(34,197,94,0.12);
+            color: var(--ext-green);
+            border: 1px solid rgba(34,197,94,0.25);
+        }
+        .ext-pill.new {
+            background: rgba(59,130,246,0.12);
+            color: var(--ext-accent2);
+            border: 1px solid rgba(59,130,246,0.25);
+        }
+
+        .ext-hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--ext-text);
+            margin-bottom: 18px;
+        }
+        .ext-hero h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ext-hero p {
+            font-size: 17px;
+            color: var(--ext-muted);
+            max-width: 520px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+
+        /* ── Botón principal de instalación ── */
+        .ext-install-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: var(--ext-accent);
+            color: white;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 0 30px rgba(59,130,246,0.3);
+        }
+        .ext-install-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px rgba(59,130,246,0.45);
+        }
+        .ext-install-btn .btn-icon { font-size: 20px; }
+
+        .ext-install-note {
+            font-size: 12px;
+            color: var(--ext-muted);
+            margin-top: 12px;
+        }
+
+        /* ── Vista previa del popup extensión ── */
+        .ext-preview {
+            margin: 56px auto 0;
+            max-width: 360px;
+            background: var(--ext-card);
+            border: 1px solid var(--ext-border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+        }
+        .ext-preview__bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            background: #0d0d18;
+            border-bottom: 1px solid var(--ext-border);
+        }
+        .ext-preview__dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+        }
+        .ext-preview__bar span {
+            font-size: 11px;
+            color: var(--ext-muted);
+            margin-left: 4px;
+        }
+        .ext-preview__body { padding: 20px; }
+        .ext-preview__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+        .ext-preview__title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #00d4ff;
+        }
+        .ext-preview__ver { font-size: 10px; color: var(--ext-muted); }
+
+        .ext-status-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #0d0d18;
+            border-radius: 7px;
+            padding: 8px 12px;
+            margin-bottom: 12px;
+        }
+        .ext-status-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .ext-status-dot.green { background: #22c55e; box-shadow: 0 0 6px #22c55e; }
+        .ext-status-dot.orange { background: #f59e0b; }
+        .ext-status-dot.red { background: #ef4444; }
+        .ext-status-text { font-size: 11px; color: #aaa; }
+
+        .ext-web-card {
+            background: #0d0d18;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+        }
+        .ext-web-url { font-size: 11px; color: #666; margin-bottom: 8px; }
+        .ext-web-btn {
+            width: 100%;
+            padding: 7px;
+            border: none;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: default;
+        }
+        .ext-web-btn.excluir { background: #ef4444; color: white; }
+        .ext-web-btn.permitir { background: #166534; color: white; }
+
+        .ext-opt-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0d0d18;
+            border-radius: 7px;
+            padding: 9px 12px;
+            font-size: 12px;
+            color: #ccc;
+        }
+        .ext-toggle-fake {
+            width: 34px; height: 18px;
+            background: #0078D4;
+            border-radius: 18px;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .ext-toggle-fake::after {
+            content: '';
+            position: absolute;
+            width: 12px; height: 12px;
+            background: white;
+            border-radius: 50%;
+            top: 3px; right: 3px;
+        }
+
+        /* ── Cómo funciona ── */
+        .ext-how {
+            padding: 72px 0;
+        }
+        .ext-how h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--ext-text);
+            margin-bottom: 8px;
+        }
+        .ext-how .sub {
+            text-align: center;
+            color: var(--ext-muted);
+            font-size: 15px;
+            margin-bottom: 48px;
+        }
+
+        .ext-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .ext-step {
+            background: var(--ext-card);
+            border: 1px solid var(--ext-border);
+            border-radius: 12px;
+            padding: 24px 20px;
+            position: relative;
+            transition: border-color 0.2s;
+        }
+        .ext-step:hover { border-color: rgba(59,130,246,0.4); }
+        .ext-step__num {
+            width: 32px; height: 32px;
+            background: var(--ext-accent);
+            color: white;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        .ext-step h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--ext-text);
+            margin-bottom: 8px;
+        }
+        .ext-step p {
+            font-size: 13px;
+            color: var(--ext-muted);
+            line-height: 1.6;
+        }
+
+        /* ── Compatibilidad ── */
+        .ext-compat {
+            padding: 56px 0;
+            background: var(--ext-surface);
+        }
+        .ext-compat h2 {
+            text-align: center;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ext-text);
+            margin-bottom: 32px;
+        }
+        .ext-browsers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .ext-browser {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--ext-card);
+            border: 1px solid var(--ext-border);
+            border-radius: 8px;
+            padding: 9px 16px;
+            font-size: 13px;
+            color: var(--ext-text);
+            font-weight: 500;
+        }
+        .ext-browser .dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--ext-green);
+        }
+
+        /* ── Features rápidas ── */
+        .ext-features {
+            padding: 72px 0 80px;
+        }
+        .ext-features h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--ext-text);
+            margin-bottom: 40px;
+        }
+        .ext-feat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .ext-feat {
+            display: flex;
+            gap: 14px;
+            background: var(--ext-card);
+            border: 1px solid var(--ext-border);
+            border-radius: 10px;
+            padding: 18px;
+        }
+        .ext-feat__icon {
+            font-size: 22px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .ext-feat h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--ext-text);
+            margin-bottom: 5px;
+        }
+        .ext-feat p {
+            font-size: 13px;
+            color: var(--ext-muted);
+            line-height: 1.6;
+        }
+
+        /* ── CTA instalación ── */
+        .ext-cta {
+            padding: 72px 0;
+            text-align: center;
+            background: var(--ext-surface);
+        }
+        .ext-cta h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--ext-text);
+            margin-bottom: 12px;
+        }
+        .ext-cta p {
+            color: var(--ext-muted);
+            font-size: 15px;
+            margin-bottom: 32px;
+        }
+
+        /* ── Pending banner ── */
+        .ext-pending {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245,158,11,0.1);
+            border: 1px solid rgba(245,158,11,0.3);
+            border-radius: 8px;
+            padding: 10px 18px;
+            font-size: 13px;
+            color: #fbbf24;
+            margin-top: 12px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .ext-hero { padding: 80px 0 40px; }
+            .ext-steps { grid-template-columns: 1fr; }
+            .ext-feat-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVBAR (igual que tu index.html)
+     ══════════════════════════════════════════════ -->
+<nav class="navbar">
+    <div class="container navbar__container">
+        <div class="logo">
+            <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:8px;">
+                <span class="logo__icon">⚡</span>
+                <span class="logo__text">Flowmatic</span>
+            </a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="/#product" class="nav-link"><i class="fas fa-box"></i> Producto</a>
+            <a href="/#pricing" class="nav-link"><i class="fas fa-tag"></i> Precios</a>
+            <div class="dropdown">
+                <button class="dropdown-btn nav-link">
+                    <i class="fas fa-toolbox"></i> Utilidades <i class="fas fa-chevron-down dropdown-icon"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="/utilities/google-auth.html" class="dropdown-item">
+                        <i class="fas fa-qrcode"></i> Google Auth Extractor
+                    </a>
+                    <a href="/utilities/extension.html" class="dropdown-item active">
+                        <i class="fas fa-puzzle-piece"></i> Position Caret
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item">
+                        <i class="fab fa-github"></i> Más en GitHub
+                    </a>
+                </div>
+            </div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="nav-link">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════════ -->
+<section class="ext-hero">
+    <div class="container">
+
+        <div class="ext-breadcrumb">
+            <a href="/">Flowmatic</a>
+            <span>/</span>
+            <a href="#">Utilidades</a>
+            <span>/</span>
+            <span style="color: var(--ext-accent2)">Position Caret</span>
+        </div>
+
+        <div class="ext-badge-wrap">
+            <span class="ext-pill free"><i class="fas fa-check"></i> Gratis</span>
+            <span class="ext-pill new"><i class="fas fa-puzzle-piece"></i> Extensión para navegador</span>
+        </div>
+
+        <h1>El popup aparece<br>exactamente <em>donde escribes</em></h1>
+        <p>
+            Complemento gratuito para Plantillas Macro. Instálalo en tu navegador y el popup de plantillas aparecerá siempre en la posición exacta del cursor, en cualquier web.
+        </p>
+
+        <!-- Botón principal — actualiza el href cuando tengas el ID de la store -->
+        <a href="https://chromewebstore.google.com/detail/flowmaticc-position-caret/PENDIENTE"
+           target="_blank"
+           class="ext-install-btn"
+           id="btn-instalar">
+            <span class="btn-icon">🧩</span>
+            Instalar extensión gratis
+        </a>
+        <p class="ext-install-note">Chrome · Edge · Brave · Opera · Vivaldi — y más</p>
+
+        <div class="ext-pending">
+            <i class="fas fa-clock"></i>
+            Pendiente de aprobación en Chrome Web Store · Disponible próximamente
+        </div>
+
+        <!-- Vista previa del popup de la extensión -->
+        <div class="ext-preview" style="margin-top:48px;">
+            <div class="ext-preview__bar">
+                <div class="ext-preview__dot" style="background:#ef4444"></div>
+                <div class="ext-preview__dot" style="background:#f59e0b"></div>
+                <div class="ext-preview__dot" style="background:#22c55e"></div>
+                <span>flowmaticc · Position Caret</span>
+            </div>
+            <div class="ext-preview__body">
+                <div class="ext-preview__header">
+                    <span class="ext-preview__title">flowmaticc · Position Caret</span>
+                    <span class="ext-preview__ver">v4.0.0</span>
+                </div>
+                <div class="ext-status-row">
+                    <div class="ext-status-dot green"></div>
+                    <span class="ext-status-text">Conectado · activo</span>
+                </div>
+                <div class="ext-web-card">
+                    <div class="ext-web-url">mail.google.com</div>
+                    <div class="ext-web-btn excluir">🚫 Excluir esta web</div>
+                </div>
+                <div class="ext-opt-row">
+                    <span>Mostrar círculo rojo al capturar</span>
+                    <div class="ext-toggle-fake"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CÓMO FUNCIONA
+     ══════════════════════════════════════════════ -->
+<section class="ext-how">
+    <div class="container">
+        <h2>Cómo funciona</h2>
+        <p class="sub">Tres pasos y listo. Sin configuración, sin cuentas.</p>
+        <div class="ext-steps">
+            <div class="ext-step">
+                <div class="ext-step__num">1</div>
+                <h3>Instala la extensión</h3>
+                <p>Un clic en Chrome Web Store. Se activa automáticamente en todos los navegadores compatibles.</p>
+            </div>
+            <div class="ext-step">
+                <div class="ext-step__num">2</div>
+                <h3>Abre Plantillas Macro</h3>
+                <p>La extensión se conecta sola a la app de escritorio. El icono se pondrá verde.</p>
+            </div>
+            <div class="ext-step">
+                <div class="ext-step__num">3</div>
+                <h3>Escribe y listo</h3>
+                <p>Escribe tu detonante en cualquier web y el popup aparece exactamente donde está el cursor.</p>
+            </div>
+            <div class="ext-step">
+                <div class="ext-step__num">4</div>
+                <h3>Controla por web</h3>
+                <p>Excluye cualquier web con un clic desde el popup. La extensión recuerda tus preferencias.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     COMPATIBILIDAD
+     ══════════════════════════════════════════════ -->
+<section class="ext-compat">
+    <div class="container">
+        <h2>Compatible con todos los navegadores Chromium</h2>
+        <div class="ext-browsers">
+            <div class="ext-browser"><div class="dot"></div> Chrome</div>
+            <div class="ext-browser"><div class="dot"></div> Edge</div>
+            <div class="ext-browser"><div class="dot"></div> Brave</div>
+            <div class="ext-browser"><div class="dot"></div> Opera</div>
+            <div class="ext-browser"><div class="dot"></div> Opera GX</div>
+            <div class="ext-browser"><div class="dot"></div> Vivaldi</div>
+            <div class="ext-browser"><div class="dot"></div> Arc</div>
+            <div class="ext-browser"><div class="dot"></div> Yandex</div>
+            <div class="ext-browser"><div class="dot"></div> Thorium</div>
+            <div class="ext-browser"><div class="dot"></div> Ungoogled</div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CARACTERÍSTICAS
+     ══════════════════════════════════════════════ -->
+<section class="ext-features">
+    <div class="container">
+        <h2>Qué incluye</h2>
+        <div class="ext-feat-grid">
+            <div class="ext-feat">
+                <div class="ext-feat__icon">🎯</div>
+                <div>
+                    <h4>Posición exacta del cursor</h4>
+                    <p>El popup aparece justo debajo de donde estás escribiendo, en Gmail, Outlook, Dynamics o cualquier editor web.</p>
+                </div>
+            </div>
+            <div class="ext-feat">
+                <div class="ext-feat__icon">🚫</div>
+                <div>
+                    <h4>Excluir webs con un clic</h4>
+                    <p>¿No quieres que funcione en alguna web? La desactivas al instante desde el icono del navegador.</p>
+                </div>
+            </div>
+            <div class="ext-feat">
+                <div class="ext-feat__icon">🔌</div>
+                <div>
+                    <h4>Conexión automática</h4>
+                    <p>Se conecta sola a Plantillas Macro. Si la app se cierra y vuelve a abrirse, la extensión reconecta sin tocar nada.</p>
+                </div>
+            </div>
+            <div class="ext-feat">
+                <div class="ext-feat__icon">🔒</div>
+                <div>
+                    <h4>100% local y privado</h4>
+                    <p>No envía nada a internet. Solo comunica coordenadas a tu app de escritorio por conexión local.</p>
+                </div>
+            </div>
+            <div class="ext-feat">
+                <div class="ext-feat__icon">⚡</div>
+                <div>
+                    <h4>Sin consumo notable</h4>
+                    <p>Solo actúa cuando detecta el detonante. Sin polling continuo, sin impacto en el rendimiento del navegador.</p>
+                </div>
+            </div>
+            <div class="ext-feat">
+                <div class="ext-feat__icon">🆓</div>
+                <div>
+                    <h4>Completamente gratis</h4>
+                    <p>Sin publicidad, sin límites de uso, sin cuenta. Solo instala y funciona.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA FINAL
+     ══════════════════════════════════════════════ -->
+<section class="ext-cta">
+    <div class="container">
+        <h2>¿Ya tienes Plantillas Macro?</h2>
+        <p>Añade la extensión y el popup funcionará perfectamente en cualquier web.</p>
+        <a href="https://chromewebstore.google.com/detail/flowmaticc-position-caret/PENDIENTE"
+           target="_blank"
+           class="ext-install-btn">
+            <span class="btn-icon">🧩</span>
+            Instalar extensión gratis
+        </a>
+        <div class="ext-pending" style="margin-top:16px;">
+            <i class="fas fa-clock"></i>
+            Pendiente de aprobación · Disponible próximamente
+        </div>
+        <p style="margin-top:24px;font-size:13px;color:var(--ext-muted)">
+            ¿Aún no tienes Plantillas Macro?
+            <a href="/" style="color:var(--ext-accent2);text-decoration:none;font-weight:600;">
+                Descárgala gratis →
+            </a>
+        </p>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER (igual que tu index.html)
+     ══════════════════════════════════════════════ -->
+<footer class="footer">
+    <div class="container footer__container">
+        <div class="footer__info">
+            <p>Flowmatic — Automatiza tu flujo de trabajo</p>
+            <p class="footer__copyright">© 2026 — Hecho con ☕</p>
+        </div>
+        <div class="footer__links">
+            <a href="mailto:gestiona.optimiza@gmail.com" class="footer-link">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="footer-link">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="/utilities/google-auth.html" class="footer-link">
+                <i class="fas fa-toolbox"></i> Utilidades
+            </a>
+            <a href="/utilities/privacy-policy.html" class="footer-link">
+                <i class="fas fa-shield-alt"></i> Privacidad
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script src="../js/main.js?v=1.0"></script>
+<script>
+    // Cuando tengas el ID de la store, reemplaza PENDIENTE aquí
+    const STORE_ID = 'PENDIENTE';
+    const STORE_URL = `https://chromewebstore.google.com/detail/flowmaticc-position-caret/${STORE_ID}`;
+
+    // Cuando el ID esté disponible, ocultar banners "pendiente" y activar botones
+    if (STORE_ID !== 'PENDIENTE') {
+        document.querySelectorAll('.ext-pending').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('[href*="PENDIENTE"]').forEach(el => el.href = STORE_URL);
+    }
+</script>
+</body>
+</html>
