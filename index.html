@@ -154,7 +154,7 @@ extra_js: |
       <div class="why-card">
         <div class="why-card-icon">💶</div>
         <h4>Precio justo sin sorpresas</h4>
-        <p>Otras soluciones cobran suscripciones caras con nube obligatoria o licencias de entrada elevadas. Plantillas Macro desde 3,90€/mes con todas las funciones incluidas.</p>
+        <p>Otras soluciones cobran suscripciones caras con nube obligatoria o licencias de entrada elevadas. Plantillas Macro desde 3,90€/mes + IVA, con todas las funciones incluidas.</p>
       </div>
 
       <div class="why-card">
@@ -342,6 +342,24 @@ extra_js: |
   .why-compare-row { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
 }
+
+/* IVA notices */
+.price-tax {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: -0.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.2px;
+}
+.pricing-note--tax {
+  margin-top: 0.5rem;
+  font-size: 0.75rem !important;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
 </style>
 
 
@@ -355,6 +373,7 @@ extra_js: |
       <div class="pricing-card">
         <h3>Mensual</h3>
         <div class="price">3,90€<span>/mes</span></div>
+        <div class="price-tax">+ IVA según tu país</div>
         <ul>
           <li>✓ Todas las funciones</li>
           <li>✓ Sin compromiso</li>
@@ -366,6 +385,7 @@ extra_js: |
         <div class="popular-badge">Más popular</div>
         <h3>Trimestral</h3>
         <div class="price">9,90€<span>/3 meses</span></div>
+        <div class="price-tax">+ IVA según tu país</div>
         <div class="save">3,30€/mes · Ahorra 15%</div>
         <ul>
           <li>✓ Todas las funciones</li>
@@ -377,6 +397,7 @@ extra_js: |
       <div class="pricing-card">
         <h3>Anual</h3>
         <div class="price">35€<span>/año</span></div>
+        <div class="price-tax">+ IVA según tu país</div>
         <div class="save">2,90€/mes · Ahorra 25%</div>
         <ul>
           <li>✓ Todas las funciones</li>
@@ -387,6 +408,7 @@ extra_js: |
       </div>
     </div>
     <p class="pricing-note">🔒 Pago seguro vía Lemon Squeezy · 14 días de prueba gratuita · Cancela cuando quieras</p>
+    <p class="pricing-note pricing-note--tax">Los precios mostrados no incluyen IVA. El IVA aplicable se calcula y añade en el momento del pago según el país de residencia del comprador, y es gestionado íntegramente por Lemon Squeezy como Merchant of Record.</p>
   </div>
 </section>
 
