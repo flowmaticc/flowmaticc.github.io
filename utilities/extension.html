@@ -15,18 +15,12 @@
     <meta name="theme-color" content="#0a0a0f">
 
     <style>
-        /* ── Variables coherentes con tu web ── */
+        /* ── Alias sobre las variables del tema de style.css ── */
         :root {
             --ext-accent:   #3b82f6;
             --ext-accent2:  #60a5fa;
             --ext-green:    #22c55e;
             --ext-orange:   #f59e0b;
-            --ext-bg:       #0a0a0f;
-            --ext-surface:  #111118;
-            --ext-card:     #16161f;
-            --ext-border:   #1e1e2e;
-            --ext-text:     #e2e8f0;
-            --ext-muted:    #64748b;
         }
 
         /* ── Hero extensión ── */
@@ -52,12 +46,12 @@
             justify-content: center;
             gap: 8px;
             font-size: 13px;
-            color: var(--ext-muted);
+            color: var(--text-muted);
             margin-bottom: 28px;
         }
-        .ext-breadcrumb a { color: var(--ext-muted); text-decoration: none; }
+        .ext-breadcrumb a { color: var(--text-muted); text-decoration: none; }
         .ext-breadcrumb a:hover { color: var(--ext-accent2); }
-        .ext-breadcrumb span { color: var(--ext-border); }
+        .ext-breadcrumb span { color: var(--text-muted); }
 
         .ext-badge-wrap {
             display: flex;
@@ -91,12 +85,12 @@
             font-size: clamp(32px, 5vw, 52px);
             font-weight: 800;
             line-height: 1.15;
-            color: var(--ext-text);
+            color: var(--text-primary);
             margin-bottom: 18px;
         }
         .ext-hero h1 em {
             font-style: normal;
-            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -104,7 +98,7 @@
 
         .ext-hero p {
             font-size: 17px;
-            color: var(--ext-muted);
+            color: var(--text-muted);
             max-width: 520px;
             margin: 0 auto 36px;
             line-height: 1.7;
@@ -116,25 +110,25 @@
             align-items: center;
             gap: 10px;
             padding: 16px 32px;
-            background: var(--ext-accent);
+            background: var(--accent);
             color: white;
             border-radius: 10px;
             font-size: 16px;
             font-weight: 700;
             text-decoration: none;
             transition: all 0.2s;
-            box-shadow: 0 0 30px rgba(59,130,246,0.3);
+            box-shadow: 0 0 30px var(--accent-glow);
         }
         .ext-install-btn:hover {
-            background: #2563eb;
+            background: var(--accent-dark);
             transform: translateY(-2px);
-            box-shadow: 0 0 40px rgba(59,130,246,0.45);
+            box-shadow: 0 6px 20px var(--accent-glow);
         }
         .ext-install-btn .btn-icon { font-size: 20px; }
 
         .ext-install-note {
             font-size: 12px;
-            color: var(--ext-muted);
+            color: var(--text-muted);
             margin-top: 12px;
         }
 
@@ -142,19 +136,19 @@
         .ext-preview {
             margin: 56px auto 0;
             max-width: 360px;
-            background: var(--ext-card);
-            border: 1px solid var(--ext-border);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.3);
         }
         .ext-preview__bar {
             display: flex;
             align-items: center;
             gap: 8px;
             padding: 10px 14px;
-            background: #0d0d18;
-            border-bottom: 1px solid var(--ext-border);
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
         }
         .ext-preview__dot {
             width: 10px; height: 10px;
@@ -162,7 +156,7 @@
         }
         .ext-preview__bar span {
             font-size: 11px;
-            color: var(--ext-muted);
+            color: var(--text-muted);
             margin-left: 4px;
         }
         .ext-preview__body { padding: 20px; }
@@ -177,13 +171,13 @@
             font-weight: 700;
             color: #00d4ff;
         }
-        .ext-preview__ver { font-size: 10px; color: var(--ext-muted); }
+        .ext-preview__ver { font-size: 10px; color: var(--text-muted); }
 
         .ext-status-row {
             display: flex;
             align-items: center;
             gap: 8px;
-            background: #0d0d18;
+            background: var(--bg-secondary);
             border-radius: 7px;
             padding: 8px 12px;
             margin-bottom: 12px;
@@ -196,15 +190,15 @@
         .ext-status-dot.green { background: #22c55e; box-shadow: 0 0 6px #22c55e; }
         .ext-status-dot.orange { background: #f59e0b; }
         .ext-status-dot.red { background: #ef4444; }
-        .ext-status-text { font-size: 11px; color: #aaa; }
+        .ext-status-text { font-size: 11px; color: var(--text-secondary); }
 
         .ext-web-card {
-            background: #0d0d18;
+            background: var(--bg-secondary);
             border-radius: 8px;
             padding: 10px 12px;
             margin-bottom: 12px;
         }
-        .ext-web-url { font-size: 11px; color: #666; margin-bottom: 8px; }
+        .ext-web-url { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
         .ext-web-btn {
             width: 100%;
             padding: 7px;
@@ -221,11 +215,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #0d0d18;
+            background: var(--bg-secondary);
             border-radius: 7px;
             padding: 9px 12px;
             font-size: 12px;
-            color: #ccc;
+            color: var(--text-secondary);
         }
         .ext-toggle-fake {
             width: 34px; height: 18px;
@@ -251,12 +245,12 @@
             text-align: center;
             font-size: 28px;
             font-weight: 700;
-            color: var(--ext-text);
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
         .ext-how .sub {
             text-align: center;
-            color: var(--ext-muted);
+            color: var(--text-muted);
             font-size: 15px;
             margin-bottom: 48px;
         }
@@ -269,8 +263,8 @@
             margin: 0 auto;
         }
         .ext-step {
-            background: var(--ext-card);
-            border: 1px solid var(--ext-border);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px 20px;
             position: relative;
@@ -279,7 +273,7 @@
         .ext-step:hover { border-color: rgba(59,130,246,0.4); }
         .ext-step__num {
             width: 32px; height: 32px;
-            background: var(--ext-accent);
+            background: var(--accent);
             color: white;
             border-radius: 8px;
             font-size: 14px;
@@ -292,25 +286,25 @@
         .ext-step h3 {
             font-size: 14px;
             font-weight: 700;
-            color: var(--ext-text);
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
         .ext-step p {
             font-size: 13px;
-            color: var(--ext-muted);
+            color: var(--text-muted);
             line-height: 1.6;
         }
 
         /* ── Compatibilidad ── */
         .ext-compat {
             padding: 56px 0;
-            background: var(--ext-surface);
+            background: var(--bg-secondary);
         }
         .ext-compat h2 {
             text-align: center;
             font-size: 22px;
             font-weight: 700;
-            color: var(--ext-text);
+            color: var(--text-primary);
             margin-bottom: 32px;
         }
         .ext-browsers {
@@ -325,12 +319,12 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: var(--ext-card);
-            border: 1px solid var(--ext-border);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 8px;
             padding: 9px 16px;
             font-size: 13px;
-            color: var(--ext-text);
+            color: var(--text-primary);
             font-weight: 500;
         }
         .ext-browser .dot {
@@ -347,7 +341,7 @@
             text-align: center;
             font-size: 28px;
             font-weight: 700;
-            color: var(--ext-text);
+            color: var(--text-primary);
             margin-bottom: 40px;
         }
         .ext-feat-grid {
@@ -360,8 +354,8 @@
         .ext-feat {
             display: flex;
             gap: 14px;
-            background: var(--ext-card);
-            border: 1px solid var(--ext-border);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 10px;
             padding: 18px;
         }
@@ -373,12 +367,12 @@
         .ext-feat h4 {
             font-size: 14px;
             font-weight: 700;
-            color: var(--ext-text);
+            color: var(--text-primary);
             margin-bottom: 5px;
         }
         .ext-feat p {
             font-size: 13px;
-            color: var(--ext-muted);
+            color: var(--text-muted);
             line-height: 1.6;
         }
 
@@ -386,16 +380,16 @@
         .ext-cta {
             padding: 72px 0;
             text-align: center;
-            background: var(--ext-surface);
+            background: var(--bg-secondary);
         }
         .ext-cta h2 {
             font-size: 28px;
             font-weight: 800;
-            color: var(--ext-text);
+            color: var(--text-primary);
             margin-bottom: 12px;
         }
         .ext-cta p {
-            color: var(--ext-muted);
+            color: var(--text-muted);
             font-size: 15px;
             margin-bottom: 32px;
         }
@@ -479,7 +473,7 @@
             <span>/</span>
             <a href="#">Utilidades</a>
             <span>/</span>
-            <span style="color: var(--ext-accent2)">Position Caret</span>
+            <span style="color: var(--accent-light)">Position Caret</span>
         </div>
 
         <div class="ext-badge-wrap">
@@ -660,9 +654,9 @@
             <i class="fas fa-clock"></i>
             Pendiente de aprobación · Disponible próximamente
         </div>
-        <p style="margin-top:24px;font-size:13px;color:var(--ext-muted)">
+        <p style="margin-top:24px;font-size:13px;color:var(--text-muted)">
             ¿Aún no tienes Plantillas Macro?
-            <a href="/" style="color:var(--ext-accent2);text-decoration:none;font-weight:600;">
+            <a href="/" style="color:var(--accent-light);text-decoration:none;font-weight:600;">
                 Descárgala gratis →
             </a>
         </p>
@@ -679,7 +673,7 @@
             <p class="footer__copyright">© 2026 — Hecho con ☕</p>
         </div>
         <div class="footer__links">
-            <a href="mailto:gestiona.optimiza@gmail.com" class="footer-link">
+            <a href="/cdn-cgi/l/email-protection#9ef9fbedeaf7f1f0ffb0f1eeeaf7f3f7e4ffdef9f3fff7f2b0fdf1f3" class="footer-link">
                 <i class="fas fa-envelope"></i> Email
             </a>
             <a href="https://github.com/joseqwrtt" target="_blank" class="footer-link">
@@ -695,7 +689,7 @@
     </div>
 </footer>
 
-<script src="../js/main.js?v=1.0"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/main.js?v=1.0"></script>
 <script>
     // Cuando tengas el ID de la store, reemplaza PENDIENTE aquí
     const STORE_ID = 'PENDIENTE';
@@ -703,9 +697,4 @@
 
     // Cuando el ID esté disponible, ocultar banners "pendiente" y activar botones
     if (STORE_ID !== 'PENDIENTE') {
-        document.querySelectorAll('.ext-pending').forEach(el => el.style.display = 'none');
-        document.querySelectorAll('[href*="PENDIENTE"]').forEach(el => el.href = STORE_URL);
-    }
-</script>
-</body>
-</html>
+        document.querySelectorAll('.ext-pending').forEach(e
