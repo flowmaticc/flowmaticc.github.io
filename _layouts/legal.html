@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+<meta name="robots" content="noindex, follow">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --bg:#09090f; --surface:#111118; --border:#1a1a28; --accent:#6366f1; --green:#10b981; --text:#c4c4d8; --muted:#3a3a52; --heading:#eeeef8; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 1.8; min-height: 100vh; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px); background-size: 48px 48px; opacity: 0.3; pointer-events: none; z-index: 0; }
+  .wrap { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 64px 32px 80px; }
+  /* Cabecera */
+  .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-size: 12px; letter-spacing: 0.5px; margin-bottom: 40px; transition: color 0.2s; }
+  .back-link:hover { color: var(--accent); }
+  .doc-badge { display: inline-flex; align-items: center; gap: 7px; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; font-size: 11px; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
+  .doc-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  h1 { font-size: clamp(24px,4vw,36px); font-weight: 700; color: var(--heading); line-height: 1.2; margin-bottom: 8px; }
+  .meta { font-size: 12px; color: var(--muted); margin-bottom: 40px; }
+  /* Alerta */
+  .alert { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 4px; padding: 14px 18px; margin-bottom: 40px; font-size: 13px; color: var(--text); }
+  .alert strong { color: var(--green); }
+  /* Secciones */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+  section { margin-bottom: 36px; }
+  h2 { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  h2::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  h3 { font-size: 13px; font-weight: 700; color: var(--heading); margin: 16px 0 8px; }
+  p { margin-bottom: 10px; color: var(--text); font-size: 13px; }
+  ul, ol { padding-left: 20px; margin: 10px 0; }
+  ul li, ol li { font-size: 13px; color: var(--text); padding: 3px 0; }
+  a { color: var(--accent); }
+  /* Footer doc */
+  .doc-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 11px; color: var(--muted); }
+  .doc-footer a { color: var(--accent); text-decoration: none; }
+  /* Índice */
+  .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-bottom: 36px; }
+  .toc-title { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+  .toc ol { padding-left: 16px; }
+  .toc li { font-size: 12px; padding: 2px 0; }
+  .toc a { color: var(--text); text-decoration: none; }
+  .toc a:hover { color: var(--accent); }
+  /* Tabla */
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+  th { text-align: left; padding: 8px 12px; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); }
+  td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text); }
+  tr:last-child td { border-bottom: none; }
+  @media(max-width:560px){ .wrap{padding:40px 18px 60px;} .doc-footer{flex-direction:column;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="/" class="back-link">← Flowmatic</a>
+  {{ content }}
+  <div class="doc-footer">
+    <span>Flowmatic · <span id="year"></span></span>
+    <span><a href="mailto:gestiona.optimiza@gmail.com">gestiona.optimiza@gmail.com</a></span>
+  </div>
+</div>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

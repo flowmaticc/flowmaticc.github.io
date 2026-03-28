@@ -2,11 +2,11 @@
   <div class="container footer__container">
     <div class="footer__info">
       <p>Flowmatic — Automatiza tu flujo de trabajo</p>
-      <p class="footer__copyright">© 2026 — Hecho con ☕</p>
+      <p class="footer__copyright">© <span id="footer-year"></span> — Hecho con ☕</p>
     </div>
     <div class="footer__links">
       <a href="mailto:gestiona.optimiza@gmail.com" class="footer-link">
-        <i class="fas fa-envelope"></i> gestiona.optimiza@gmail.com
+        <i class="fas fa-envelope"></i> Contacto
       </a>
       <a href="https://github.com/joseqwrtt" target="_blank" class="footer-link">
         <i class="fab fa-github"></i> GitHub
@@ -17,9 +17,16 @@
       <a href="/utilities/extension/" class="footer-link">
         <i class="fas fa-puzzle-piece"></i> Position Caret
       </a>
-      <a href="/privacy-policy/" class="footer-link">
+      <a href="/legal/privacidad/" class="footer-link">
         <i class="fas fa-shield-alt"></i> Privacidad
+      </a>
+      <a href="/legal/aviso-legal/" class="footer-link">
+        <i class="fas fa-file-alt"></i> Aviso legal
+      </a>
+      <a href="/legal/terminos/" class="footer-link">
+        <i class="fas fa-file-contract"></i> Términos
       </a>
     </div>
   </div>
 </footer>
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
