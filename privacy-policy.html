@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy · flowmaticc Position Caret</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #09090f;
+    --surface:  #111118;
+    --border:   #1a1a28;
+    --accent:   #00d4ff;
+    --green:    #00e676;
+    --text:     #c4c4d8;
+    --muted:    #3a3a52;
+    --heading:  #eeeef8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', 'Lucida Console', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* Grid de fondo */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 32px 80px;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 56px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink {
+    0%,100% { opacity: 1; }
+    50%      { opacity: 0.2; }
+  }
+
+  h1 {
+    font-family: 'Courier New', monospace;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  h1 span { color: var(--accent); }
+
+  .subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* Línea divisoria */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0;
+  }
+
+  /* Secciones */
+  section { margin-bottom: 40px; }
+
+  h2 {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  p { margin-bottom: 12px; color: var(--text); }
+  p:last-child { margin-bottom: 0; }
+
+  /* Tabla de datos */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .data-table th {
+    text-align: left;
+    padding: 8px 14px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--surface); }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+  }
+  .tag.local  { background: #0a2a1a; color: var(--green); border: 1px solid #1a4a2a; }
+  .tag.none   { background: #1a1a1a; color: var(--muted); border: 1px solid var(--border); }
+
+  /* Bloque destacado */
+  .highlight {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--green); }
+
+  /* Lista */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+  }
+  ul li {
+    padding: 5px 0 5px 20px;
+    position: relative;
+    font-size: 13px;
+  }
+  ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 6px;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .footer a:hover { text-decoration: underline; }
+
+  /* Fade in */
+  .wrap > * {
+    animation: fadein 0.5s ease both;
+  }
+  @keyframes fadein {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  section:nth-child(2)  { animation-delay: 0.05s; }
+  section:nth-child(3)  { animation-delay: 0.10s; }
+  section:nth-child(4)  { animation-delay: 0.15s; }
+  section:nth-child(5)  { animation-delay: 0.20s; }
+  section:nth-child(6)  { animation-delay: 0.25s; }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 48px 20px 60px; }
+    .footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="badge">Privacy Policy</div>
+    <h1>flowmaticc<br><span>Position Caret</span></h1>
+    <p class="subtitle">Last updated: <span id="fecha"></span> · Chrome Extension v4.0.0</p>
+  </div>
+
+  <div class="highlight">
+    <strong>Short version:</strong> This extension does not collect, transmit, or store any personal data. Everything stays on your device.
+  </div>
+
+  <hr class="divider">
+
+  <section>
+    <h2>What this extension does</h2>
+    <p>
+      flowmaticc - Position Caret is a companion extension for the flowmaticc desktop application.
+      When you type your configured trigger character in a web-based text editor, the extension
+      detects the position of your text cursor (caret) and sends those coordinates to the
+      flowmaticc app running locally on your computer.
+    </p>
+    <p>
+      This allows the desktop app to display its template selector popup exactly where you are
+      typing — without requiring any clicks or interruptions to your workflow.
+    </p>
+  </section>
+
+  <section>
+    <h2>Data collected</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Purpose</th>
+          <th>Storage</th>
+          <th>Shared</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Excluded websites list</td>
+          <td>User preference — sites where the extension is disabled</td>
+          <td><span class="tag local">Local only</span></td>
+          <td><span class="tag none">Never</span></td>
+        </tr>
+        <tr>
+          <td>Visual indicator toggle</td>
+          <td>User preference — show/hide red circle on capture</td>
+          <td><span class="tag local">Local only</span></td>
+          <td><span class="tag none">Never</span></td>
+        </tr>
+        <tr>
+          <td>Trigger character</td>
+          <td>User preference — character that activates caret detection</td>
+          <td><span class="tag local">Local only</span></td>
+          <td><span class="tag none">Never</span></td>
+        </tr>
+        <tr>
+          <td>Caret coordinates (x, y)</td>
+          <td>Sent to the local desktop app via localhost WebSocket only</td>
+          <td><span class="tag local">Local only</span></td>
+          <td><span class="tag none">Never</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>What we do NOT collect</h2>
+    <ul>
+      <li>Browsing history or visited URLs (beyond the current tab's hostname for exclusion checks)</li>
+      <li>Page content, text, images, or any site data</li>
+      <li>Personal information of any kind</li>
+      <li>Keystrokes or typed text (only the presence of the trigger character is detected)</li>
+      <li>Authentication credentials or form data</li>
+      <li>Device identifiers or IP addresses</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Local communication</h2>
+    <p>
+      All communication between this extension and the flowmaticc desktop application happens
+      exclusively via a WebSocket connection to <code style="color:var(--accent)">localhost:8765</code>.
+      This is a local connection on your own machine — no data is transmitted over the internet
+      or sent to any external server.
+    </p>
+    <p>
+      This is the same pattern used by other local desktop companion tools. Your data never
+      leaves your computer.
+    </p>
+  </section>
+
+  <section>
+    <h2>Third parties</h2>
+    <p>
+      We do not share, sell, rent, or transfer any data to third parties under any circumstances.
+      There are no analytics, no advertising networks, and no external services integrated into
+      this extension.
+    </p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>
+      If this policy is updated, the new version will be published at this URL and the
+      "Last updated" date at the top of the page will reflect the change.
+    </p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>
+      For any questions regarding this privacy policy, you can reach us at
+      <a href="https://github.com/flowmaticc/flowmaticc.github.io"
+         style="color:var(--accent);text-decoration:none;"
+         target="_blank">github.com/flowmaticc</a>.
+    </p>
+  </section>
+
+  <div class="footer">
+    <span>© <span id="year"></span> flowmaticc · Position Caret</span>
+    <a href="https://github.com/flowmaticc/flowmaticc.github.io" target="_blank">github.com/flowmaticc</a>
+  </div>
+
+</div>
+
+<script>
+  const now = new Date();
+  const months = ['January','February','March','April','May','June',
+                  'July','August','September','October','November','December'];
+  document.getElementById('fecha').textContent =
+    months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
+  document.getElementById('year').textContent = now.getFullYear();
+</script>
+</body>
+</html>
