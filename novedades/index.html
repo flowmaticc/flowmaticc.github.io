@@ -308,24 +308,20 @@ nav_active: "novedades"
       notesHTML = `<div class="release-notes"><span class="release-notes-empty">Sin notas para esta versión.</span></div>`;
     }
 
-    // Assets (archivos adjuntos)
+    // Assets — solo en la versión más reciente, excluyendo version.json
     let assetsHTML = '';
-    if (release.assets && release.assets.length > 0) {
-      const links = release.assets.map(asset => {
-        const icon = assetIcon(asset.name);
-        const size = (asset.size / 1048576).toFixed(1);
-        const cls  = index === 0 ? 'primary' : 'secondary';
-        return `<a href="${asset.browser_download_url}" class="btn-download ${cls}" download>
-          ${icon} ${asset.name} <span style="opacity:.6;font-weight:400">(${size} MB)</span>
-        </a>`;
-      }).join('');
-      assetsHTML = `<div class="release-assets">${links}</div>`;
-    } else if (release.zipball_url) {
-      // Fallback al zipball del tag
-      const cls = index === 0 ? 'primary' : 'secondary';
-      assetsHTML = `<div class="release-assets">
-        <a href="${release.zipball_url}" class="btn-download ${cls}">📦 Código fuente (.zip)</a>
-      </div>`;
+    if (index === 0) {
+      const downloadable = (release.assets || []).filter(a => !/version\.json$/i.test(a.name));
+      if (downloadable.length > 0) {
+        const links = downloadable.map(asset => {
+          const icon = assetIcon(asset.name);
+          const size = (asset.size / 1048576).toFixed(1);
+          return `<a href="${asset.browser_download_url}" class="btn-download primary" download>
+            ${icon} ${asset.name} <span style="opacity:.6;font-weight:400">(${size} MB)</span>
+          </a>`;
+        }).join('');
+        assetsHTML = `<div class="release-assets">${links}</div>`;
+      }
     }
 
     return `
