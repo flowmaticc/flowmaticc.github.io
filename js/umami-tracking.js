@@ -7,14 +7,10 @@
   'use strict';
 
   // Helper: dispara evento Umami si está disponible
-  function track(eventName, props) {
+  function track(eventName) {
     if (typeof umami === 'undefined') return;
     try {
-      if (props && Object.keys(props).length > 0) {
-        umami.track(eventName, props);
-      } else {
-        umami.track(eventName);
-      }
+      umami.track(eventName);
     } catch (e) {
       // silencio: no interrumpir la experiencia del usuario
     }
@@ -22,6 +18,7 @@
 
   // ─── 1. DELEGACIÓN GLOBAL: atributos data-umami en HTML ──────────────────
   // Cualquier elemento con data-umami="nombre-evento" dispara el track al clic.
+  // No requiere tocar más JS: solo añadir data-umami="evento" al elemento HTML.
   document.addEventListener('click', function (e) {
     const el = e.target.closest('[data-umami]');
     if (!el) return;
@@ -31,45 +28,38 @@
 
   // ─── 2. VIEW-PRICING — sección de precios entra en viewport ──────────────
   (function () {
-    const pricingSection = document.getElementById('pricing');
-    if (!pricingSection) return;
+    const section = document.getElementById('pricing');
+    if (!section) return;
     let fired = false;
     const obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting && !fired) {
-          fired = true;
-          track('view-pricing');
-          obs.disconnect();
-        }
-      });
+      if (entries[0].isIntersecting && !fired) {
+        fired = true;
+        track('view-pricing');
+        obs.disconnect();
+      }
     }, { threshold: 0.3 });
-    obs.observe(pricingSection);
+    obs.observe(section);
   })();
 
   // ─── 3. VIEW-PRODUCT — sección de producto entra en viewport ─────────────
   (function () {
-    const productSection = document.getElementById('product');
-    if (!productSection) return;
+    const section = document.getElementById('product');
+    if (!section) return;
     let fired = false;
     const obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting && !fired) {
-          fired = true;
-          track('view-product');
-          obs.disconnect();
-        }
-      });
+      if (entries[0].isIntersecting && !fired) {
+        fired = true;
+        track('view-product');
+        obs.disconnect();
+      }
     }, { threshold: 0.3 });
-    obs.observe(productSection);
+    obs.observe(section);
   })();
 
-  // ─── 4. VIEW-UTILITIES — página de utilidades ────────────────────────────
-  (function () {
-    const isUtilitiesPage =
-      window.location.pathname.startsWith('/utilities') ||
-      document.querySelector('[data-page="utilities"]');
-    if (isUtilitiesPage) track('view-utilities');
-  })();
+  // ─── 4. VIEW-UTILITIES — páginas de utilidades ───────────────────────────
+  if (window.location.pathname.startsWith('/utilities')) {
+    track('view-utilities');
+  }
 
   // ─── 5. SCROLL-50 y SCROLL-90 ────────────────────────────────────────────
   (function () {
@@ -105,19 +95,7 @@
     let lastActive = Date.now();
     let fired = false;
     const THRESHOLD = 30000; // 30 segundos
-    const IDLE_GAP = 5000;   // pausa > 5 s = inactividad
-
-    function tick() {
-      if (fired) return;
-      const now = Date.now();
-      const delta = now - lastActive;
-      if (delta < IDLE_GAP) totalActive += delta;
-      lastActive = now;
-      if (totalActive >= THRESHOLD) {
-        fired = true;
-        track('engaged-30s');
-      }
-    }
+    const IDLE_GAP  = 5000;  // pausa > 5 s = inactividad
 
     const ACTIVITY_EVENTS = ['mousemove', 'keydown', 'scroll', 'click', 'touchstart'];
     ACTIVITY_EVENTS.forEach(function (ev) {
@@ -126,30 +104,17 @@
       }, { passive: true });
     });
 
-    setInterval(tick, 1000);
-  })();
-
-  // ─── 7. REUSE-TOOL — herramienta usada más de una vez en sesión ──────────
-  (function () {
-    const toolUsage = {};
-    document.addEventListener('click', function (e) {
-      const el = e.target.closest('[data-umami-tool]');
-      if (!el) return;
-      const toolId = el.getAttribute('data-umami-tool');
-      if (!toolId) return;
-      toolUsage[toolId] = (toolUsage[toolId] || 0) + 1;
-      if (toolUsage[toolId] === 2) {
-        track('reuse-tool', { tool: toolId });
+    setInterval(function () {
+      if (fired) return;
+      const now   = Date.now();
+      const delta = now - lastActive;
+      if (delta < IDLE_GAP) totalActive += delta;
+      lastActive = now;
+      if (totalActive >= THRESHOLD) {
+        fired = true;
+        track('engaged-30s');
       }
-    }, true);
+    }, 1000);
   })();
-
-  // ─── 8. ERROR-TOOL — errores en herramientas (event bus global) ──────────
-  // Las páginas de utilidades pueden llamar:
-  //   window.dispatchEvent(new CustomEvent('flowmatic:tool-error', { detail: { tool: 'google-auth' } }))
-  window.addEventListener('flowmatic:tool-error', function (e) {
-    const tool = (e.detail && e.detail.tool) ? e.detail.tool : 'unknown';
-    track('error-tool', { tool: tool });
-  });
 
 })();
