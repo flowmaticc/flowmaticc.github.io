@@ -16,8 +16,28 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://flowmaticc.github.io/novedades/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://flowmaticc.github.io/privacy-policy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/legal/privacidad/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/legal/terminos/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/legal/aviso-legal/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 </urlset>
