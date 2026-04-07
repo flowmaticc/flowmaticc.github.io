@@ -88,11 +88,11 @@
 
       <!-- Language Switcher -->
       <div class="lang-switcher">
-        <a href="/" class="lang-btn {% if page.lang == 'es' or page.lang == nil %}lang-btn--active{% endif %}" {% if page.lang == 'es' or page.lang == nil %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')">🇪🇸</a>
-        <a href="/en/" class="lang-btn {% if page.lang == 'en' %}lang-btn--active{% endif %}" {% if page.lang == 'en' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')">🇬🇧</a>
-        <a href="/fr/" class="lang-btn {% if page.lang == 'fr' %}lang-btn--active{% endif %}" {% if page.lang == 'fr' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')">🇫🇷</a>
-        <a href="/de/" class="lang-btn {% if page.lang == 'de' %}lang-btn--active{% endif %}" {% if page.lang == 'de' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')">🇩🇪</a>
-        <a href="/pt/" class="lang-btn {% if page.lang == 'pt' %}lang-btn--active{% endif %}" {% if page.lang == 'pt' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')">🇧🇷</a>
+        <a href="/" class="lang-btn {% if page.lang == 'es' or page.lang == nil %}lang-btn--active{% endif %}" {% if page.lang == 'es' or page.lang == nil %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Español"><img src="https://flagcdn.com/es.svg" width="20" height="15" alt="ES" class="flag-icon"></a>
+        <a href="/en/" class="lang-btn {% if page.lang == 'en' %}lang-btn--active{% endif %}" {% if page.lang == 'en' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="English"><img src="https://flagcdn.com/gb.svg" width="20" height="15" alt="EN" class="flag-icon"></a>
+        <a href="/fr/" class="lang-btn {% if page.lang == 'fr' %}lang-btn--active{% endif %}" {% if page.lang == 'fr' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Français"><img src="https://flagcdn.com/fr.svg" width="20" height="15" alt="FR" class="flag-icon"></a>
+        <a href="/de/" class="lang-btn {% if page.lang == 'de' %}lang-btn--active{% endif %}" {% if page.lang == 'de' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Deutsch"><img src="https://flagcdn.com/de.svg" width="20" height="15" alt="DE" class="flag-icon"></a>
+        <a href="/pt/" class="lang-btn {% if page.lang == 'pt' %}lang-btn--active{% endif %}" {% if page.lang == 'pt' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Português"><img src="https://flagcdn.com/br.svg" width="20" height="15" alt="PT" class="flag-icon"></a>
       </div>
     </div>
   </div>
