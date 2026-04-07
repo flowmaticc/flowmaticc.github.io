@@ -2,17 +2,51 @@
   <div class="container navbar__container">
 
     <div class="logo">
-      <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:0.5rem;">
+      <a href="{% if page.lang == 'en' %}/en/{% else %}/{% endif %}" style="text-decoration:none;display:flex;align-items:center;gap:0.5rem;">
         <span class="logo__icon">⚡</span>
         <span class="logo__text">Flowmatic</span>
       </a>
     </div>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
 
     <div class="nav-links" id="navLinks">
+      {% if page.lang == 'en' %}
+      <a href="/en/#product" class="nav-link {% if page.nav_active == 'product' %}active{% endif %}">
+        <i class="fas fa-box"></i> Product
+      </a>
+      <a href="/en/#pricing" class="nav-link {% if page.nav_active == 'pricing' %}active{% endif %}">
+        <i class="fas fa-tag"></i> Pricing
+      </a>
+
+      <div class="dropdown">
+        <button class="dropdown-btn nav-link {% if page.nav_active == 'utilities' %}active{% endif %}">
+          <i class="fas fa-toolbox"></i> Utilities <i class="fas fa-chevron-down dropdown-icon"></i>
+        </button>
+        <div class="dropdown-menu">
+          <a href="/en/utilities/google-auth/" class="dropdown-item {% if page.url contains 'google-auth' %}active{% endif %}">
+            <i class="fas fa-qrcode"></i> Google Auth Extractor
+          </a>
+          <a href="/en/utilities/extension/" class="dropdown-item {% if page.url contains 'extension' %}active{% endif %}">
+            <i class="fas fa-puzzle-piece"></i> Position Caret
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item">
+            <i class="fab fa-github"></i> More on GitHub
+          </a>
+        </div>
+      </div>
+
+      <a href="/en/changelog/" class="nav-link {% if page.nav_active == 'novedades' %}active{% endif %}">
+        <i class="fas fa-rocket"></i> Changelog
+      </a>
+      <a href="https://github.com/joseqwrtt" target="_blank" class="nav-link">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+
+      {% else %}
       <a href="/#product" class="nav-link {% if page.nav_active == 'product' %}active{% endif %}">
         <i class="fas fa-box"></i> Producto
       </a>
@@ -44,9 +78,22 @@
       <a href="https://github.com/joseqwrtt" target="_blank" class="nav-link">
         <i class="fab fa-github"></i> GitHub
       </a>
+      {% endif %}
+
       <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
         <i class="fas fa-moon"></i>
       </button>
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        {% if page.lang == 'en' %}
+          <a href="{{ page.url | remove: '/en' | replace: '/changelog/', '/novedades/' | replace: '/utilities/', '/utilities/' }}" class="lang-btn" aria-label="Español">🇪🇸 ES</a>
+          <span class="lang-btn lang-btn--active" aria-current="true">🇬🇧 EN</span>
+        {% else %}
+          <span class="lang-btn lang-btn--active" aria-current="true">🇪🇸 ES</span>
+          <a href="/en{{ page.url | replace: '/novedades/', '/changelog/' }}" class="lang-btn" aria-label="English">🇬🇧 EN</a>
+        {% endif %}
+      </div>
     </div>
   </div>
 </nav>

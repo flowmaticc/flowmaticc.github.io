@@ -1,0 +1,335 @@
+---
+layout: default
+lang: en
+title: "Plantillas Macro — Word Template Expander for Windows"
+description: "Text expander for Windows that pastes Word and ODT templates with full formatting. Type / and your DOCX appears instantly in any app. No file copying. Free 14-day trial."
+canonical: "https://flowmaticc.github.io/en/"
+lemon: true
+schema: |
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Plantillas Macro",
+    "operatingSystem": "Windows",
+    "applicationCategory": "ProductivityApplication",
+    "description": "Text expander and Word template tool for Windows. Paste DOCX and ODT templates with full formatting into any application.",
+    "url": "https://flowmaticc.github.io/en/",
+    "downloadUrl": "https://github.com/joseqwrtt/update_app/releases/download/3.0.0.12/PlantillasMacro.zip",
+    "softwareVersion": "3.0.0",
+    "offers": [
+      { "@type": "Offer", "name": "Monthly Plan",   "price": "3.90",  "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Quarterly Plan", "price": "9.90",  "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Annual Plan",    "price": "35.00", "priceCurrency": "EUR" }
+    ],
+    "publisher": { "@type": "Organization", "name": "Flowmatic", "url": "https://flowmaticc.github.io/" }
+  }
+extra_js: |
+  const VERSION = '1.3';
+  const cachedVersion = localStorage.getItem('app_version');
+  if (cachedVersion !== VERSION) {
+    localStorage.setItem('app_version', VERSION);
+    location.reload(true);
+  }
+---
+
+<header class="hero">
+  <div class="container hero__container">
+    <div class="hero__badge">
+      <span class="badge">✨ Smart automation</span>
+    </div>
+    <h1 class="hero__title">
+      Type <span class="gradient-text">/</span> and your template appears
+    </h1>
+    <p class="hero__subtitle">
+      Plantillas Macro is the text expander for Windows that pastes your Word, ODT and TXT templates with full formatting into any application. Type "/" + the name and it pastes instantly. No copying, no opening files, no interrupting your flow.
+    </p>
+    <div class="hero__video">
+      <video autoplay loop muted playsinline class="demo-video">
+        <source src="/videos/Sistema-Macro.webm" type="video/webm">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    <div class="hero__buttons">
+      <a href="https://github.com/joseqwrtt/update_app/releases/download/3.0.0.12/PlantillasMacro.zip" class="btn btn-primary btn-large" data-umami="click-cta-main-en">
+        <i class="fas fa-download"></i> Download free
+      </a>
+      <a href="#pricing" class="btn btn-outline btn-large" data-umami="click-ver-precios-en">
+        <i class="fas fa-tag"></i> See pricing
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="features-section" id="product">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Designed for your workflow</h2>
+      <p class="section-subtitle">No interruptions, no extra steps. Just type and paste.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>Instant</h3>
+        <p>Type <code>/name</code> and your template appears instantly. No menus, no extra clicks.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🪄</div>
+        <h3>Full formatting</h3>
+        <p>DOCX, ODT and TXT with bold, tables, images — all formatting is preserved.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>100% local</h3>
+        <p>Your templates stay on your machine. No clouds, no servers, no hidden subscriptions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section" id="why">
+  <div class="container">
+
+    <div class="section-header">
+      <h2 class="section-title">Why choose Plantillas Macro</h2>
+      <p class="section-subtitle">Other expanders make you memorize shortcuts. Here you just type.</p>
+    </div>
+
+    <div class="why-hero-card">
+      <div class="why-hero-icon">🔍</div>
+      <div class="why-hero-content">
+        <h3>No abbreviations to memorize</h3>
+        <p>
+          Most text expanders force you to invent a unique abbreviation for each template and remember them all.
+          With 50 templates that's 50 different codes that can't overlap. A month later you've forgotten which was which.
+        </p>
+        <p class="why-hero-vs">
+          With Plantillas Macro you type <strong>/</strong> and any part of the name.
+          The popup filters in real time — you don't need to remember anything exactly.
+          The file is named however you want.
+        </p>
+        <div class="why-compare-row">
+          <div class="why-compare-bad">
+            <span class="why-compare-label">Classic expanders</span>
+            <code>/prspcl2024v3</code> ← you have to remember this
+          </div>
+          <div class="why-compare-good">
+            <span class="why-compare-label">Plantillas Macro</span>
+            <code>/prop</code> → filters and shows everything that matches
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-icon">📄</div>
+        <h4>Full Word formatting</h4>
+        <p>Paste with bold, tables, images and styles intact. Most expanders paste plain text — none truly handle DOCX or ODT.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🔒</div>
+        <h4>No account, no mandatory cloud</h4>
+        <p>Many expanders require creating an account and store your templates on their servers. Here your files are yours — in your folder, on your machine.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">⚡</div>
+        <h4>Works in any app</h4>
+        <p>Some expanders only work in the browser. Plantillas Macro works in Outlook, Word, CRM, websites, chat — in any Windows application without exception.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🚀</div>
+        <h4>Ready in 2 minutes</h4>
+        <p>Many expanders have dense interfaces designed for technical users or require manual file configuration. Plantillas Macro: install, point to your folder and it just works.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">💶</div>
+        <h4>Fair price, no surprises</h4>
+        <p>Other solutions charge expensive subscriptions with mandatory cloud or high entry licenses. Plantillas Macro from €3.90/month + VAT, all features included.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">☁️</div>
+        <h4>Sync without lock-in</h4>
+        <p>Point your folder to OneDrive, Dropbox or Google Drive and it syncs automatically. Your templates remain normal .docx files — if you switch apps, you lose nothing.</p>
+      </div>
+    </div>
+
+    <div class="why-table-wrap">
+      <h3 class="why-table-title">What makes Plantillas Macro different?</h3>
+      <div class="why-table-scroll">
+        <table class="why-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="col-pm">Plantillas Macro</th>
+              <th>Abbreviation-based expanders</th>
+              <th>Browser-only expanders</th>
+              <th>Technical tools</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>No abbreviations to memorize</td>
+              <td class="col-pm check">✅</td>
+              <td class="cross">❌</td>
+              <td class="cross">❌</td>
+              <td class="cross">❌</td>
+            </tr>
+            <tr>
+              <td>Full DOCX / ODT formatting</td>
+              <td class="col-pm check">✅</td>
+              <td class="cross">❌ plain text</td>
+              <td class="cross">❌</td>
+              <td class="cross">❌</td>
+            </tr>
+            <tr>
+              <td>No mandatory account</td>
+              <td class="col-pm check">✅</td>
+              <td class="partial">⚠️ depends</td>
+              <td class="cross">❌</td>
+              <td class="check">✅</td>
+            </tr>
+            <tr>
+              <td>Works in desktop apps</td>
+              <td class="col-pm check">✅</td>
+              <td class="check">✅</td>
+              <td class="cross">❌ browser only</td>
+              <td class="check">✅</td>
+            </tr>
+            <tr>
+              <td>No learning curve</td>
+              <td class="col-pm check">✅</td>
+              <td class="partial">⚠️ complex</td>
+              <td class="check">✅</td>
+              <td class="cross">❌ code</td>
+            </tr>
+            <tr>
+              <td>Your files, your folder</td>
+              <td class="col-pm check">✅</td>
+              <td class="partial">⚠️ proprietary format</td>
+              <td class="cross">❌ cloud</td>
+              <td class="check">✅</td>
+            </tr>
+            <tr>
+              <td>14-day free trial</td>
+              <td class="col-pm check">✅</td>
+              <td class="partial">⚠️ limited</td>
+              <td class="partial">⚠️ limited</td>
+              <td class="check">✅ free</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.why-section { padding: 5rem 0; background: var(--bg-primary); }
+.why-hero-card { display: flex; gap: 2rem; background: var(--bg-card); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 16px; padding: 2rem; margin-bottom: 3rem; align-items: flex-start; }
+.why-hero-icon { font-size: 2.5rem; flex-shrink: 0; margin-top: 4px; }
+.why-hero-content h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary); }
+.why-hero-content p { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.7; }
+.why-hero-vs { color: var(--text-primary) !important; font-weight: 500; }
+.why-compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+.why-compare-bad, .why-compare-good { border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.8125rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.why-compare-bad { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); color: var(--text-secondary); }
+.why-compare-good { background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.25); color: var(--text-secondary); }
+.why-compare-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 0.25rem; }
+.why-compare-bad .why-compare-label  { color: #ef4444; }
+.why-compare-good .why-compare-label { color: var(--accent-light); }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 3rem; }
+.why-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; transition: border-color 0.2s, transform 0.2s; }
+.why-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.why-card-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+.why-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); }
+.why-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
+.why-table-wrap { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+.why-table-title { font-size: 1.125rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-primary); }
+.why-table-scroll { overflow-x: auto; }
+.why-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.why-table th { padding: 0.6rem 0.9rem; text-align: center; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); border-bottom: 2px solid var(--border); white-space: nowrap; }
+.why-table th:first-child { text-align: left; }
+.why-table td { padding: 0.6rem 0.9rem; text-align: center; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: middle; }
+.why-table td:first-child { text-align: left; font-weight: 500; color: var(--text-primary); }
+.why-table tr:last-child td { border-bottom: none; }
+.why-table tr:hover td { background: var(--bg-secondary); }
+.col-pm { background: rgba(99,102,241,0.06) !important; }
+.why-table th.col-pm { color: var(--accent-light); font-weight: 700; font-size: 0.875rem; }
+.check   { color: #10b981; font-weight: 600; }
+.cross   { color: var(--text-muted); }
+.partial { color: var(--warning); }
+.price-tax { font-size: 0.7rem; color: var(--text-muted); margin-top: -0.5rem; margin-bottom: 0.75rem; letter-spacing: 0.2px; }
+.pricing-note--tax { margin-top: 0.5rem; font-size: 0.75rem !important; color: var(--text-muted); max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+.pricing-volume { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.4rem 0.75rem; margin-top: 1.5rem; padding: 0.65rem 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.4; }
+.pricing-volume i { color: var(--accent); font-size: 0.9rem; flex-shrink: 0; }
+.pricing-volume a { color: var(--accent); text-decoration: none; font-weight: 600; white-space: nowrap; }
+.pricing-volume a:hover { text-decoration: underline; }
+@media (max-width: 900px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .why-hero-card { flex-direction: column; gap: 1rem; } .why-compare-row { grid-template-columns: 1fr; } .why-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Choose your plan</h2>
+      <p class="section-subtitle">No commitment · Cancel anytime</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Monthly</h3>
+        <div class="price">€3.90<span>/month</span></div>
+        <div class="price-tax">+ VAT based on your country</div>
+        <ul>
+          <li>✓ All features</li>
+          <li>✓ No commitment</li>
+          <li>✓ Cancel anytime</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button" data-umami="click-buy-mensual-en">Subscribe</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="popular-badge">Most popular</div>
+        <h3>Quarterly</h3>
+        <div class="price">€9.90<span>/3 months</span></div>
+        <div class="price-tax">+ VAT based on your country</div>
+        <div class="save">€3.30/month · Save 15%</div>
+        <ul>
+          <li>✓ All features</li>
+          <li>✓ Quarterly renewal</li>
+          <li>✓ Cancel anytime</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-primary btn-block lemonsqueezy-button" data-umami="click-buy-trimestral-en">Choose Quarterly</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Annual</h3>
+        <div class="price">€35<span>/year</span></div>
+        <div class="price-tax">+ VAT based on your country</div>
+        <div class="save">€2.90/month · Save 25%</div>
+        <ul>
+          <li>✓ All features</li>
+          <li>✓ Annual renewal</li>
+          <li>✓ Best value</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button" data-umami="click-buy-anual-en">Choose Annual</a>
+      </div>
+    </div>
+    <p class="pricing-note">🔒 Secure payment via Lemon Squeezy · 14-day free trial · Cancel anytime</p>
+    <p class="pricing-note pricing-note--tax">Prices shown exclude VAT. Applicable VAT is calculated and added at checkout based on the buyer's country of residence, managed entirely by Lemon Squeezy as Merchant of Record.</p>
+
+    <div class="pricing-volume">
+      <i class="fas fa-building"></i>
+      <span>Need <strong>25 or more licenses</strong> for your team or company?</span>
+      <a href="mailto:gestiona.optimiza@gmail.com?subject=Volume%20license%20inquiry%20(%2B25)">Contact us to find the best solution for you →</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="cta-final">
+  <div class="container">
+    <h2 class="cta__title">Ready to work faster?</h2>
+    <p class="cta__text">Download Plantillas Macro for free and try all features for 14 days.</p>
+    <a href="https://github.com/joseqwrtt/update_app/releases/download/3.0.0.12/PlantillasMacro.zip" class="btn btn-primary btn-large" data-umami="click-cta-main-en">
+      <i class="fas fa-download"></i> Download now
+    </a>
+  </div>
+</section>

@@ -1,16 +1,33 @@
 <footer class="footer">
   <div class="container footer__container">
     <div class="footer__info">
-      <p>Flowmatic — Automatiza tu flujo de trabajo</p>
-      <p class="footer__copyright">© <span id="footer-year"></span> — Hecho con ☕</p>
+      <p>Flowmatic — {% if page.lang == 'en' %}Automate your workflow{% else %}Automatiza tu flujo de trabajo{% endif %}</p>
+      <p class="footer__copyright">© <span id="footer-year"></span> — {% if page.lang == 'en' %}Made with{% else %}Hecho con{% endif %} ☕</p>
     </div>
     <div class="footer__links">
       <a href="mailto:gestiona.optimiza@gmail.com" class="footer-link">
-        <i class="fas fa-envelope"></i> Contacto
+        <i class="fas fa-envelope"></i> {% if page.lang == 'en' %}Contact{% else %}Contacto{% endif %}
       </a>
       <a href="https://github.com/joseqwrtt" target="_blank" class="footer-link">
         <i class="fab fa-github"></i> GitHub
       </a>
+      {% if page.lang == 'en' %}
+      <a href="/en/utilities/google-auth/" class="footer-link">
+        <i class="fas fa-toolbox"></i> Utilities
+      </a>
+      <a href="/en/utilities/extension/" class="footer-link">
+        <i class="fas fa-puzzle-piece"></i> Position Caret
+      </a>
+      <a href="/legal/privacidad/" class="footer-link">
+        <i class="fas fa-shield-alt"></i> Privacy
+      </a>
+      <a href="/legal/aviso-legal/" class="footer-link">
+        <i class="fas fa-file-alt"></i> Legal notice
+      </a>
+      <a href="/legal/terminos/" class="footer-link">
+        <i class="fas fa-file-contract"></i> Terms
+      </a>
+      {% else %}
       <a href="/utilities/google-auth/" class="footer-link">
         <i class="fas fa-toolbox"></i> Utilidades
       </a>
@@ -26,6 +43,7 @@
       <a href="/legal/terminos/" class="footer-link">
         <i class="fas fa-file-contract"></i> Términos
       </a>
+      {% endif %}
     </div>
   </div>
 </footer>

@@ -2,32 +2,90 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Español: Home -->
   <url>
     <loc>https://flowmaticc.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- English: Home -->
+  <url>
+    <loc>https://flowmaticc.github.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Español: Google Auth -->
   <url>
     <loc>https://flowmaticc.github.io/utilities/google-auth/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/google-auth/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- English: Google Auth -->
+  <url>
+    <loc>https://flowmaticc.github.io/en/utilities/google-auth/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/google-auth/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Español: Extension -->
   <url>
     <loc>https://flowmaticc.github.io/utilities/extension/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/extension/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- English: Extension -->
+  <url>
+    <loc>https://flowmaticc.github.io/en/utilities/extension/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/extension/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Español: Novedades -->
   <url>
     <loc>https://flowmaticc.github.io/novedades/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/novedades/"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- English: Changelog -->
   <url>
-    <loc>https://flowmaticc.github.io/privacy-policy/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://flowmaticc.github.io/en/changelog/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/novedades/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
+
+  <!-- Legal (solo ES, no se traduce) -->
   <url>
     <loc>https://flowmaticc.github.io/legal/privacidad/</loc>
     <changefreq>yearly</changefreq>
@@ -43,4 +101,5 @@ layout: null
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+
 </urlset>
