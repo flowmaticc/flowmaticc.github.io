@@ -7,15 +7,13 @@
 <meta name="author" content="Flowmatic">
 
 <!-- hreflang: multilanguage SEO -->
-{% if page.lang == 'en' %}
-  <link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ page.url | remove: '/en' }}">
-  <link rel="alternate" hreflang="es" href="{{ site.url }}{{ page.url | remove: '/en' }}">
-  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url | remove: '/en' }}">
-{% else %}
-  <link rel="alternate" hreflang="es" href="{{ site.url }}{{ page.url }}">
-  <link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ page.url }}">
-  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}">
-{% endif %}
+{% assign base_path = page.url | remove: '/en' | remove: '/fr' | remove: '/de' | remove: '/pt' | replace: '/changelog/', '/novedades/' %}
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ base_path }}">
+<link rel="alternate" hreflang="es" href="{{ site.url }}{{ base_path }}">
+<link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ base_path | replace: '/novedades/', '/changelog/' }}">
+<link rel="alternate" hreflang="fr" href="{{ site.url }}/fr{{ base_path | replace: '/novedades/', '/changelog/' }}">
+<link rel="alternate" hreflang="de" href="{{ site.url }}/de{{ base_path | replace: '/novedades/', '/changelog/' }}">
+<link rel="alternate" hreflang="pt" href="{{ site.url }}/pt{{ base_path | replace: '/novedades/', '/changelog/' }}">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -23,8 +21,7 @@
 <meta property="og:title" content="{{ page.title | default: site.title }}">
 <meta property="og:description" content="{{ page.description | default: site.description }}">
 <meta property="og:image" content="{{ site.url }}/img/og-image.png">
-<meta property="og:locale" content="{% if page.lang == 'en' %}en_US{% else %}es_ES{% endif %}">
-<meta property="og:locale:alternate" content="{% if page.lang == 'en' %}es_ES{% else %}en_US{% endif %}">
+<meta property="og:locale" content="{% case page.lang %}{% when 'en' %}en_US{% when 'fr' %}fr_FR{% when 'de' %}de_DE{% when 'pt' %}pt_BR{% else %}es_ES{% endcase %}">
 <meta property="og:site_name" content="Flowmatic · Plantillas Macro">
 
 <!-- Twitter -->
@@ -40,15 +37,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-{% if page.extra_css %}
-<style>{{ page.extra_css }}</style>
-{% endif %}
-
-{% if page.lemon %}
-<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-{% endif %}
+{% if page.extra_css %}<style>{{ page.extra_css }}</style>{% endif %}
+{% if page.lemon %}<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>{% endif %}
 
 <meta name="theme-color" content="#0a0a0f">
 <meta name="apple-mobile-web-app-capable" content="yes">
-
 <script defer src="https://cloud.umami.is/script.js" data-website-id="4879f8fb-3949-493c-a64e-83c77bed24ab"></script>

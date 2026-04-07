@@ -1,0 +1,260 @@
+---
+layout: default
+lang: pt
+title: "Google Auth Extractor · Export your TOTP accounts · Flowmatic"
+description: "Export your TOTP accounts from Google Authenticator to TXT, Aegis, 2FAS or CSV. Free and open source tool."
+canonical: "https://flowmaticc.github.io/pt/utilities/google-auth/"
+nav_active: utilities
+extra_js: |
+  const VERSION = '1.1';
+  const cachedVersion = localStorage.getItem('app_version');
+  if (cachedVersion !== VERSION) {
+    localStorage.setItem('app_version', VERSION);
+    location.reload(true);
+  }
+---
+
+<header class="hero hero-utility">
+  <div class="container hero__container">
+    <div class="hero__badge">
+      <span class="badge">🔧 Utilidad gratuita · Código abierto</span>
+    </div>
+    <h1 class="hero__title">
+      Google Auth <span class="gradient-text">Extractor</span>
+    </h1>
+    <p class="hero__subtitle">
+      Exporta tus cuentas TOTP de Google Authenticator a TXT, Aegis, 2FAS o CSV.<br>
+      Export your Google Authenticator TOTP accounts to TXT, Aegis, 2FAS or CSV.
+    </p>
+    <div class="hero__badges">
+      <span class="badge-tech"><i class="fab fa-python"></i> Python 3.10+</span>
+      <span class="badge-tech"><i class="fab fa-windows"></i> Windows</span>
+      <span class="badge-tech"><i class="fab fa-apple"></i> macOS</span>
+      <span class="badge-tech"><i class="fab fa-linux"></i> Linux</span>
+      <span class="badge-tech"><i class="fas fa-balance-scale"></i> MIT</span>
+    </div>
+    <div class="hero__buttons">
+      <a href="https://github.com/joseqwrtt/Google_auth_extractor" class="btn btn-outline btn-large" target="_blank" data-umami="click-github" data-umami-tool="google-auth">
+        <i class="fab fa-github"></i> Ver en GitHub
+      </a>
+      <a href="https://github.com/joseqwrtt/Google_auth_extractor/archive/refs/heads/main.zip" class="btn btn-primary btn-large" data-umami="use-google-auth" data-umami-tool="google-auth">
+        <i class="fas fa-download"></i> Descargar ZIP
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container utility-container">
+
+    <section class="utility-section">
+      <div class="section-header">
+        <h2 class="section-title">¿Por qué existe esta herramienta?</h2>
+        <p class="section-subtitle">Why does this tool exist?</p>
+      </div>
+      <div class="info-card">
+        <p>Google Authenticator exporta las cuentas en un formato propietario (<code>otpauth-migration://</code>) que ninguna otra app puede leer directamente. Cada código QR contiene hasta 10 cuentas. Esta herramienta decodifica esos QR y extrae las claves TOTP para que puedas importarlas donde quieras.</p>
+        <p class="info-card-en">Google Authenticator exports accounts in a proprietary format (<code>otpauth-migration://</code>) that no other app can read directly. Each QR code holds up to 10 accounts. This tool decodes those QR codes and extracts the TOTP secrets so you can import them anywhere.</p>
+      </div>
+    </section>
+
+    <section class="utility-section">
+      <div class="section-header">
+        <h2 class="section-title">Características</h2>
+        <p class="section-subtitle">Features</p>
+      </div>
+      <div class="features-grid-2cols">
+        <div class="feature-item"><span class="feature-emoji">🔗</span><span>Pegar URL <code>otpauth-migration://</code> directamente / Paste URL directly</span></div>
+        <div class="feature-item"><span class="feature-emoji">🖼️</span><span>Subir imagen o captura del QR / Upload QR image or screenshot</span></div>
+        <div class="feature-item"><span class="feature-emoji">📷</span><span>Escanear región de pantalla con el ratón / Live screen region scanner</span></div>
+        <div class="feature-item"><span class="feature-emoji">➕</span><span>Acumula cuentas entre escaneos / Accumulates accounts across scans</span></div>
+        <div class="feature-item"><span class="feature-emoji">🔁</span><span>Deduplicación automática / Auto-deduplication</span></div>
+        <div class="feature-item"><span class="feature-emoji">📋</span><span>Copiar Emisor, Nombre o Clave / Copy Issuer, Name or Secret</span></div>
+        <div class="feature-item"><span class="feature-emoji">🌐</span><span>Interfaz en Español e Inglés / Spanish and English UI</span></div>
+        <div class="feature-item"><span class="feature-emoji">🗑️</span><span>Borrar lista para empezar de cero / Clear list to start over</span></div>
+        <div class="feature-item"><span class="feature-emoji">💾</span><span>Exportar a TXT, Aegis, 2FAS, CSV / Export to TXT, Aegis, 2FAS, CSV</span></div>
+        <div class="feature-item"><span class="feature-emoji">🔒</span><span>100% local — ningún dato sale del equipo / No data leaves your device</span></div>
+      </div>
+    </section>
+
+    <section class="utility-section">
+      <div class="section-header">
+        <h2 class="section-title">Capturas</h2>
+        <p class="section-subtitle">Screenshots</p>
+      </div>
+      <div class="screenshots-grid">
+        <img src="https://github.com/user-attachments/assets/3bc9b0b4-905a-4cd7-8941-36421c4a6b75" alt="Pantalla principal" loading="lazy">
+        <img src="https://github.com/user-attachments/assets/e63a4706-ab28-47d3-afc5-46f7588e0abd" alt="Ventana de cuentas" loading="lazy">
+        <img src="https://github.com/user-attachments/assets/de41a90e-1467-419a-92b6-a1d0875ce1c9" alt="Exportar cuentas" loading="lazy">
+        <img src="https://github.com/user-attachments/assets/bb2bddfd-4c36-41a4-885a-894e54b40718" alt="Selector de región" loading="lazy">
+        <img src="https://github.com/user-attachments/assets/fb567a63-b989-4eeb-9341-5e3c7e7cd18c" alt="Modo escaneo" loading="lazy">
+      </div>
+    </section>
+
+    <section class="utility-section">
+      <div class="section-header">
+        <h2 class="section-title">Instalación</h2>
+        <p class="section-subtitle">Installation</p>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <span>1. Clona el repositorio / Clone the repo</span>
+          <button class="copy-btn" data-code="git clone https://github.com/joseqwrtt/Google_auth_extractor.git&#10;cd Google_auth_extractor"><i class="fas fa-copy"></i> Copiar</button>
+        </div>
+        <pre><code>git clone https://github.com/joseqwrtt/Google_auth_extractor.git
+cd Google_auth_extractor</code></pre>
+      </div>
+      <div class="info-card">
+        <p><strong>📌 Requisitos / Requirements:</strong> Python 3.10 o superior. Durante la instalación en Windows, marca <strong>"Add Python to PATH"</strong>.</p>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <span>2. Instala las dependencias / Install dependencies</span>
+          <button class="copy-btn" data-code="pip install customtkinter pillow pyzbar opencv-python mss"><i class="fas fa-copy"></i> Copiar</button>
+        </div>
+        <pre><code>pip install customtkinter pillow pyzbar opencv-python mss</code></pre>
+      </div>
+      <div class="info-card">
+        <p><strong>🐧 Linux / macOS:</strong> También necesitas la librería nativa de zbar:</p>
+        <pre><code># Ubuntu / Debian
+sudo apt install libzbar0
+
+# macOS
+brew install zbar</code></pre>
+      </div>
+    </section>
+
+    <section class="utility-section">
+      <div class="section-header">
+        <h2 class="section-title">Uso</h2>
+        <p class="section-subtitle">Usage</p>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <span>Ejecutar / Run</span>
+          <button class="copy-btn" data-code="python Google_auth_extractor.py"><i class="fas fa-copy"></i> Copiar</button>
+        </div>
+        <pre><code>python Google_auth_extractor.py</code></pre>
+      </div>
+      <div class="info-card">
+        <p><strong>💡 Windows con varias versiones de Python:</strong></p>
+        <pre><code>C:\Python311\python.exe Google_auth_extractor.py</code></pre>
+        <p>O crea un archivo <code>ejecutar.bat</code>:</p>
+        <pre><code>python "%~dp0Google_auth_extractor.py"
+pause</code></pre>
+      </div>
+    </section>
+
+    <section class="utility-section">
+      <div class="section-header">
+        <h2 class="section-title">Guía paso a paso</h2>
+        <p class="section-subtitle">Step-by-step guide</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Exportar desde Google Authenticator</h3>
+          <p>Abre Google Authenticator → menú (⋮) → <strong>Exportar cuentas / Transfer accounts → Export accounts</strong> → selecciona las cuentas → aparecerá uno o varios QR (máximo 10 cuentas por QR).</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Importar en la app (elige un modo)</h3>
+          <div class="step-modes">
+            <div class="mode-card">
+              <span class="mode-icon">🔗</span>
+              <strong>Modo URL</strong>
+              <p>Escanea el QR → copia la URL <code>otpauth-migration://offline?data=...</code> → pégala → Extraer cuentas</p>
+            </div>
+            <div class="mode-card">
+              <span class="mode-icon">🖼️</span>
+              <strong>Modo imagen</strong>
+              <p>Captura de pantalla del QR → Seleccionar imagen → Leer QR y extraer</p>
+            </div>
+            <div class="mode-card">
+              <span class="mode-icon">📷</span>
+              <strong>Modo escaneo pantalla</strong>
+              <p>Muestra el QR → Seleccionar región → dibuja rectángulo → extracción automática</p>
+            </div>
+          </div>
+          <p class="step-note">💡 Si tienes más de 10 cuentas, repite el proceso con cada QR. Las cuentas se acumulan y los duplicados se ignoran.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Exportar</h3>
+          <p>Una vez con todas las cuentas en el listado, pulsa el botón del formato que necesites:</p>
+          <div class="export-formats">
+            <span class="format-badge"><strong>TXT</strong> · .txt</span>
+            <span class="format-badge"><strong>Aegis</strong> · .json · Android</span>
+            <span class="format-badge"><strong>2FAS</strong> · .2fas · Android/iOS</span>
+            <span class="format-badge"><strong>CSV</strong> · Bitwarden, 1Password</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="utility-section">
+      <div class="section-header">
+        <h2 class="section-title">Dependencias</h2>
+        <p class="section-subtitle">Dependencies</p>
+      </div>
+      <div class="deps-grid">
+        <div class="dep-card"><strong>customtkinter</strong><span>Interfaz gráfica / UI</span></div>
+        <div class="dep-card"><strong>pillow</strong><span>Lectura de imágenes</span></div>
+        <div class="dep-card"><strong>pyzbar</strong><span>Decodificación QR (principal)</span></div>
+        <div class="dep-card"><strong>opencv-python</strong><span>Decodificación QR (fallback)</span></div>
+        <div class="dep-card"><strong>mss</strong><span>Captura multi-monitor</span></div>
+      </div>
+    </section>
+
+    <section class="utility-section">
+      <div class="section-header">
+        <h2 class="section-title">Solución de problemas</h2>
+        <p class="section-subtitle">Troubleshooting</p>
+      </div>
+      <div class="troubleshoot-card">
+        <h3><i class="fas fa-camera"></i> El escáner de pantalla no funciona</h3>
+        <pre><code>pip install pillow pyzbar opencv-python mss
+sudo apt install libzbar0   # Ubuntu
+brew install zbar           # macOS</code></pre>
+      </div>
+      <div class="troubleshoot-card">
+        <h3><i class="fab fa-python"></i> Varias versiones de Python en Windows</h3>
+        <pre><code>C:\Python311\python.exe -m pip install customtkinter pillow pyzbar opencv-python mss</code></pre>
+      </div>
+      <div class="troubleshoot-card">
+        <h3><i class="fas fa-qrcode"></i> Error al importar pyzbar en Windows</h3>
+        <p><code>pyzbar</code> requiere librerías nativas. Si falla, <code>opencv-python</code> se usa como alternativa automáticamente.</p>
+      </div>
+    </section>
+
+    <section class="utility-section security-highlight">
+      <div class="section-header">
+        <h2 class="section-title">🔒 Seguridad</h2>
+        <p class="section-subtitle">Security</p>
+      </div>
+      <div class="security-grid">
+        <div class="security-item">✓ Sin conexiones de red / No network connections</div>
+        <div class="security-item">✓ Claves TOTP solo en tu equipo / TOTP secrets stay local</div>
+        <div class="security-item">✓ Código fuente auditable / Full source available</div>
+      </div>
+    </section>
+
+    <section class="utility-section">
+      <div class="section-header">
+        <h2 class="section-title">Licencia</h2>
+        <p class="section-subtitle">License</p>
+      </div>
+      <div class="info-card text-center">
+        <p><strong>MIT</strong> — úsalo, modifícalo y distribúyelo libremente.</p>
+        <a href="https://github.com/joseqwrtt/Google_auth_extractor" class="btn btn-outline" style="margin-top:1rem;" target="_blank" data-umami="click-github">
+          <i class="fab fa-github"></i> Ver repositorio
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>

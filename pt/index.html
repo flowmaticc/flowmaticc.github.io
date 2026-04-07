@@ -1,0 +1,148 @@
+---
+layout: default
+lang: pt
+title: "Plantillas Macro — Expansor de Texto e Modelos Word para Windows"
+description: "Expansor de texto para Windows que cola modelos Word e ODT com formatação completa. Digite / e seu DOCX aparece instantaneamente em qualquer app. Teste grátis por 14 dias."
+canonical: "https://flowmaticc.github.io/pt/"
+lemon: true
+schema: |
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Plantillas Macro",
+    "operatingSystem": "Windows",
+    "applicationCategory": "ProductivityApplication",
+    "description": "Expansor de texto e modelos Word para Windows. Cole modelos DOCX e ODT com formatação completa em qualquer aplicativo.",
+    "url": "https://flowmaticc.github.io/pt/",
+    "softwareVersion": "3.0.0",
+    "offers": [
+      { "@type": "Offer", "name": "Mensal",     "price": "3.90",  "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Trimestral", "price": "9.90",  "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Anual",       "price": "35.00", "priceCurrency": "EUR" }
+    ],
+    "publisher": { "@type": "Organization", "name": "Flowmatic", "url": "https://flowmaticc.github.io/" }
+  }
+extra_js: |
+  const VERSION = '1.3';
+  const cachedVersion = localStorage.getItem('app_version');
+  if (cachedVersion !== VERSION) {
+    localStorage.setItem('app_version', VERSION);
+    location.reload(true);
+  }
+---
+
+<header class="hero">
+  <div class="container hero__container">
+    <div class="hero__badge">
+      <span class="badge">✨ Automação inteligente</span>
+    </div>
+    <h1 class="hero__title">
+      Digite <span class="gradient-text">/</span> e seu modelo aparece
+    </h1>
+    <p class="hero__subtitle">
+      Plantillas Macro é o expansor de texto para Windows que cola seus modelos Word, ODT e TXT com formatação completa em qualquer aplicativo. Digite "/" + o nome e ele é colado instantaneamente. Sem copiar, sem abrir arquivos, sem interromper seu fluxo.
+    </p>
+    <div class="hero__video">
+      <video autoplay loop muted playsinline class="demo-video">
+        <source src="/videos/Sistema-Macro.webm" type="video/webm">
+        Seu navegador não suporta vídeos HTML5.
+      </video>
+    </div>
+    <div class="hero__buttons">
+      <a href="https://github.com/joseqwrtt/update_app/releases/download/3.0.0.12/PlantillasMacro.zip" class="btn btn-primary btn-large" data-umami="click-cta-main-pt">
+        <i class="fas fa-download"></i> Baixar grátis
+      </a>
+      <a href="#pricing" class="btn btn-outline btn-large" data-umami="click-ver-precios-pt">
+        <i class="fas fa-tag"></i> Ver preços
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="features-section" id="product">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Projetado para o seu fluxo de trabalho</h2>
+      <p class="section-subtitle">Sem interrupções, sem etapas extras. Só digite e cole.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>Instantâneo</h3>
+        <p>Digite <code>/nome</code> e seu modelo aparece instantaneamente. Sem menus, sem cliques extras.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🪄</div>
+        <h3>Formatação completa</h3>
+        <p>DOCX, ODT e TXT com negrito, tabelas, imagens — toda a formatação é mantida.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>100% local</h3>
+        <p>Seus modelos ficam na sua máquina. Sem nuvem, sem servidores, sem assinaturas ocultas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Escolha seu plano</h2>
+      <p class="section-subtitle">Sem fidelidade · Cancele quando quiser</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Mensal</h3>
+        <div class="price">€3,90<span>/mês</span></div>
+        <div class="price-tax">+ IVA conforme seu país</div>
+        <ul>
+          <li>✓ Todas as funcionalidades</li>
+          <li>✓ Sem fidelidade</li>
+          <li>✓ Cancele quando quiser</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button" data-umami="click-buy-mensual-pt">Assinar</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="popular-badge">Mais popular</div>
+        <h3>Trimestral</h3>
+        <div class="price">€9,90<span>/3 meses</span></div>
+        <div class="price-tax">+ IVA conforme seu país</div>
+        <div class="save">€3,30/mês · Economize 15%</div>
+        <ul>
+          <li>✓ Todas as funcionalidades</li>
+          <li>✓ Renovação trimestral</li>
+          <li>✓ Cancele quando quiser</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-primary btn-block lemonsqueezy-button" data-umami="click-buy-trimestral-pt">Escolher Trimestral</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Anual</h3>
+        <div class="price">€35<span>/ano</span></div>
+        <div class="price-tax">+ IVA conforme seu país</div>
+        <div class="save">€2,90/mês · Economize 25%</div>
+        <ul>
+          <li>✓ Todas as funcionalidades</li>
+          <li>✓ Renovação anual</li>
+          <li>✓ Melhor valor</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button" data-umami="click-buy-anual-pt">Escolher Anual</a>
+      </div>
+    </div>
+    <p class="pricing-note">🔒 Pagamento seguro via Lemon Squeezy · 14 dias de teste gratuito · Cancele quando quiser</p>
+  </div>
+</section>
+
+<section class="cta-section" id="cta-final">
+  <div class="container">
+    <h2 class="cta__title">Pronto para trabalhar mais rápido?</h2>
+    <p class="cta__text">Baixe o Plantillas Macro gratuitamente e teste todas as funcionalidades por 14 dias.</p>
+    <a href="https://github.com/joseqwrtt/update_app/releases/download/3.0.0.12/PlantillasMacro.zip" class="btn btn-primary btn-large" data-umami="click-cta-main-pt">
+      <i class="fas fa-download"></i> Baixar agora
+    </a>
+  </div>
+</section>
+
+<style>
+.price-tax { font-size: 0.7rem; color: var(--text-muted); margin-top: -0.5rem; margin-bottom: 0.75rem; }
+</style>

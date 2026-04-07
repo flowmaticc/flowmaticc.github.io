@@ -5,6 +5,10 @@
   {% if page.schema %}
   <script type="application/ld+json">{{ page.schema }}</script>
   {% endif %}
+  <!-- Language auto-detection: only on ES root pages -->
+  {% unless page.lang == 'en' or page.lang == 'fr' or page.lang == 'de' or page.lang == 'pt' %}
+  <script src="/js/lang-redirect.js"></script>
+  {% endunless %}
 </head>
 <body>
 
