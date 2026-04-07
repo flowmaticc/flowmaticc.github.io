@@ -1,0 +1,148 @@
+---
+layout: default
+lang: ru
+title: "Plantillas Macro — Расширитель текста и шаблоны Word для Windows"
+description: "Расширитель текста для Windows, который вставляет шаблоны Word и ODT с полным форматированием. Введите / и ваш DOCX появится мгновенно в любом приложении. Бесплатно 14 дней."
+canonical: "https://flowmaticc.github.io/ru/"
+lemon: true
+schema: |
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Plantillas Macro",
+    "operatingSystem": "Windows",
+    "applicationCategory": "ProductivityApplication",
+    "description": "Расширитель текста и шаблоны Word для Windows. Вставляйте DOCX и ODT шаблоны с полным форматированием в любое приложение.",
+    "url": "https://flowmaticc.github.io/ru/",
+    "softwareVersion": "3.0.0",
+    "offers": [
+      { "@type": "Offer", "name": "Ежемесячно",   "price": "3.90",  "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Ежеквартально","price": "9.90",  "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Ежегодно",      "price": "35.00", "priceCurrency": "EUR" }
+    ],
+    "publisher": { "@type": "Organization", "name": "Flowmatic", "url": "https://flowmaticc.github.io/" }
+  }
+extra_js: |
+  const VERSION = '1.3';
+  const cachedVersion = localStorage.getItem('app_version');
+  if (cachedVersion !== VERSION) {
+    localStorage.setItem('app_version', VERSION);
+    location.reload(true);
+  }
+---
+
+<header class="hero">
+  <div class="container hero__container">
+    <div class="hero__badge">
+      <span class="badge">✨ Умная автоматизация</span>
+    </div>
+    <h1 class="hero__title">
+      Введите <span class="gradient-text">/</span> — и шаблон появится
+    </h1>
+    <p class="hero__subtitle">
+      Plantillas Macro — расширитель текста для Windows, который вставляет ваши шаблоны Word, ODT и TXT с полным форматированием в любое приложение. Введите «/» и название — вставка произойдёт мгновенно. Без копирования, без открытия файлов, без перерывов в работе.
+    </p>
+    <div class="hero__video">
+      <video autoplay loop muted playsinline class="demo-video">
+        <source src="/videos/Sistema-Macro.webm" type="video/webm">
+        Ваш браузер не поддерживает HTML5 видео.
+      </video>
+    </div>
+    <div class="hero__buttons">
+      <a href="https://github.com/joseqwrtt/update_app/releases/download/3.0.0.12/PlantillasMacro.zip" class="btn btn-primary btn-large" data-umami="click-cta-main-ru">
+        <i class="fas fa-download"></i> Скачать бесплатно
+      </a>
+      <a href="#pricing" class="btn btn-outline btn-large" data-umami="click-ver-precios-ru">
+        <i class="fas fa-tag"></i> Цены
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="features-section" id="product">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Создан для вашего рабочего процесса</h2>
+      <p class="section-subtitle">Никаких прерываний, никаких лишних шагов. Просто вводите и вставляйте.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>Мгновенно</h3>
+        <p>Введите <code>/название</code> — шаблон появится мгновенно. Без меню, без лишних кликов.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🪄</div>
+        <h3>Полное форматирование</h3>
+        <p>DOCX, ODT и TXT с жирным шрифтом, таблицами, изображениями — всё форматирование сохраняется.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>100% локально</h3>
+        <p>Ваши шаблоны хранятся на вашем компьютере. Без облака, без серверов, без скрытых подписок.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Выберите тариф</h2>
+      <p class="section-subtitle">Без обязательств · Отмените в любое время</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Ежемесячно</h3>
+        <div class="price">€3,90<span>/мес</span></div>
+        <div class="price-tax">+ НДС по вашей стране</div>
+        <ul>
+          <li>✓ Все функции</li>
+          <li>✓ Без обязательств</li>
+          <li>✓ Отмените в любое время</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button" data-umami="click-buy-mensual-ru">Подписаться</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="popular-badge">Самый популярный</div>
+        <h3>Ежеквартально</h3>
+        <div class="price">€9,90<span>/3 мес</span></div>
+        <div class="price-tax">+ НДС по вашей стране</div>
+        <div class="save">€3,30/мес · Экономия 15%</div>
+        <ul>
+          <li>✓ Все функции</li>
+          <li>✓ Ежеквартальное продление</li>
+          <li>✓ Отмените в любое время</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-primary btn-block lemonsqueezy-button" data-umami="click-buy-trimestral-ru">Выбрать квартальный</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Ежегодно</h3>
+        <div class="price">€35<span>/год</span></div>
+        <div class="price-tax">+ НДС по вашей стране</div>
+        <div class="save">€2,90/мес · Экономия 25%</div>
+        <ul>
+          <li>✓ Все функции</li>
+          <li>✓ Ежегодное продление</li>
+          <li>✓ Лучшая стоимость</li>
+        </ul>
+        <a href="https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1" class="btn btn-outline btn-block lemonsqueezy-button" data-umami="click-buy-anual-ru">Выбрать годовой</a>
+      </div>
+    </div>
+    <p class="pricing-note">🔒 Безопасная оплата через Lemon Squeezy · 14 дней бесплатно · Отмените в любое время</p>
+  </div>
+</section>
+
+<section class="cta-section" id="cta-final">
+  <div class="container">
+    <h2 class="cta__title">Готовы работать быстрее?</h2>
+    <p class="cta__text">Скачайте Plantillas Macro бесплатно и попробуйте все функции в течение 14 дней.</p>
+    <a href="https://github.com/joseqwrtt/update_app/releases/download/3.0.0.12/PlantillasMacro.zip" class="btn btn-primary btn-large" data-umami="click-cta-main-ru">
+      <i class="fas fa-download"></i> Скачать сейчас
+    </a>
+  </div>
+</section>
+
+<style>
+.price-tax { font-size: 0.7rem; color: var(--text-muted); margin-top: -0.5rem; margin-bottom: 0.75rem; }
+</style>

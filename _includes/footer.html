@@ -1,8 +1,15 @@
 <footer class="footer">
   <div class="container footer__container">
     <div class="footer__info">
-      <p>Flowmatic — {% if page.lang == 'en' %}Automate your workflow{% else %}Automatiza tu flujo de trabajo{% endif %}</p>
-      <p class="footer__copyright">© <span id="footer-year"></span> — {% if page.lang == 'en' %}Made with{% else %}Hecho con{% endif %} ☕</p>
+      {% case page.lang %}
+      {% when 'en' %}<p>Flowmatic — Automate your workflow</p><p class="footer__copyright">© <span id="footer-year"></span> — Made with ☕</p>
+      {% when 'fr' %}<p>Flowmatic — Automatisez votre flux</p><p class="footer__copyright">© <span id="footer-year"></span> — Fait avec ☕</p>
+      {% when 'de' %}<p>Flowmatic — Automatisieren Sie Ihren Workflow</p><p class="footer__copyright">© <span id="footer-year"></span> — Gemacht mit ☕</p>
+      {% when 'pt' %}<p>Flowmatic — Automatize seu fluxo</p><p class="footer__copyright">© <span id="footer-year"></span> — Feito com ☕</p>
+      {% when 'zh' %}<p>Flowmatic — 自动化您的工作流程</p><p class="footer__copyright">© <span id="footer-year"></span> — 用 ☕ 制作</p>
+      {% when 'ru' %}<p>Flowmatic — Автоматизируйте рабочий процесс</p><p class="footer__copyright">© <span id="footer-year"></span> — Сделано с ☕</p>
+      {% else %}<p>Flowmatic — Automatiza tu flujo de trabajo</p><p class="footer__copyright">© <span id="footer-year"></span> — Hecho con ☕</p>
+      {% endcase %}
     </div>
     <div class="footer__links">
       <a href="mailto:gestiona.optimiza@gmail.com" class="footer-link">
@@ -11,7 +18,17 @@
       <a href="https://github.com/joseqwrtt" target="_blank" class="footer-link">
         <i class="fab fa-github"></i> GitHub
       </a>
-      {% if page.lang == 'en' %}
+      {% if page.lang == 'zh' %}
+      <a href="/zh/utilities/google-auth/" class="footer-link"><i class="fas fa-toolbox"></i> 工具</a>
+      <a href="/zh/utilities/extension/" class="footer-link"><i class="fas fa-puzzle-piece"></i> Position Caret</a>
+      <a href="/legal/privacidad/" class="footer-link"><i class="fas fa-shield-alt"></i> 隐私政策</a>
+      <a href="/legal/terminos/" class="footer-link"><i class="fas fa-file-contract"></i> 条款</a>
+      {% elsif page.lang == 'ru' %}
+      <a href="/ru/utilities/google-auth/" class="footer-link"><i class="fas fa-toolbox"></i> Утилиты</a>
+      <a href="/ru/utilities/extension/" class="footer-link"><i class="fas fa-puzzle-piece"></i> Position Caret</a>
+      <a href="/legal/privacidad/" class="footer-link"><i class="fas fa-shield-alt"></i> Конфиденциальность</a>
+      <a href="/legal/terminos/" class="footer-link"><i class="fas fa-file-contract"></i> Условия</a>
+      {% elsif page.lang == 'en' %}
       <a href="/en/utilities/google-auth/" class="footer-link">
         <i class="fas fa-toolbox"></i> Utilities
       </a>

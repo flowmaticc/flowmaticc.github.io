@@ -2,7 +2,7 @@
   <div class="container navbar__container">
 
     <div class="logo">
-      <a href="{% case page.lang %}{% when 'en' %}/en/{% when 'fr' %}/fr/{% when 'de' %}/de/{% when 'pt' %}/pt/{% else %}/{% endcase %}" style="text-decoration:none;display:flex;align-items:center;gap:0.5rem;">
+      <a href="{% case page.lang %}{% when 'en' %}/en/{% when 'fr' %}/fr/{% when 'de' %}/de/{% when 'pt' %}/pt/{% when 'zh' %}/zh/{% when 'ru' %}/ru/{% else %}/{% endcase %}" style="text-decoration:none;display:flex;align-items:center;gap:0.5rem;">
         <span class="logo__icon">⚡</span>
         <span class="logo__text">Flowmatic</span>
       </a>
@@ -65,6 +65,32 @@
           </div>
         </div>
         <a href="/pt/changelog/" class="nav-link {% if page.nav_active == 'novedades' %}active{% endif %}"><i class="fas fa-rocket"></i> Novidades</a>
+      {% elsif page.lang == 'zh' %}
+        <a href="/zh/#product" class="nav-link {% if page.nav_active == 'product' %}active{% endif %}"><i class="fas fa-box"></i> 产品</a>
+        <a href="/zh/#pricing" class="nav-link {% if page.nav_active == 'pricing' %}active{% endif %}"><i class="fas fa-tag"></i> 价格</a>
+        <div class="dropdown">
+          <button class="dropdown-btn nav-link {% if page.nav_active == 'utilities' %}active{% endif %}"><i class="fas fa-toolbox"></i> 工具 <i class="fas fa-chevron-down dropdown-icon"></i></button>
+          <div class="dropdown-menu">
+            <a href="/zh/utilities/google-auth/" class="dropdown-item"><i class="fas fa-qrcode"></i> Google Auth Extractor</a>
+            <a href="/zh/utilities/extension/" class="dropdown-item"><i class="fas fa-puzzle-piece"></i> Position Caret</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item"><i class="fab fa-github"></i> GitHub上更多</a>
+          </div>
+        </div>
+        <a href="/zh/changelog/" class="nav-link {% if page.nav_active == 'novedades' %}active{% endif %}"><i class="fas fa-rocket"></i> 更新日志</a>
+      {% elsif page.lang == 'ru' %}
+        <a href="/ru/#product" class="nav-link {% if page.nav_active == 'product' %}active{% endif %}"><i class="fas fa-box"></i> Продукт</a>
+        <a href="/ru/#pricing" class="nav-link {% if page.nav_active == 'pricing' %}active{% endif %}"><i class="fas fa-tag"></i> Цены</a>
+        <div class="dropdown">
+          <button class="dropdown-btn nav-link {% if page.nav_active == 'utilities' %}active{% endif %}"><i class="fas fa-toolbox"></i> Утилиты <i class="fas fa-chevron-down dropdown-icon"></i></button>
+          <div class="dropdown-menu">
+            <a href="/ru/utilities/google-auth/" class="dropdown-item"><i class="fas fa-qrcode"></i> Google Auth Extractor</a>
+            <a href="/ru/utilities/extension/" class="dropdown-item"><i class="fas fa-puzzle-piece"></i> Position Caret</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item"><i class="fab fa-github"></i> Больше на GitHub</a>
+          </div>
+        </div>
+        <a href="/ru/changelog/" class="nav-link {% if page.nav_active == 'novedades' %}active{% endif %}"><i class="fas fa-rocket"></i> Обновления</a>
       {% else %}
         <a href="/#product" class="nav-link {% if page.nav_active == 'product' %}active{% endif %}"><i class="fas fa-box"></i> Producto</a>
         <a href="/#pricing" class="nav-link {% if page.nav_active == 'pricing' %}active{% endif %}"><i class="fas fa-tag"></i> Precios</a>
@@ -93,6 +119,8 @@
         <a href="/fr/" class="lang-btn {% if page.lang == 'fr' %}lang-btn--active{% endif %}" {% if page.lang == 'fr' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Français"><img src="https://flagcdn.com/fr.svg" width="20" height="15" alt="FR" class="flag-icon"></a>
         <a href="/de/" class="lang-btn {% if page.lang == 'de' %}lang-btn--active{% endif %}" {% if page.lang == 'de' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Deutsch"><img src="https://flagcdn.com/de.svg" width="20" height="15" alt="DE" class="flag-icon"></a>
         <a href="/pt/" class="lang-btn {% if page.lang == 'pt' %}lang-btn--active{% endif %}" {% if page.lang == 'pt' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Português"><img src="https://flagcdn.com/br.svg" width="20" height="15" alt="PT" class="flag-icon"></a>
+        <a href="/zh/" class="lang-btn {% if page.lang == 'zh' %}lang-btn--active{% endif %}" {% if page.lang == 'zh' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="中文"><img src="https://flagcdn.com/cn.svg" width="20" height="15" alt="ZH" class="flag-icon"></a>
+        <a href="/ru/" class="lang-btn {% if page.lang == 'ru' %}lang-btn--active{% endif %}" {% if page.lang == 'ru' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Русский"><img src="https://flagcdn.com/ru.svg" width="20" height="15" alt="RU" class="flag-icon"></a>
       </div>
     </div>
   </div>
