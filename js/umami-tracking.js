@@ -192,3 +192,25 @@
   })();
 
 })();
+
+  // ─── 11. PAGE-VIEW con URL exacta como evento (para análisis por sesión) ──
+  // Umami ya trackea pageviews, pero no los incluye en el eventList por sesión
+  // que devuelve la API. Este evento extra registra la URL actual como propiedad,
+  // permitiendo reconstruir el recorrido completo de cada visita desde el script.
+  (function () {
+    function trackPageUrl() {
+      if (typeof umami === 'undefined') return;
+      try {
+        // Normalizar URL: quitar parámetros y hash, conservar pathname limpio
+        const path = window.location.pathname.replace(/\/$/, '') || '/';
+        umami.track('page-visit', { url: path });
+      } catch (e) {}
+    }
+
+    // Disparar en carga inicial
+    trackPageUrl();
+
+    // Disparar en navegación SPA (por si acaso se añaden en el futuro)
+    window.addEventListener('popstate', trackPageUrl);
+  })();
+
