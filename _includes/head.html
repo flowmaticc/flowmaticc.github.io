@@ -7,7 +7,7 @@
 <meta name="author" content="Flowmatic">
 
 <!-- hreflang: multilanguage SEO -->
-{% assign base_path = page.url | remove: '/en' | remove: '/fr' | remove: '/de' | remove: '/pt' | replace: '/changelog/', '/novedades/' %}
+{% assign base_path = page.url | remove: '/en' | remove: '/fr' | remove: '/de' | remove: '/pt' | remove: '/zh' | remove: '/ru' | replace: '/changelog/', '/novedades/' %}
 <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ base_path }}">
 <link rel="alternate" hreflang="es" href="{{ site.url }}{{ base_path }}">
 <link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ base_path | replace: '/novedades/', '/changelog/' }}">
