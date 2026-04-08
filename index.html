@@ -23,6 +23,53 @@ schema: |
     ],
     "publisher": { "@type": "Organization", "name": "Flowmatic", "url": "https://flowmaticc.github.io/" }
   }
+faq_schema: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Funciona Plantillas Macro con Microsoft Word y Outlook?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Plantillas Macro funciona en cualquier aplicación de Windows donde puedas escribir: Microsoft Word, Outlook, Excel, Chrome, Firefox, Slack, Teams, CRM web, y cualquier otro programa." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo usar mis plantillas .docx y .odt existentes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Simplemente señala la carpeta donde tienes tus archivos .docx, .odt o .txt. No hace falta convertirlos — tus archivos Word siguen siendo archivos Word normales." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se mantiene el formato completo al pegar — negritas, tablas, imágenes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Plantillas Macro pega el contenido DOCX u ODT con toda la formatación intacta: negritas, cursivas, tablas, listas, imágenes incrustadas y estilos de párrafo." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Mis plantillas se suben a algún servidor o nube?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Plantillas Macro funciona 100% en local. Tus archivos nunca salen de tu equipo. No hay cuenta de usuario ni servidor propio." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta y hay prueba gratuita?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hay 14 días de prueba gratuita con todas las funciones incluidas, sin tarjeta de crédito. Los planes empiezan desde 3,90€/mes + IVA. Puedes cancelar en cualquier momento." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué versiones de Windows son compatibles?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Compatible con Windows 10 y Windows 11 de 64 bits. No requiere instalar Microsoft Office." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué se diferencia de AutoHotkey o Espanso?",
+        "acceptedAnswer": { "@type": "Answer", "text": "AutoHotkey requiere programar scripts. Espanso y otros expansores solo manejan texto plano. Plantillas Macro pega archivos DOCX con formato completo en cualquier aplicación." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo tener más de un equipo con la misma licencia?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cada licencia permite una activación simultánea. Puedes desactivar el equipo anterior desde el mismo software para usarla en otro." }
+      }
+    ]
+  }
 extra_js: |
   const VERSION = '1.3';
   const cachedVersion = localStorage.getItem('app_version');
@@ -451,6 +498,151 @@ extra_js: |
     </div>
   </div>
 </section>
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <p class="section-subtitle">Todo lo que necesitas saber antes de empezar.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Funciona Plantillas Macro con Microsoft Word y Outlook?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sí. Plantillas Macro funciona en cualquier aplicación de Windows donde puedas escribir: Microsoft Word, Outlook, Excel, Google Chrome, Firefox, Slack, Teams, CRM web, y cualquier otro programa. No depende de Word — funciona a nivel del sistema operativo.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Puedo usar mis plantillas .docx y .odt existentes?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sí. Simplemente señala la carpeta donde tienes tus archivos .docx, .odt o .txt y Plantillas Macro los detecta automáticamente. No hace falta convertirlos ni importarlos — tus archivos Word siguen siendo archivos Word normales.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Se mantiene el formato completo al pegar — negritas, tablas, imágenes?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sí, es la principal ventaja frente a otros expansores de texto. Plantillas Macro pega el contenido DOCX u ODT con toda la formatación intacta: negritas, cursivas, tablas, listas, imágenes incrustadas y estilos de párrafo. Los expansores clásicos solo pegan texto plano.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Mis plantillas se suben a algún servidor o nube?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>No. Plantillas Macro funciona 100% en local — tus archivos nunca salen de tu equipo. No hay cuenta de usuario, no hay servidor propio, no hay sincronización obligatoria. Si quieres sync entre equipos, simplemente apunta la carpeta a OneDrive, Dropbox o Google Drive.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Cuánto cuesta y hay prueba gratuita?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Hay 14 días de prueba gratuita con todas las funciones incluidas, sin tarjeta de crédito. Después, los planes empiezan desde 3,90€/mes + IVA. Puedes cancelar en cualquier momento desde el panel de Lemon Squeezy sin penalizaciones.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Qué versiones de Windows son compatibles?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Plantillas Macro es compatible con Windows 10 y Windows 11 (64 bits). No requiere instalar Microsoft Office — funciona con cualquier aplicación del sistema. No hay versión para macOS ni Linux por el momento.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿En qué se diferencia de AutoHotkey o de otros expansores como Espanso?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>AutoHotkey requiere programar scripts — no es para usuarios no técnicos. Espanso y otros expansores manejan texto plano o markdown, pero no pegan archivos DOCX con formato completo. Plantillas Macro está pensado para quienes trabajan con documentos Word reales y quieren pegarlos en cualquier app sin abrir Word.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          ¿Puedo tener más de un equipo con la misma licencia?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Cada licencia permite una activación simultánea. Si necesitas usarla en varios equipos puedes desactivar el equipo anterior desde el mismo software. Para equipos o empresas con 25 o más licencias, <a href="mailto:gestiona.optimiza@gmail.com" style="color:var(--accent-light)">contáctanos</a> para un precio personalizado.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.faq-section { padding: 5rem 0; background: var(--bg-secondary); }
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  width: 100%; background: transparent; border: none; text-align: left;
+  padding: 1.1rem 0; cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; gap: 1rem; color: var(--text-primary);
+  font-size: 1rem; font-weight: 600; font-family: inherit;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--accent-light); }
+.faq-q[aria-expanded="true"] { color: var(--accent-light); }
+.faq-icon {
+  flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid var(--border); display: flex; align-items: center;
+  justify-content: center; font-size: 1rem; color: var(--text-muted);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.faq-q[aria-expanded="true"] .faq-icon {
+  transform: rotate(45deg); border-color: var(--accent);
+}
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.2s;
+}
+.faq-a.open { max-height: 300px; padding-bottom: 1rem; }
+.faq-a p { color: var(--text-secondary); line-height: 1.7; font-size: 0.9375rem; }
+</style>
+
+<script>
+(function(){
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      // Cerrar todos
+      document.querySelectorAll(".faq-q").forEach(b => {
+        b.setAttribute("aria-expanded", "false");
+        b.nextElementSibling.classList.remove("open");
+      });
+      // Abrir el pulsado si estaba cerrado
+      if (!expanded) {
+        btn.setAttribute("aria-expanded", "true");
+        btn.nextElementSibling.classList.add("open");
+      }
+    });
+  });
+})();
+</script>
+
+
 <section class="cta-section" id="cta-final">
   <div class="container">
     <h2 class="cta__title">¿Listo para trabajar más rápido?</h2>

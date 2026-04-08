@@ -133,6 +133,107 @@ extra_js: |
   </div>
 </section>
 
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">常见问题</h2>
+      <p class="section-subtitle">开始前您需要了解的一切。</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Plantillas Macro可以与Word和Outlook一起使用吗？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>可以。它可以在任何Windows应用程序中使用：Word、Outlook、Excel、Chrome、Firefox、Slack、Teams和其他程序。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          我可以使用现有的.docx和.odt模板吗？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>可以。只需指向存放文件的文件夹，无需转换——您的Word文件仍然是正常的Word文件。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          粘贴时能保留完整格式吗？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>可以。Plantillas Macro可以完整保留DOCX或ODT的格式：粗体、斜体、表格、列表、嵌入图片和段落样式。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          我的模板会上传到服务器吗？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>不会。100%本地运行——您的文件永远不会离开您的电脑。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          价格是多少？有免费试用吗？
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>14天全功能免费试用，无需信用卡。每月起价€3.90+增值税，随时可取消。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.faq-section { padding: 5rem 0; background: var(--bg-secondary); }
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  width: 100%; background: transparent; border: none; text-align: left;
+  padding: 1.1rem 0; cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; gap: 1rem; color: var(--text-primary);
+  font-size: 1rem; font-weight: 600; font-family: inherit; transition: color 0.2s;
+}
+.faq-q:hover, .faq-q[aria-expanded="true"] { color: var(--accent-light); }
+.faq-icon {
+  flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid var(--border); display: flex; align-items: center;
+  justify-content: center; font-size: 1rem; color: var(--text-muted);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.faq-q[aria-expanded="true"] .faq-icon { transform: rotate(45deg); border-color: var(--accent); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.2s; }
+.faq-a.open { max-height: 300px; padding-bottom: 1rem; }
+.faq-a p { color: var(--text-secondary); line-height: 1.7; font-size: 0.9375rem; }
+</style>
+
+<script>
+(function(){
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".faq-q").forEach(b => {
+        b.setAttribute("aria-expanded", "false");
+        b.nextElementSibling.classList.remove("open");
+      });
+      if (!expanded) {
+        btn.setAttribute("aria-expanded", "true");
+        btn.nextElementSibling.classList.add("open");
+      }
+    });
+  });
+})();
+</script>
+
+
 <section class="cta-section" id="cta-final">
   <div class="container">
     <h2 class="cta__title">准备好提升工作效率了吗？</h2>

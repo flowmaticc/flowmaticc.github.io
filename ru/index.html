@@ -133,6 +133,107 @@ extra_js: |
   </div>
 </section>
 
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Часто задаваемые вопросы</h2>
+      <p class="section-subtitle">Всё, что нужно знать перед началом работы.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Работает ли Plantillas Macro с Word и Outlook?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Да. Работает в любом приложении Windows: Word, Outlook, Excel, Chrome, Firefox, Slack, Teams и других программах.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Можно ли использовать существующие шаблоны .docx и .odt?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Да. Просто укажите папку с файлами. Конвертация не нужна — ваши Word-файлы остаются обычными Word-файлами.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Сохраняется ли полное форматирование при вставке?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Да. Plantillas Macro вставляет содержимое DOCX или ODT с полным форматированием: жирный, курсив, таблицы, списки и изображения.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Загружаются ли шаблоны на сервер?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Нет. Работает 100% локально — ваши файлы никогда не покидают компьютер.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Сколько стоит? Есть ли бесплатный период?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>14-дневный бесплатный пробный период со всеми функциями, без кредитной карты. От €3,90/месяц + НДС.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.faq-section { padding: 5rem 0; background: var(--bg-secondary); }
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  width: 100%; background: transparent; border: none; text-align: left;
+  padding: 1.1rem 0; cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; gap: 1rem; color: var(--text-primary);
+  font-size: 1rem; font-weight: 600; font-family: inherit; transition: color 0.2s;
+}
+.faq-q:hover, .faq-q[aria-expanded="true"] { color: var(--accent-light); }
+.faq-icon {
+  flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid var(--border); display: flex; align-items: center;
+  justify-content: center; font-size: 1rem; color: var(--text-muted);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.faq-q[aria-expanded="true"] .faq-icon { transform: rotate(45deg); border-color: var(--accent); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.2s; }
+.faq-a.open { max-height: 300px; padding-bottom: 1rem; }
+.faq-a p { color: var(--text-secondary); line-height: 1.7; font-size: 0.9375rem; }
+</style>
+
+<script>
+(function(){
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".faq-q").forEach(b => {
+        b.setAttribute("aria-expanded", "false");
+        b.nextElementSibling.classList.remove("open");
+      });
+      if (!expanded) {
+        btn.setAttribute("aria-expanded", "true");
+        btn.nextElementSibling.classList.add("open");
+      }
+    });
+  });
+})();
+</script>
+
+
 <section class="cta-section" id="cta-final">
   <div class="container">
     <h2 class="cta__title">Готовы работать быстрее?</h2>

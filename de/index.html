@@ -133,6 +133,107 @@ extra_js: |
   </div>
 </section>
 
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Häufig gestellte Fragen</h2>
+      <p class="section-subtitle">Alles, was Sie vor dem Start wissen müssen.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Funktioniert Plantillas Macro mit Word und Outlook?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Ja. Es funktioniert in jeder Windows-Anwendung: Word, Outlook, Excel, Chrome, Firefox, Slack, Teams und anderen Programmen.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Kann ich meine vorhandenen .docx- und .odt-Vorlagen verwenden?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Ja. Zeigen Sie einfach auf den Ordner mit Ihren Dateien. Keine Konvertierung nötig.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Bleibt die vollständige Formatierung erhalten?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Ja. Plantillas Macro fügt DOCX- oder ODT-Inhalte mit vollständiger Formatierung ein: Fett, Kursiv, Tabellen, Listen und Bilder.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Werden meine Vorlagen auf einen Server hochgeladen?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Nein. Funktioniert 100% lokal — Ihre Dateien verlassen Ihren Computer nie.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Wie viel kostet es und gibt es eine kostenlose Testversion?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>14-tägige kostenlose Testversion mit allen Funktionen, ohne Kreditkarte. Ab 3,90€/Monat + MwSt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.faq-section { padding: 5rem 0; background: var(--bg-secondary); }
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  width: 100%; background: transparent; border: none; text-align: left;
+  padding: 1.1rem 0; cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; gap: 1rem; color: var(--text-primary);
+  font-size: 1rem; font-weight: 600; font-family: inherit; transition: color 0.2s;
+}
+.faq-q:hover, .faq-q[aria-expanded="true"] { color: var(--accent-light); }
+.faq-icon {
+  flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid var(--border); display: flex; align-items: center;
+  justify-content: center; font-size: 1rem; color: var(--text-muted);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.faq-q[aria-expanded="true"] .faq-icon { transform: rotate(45deg); border-color: var(--accent); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.2s; }
+.faq-a.open { max-height: 300px; padding-bottom: 1rem; }
+.faq-a p { color: var(--text-secondary); line-height: 1.7; font-size: 0.9375rem; }
+</style>
+
+<script>
+(function(){
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".faq-q").forEach(b => {
+        b.setAttribute("aria-expanded", "false");
+        b.nextElementSibling.classList.remove("open");
+      });
+      if (!expanded) {
+        btn.setAttribute("aria-expanded", "true");
+        btn.nextElementSibling.classList.add("open");
+      }
+    });
+  });
+})();
+</script>
+
+
 <section class="cta-section" id="cta-final">
   <div class="container">
     <h2 class="cta__title">Bereit, schneller zu arbeiten?</h2>
