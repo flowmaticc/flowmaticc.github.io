@@ -3,8 +3,8 @@ description: "Expansor de texto y plantillas Word para Windows. Escribe / y tu p
 url: "https://flowmaticc.github.io"
 baseurl: ""
 
-plugins:
-  - jekyll-sitemap
+# jekyll-sitemap eliminado — usamos sitemap.xml manual con hreflang completo
+plugins: []
 
 exclude:
   - README.md

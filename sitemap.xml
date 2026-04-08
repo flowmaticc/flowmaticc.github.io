@@ -5,9 +5,22 @@ layout: null
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  {% assign langs = "en,fr,de,pt,zh,ru" | split: "," %}
+  {% assign all_langs = "es,en,fr,de,pt,zh,ru" | split: "," %}
+  {% assign alt_langs = "en,fr,de,pt,zh,ru" | split: "," %}
 
-  <!-- HOME -->
+  {% comment %} Macro para generar xhtml:link de todos los idiomas {% endcomment %}
+  {% capture hreflang_home %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/"/>
+  {% endcapture %}
+
+  <!-- ═══ HOMEPAGE ═══ -->
   <url>
     <loc>https://flowmaticc.github.io/</loc>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/"/>
@@ -20,9 +33,8 @@ layout: null
     <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/"/>
     <changefreq>monthly</changefreq><priority>1.0</priority>
   </url>
-  {% for l in langs %}
   <url>
-    <loc>https://flowmaticc.github.io/{{ l }}/</loc>
+    <loc>https://flowmaticc.github.io/en/</loc>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/"/>
@@ -33,65 +45,68 @@ layout: null
     <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/"/>
     <changefreq>monthly</changefreq><priority>1.0</priority>
   </url>
-  {% endfor %}
+  <url>
+    <loc>https://flowmaticc.github.io/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/"/>
+    <changefreq>monthly</changefreq><priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/de/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/"/>
+    <changefreq>monthly</changefreq><priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/"/>
+    <changefreq>monthly</changefreq><priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/"/>
+    <changefreq>monthly</changefreq><priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/"/>
+    <changefreq>monthly</changefreq><priority>1.0</priority>
+  </url>
 
-  <!-- GOOGLE AUTH -->
-  <url>
-    <loc>https://flowmaticc.github.io/utilities/google-auth/</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/utilities/google-auth/"/>
-    <changefreq>monthly</changefreq><priority>0.8</priority>
-  </url>
-  {% for l in langs %}
-  <url>
-    <loc>https://flowmaticc.github.io/{{ l }}/utilities/google-auth/</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/utilities/google-auth/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/utilities/google-auth/"/>
-    <changefreq>monthly</changefreq><priority>0.8</priority>
-  </url>
-  {% endfor %}
-
-  <!-- EXTENSION -->
-  <url>
-    <loc>https://flowmaticc.github.io/utilities/extension/</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/utilities/extension/"/>
-    <changefreq>monthly</changefreq><priority>0.8</priority>
-  </url>
-  {% for l in langs %}
-  <url>
-    <loc>https://flowmaticc.github.io/{{ l }}/utilities/extension/</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/utilities/extension/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/utilities/extension/"/>
-    <changefreq>monthly</changefreq><priority>0.8</priority>
-  </url>
-  {% endfor %}
-
-  <!-- CHANGELOG / NOVEDADES -->
+  <!-- ═══ NOVEDADES / CHANGELOG ═══ -->
   <url>
     <loc>https://flowmaticc.github.io/novedades/</loc>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/novedades/"/>
@@ -104,9 +119,8 @@ layout: null
     <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/changelog/"/>
     <changefreq>weekly</changefreq><priority>0.7</priority>
   </url>
-  {% for l in langs %}
   <url>
-    <loc>https://flowmaticc.github.io/{{ l }}/changelog/</loc>
+    <loc>https://flowmaticc.github.io/en/changelog/</loc>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/novedades/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/novedades/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/changelog/"/>
@@ -117,9 +131,120 @@ layout: null
     <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/changelog/"/>
     <changefreq>weekly</changefreq><priority>0.7</priority>
   </url>
-  {% endfor %}
+  <url>
+    <loc>https://flowmaticc.github.io/fr/changelog/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/changelog/"/>
+    <changefreq>weekly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/de/changelog/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/changelog/"/>
+    <changefreq>weekly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/pt/changelog/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/changelog/"/>
+    <changefreq>weekly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/zh/changelog/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/changelog/"/>
+    <changefreq>weekly</changefreq><priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/ru/changelog/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/novedades/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/changelog/"/>
+    <changefreq>weekly</changefreq><priority>0.7</priority>
+  </url>
 
-  <!-- LEGAL (ES only) -->
+  <!-- ═══ GOOGLE AUTH ═══ -->
+  <url>
+    <loc>https://flowmaticc.github.io/utilities/google-auth/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/utilities/google-auth/"/>
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/en/utilities/google-auth/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/utilities/google-auth/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/utilities/google-auth/"/>
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+
+  <!-- ═══ EXTENSION ═══ -->
+  <url>
+    <loc>https://flowmaticc.github.io/utilities/extension/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/utilities/extension/"/>
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://flowmaticc.github.io/en/utilities/extension/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://flowmaticc.github.io/fr/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://flowmaticc.github.io/de/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://flowmaticc.github.io/pt/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://flowmaticc.github.io/zh/utilities/extension/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://flowmaticc.github.io/ru/utilities/extension/"/>
+    <changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+
+  <!-- ═══ LEGAL (ES only) ═══ -->
   <url><loc>https://flowmaticc.github.io/legal/privacidad/</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://flowmaticc.github.io/legal/terminos/</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://flowmaticc.github.io/legal/aviso-legal/</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
