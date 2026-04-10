@@ -52,3 +52,8 @@ defaults:
     values:
       layout: "default"
       lang: "ru"
+  - scope:
+      path: "it"
+    values:
+      layout: "default"
+      lang: "it"
