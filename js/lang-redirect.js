@@ -6,7 +6,7 @@
  */
 (function () {
   // Supported language prefixes
-  const SUPPORTED = ['en', 'fr', 'de', 'pt', 'zh', 'ru'];
+  const SUPPORTED = ['en', 'fr', 'de', 'pt', 'zh', 'ru', 'it'];
 
   // Don't redirect if already on a language-prefixed path
   const path = window.location.pathname;
