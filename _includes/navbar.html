@@ -2,7 +2,7 @@
   <div class="container navbar__container">
 
     <div class="logo">
-      <a href="{% case page.lang %}{% when 'en' %}/en/{% when 'fr' %}/fr/{% when 'de' %}/de/{% when 'pt' %}/pt/{% when 'zh' %}/zh/{% when 'ru' %}/ru/{% else %}/{% endcase %}" style="text-decoration:none;display:flex;align-items:center;gap:0.5rem;">
+      <a href="{% case page.lang %}{% when 'en' %}/en/{% when 'fr' %}/fr/{% when 'de' %}/de/{% when 'pt' %}/pt/{% when 'zh' %}/zh/{% when 'ru' %}/ru/{% when 'it' %}/it/{% else %}/{% endcase %}" style="text-decoration:none;display:flex;align-items:center;gap:0.5rem;">
         <span class="logo__icon">⚡</span>
         <span class="logo__text">Flowmatic</span>
       </a>
@@ -91,6 +91,19 @@
           </div>
         </div>
         <a href="/ru/changelog/" class="nav-link {% if page.nav_active == 'novedades' %}active{% endif %}"><i class="fas fa-rocket"></i> Обновления</a>
+      {% elsif page.lang == 'it' %}
+        <a href="/it/#product" class="nav-link {% if page.nav_active == 'product' %}active{% endif %}"><i class="fas fa-box"></i> Prodotto</a>
+        <a href="/it/#pricing" class="nav-link {% if page.nav_active == 'pricing' %}active{% endif %}"><i class="fas fa-tag"></i> Prezzi</a>
+        <div class="dropdown">
+          <button class="dropdown-btn nav-link {% if page.nav_active == 'utilities' %}active{% endif %}"><i class="fas fa-toolbox"></i> Strumenti <i class="fas fa-chevron-down dropdown-icon"></i></button>
+          <div class="dropdown-menu">
+            <a href="/it/utilities/google-auth/" class="dropdown-item"><i class="fas fa-qrcode"></i> Google Auth Extractor</a>
+            <a href="/it/utilities/extension/" class="dropdown-item"><i class="fas fa-puzzle-piece"></i> Position Caret</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item"><i class="fab fa-github"></i> Altro su GitHub</a>
+          </div>
+        </div>
+        <a href="/it/changelog/" class="nav-link {% if page.nav_active == 'novedades' %}active{% endif %}"><i class="fas fa-rocket"></i> Novità</a>
       {% else %}
         <a href="/#product" class="nav-link {% if page.nav_active == 'product' %}active{% endif %}"><i class="fas fa-box"></i> Producto</a>
         <a href="/#pricing" class="nav-link {% if page.nav_active == 'pricing' %}active{% endif %}"><i class="fas fa-tag"></i> Precios</a>
@@ -112,16 +125,78 @@
         <i class="fas fa-moon"></i>
       </button>
 
-      <!-- Language Switcher -->
-      <div class="lang-switcher">
-        <a href="/" class="lang-btn {% if page.lang == 'es' or page.lang == nil %}lang-btn--active{% endif %}" {% if page.lang == 'es' or page.lang == nil %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Español"><img src="https://flagcdn.com/es.svg" width="20" height="15" alt="ES" class="flag-icon"></a>
-        <a href="/en/" class="lang-btn {% if page.lang == 'en' %}lang-btn--active{% endif %}" {% if page.lang == 'en' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="English"><img src="https://flagcdn.com/gb.svg" width="20" height="15" alt="EN" class="flag-icon"></a>
-        <a href="/fr/" class="lang-btn {% if page.lang == 'fr' %}lang-btn--active{% endif %}" {% if page.lang == 'fr' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Français"><img src="https://flagcdn.com/fr.svg" width="20" height="15" alt="FR" class="flag-icon"></a>
-        <a href="/de/" class="lang-btn {% if page.lang == 'de' %}lang-btn--active{% endif %}" {% if page.lang == 'de' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Deutsch"><img src="https://flagcdn.com/de.svg" width="20" height="15" alt="DE" class="flag-icon"></a>
-        <a href="/pt/" class="lang-btn {% if page.lang == 'pt' %}lang-btn--active{% endif %}" {% if page.lang == 'pt' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Português"><img src="https://flagcdn.com/br.svg" width="20" height="15" alt="PT" class="flag-icon"></a>
-        <a href="/zh/" class="lang-btn {% if page.lang == 'zh' %}lang-btn--active{% endif %}" {% if page.lang == 'zh' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="中文"><img src="https://flagcdn.com/cn.svg" width="20" height="15" alt="ZH" class="flag-icon"></a>
-        <a href="/ru/" class="lang-btn {% if page.lang == 'ru' %}lang-btn--active{% endif %}" {% if page.lang == 'ru' %}aria-current="true"{% endif %} onclick="sessionStorage.setItem('lang_chosen','manual')" aria-label="Русский"><img src="https://flagcdn.com/ru.svg" width="20" height="15" alt="RU" class="flag-icon"></a>
+      <!-- Language Switcher — desplegable -->
+      <div class="lang-switcher dropdown">
+        <button class="dropdown-btn lang-dropdown-btn" aria-label="Idioma / Language">
+          {% if page.lang == 'en' %}
+            <img src="https://flagcdn.com/gb.svg" width="20" height="15" alt="EN" class="flag-icon"> EN
+          {% elsif page.lang == 'fr' %}
+            <img src="https://flagcdn.com/fr.svg" width="20" height="15" alt="FR" class="flag-icon"> FR
+          {% elsif page.lang == 'de' %}
+            <img src="https://flagcdn.com/de.svg" width="20" height="15" alt="DE" class="flag-icon"> DE
+          {% elsif page.lang == 'pt' %}
+            <img src="https://flagcdn.com/br.svg" width="20" height="15" alt="PT" class="flag-icon"> PT
+          {% elsif page.lang == 'zh' %}
+            <img src="https://flagcdn.com/cn.svg" width="20" height="15" alt="ZH" class="flag-icon"> ZH
+          {% elsif page.lang == 'ru' %}
+            <img src="https://flagcdn.com/ru.svg" width="20" height="15" alt="RU" class="flag-icon"> RU
+          {% elsif page.lang == 'it' %}
+            <img src="https://flagcdn.com/it.svg" width="20" height="15" alt="IT" class="flag-icon"> IT
+          {% else %}
+            <img src="https://flagcdn.com/es.svg" width="20" height="15" alt="ES" class="flag-icon"> ES
+          {% endif %}
+          <i class="fas fa-chevron-down dropdown-icon" style="font-size:10px;margin-left:2px;"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu--right">
+          <a href="/" class="dropdown-item {% if page.lang == 'es' or page.lang == nil %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')">
+            <img src="https://flagcdn.com/es.svg" width="18" height="13" alt="" class="flag-icon"> Español
+          </a>
+          <a href="/en/" class="dropdown-item {% if page.lang == 'en' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')">
+            <img src="https://flagcdn.com/gb.svg" width="18" height="13" alt="" class="flag-icon"> English
+          </a>
+          <a href="/fr/" class="dropdown-item {% if page.lang == 'fr' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')">
+            <img src="https://flagcdn.com/fr.svg" width="18" height="13" alt="" class="flag-icon"> Français
+          </a>
+          <a href="/de/" class="dropdown-item {% if page.lang == 'de' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')">
+            <img src="https://flagcdn.com/de.svg" width="18" height="13" alt="" class="flag-icon"> Deutsch
+          </a>
+          <a href="/pt/" class="dropdown-item {% if page.lang == 'pt' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')">
+            <img src="https://flagcdn.com/br.svg" width="18" height="13" alt="" class="flag-icon"> Português
+          </a>
+          <a href="/it/" class="dropdown-item {% if page.lang == 'it' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')">
+            <img src="https://flagcdn.com/it.svg" width="18" height="13" alt="" class="flag-icon"> Italiano
+          </a>
+          <a href="/zh/" class="dropdown-item {% if page.lang == 'zh' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')">
+            <img src="https://flagcdn.com/cn.svg" width="18" height="13" alt="" class="flag-icon"> 中文
+          </a>
+          <a href="/ru/" class="dropdown-item {% if page.lang == 'ru' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')">
+            <img src="https://flagcdn.com/ru.svg" width="18" height="13" alt="" class="flag-icon"> Русский
+          </a>
+        </div>
       </div>
+
     </div>
   </div>
 </nav>
+
+<style>
+/* ── Lang dropdown refinements ───────────────────────────────────────── */
+.lang-switcher { position: relative; }
+.lang-dropdown-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 10px; border-radius: 6px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--text-primary); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: border-color .2s, background .2s;
+  font-family: inherit;
+}
+.lang-dropdown-btn:hover { border-color: var(--accent); background: var(--bg-secondary); }
+.lang-switcher .dropdown-menu { min-width: 160px; }
+.dropdown-item--active {
+  color: var(--accent-light) !important;
+  background: rgba(99,102,241,.08) !important;
+  font-weight: 600;
+}
+.flag-icon { border-radius: 2px; vertical-align: middle; flex-shrink: 0; }
+.dropdown-menu--right { right: 0; left: auto; }
+</style>
