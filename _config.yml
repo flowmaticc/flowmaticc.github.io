@@ -1,4 +1,15 @@
 title: "Flowmatic · Plantillas Macro"
+
+# ══════════════════════════════════════════════════════════════════════
+#  ENLACES CENTRALIZADOS — edita solo aquí, cambia en toda la web
+# ══════════════════════════════════════════════════════════════════════
+links:
+  app_download: "https://github.com/joseqwrtt/update_app/releases/download/3.0.0.12/PlantillasMacro.zip"
+  extension:    "https://chromewebstore.google.com/detail/flowmaticc-position-caret/faibchhnndpnhmiepnlabiiddpbcckin"
+  buy_mensual:  "https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1"
+  buy_trimestral: "https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1"
+  buy_anual:    "https://srjosef9.lemonsqueezy.com/checkout/buy/74f21431-b9fe-4633-8b5a-2c58dae0f328?embed=1"
+# ══════════════════════════════════════════════════════════════════════
 description: "Expansor de texto y plantillas Word para Windows. Escribe / y tu plantilla DOCX u ODT se pega al instante en cualquier aplicación, sin abrir archivos ni interrumpir tu flujo."
 url: "https://flowmaticc.github.io"
 baseurl: ""
