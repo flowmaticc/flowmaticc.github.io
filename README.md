@@ -1,4 +1,4 @@
-# ⚡ Plantillas Macro — Expansor de plantillas Word y ODT para Windows
+# / Plantillas Macro — Expansor de plantillas Word y ODT para Windows
 
 **Escribe `/` y tu plantilla DOCX, ODT o TXT se pega al instante en cualquier aplicación de Windows.**
 
