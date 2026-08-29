@@ -65,8 +65,8 @@ canonical: "https://flowmaticc.github.io/novedades/"
 </div>
 </section>
 
-<!-- marked.js para renderizar el Markdown real de las releases de GitHub -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.2.0/marked.min.js"></script>
+<!-- marked.js (auto-hospedado en /js/vendor/, sin depender de un CDN externo) -->
+<script src="/js/vendor/marked.min.js"></script>
 
 <script>
 (function () {
@@ -155,7 +155,7 @@ canonical: "https://flowmaticc.github.io/novedades/"
     const body    = release.body || "";
 
     return `
-      <article class="release ${latest ? "latest" : ""}">
+      <article class="release ${latest ? "latest" : ""}" data-reveal>
         <div class="timeline-node">${nodeNumber}</div>
         <div class="release-card">
           <header class="release-header">

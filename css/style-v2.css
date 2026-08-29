@@ -8,6 +8,51 @@
 ========================================================= */
 
 /* =========================================================
+   REVEAL AL SCROLL (solo la primera vez, ver js/reveal-v2.js)
+========================================================= */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .65s cubic-bezier(.2, .7, .2, 1), transform .65s cubic-bezier(.2, .7, .2, 1);
+}
+
+[data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { transition: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* Efecto escalonado por posición dentro de cada grupo */
+.features .feature:nth-child(1) { transition-delay: 0ms; }
+.features .feature:nth-child(2) { transition-delay: 90ms; }
+.features .feature:nth-child(3) { transition-delay: 180ms; }
+
+.why-list .why-item:nth-child(1) { transition-delay: 0ms; }
+.why-list .why-item:nth-child(2) { transition-delay: 60ms; }
+.why-list .why-item:nth-child(3) { transition-delay: 120ms; }
+.why-list .why-item:nth-child(4) { transition-delay: 180ms; }
+.why-list .why-item:nth-child(5) { transition-delay: 240ms; }
+.why-list .why-item:nth-child(6) { transition-delay: 300ms; }
+
+.pricing-grid .plan:nth-child(1) { transition-delay: 0ms; }
+.pricing-grid .plan:nth-child(2) { transition-delay: 100ms; }
+.pricing-grid .plan:nth-child(3) { transition-delay: 200ms; }
+
+.faq .faq-item:nth-child(1) { transition-delay: 0ms; }
+.faq .faq-item:nth-child(2) { transition-delay: 40ms; }
+.faq .faq-item:nth-child(3) { transition-delay: 80ms; }
+.faq .faq-item:nth-child(4) { transition-delay: 120ms; }
+.faq .faq-item:nth-child(5) { transition-delay: 160ms; }
+.faq .faq-item:nth-child(6) { transition-delay: 200ms; }
+.faq .faq-item:nth-child(7) { transition-delay: 240ms; }
+.faq .faq-item:nth-child(8) { transition-delay: 280ms; }
+
+.release:nth-child(1) { transition-delay: 0ms; }
+.release:nth-child(2) { transition-delay: 60ms; }
+.release:nth-child(3) { transition-delay: 120ms; }
+.release:nth-child(4) { transition-delay: 180ms; }
+
+/* =========================================================
    VARIABLES
 ========================================================= */
 :root {
@@ -476,6 +521,13 @@ body.menu-open { overflow: hidden; }
   padding: 28px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  transition: border-color .25s ease, background .25s ease, transform .25s ease;
+}
+
+.feature:hover {
+  border-color: rgba(202, 255, 51, .35);
+  background: var(--surface);
+  transform: translateY(-3px);
 }
 
 .feature-number {
@@ -497,14 +549,24 @@ body.menu-open { overflow: hidden; }
 .why-lead { font-size: 25px; line-height: 1.15; letter-spacing: -.04em; }
 .why-lead span { color: var(--muted); }
 
+.why-visual { margin-top: 55px; max-width: 230px; }
+.why-visual svg { width: 100%; height: auto; display: block; }
+
 .why-list { border-top: 1px solid var(--line); }
 
 .why-item {
   padding: 24px 0;
   border-bottom: 1px solid var(--line);
+  border-left: 2px solid transparent;
   display: grid;
   grid-template-columns: 35px 1fr;
   gap: 15px;
+  transition: border-left-color .25s ease, padding-left .25s ease;
+}
+
+.why-item:hover {
+  border-left-color: var(--lime);
+  padding-left: 12px;
 }
 
 .why-index { color: var(--lime); font-family: "DM Mono", monospace; font-size: 9px; }
@@ -544,6 +606,9 @@ body.menu-open { overflow: hidden; }
 .comparison .yes { color: var(--lime); font-size: 15px; }
 .comparison .no { color: #555; font-size: 14px; }
 .comparison .highlight { background: var(--lime-soft); color: white; }
+.comparison tbody tr { transition: background .2s ease; }
+.comparison tbody tr:hover td:not(.highlight) { background: rgba(255, 255, 255, .02); }
+.comparison tbody tr:hover td.highlight { background: rgba(202, 255, 51, .14); }
 
 /* =========================================================
    PRICING
@@ -560,11 +625,34 @@ body.menu-open { overflow: hidden; }
   min-height: 370px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  border-top: 2px solid transparent;
   display: flex;
   flex-direction: column;
+  position: relative;
+  transition: transform .3s cubic-bezier(.2, .7, .2, 1), box-shadow .3s ease,
+              border-color .3s ease, opacity .3s ease;
 }
 
-.plan.popular { background: var(--lime); color: #111; }
+.plan.popular { background: var(--lime); color: #111; border-top-color: #111; }
+
+/* Al pasar el ratón por un plan, se remarca y los demás se atenúan un poco —
+   así siempre queda claro cuál estás mirando, aunque el "Trimestral" sea
+   el marcado por defecto. */
+.pricing-grid:hover .plan { opacity: .82; }
+.pricing-grid .plan:hover { opacity: 1 !important; }
+
+.plan:not(.popular):hover {
+  border-top-color: var(--lime);
+  transform: translateY(-6px);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, .4);
+  z-index: 2;
+}
+
+.plan.popular:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, .4);
+  z-index: 2;
+}
 
 .plan-tag {
   height: 20px;
@@ -640,6 +728,9 @@ body.menu-open { overflow: hidden; }
   font-weight: 600;
   gap: 20px;
 }
+
+.faq-question span:first-child { transition: color .2s ease; }
+.faq-question:hover span:first-child { color: var(--lime); }
 
 .faq-plus { color: var(--lime); font-family: "DM Mono", monospace; font-size: 17px; transition: transform .2s ease; flex-shrink: 0; }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height .3s ease; }

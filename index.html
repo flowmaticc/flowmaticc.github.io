@@ -157,17 +157,17 @@ extra_js: |
   </div>
 
   <div class="features">
-    <article class="feature">
+    <article class="feature" data-reveal>
       <div class="feature-number">01</div>
       <h3>Instantáneo</h3>
       <p>Escribe <strong>/nombre</strong> y tu plantilla aparece al instante. Sin menús, sin clics extra.</p>
     </article>
-    <article class="feature">
+    <article class="feature" data-reveal>
       <div class="feature-number">02</div>
       <h3>Formato completo</h3>
       <p>DOCX, ODT y TXT con negrita, tablas, imágenes y estilos. Todo el formato se mantiene.</p>
     </article>
-    <article class="feature">
+    <article class="feature" data-reveal>
       <div class="feature-number">03</div>
       <h3>100% local</h3>
       <p>Tus plantillas están en tu equipo. Sin nubes obligatorias, sin servidores y sin suscripciones ocultas.</p>
@@ -189,14 +189,34 @@ extra_js: |
   </div>
 
   <div class="why">
-    <div class="why-lead">
-      Otros expansores te obligan a memorizar.
-      <span>Plantillas Macro busca el archivo por ti.</span>
+    <div class="why-col">
+      <div class="why-lead">
+        Otros expansores te obligan a memorizar.
+        <span>Plantillas Macro busca el archivo por ti.</span>
+      </div>
+
+      <div class="why-visual" data-reveal aria-hidden="true">
+        <svg viewBox="0 0 230 300" xmlns="http://www.w3.org/2000/svg">
+          <line x1="15" y1="20" x2="15" y2="270" stroke="var(--line)" stroke-width="1"/>
+
+          <circle cx="15" cy="20" r="5" fill="var(--bg)" stroke="var(--lime)" stroke-width="1.5"/>
+          <text x="34" y="10" fill="var(--muted-2)" font-family="'DM Mono',monospace" font-size="9" letter-spacing="1">01</text>
+          <text x="34" y="26" fill="var(--text)" font-family="Manrope,sans-serif" font-size="13" font-weight="700">Escribe /nombre</text>
+
+          <circle cx="15" cy="145" r="5" fill="var(--bg)" stroke="#555" stroke-width="1.5"/>
+          <text x="34" y="135" fill="var(--muted-2)" font-family="'DM Mono',monospace" font-size="9" letter-spacing="1">02</text>
+          <text x="34" y="151" fill="var(--text)" font-family="Manrope,sans-serif" font-size="13" font-weight="700">Filtra en tiempo real</text>
+
+          <circle cx="15" cy="270" r="5" fill="var(--lime)" stroke="var(--lime)" stroke-width="1.5"/>
+          <text x="34" y="260" fill="var(--lime)" font-family="'DM Mono',monospace" font-size="9" letter-spacing="1">03</text>
+          <text x="34" y="276" fill="var(--text)" font-family="Manrope,sans-serif" font-size="13" font-weight="700">Se pega con formato</text>
+        </svg>
+      </div>
     </div>
 
     <div class="why-list">
 
-      <article class="why-item">
+      <article class="why-item" data-reveal>
         <div class="why-index">01</div>
         <div>
           <h3>Sin abreviaturas que memorizar</h3>
@@ -204,7 +224,7 @@ extra_js: |
         </div>
       </article>
 
-      <article class="why-item">
+      <article class="why-item" data-reveal>
         <div class="why-index">02</div>
         <div>
           <h3>Formato Word completo</h3>
@@ -212,7 +232,7 @@ extra_js: |
         </div>
       </article>
 
-      <article class="why-item">
+      <article class="why-item" data-reveal>
         <div class="why-index">03</div>
         <div>
           <h3>Sin cuenta, sin nube obligatoria</h3>
@@ -220,7 +240,7 @@ extra_js: |
         </div>
       </article>
 
-      <article class="why-item">
+      <article class="why-item" data-reveal>
         <div class="why-index">04</div>
         <div>
           <h3>Funciona en cualquier app</h3>
@@ -228,7 +248,7 @@ extra_js: |
         </div>
       </article>
 
-      <article class="why-item">
+      <article class="why-item" data-reveal>
         <div class="why-index">05</div>
         <div>
           <h3>Listo en 2 minutos</h3>
@@ -236,7 +256,7 @@ extra_js: |
         </div>
       </article>
 
-      <article class="why-item">
+      <article class="why-item" data-reveal>
         <div class="why-index">06</div>
         <div>
           <h3>Sync sin lock-in</h3>
@@ -261,7 +281,7 @@ extra_js: |
     <div><h2>Qué hace diferente a Plantillas Macro.</h2></div>
   </div>
 
-  <div class="comparison-wrapper">
+  <div class="comparison-wrapper" data-reveal>
     <table class="comparison">
       <thead>
         <tr>
@@ -345,7 +365,7 @@ extra_js: |
 
   <div class="pricing-grid">
 
-    <article class="plan">
+    <article class="plan" data-reveal>
       <div class="plan-tag">&nbsp;</div>
       <h3>Mensual</h3>
       <div class="price">3,90€<small>/mes</small></div>
@@ -358,7 +378,7 @@ extra_js: |
       <a href="{{ site.links.buy_mensual }}" class="plan-button lemonsqueezy-button" data-umami="click-buy-mensual">Suscribirme →</a>
     </article>
 
-    <article class="plan popular">
+    <article class="plan popular" data-reveal>
       <div class="plan-tag">Más popular</div>
       <h3>Trimestral</h3>
       <div class="price">9,90€<small>/3 meses</small></div>
@@ -371,7 +391,7 @@ extra_js: |
       <a href="{{ site.links.buy_trimestral }}" class="plan-button lemonsqueezy-button" data-umami="click-buy-trimestral">Elegir Trimestral →</a>
     </article>
 
-    <article class="plan">
+    <article class="plan" data-reveal>
       <div class="plan-tag">Mejor valor</div>
       <h3>Anual</h3>
       <div class="price">35€<small>/año</small></div>
@@ -410,7 +430,7 @@ extra_js: |
 
   <div class="faq">
 
-    <div class="faq-item">
+    <div class="faq-item" data-reveal>
       <button class="faq-question">
         <span>¿Funciona Plantillas Macro con Microsoft Word y Outlook?</span>
         <span class="faq-plus">+</span>
@@ -420,7 +440,7 @@ extra_js: |
       </div></div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item" data-reveal>
       <button class="faq-question">
         <span>¿Puedo usar mis plantillas .docx y .odt existentes?</span>
         <span class="faq-plus">+</span>
@@ -430,7 +450,7 @@ extra_js: |
       </div></div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item" data-reveal>
       <button class="faq-question">
         <span>¿Se mantiene el formato completo al pegar — negritas, tablas, imágenes?</span>
         <span class="faq-plus">+</span>
@@ -440,7 +460,7 @@ extra_js: |
       </div></div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item" data-reveal>
       <button class="faq-question">
         <span>¿Mis plantillas se suben a algún servidor o nube?</span>
         <span class="faq-plus">+</span>
@@ -450,7 +470,7 @@ extra_js: |
       </div></div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item" data-reveal>
       <button class="faq-question">
         <span>¿Cuánto cuesta y hay prueba gratuita?</span>
         <span class="faq-plus">+</span>
@@ -460,7 +480,7 @@ extra_js: |
       </div></div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item" data-reveal>
       <button class="faq-question">
         <span>¿Qué versiones de Windows son compatibles?</span>
         <span class="faq-plus">+</span>
@@ -470,7 +490,7 @@ extra_js: |
       </div></div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item" data-reveal>
       <button class="faq-question">
         <span>¿En qué se diferencia de AutoHotkey o de otros expansores como Espanso?</span>
         <span class="faq-plus">+</span>
@@ -480,7 +500,7 @@ extra_js: |
       </div></div>
     </div>
 
-    <div class="faq-item">
+    <div class="faq-item" data-reveal>
       <button class="faq-question">
         <span>¿Puedo tener más de un equipo con la misma licencia?</span>
         <span class="faq-plus">+</span>
