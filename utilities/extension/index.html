@@ -7,47 +7,48 @@ title: "Position Caret — Extensión para navegador · Flowmatic"
 description: "Extensión gratuita para Chrome, Edge y Brave que mejora la precisión del popup de Plantillas Macro en cualquier web. Instala en un clic desde Chrome Web Store."
 canonical: "https://flowmaticc.github.io/utilities/extension/"
 ---
+{% assign t = site.data.i18n[page.lang].extension %}
 
 <section class="hero hero--compact hero--center">
 <div class="container">
 
   <div class="breadcrumb-v2">
-    <a href="/">Flowmatic</a><span>/</span><a href="/#product">Utilidades</a><span>/</span><span class="current">Position Caret</span>
+    <a href="/">Flowmatic</a><span>/</span><a href="/#product">{{ t.hero.breadcrumb_utilities }}</a><span>/</span><span class="current">{{ t.hero.breadcrumb_current }}</span>
   </div>
 
   <div class="chip-row" style="margin-top:0;margin-bottom:22px;">
-    <span class="chip chip-lime"><i class="fas fa-check"></i> Gratis</span>
-    <span class="chip"><i class="fas fa-puzzle-piece"></i> Extensión para navegador</span>
+    <span class="chip chip-lime"><i class="fas fa-check"></i> {{ t.hero.pill_free }}</span>
+    <span class="chip"><i class="fas fa-puzzle-piece"></i> {{ t.hero.pill_type }}</span>
   </div>
 
-  <h1>El popup aparece <span>exactamente donde escribes.</span></h1>
+  <h1>{{ t.hero.title_pre }} <span>{{ t.hero.title_highlight }}</span></h1>
 
   <div class="hero-copy">
-    <p>Complemento gratuito para Plantillas Macro. Instálalo en tu navegador y el popup de plantillas aparecerá siempre en la posición exacta del cursor, en cualquier web.</p>
+    <p>{{ t.hero.copy }}</p>
   </div>
 
   <div class="hero-actions">
-    <a href="{{ site.links.extension }}" target="_blank" rel="noopener" class="button-primary" data-umami="click-extension-es">🧩 Instalar extensión gratis</a>
+    <a href="{{ site.links.extension }}" target="_blank" rel="noopener" class="button-primary" data-umami="click-extension-es">{{ t.hero.cta_install }}</a>
   </div>
-  <p style="margin-top:14px;color:var(--muted-2);font-family:'DM Mono',monospace;font-size:10px;">Chrome · Edge · Brave · Opera · Vivaldi — y más navegadores Chromium</p>
+  <p style="margin-top:14px;color:var(--muted-2);font-family:'DM Mono',monospace;font-size:10px;">{{ t.hero.browsers_note }}</p>
 
   <div class="product-window" style="max-width:380px;margin:50px auto 0;cursor:default;" data-reveal>
     <div class="window-top">
       <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
-      <span class="window-title">FLOWMATICC · POSITION CARET</span>
+      <span class="window-title">{{ t.hero.preview_window_title }}</span>
     </div>
     <div class="window-body" style="padding:16px;">
       <div class="util-preview-row">
         <span class="util-status-dot"></span>
-        <span style="margin-right:auto;padding-left:8px;">Conectado · activo</span>
+        <span style="margin-right:auto;padding-left:8px;">{{ t.hero.preview_status }}</span>
         <span style="color:var(--muted-2);font-family:'DM Mono',monospace;font-size:9px;">v4.0.0</span>
       </div>
       <div class="util-preview-row">
-        <span>mail.google.com</span>
-        <span style="color:#e07a7a;font-family:'DM Mono',monospace;font-size:9px;">🚫 Excluir esta web</span>
+        <span>{{ t.hero.preview_site }}</span>
+        <span style="color:#e07a7a;font-family:'DM Mono',monospace;font-size:9px;">{{ t.hero.preview_exclude }}</span>
       </div>
       <div class="util-preview-row">
-        <span>Mostrar círculo rojo al capturar</span>
+        <span>{{ t.hero.preview_toggle_label }}</span>
         <span class="util-toggle-fake"></span>
       </div>
     </div>
@@ -59,34 +60,21 @@ canonical: "https://flowmaticc.github.io/utilities/extension/"
 <section class="section" id="product">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ cómo funciona</div></div>
+    <div><div class="section-kicker">{{ t.how.kicker }}</div></div>
     <div>
-      <h2>Tres pasos y listo.</h2>
-      <p class="section-intro">Sin configuración, sin cuentas.</p>
+      <h2>{{ t.how.title }}</h2>
+      <p class="section-intro">{{ t.how.intro }}</p>
     </div>
   </div>
 
   <div class="features">
+    {% for step in t.how.steps %}
     <article class="feature" data-reveal>
-      <div class="feature-number">01</div>
-      <h3>Instala la extensión</h3>
-      <p>Un clic en Chrome Web Store. Se activa automáticamente en todos los navegadores compatibles.</p>
+      <div class="feature-number">{{ step.number }}</div>
+      <h3>{{ step.title }}</h3>
+      <p>{{ step.text }}</p>
     </article>
-    <article class="feature" data-reveal>
-      <div class="feature-number">02</div>
-      <h3>Abre Plantillas Macro</h3>
-      <p>La extensión se conecta sola a la app de escritorio. El icono se pondrá verde.</p>
-    </article>
-    <article class="feature" data-reveal>
-      <div class="feature-number">03</div>
-      <h3>Escribe y listo</h3>
-      <p>Escribe tu detonante en cualquier web y el popup aparece exactamente donde está el cursor.</p>
-    </article>
-    <article class="feature" data-reveal>
-      <div class="feature-number">04</div>
-      <h3>Controla por web</h3>
-      <p>Excluye cualquier web con un clic desde el popup. La extensión recuerda tus preferencias.</p>
-    </article>
+    {% endfor %}
   </div>
 </div>
 </section>
@@ -94,20 +82,13 @@ canonical: "https://flowmaticc.github.io/utilities/extension/"
 <section class="section">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ compatibilidad</div></div>
-    <div><h2>Cualquier navegador Chromium.</h2></div>
+    <div><div class="section-kicker">{{ t.compat.kicker }}</div></div>
+    <div><h2>{{ t.compat.title }}</h2></div>
   </div>
   <div class="chip-row" style="justify-content:flex-start;" data-reveal>
-    <span class="chip chip-dot">Chrome</span>
-    <span class="chip chip-dot">Edge</span>
-    <span class="chip chip-dot">Brave</span>
-    <span class="chip chip-dot">Opera</span>
-    <span class="chip chip-dot">Opera GX</span>
-    <span class="chip chip-dot">Vivaldi</span>
-    <span class="chip chip-dot">Arc</span>
-    <span class="chip chip-dot">Yandex</span>
-    <span class="chip chip-dot">Thorium</span>
-    <span class="chip chip-dot">Ungoogled</span>
+    {% for b in t.compat.browsers %}
+    <span class="chip chip-dot">{{ b }}</span>
+    {% endfor %}
   </div>
 </div>
 </section>
@@ -115,46 +96,28 @@ canonical: "https://flowmaticc.github.io/utilities/extension/"
 <section class="section">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ incluye</div></div>
-    <div><h2>Qué hace por ti.</h2></div>
+    <div><div class="section-kicker">{{ t.features.kicker }}</div></div>
+    <div><h2>{{ t.features.title }}</h2></div>
   </div>
 
   <div class="why-list">
+    {% for item in t.features.items %}
     <article class="why-item" data-reveal>
-      <div class="why-index">🎯</div>
-      <div><h3>Posición exacta del cursor</h3><p>El popup aparece justo debajo de donde estás escribiendo, en cualquier editor web.</p></div>
+      <div class="why-index">{{ item.icon }}</div>
+      <div><h3>{{ item.title }}</h3><p>{{ item.text }}</p></div>
     </article>
-    <article class="why-item" data-reveal>
-      <div class="why-index">🚫</div>
-      <div><h3>Excluir webs con un clic</h3><p>¿No quieres que funcione en alguna web? La desactivas al instante desde el icono del navegador.</p></div>
-    </article>
-    <article class="why-item" data-reveal>
-      <div class="why-index">🔌</div>
-      <div><h3>Conexión automática</h3><p>Se conecta sola a Plantillas Macro. Si la app se cierra y reabre, reconecta sin tocar nada.</p></div>
-    </article>
-    <article class="why-item" data-reveal>
-      <div class="why-index">🔒</div>
-      <div><h3>100% local y privado</h3><p>No envía nada a internet. Solo comunica coordenadas a tu app de escritorio por conexión local.</p></div>
-    </article>
-    <article class="why-item" data-reveal>
-      <div class="why-index">⚡</div>
-      <div><h3>Sin consumo notable</h3><p>Solo actúa cuando detecta el detonante. Sin polling continuo, sin impacto en el navegador.</p></div>
-    </article>
-    <article class="why-item" data-reveal>
-      <div class="why-index">🆓</div>
-      <div><h3>Completamente gratis</h3><p>Sin publicidad, sin límites de uso, sin cuenta. Solo instala y funciona.</p></div>
-    </article>
+    {% endfor %}
   </div>
 </div>
 </section>
 
 <section class="final-cta" id="cta-final">
 <div class="container">
-  <h2>¿Ya tienes Plantillas Macro?</h2>
-  <p>Añade la extensión y el popup funcionará perfectamente en cualquier web.</p>
-  <a href="{{ site.links.extension }}" target="_blank" rel="noopener" class="cta-button" data-umami="click-extension-es">🧩 Instalar extensión gratis</a>
+  <h2>{{ t.final_cta.title }}</h2>
+  <p>{{ t.final_cta.text }}</p>
+  <a href="{{ site.links.extension }}" target="_blank" rel="noopener" class="cta-button" data-umami="click-extension-es">{{ t.final_cta.button }}</a>
   <p style="margin-top:20px;font-size:12px;color:#1a1a1a;">
-    ¿Aún no tienes Plantillas Macro? <a href="/" style="color:#111;font-weight:700;text-decoration:underline;">Descárgala gratis →</a>
+    {{ t.final_cta.footer_question }} <a href="/" style="color:#111;font-weight:700;text-decoration:underline;">{{ t.final_cta.footer_link }}</a>
   </p>
 </div>
 </section>

@@ -7,16 +7,17 @@ title: "Novedades — Plantillas Macro"
 description: "Últimas actualizaciones y mejoras de Plantillas Macro. Consulta el historial de versiones y descarga la más reciente."
 canonical: "https://flowmaticc.github.io/novedades/"
 ---
+{% assign t = site.data.i18n[page.lang].novedades %}
 
 <!-- =====================================================
      HERO (compacto)
 ===================================================== -->
 <section class="hero hero--compact">
 <div class="container">
-  <div class="hero-kicker">/ historial de versiones</div>
-  <h1>Novedades de <span>Plantillas Macro.</span></h1>
+  <div class="hero-kicker">{{ t.hero.kicker }}</div>
+  <h1>{{ t.hero.title_pre }} <span>{{ t.hero.title_highlight }}</span></h1>
   <div class="hero-copy" style="max-width:640px">
-    <p>Cada actualización, mejora y corrección publicada — generadas automáticamente desde GitHub Releases.</p>
+    <p>{{ t.hero.copy }}</p>
   </div>
 </div>
 </section>
@@ -26,16 +27,16 @@ canonical: "https://flowmaticc.github.io/novedades/"
 ===================================================== -->
 <section class="toolbar">
 <div class="container toolbar-inner">
-  <div class="toolbar-label">CHANGELOG COMPLETO</div>
+  <div class="toolbar-label">{{ t.toolbar.label }}</div>
 
   <div class="release-switch" id="releaseSwitch">
-    <button class="switch-btn active" data-repo="app">Programa</button>
-    <button class="switch-btn" data-repo="lang">Paquete de idiomas</button>
+    <button class="switch-btn active" data-repo="app">{{ t.toolbar.switch_app }}</button>
+    <button class="switch-btn" data-repo="lang">{{ t.toolbar.switch_lang }}</button>
   </div>
 
   <div class="github-state">
     <span class="state-dot"></span>
-    GITHUB · ACTUALIZADO
+    {{ t.toolbar.github_state }}
   </div>
 </div>
 </section>
@@ -48,7 +49,7 @@ canonical: "https://flowmaticc.github.io/novedades/"
   <div class="timeline" id="releases">
     <div class="loading">
       <span class="loading-symbol">/</span>
-      Cargando novedades desde GitHub…
+      {{ t.timeline.loading }}
     </div>
   </div>
 </div>
@@ -59,9 +60,9 @@ canonical: "https://flowmaticc.github.io/novedades/"
 ===================================================== -->
 <section class="final-cta" id="cta-final">
 <div class="container">
-  <h2>¿Listo para trabajar más rápido?</h2>
-  <p>Descarga Plantillas Macro gratis y prueba todas las funciones durante 14 días.</p>
-  <a href="{{ site.links.app_download }}" class="cta-button" data-umami="click-cta-main">Descargar Plantillas Macro →</a>
+  <h2>{{ t.final_cta.title }}</h2>
+  <p>{{ t.final_cta.text }}</p>
+  <a href="{{ site.links.app_download }}" class="cta-button" data-umami="click-cta-main">{{ t.final_cta.button }}</a>
 </div>
 </section>
 
@@ -80,6 +81,19 @@ canonical: "https://flowmaticc.github.io/novedades/"
   const REPOS = {
     app:  { repo: "update_app",      showDownloads: true  },
     lang: { repo: "update_language", showDownloads: false },
+  };
+
+  const LOCALE = "{{ t.locale }}";
+  const I18N = {
+    loading:     {{ t.timeline.loading | jsonify }},
+    empty:       {{ t.timeline.empty_message | jsonify }},
+    errorTitle:  {{ t.timeline.error_title | jsonify }},
+    errorLinkText:  {{ t.timeline.error_link_text | jsonify }},
+    errorLinkLabel: {{ t.timeline.error_link_label | jsonify }},
+    latestBadge:   {{ t.timeline.latest_badge | jsonify }},
+    previousBadge: {{ t.timeline.previous_badge | jsonify }},
+    noNotes:       {{ t.timeline.no_notes | jsonify }},
+    publishedOn:   {{ t.timeline.published_on | jsonify }},
   };
 
   let currentRepo = "app";
@@ -105,7 +119,7 @@ canonical: "https://flowmaticc.github.io/novedades/"
     container.innerHTML = `
       <div class="loading">
         <span class="loading-symbol">/</span>
-        Cargando novedades desde GitHub…
+        ${I18N.loading}
       </div>`;
 
     try {
@@ -124,7 +138,7 @@ canonical: "https://flowmaticc.github.io/novedades/"
       });
 
       if (!Array.isArray(releases) || !releases.length) {
-        container.innerHTML = `<div class="empty">Todavía no hay releases publicadas en GitHub.</div>`;
+        container.innerHTML = `<div class="empty">${I18N.empty}</div>`;
         return;
       }
 
@@ -135,18 +149,18 @@ canonical: "https://flowmaticc.github.io/novedades/"
       console.error("Error cargando GitHub:", error);
       container.innerHTML = `
         <div class="error">
-          <strong>No se han podido cargar las novedades.</strong>
+          <strong>${I18N.errorTitle}</strong>
           <br><br>
           ${escapeHtml(error.message)}
           <br><br>
-          Puedes ver el historial directamente en <a href="https://github.com/${GITHUB_OWNER}/${repo}/releases" target="_blank" rel="noopener">GitHub Releases</a>.
+          ${I18N.errorLinkText} <a href="https://github.com/${GITHUB_OWNER}/${repo}/releases" target="_blank" rel="noopener">${I18N.errorLinkLabel}</a>.
         </div>`;
     }
   }
 
   /* Genera dinámicamente cada tarjeta — nada de versión/fecha/texto escrito a mano */
   function renderRelease(release, index, showDownloads) {
-    const version = release.tag_name || release.name || "Sin versión";
+    const version = release.tag_name || release.name || "—";
     const title   = release.name || version;
     const date    = formatDate(release.published_at || release.created_at);
     const latest  = index === 0;
@@ -165,15 +179,15 @@ canonical: "https://flowmaticc.github.io/novedades/"
             </div>
             <div class="status">
               <span class="status-dot"></span>
-              ${latest ? "ÚLTIMA VERSIÓN" : "VERSIÓN ANTERIOR"}
+              ${latest ? I18N.latestBadge : I18N.previousBadge}
             </div>
           </header>
           <div class="release-content">
             <h2 class="release-title">${escapeHtml(title)}</h2>
-            <div class="github-markdown">${body.trim() ? marked.parse(body) : '<p><em>Sin notas para esta versión.</em></p>'}</div>
+            <div class="github-markdown">${body.trim() ? marked.parse(body) : `<p><em>${I18N.noNotes}</em></p>`}</div>
             ${showDownloads ? renderDownloads(assets) : ""}
             <div class="release-footer">
-              <span class="release-source">Publicado en GitHub</span>
+              <span class="release-source">${I18N.publishedOn}</span>
             </div>
           </div>
         </div>
@@ -191,7 +205,7 @@ canonical: "https://flowmaticc.github.io/novedades/"
     if (!dateString) return "";
     const date = new Date(dateString);
     if (Number.isNaN(date.getTime())) return "";
-    return date.toLocaleDateString("es-ES", { day: "2-digit", month: "short", year: "numeric" }).toUpperCase();
+    return date.toLocaleDateString(LOCALE, { day: "2-digit", month: "short", year: "numeric" }).toUpperCase();
   }
 
   function escapeHtml(value) {

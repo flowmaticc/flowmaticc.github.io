@@ -14,34 +14,34 @@ extra_js: |
     location.reload(true);
   }
 ---
+{% assign t = site.data.i18n[page.lang].google_auth %}
 
 <section class="hero hero--compact hero--center">
 <div class="container">
 
   <div class="breadcrumb-v2">
-    <a href="/">Flowmatic</a><span>/</span><span class="current">Google Auth Extractor</span>
+    <a href="/">Flowmatic</a><span>/</span><span class="current">{{ t.hero.breadcrumb_current }}</span>
   </div>
 
-  <div class="hero-kicker">/ utilidad gratuita · código abierto</div>
+  <div class="hero-kicker">{{ t.hero.kicker }}</div>
 
-  <h1>Google Auth <span>Extractor</span></h1>
+  <h1>{{ t.hero.title_pre }} <span>{{ t.hero.title_highlight }}</span></h1>
 
   <div class="hero-copy">
-    <p>Exporta tus cuentas TOTP de Google Authenticator a TXT, Aegis, 2FAS o CSV.</p>
-    <p style="color:var(--muted-2)">Export your Google Authenticator TOTP accounts to TXT, Aegis, 2FAS or CSV.</p>
+    <p>{{ t.hero.copy_es }}</p>
+    <p style="color:var(--muted-2)">{{ t.hero.copy_en }}</p>
   </div>
 
   <div class="chip-row">
-    <span class="chip"><i class="fab fa-python"></i> Python 3.10+</span>
-    <span class="chip"><i class="fab fa-windows"></i> Windows</span>
-    <span class="chip"><i class="fab fa-apple"></i> macOS</span>
-    <span class="chip"><i class="fab fa-linux"></i> Linux</span>
-    <span class="chip"><i class="fas fa-balance-scale"></i> MIT</span>
+    {% assign icons = "fab fa-python|fab fa-windows|fab fa-apple|fab fa-linux|fas fa-balance-scale" | split: "|" %}
+    {% for chip in t.hero.chips %}
+    <span class="chip"><i class="{{ icons[forloop.index0] }}"></i> {{ chip }}</span>
+    {% endfor %}
   </div>
 
   <div class="hero-actions">
-    <a href="https://github.com/joseqwrtt/Google_auth_extractor" class="button-secondary" target="_blank" rel="noopener" data-umami="click-github" data-umami-tool="google-auth">Ver en GitHub</a>
-    <a href="https://github.com/joseqwrtt/Google_auth_extractor/archive/refs/heads/main.zip" class="button-primary" data-umami="use-google-auth" data-umami-tool="google-auth">Descargar ZIP →</a>
+    <a href="https://github.com/joseqwrtt/Google_auth_extractor" class="button-secondary" target="_blank" rel="noopener" data-umami="click-github" data-umami-tool="google-auth">{{ t.hero.cta_github }}</a>
+    <a href="https://github.com/joseqwrtt/Google_auth_extractor/archive/refs/heads/main.zip" class="button-primary" data-umami="use-google-auth" data-umami-tool="google-auth">{{ t.hero.cta_download }}</a>
   </div>
 
 </div>
@@ -50,12 +50,12 @@ extra_js: |
 <section class="section" id="product">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ motivo</div></div>
-    <div><h2>¿Por qué existe esta herramienta?</h2></div>
+    <div><div class="section-kicker">{{ t.why.kicker }}</div></div>
+    <div><h2>{{ t.why.title }}</h2></div>
   </div>
   <div class="info-card" data-reveal>
-    <p>Google Authenticator exporta las cuentas en un formato propietario (<code>otpauth-migration://</code>) que ninguna otra app puede leer directamente. Cada código QR contiene hasta 10 cuentas. Esta herramienta decodifica esos QR y extrae las claves TOTP para que puedas importarlas donde quieras.</p>
-    <p style="color:var(--muted-2)">Google Authenticator exports accounts in a proprietary format (<code>otpauth-migration://</code>) that no other app can read directly. Each QR code holds up to 10 accounts. This tool decodes those QR codes and extracts the TOTP secrets so you can import them anywhere.</p>
+    <p>{{ t.why.text_es_html }}</p>
+    <p style="color:var(--muted-2)">{{ t.why.text_en_html }}</p>
   </div>
 </div>
 </section>
@@ -63,20 +63,13 @@ extra_js: |
 <section class="section">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ características</div></div>
-    <div><h2>Todo lo que incluye.</h2></div>
+    <div><div class="section-kicker">{{ t.features.kicker }}</div></div>
+    <div><h2>{{ t.features.title }}</h2></div>
   </div>
   <div class="check-list">
-    <div class="check-item" data-reveal>Pegar URL <code>otpauth-migration://</code> directamente</div>
-    <div class="check-item" data-reveal>Subir imagen o captura del QR</div>
-    <div class="check-item" data-reveal>Escanear región de pantalla con el ratón</div>
-    <div class="check-item" data-reveal>Acumula cuentas entre escaneos</div>
-    <div class="check-item" data-reveal>Deduplicación automática</div>
-    <div class="check-item" data-reveal>Copiar Emisor, Nombre o Clave</div>
-    <div class="check-item" data-reveal>Interfaz en Español e Inglés</div>
-    <div class="check-item" data-reveal>Borrar lista para empezar de cero</div>
-    <div class="check-item" data-reveal>Exportar a TXT, Aegis, 2FAS, CSV</div>
-    <div class="check-item" data-reveal>100% local — ningún dato sale del equipo</div>
+    {% for item in t.features.items %}
+    <div class="check-item" data-reveal>{{ item }}</div>
+    {% endfor %}
   </div>
 </div>
 </section>
@@ -84,15 +77,15 @@ extra_js: |
 <section class="section">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ capturas</div></div>
-    <div><h2>La herramienta en uso.</h2></div>
+    <div><div class="section-kicker">{{ t.screenshots.kicker }}</div></div>
+    <div><h2>{{ t.screenshots.title }}</h2></div>
   </div>
   <div class="shot-grid" data-reveal>
-    <img src="https://github.com/user-attachments/assets/3bc9b0b4-905a-4cd7-8941-36421c4a6b75" alt="Pantalla principal" loading="lazy">
-    <img src="https://github.com/user-attachments/assets/e63a4706-ab28-47d3-afc5-46f7588e0abd" alt="Ventana de cuentas" loading="lazy">
-    <img src="https://github.com/user-attachments/assets/de41a90e-1467-419a-92b6-a1d0875ce1c9" alt="Exportar cuentas" loading="lazy">
-    <img src="https://github.com/user-attachments/assets/bb2bddfd-4c36-41a4-885a-894e54b40718" alt="Selector de región" loading="lazy">
-    <img src="https://github.com/user-attachments/assets/fb567a63-b989-4eeb-9341-5e3c7e7cd18c" alt="Modo escaneo" loading="lazy">
+    <img src="https://github.com/user-attachments/assets/3bc9b0b4-905a-4cd7-8941-36421c4a6b75" alt="{{ t.screenshots.title }}" loading="lazy">
+    <img src="https://github.com/user-attachments/assets/e63a4706-ab28-47d3-afc5-46f7588e0abd" alt="{{ t.screenshots.title }}" loading="lazy">
+    <img src="https://github.com/user-attachments/assets/de41a90e-1467-419a-92b6-a1d0875ce1c9" alt="{{ t.screenshots.title }}" loading="lazy">
+    <img src="https://github.com/user-attachments/assets/bb2bddfd-4c36-41a4-885a-894e54b40718" alt="{{ t.screenshots.title }}" loading="lazy">
+    <img src="https://github.com/user-attachments/assets/fb567a63-b989-4eeb-9341-5e3c7e7cd18c" alt="{{ t.screenshots.title }}" loading="lazy">
   </div>
 </div>
 </section>
@@ -100,13 +93,13 @@ extra_js: |
 <section class="section">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ instalación</div></div>
-    <div><h2>Instalación.</h2></div>
+    <div><div class="section-kicker">{{ t.installation.kicker }}</div></div>
+    <div><h2>{{ t.installation.title }}</h2></div>
   </div>
 
   <div class="code-block" data-reveal>
     <div class="code-header">
-      <span>1. Clona el repositorio / Clone the repo</span>
+      <span>{{ t.installation.step1_label }}</span>
       <button class="copy-btn" data-code="git clone https://github.com/joseqwrtt/Google_auth_extractor.git&#10;cd Google_auth_extractor"><i class="fas fa-copy"></i> Copiar</button>
     </div>
     <pre><code>git clone https://github.com/joseqwrtt/Google_auth_extractor.git
@@ -114,19 +107,19 @@ cd Google_auth_extractor</code></pre>
   </div>
 
   <div class="info-card">
-    <p><strong>📌 Requisitos / Requirements:</strong> Python 3.10 o superior. Durante la instalación en Windows, marca <strong>"Add Python to PATH"</strong>.</p>
+    <p>{{ t.installation.requirements_html }}</p>
   </div>
 
   <div class="code-block" data-reveal>
     <div class="code-header">
-      <span>2. Instala las dependencias / Install dependencies</span>
+      <span>{{ t.installation.step2_label }}</span>
       <button class="copy-btn" data-code="pip install customtkinter pillow pyzbar opencv-python mss"><i class="fas fa-copy"></i> Copiar</button>
     </div>
     <pre><code>pip install customtkinter pillow pyzbar opencv-python mss</code></pre>
   </div>
 
   <div class="info-card">
-    <p><strong>🐧 Linux / macOS:</strong> También necesitas la librería nativa de zbar:</p>
+    <p>{{ t.installation.linux_note_html }}</p>
     <pre style="margin-top:10px;padding:12px 14px;border:1px solid var(--line);background:#0c0c0c;overflow-x:auto;"><code style="color:var(--lime);font-family:'DM Mono',monospace;font-size:11px;"># Ubuntu / Debian
 sudo apt install libzbar0
 
@@ -139,22 +132,22 @@ brew install zbar</code></pre>
 <section class="section">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ uso</div></div>
-    <div><h2>Cómo se ejecuta.</h2></div>
+    <div><div class="section-kicker">{{ t.usage.kicker }}</div></div>
+    <div><h2>{{ t.usage.title }}</h2></div>
   </div>
 
   <div class="code-block" data-reveal>
     <div class="code-header">
-      <span>Ejecutar / Run</span>
+      <span>{{ t.usage.run_label }}</span>
       <button class="copy-btn" data-code="python Google_auth_extractor.py"><i class="fas fa-copy"></i> Copiar</button>
     </div>
     <pre><code>python Google_auth_extractor.py</code></pre>
   </div>
 
   <div class="info-card">
-    <p><strong>💡 Windows con varias versiones de Python:</strong></p>
+    <p>{{ t.usage.windows_note_html }}</p>
     <pre style="margin:10px 0;padding:12px 14px;border:1px solid var(--line);background:#0c0c0c;overflow-x:auto;"><code style="color:var(--lime);font-family:'DM Mono',monospace;font-size:11px;">C:\Python311\python.exe Google_auth_extractor.py</code></pre>
-    <p>O crea un archivo <code>ejecutar.bat</code>:</p>
+    <p>{{ t.usage.batch_note_html }}</p>
     <pre style="margin-top:10px;padding:12px 14px;border:1px solid var(--line);background:#0c0c0c;overflow-x:auto;"><code style="color:var(--lime);font-family:'DM Mono',monospace;font-size:11px;">python "%~dp0Google_auth_extractor.py"
 pause</code></pre>
   </div>
@@ -164,71 +157,56 @@ pause</code></pre>
 <section class="section">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ guía</div></div>
-    <div><h2>Paso a paso.</h2></div>
+    <div><div class="section-kicker">{{ t.guide.kicker }}</div></div>
+    <div><h2>{{ t.guide.title }}</h2></div>
   </div>
 
+  {% for step in t.guide.steps %}
   <div class="step-card" data-reveal>
-    <div class="step-number">01</div>
+    <div class="step-number">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</div>
     <div class="step-content">
-      <h3>Exportar desde Google Authenticator</h3>
-      <p>Abre Google Authenticator → menú (⋮) → <strong>Exportar cuentas / Transfer accounts → Export accounts</strong> → selecciona las cuentas → aparecerá uno o varios QR (máximo 10 cuentas por QR).</p>
-    </div>
-  </div>
+      <h3>{{ step.title }}</h3>
 
-  <div class="step-card" data-reveal>
-    <div class="step-number">02</div>
-    <div class="step-content">
-      <h3>Importar en la app (elige un modo)</h3>
+      {% if step.text_html %}<p>{{ step.text_html }}</p>{% endif %}
+      {% if step.text %}<p>{{ step.text }}</p>{% endif %}
+
+      {% if step.modes %}
       <div class="mode-grid">
+        {% for mode in step.modes %}
         <div class="mode-card">
-          <span class="mode-icon">🔗</span>
-          <strong>Modo URL</strong>
-          <p>Escanea el QR → copia la URL <code>otpauth-migration://offline?data=...</code> → pégala → Extraer cuentas</p>
+          <span class="mode-icon">{{ mode.icon }}</span>
+          <strong>{{ mode.title }}</strong>
+          {% if mode.text_html %}<p>{{ mode.text_html }}</p>{% endif %}
+          {% if mode.text %}<p>{{ mode.text }}</p>{% endif %}
         </div>
-        <div class="mode-card">
-          <span class="mode-icon">🖼️</span>
-          <strong>Modo imagen</strong>
-          <p>Captura de pantalla del QR → Seleccionar imagen → Leer QR y extraer</p>
-        </div>
-        <div class="mode-card">
-          <span class="mode-icon">📷</span>
-          <strong>Modo escaneo pantalla</strong>
-          <p>Muestra el QR → Seleccionar región → dibuja rectángulo → extracción automática</p>
-        </div>
+        {% endfor %}
       </div>
-      <p class="step-note">💡 Si tienes más de 10 cuentas, repite el proceso con cada QR. Las cuentas se acumulan y los duplicados se ignoran.</p>
-    </div>
-  </div>
+      <p class="step-note">{{ step.note }}</p>
+      {% endif %}
 
-  <div class="step-card" data-reveal>
-    <div class="step-number">03</div>
-    <div class="step-content">
-      <h3>Exportar</h3>
-      <p>Una vez con todas las cuentas en el listado, pulsa el botón del formato que necesites:</p>
+      {% if forloop.last %}
       <div class="chip-row" style="justify-content:flex-start;margin-top:14px;">
-        <span class="chip chip-lime"><strong>TXT</strong>&nbsp;· .txt</span>
-        <span class="chip chip-lime"><strong>Aegis</strong>&nbsp;· .json · Android</span>
-        <span class="chip chip-lime"><strong>2FAS</strong>&nbsp;· .2fas · Android/iOS</span>
-        <span class="chip chip-lime"><strong>CSV</strong>&nbsp;· Bitwarden, 1Password</span>
+        {% for fmt in t.guide.formats %}
+        <span class="chip chip-lime"><strong>{{ fmt.name }}</strong>&nbsp;· {{ fmt.meta }}</span>
+        {% endfor %}
       </div>
+      {% endif %}
     </div>
   </div>
+  {% endfor %}
 </div>
 </section>
 
 <section class="section">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ dependencias</div></div>
-    <div><h2>Qué usa por dentro.</h2></div>
+    <div><div class="section-kicker">{{ t.deps.kicker }}</div></div>
+    <div><h2>{{ t.deps.title }}</h2></div>
   </div>
   <div class="chip-row" style="justify-content:flex-start;" data-reveal>
-    <span class="chip"><strong>customtkinter</strong>&nbsp;— interfaz gráfica</span>
-    <span class="chip"><strong>pillow</strong>&nbsp;— lectura de imágenes</span>
-    <span class="chip"><strong>pyzbar</strong>&nbsp;— decodificación QR (principal)</span>
-    <span class="chip"><strong>opencv-python</strong>&nbsp;— decodificación QR (fallback)</span>
-    <span class="chip"><strong>mss</strong>&nbsp;— captura multi-monitor</span>
+    {% for dep in t.deps.items %}
+    <span class="chip"><strong>{{ dep.name }}</strong>&nbsp;— {{ dep.text }}</span>
+    {% endfor %}
   </div>
 </div>
 </section>
@@ -236,25 +214,25 @@ pause</code></pre>
 <section class="section">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ ayuda</div></div>
-    <div><h2>Solución de problemas.</h2></div>
+    <div><div class="section-kicker">{{ t.troubleshooting.kicker }}</div></div>
+    <div><h2>{{ t.troubleshooting.title }}</h2></div>
   </div>
 
   <div class="trouble-card" data-reveal>
-    <h3><i class="fas fa-camera"></i> El escáner de pantalla no funciona</h3>
+    <h3><i class="fas fa-camera"></i> {{ t.troubleshooting.items[0].title }}</h3>
     <pre><code>pip install pillow pyzbar opencv-python mss
 sudo apt install libzbar0   # Ubuntu
 brew install zbar           # macOS</code></pre>
   </div>
 
   <div class="trouble-card" data-reveal>
-    <h3><i class="fab fa-python"></i> Varias versiones de Python en Windows</h3>
+    <h3><i class="fab fa-python"></i> {{ t.troubleshooting.items[1].title }}</h3>
     <pre><code>C:\Python311\python.exe -m pip install customtkinter pillow pyzbar opencv-python mss</code></pre>
   </div>
 
   <div class="trouble-card" data-reveal>
-    <h3><i class="fas fa-qrcode"></i> Error al importar pyzbar en Windows</h3>
-    <p><code>pyzbar</code> requiere librerías nativas. Si falla, <code>opencv-python</code> se usa como alternativa automáticamente.</p>
+    <h3><i class="fas fa-qrcode"></i> {{ t.troubleshooting.items[2].title }}</h3>
+    <p>{{ t.troubleshooting.items[2].text_html }}</p>
   </div>
 </div>
 </section>
@@ -262,21 +240,21 @@ brew install zbar           # macOS</code></pre>
 <section class="section">
 <div class="container">
   <div class="section-header">
-    <div><div class="section-kicker">/ seguridad</div></div>
-    <div><h2>Sin conexión a internet.</h2></div>
+    <div><div class="section-kicker">{{ t.security.kicker }}</div></div>
+    <div><h2>{{ t.security.title }}</h2></div>
   </div>
   <div class="check-list" data-reveal>
-    <div class="check-item">Sin conexiones de red · No network connections</div>
-    <div class="check-item">Claves TOTP solo en tu equipo · TOTP secrets stay local</div>
-    <div class="check-item">Código fuente auditable · Full source available</div>
+    {% for item in t.security.items %}
+    <div class="check-item">{{ item }}</div>
+    {% endfor %}
   </div>
 </div>
 </section>
 
 <section class="final-cta" id="cta-final">
 <div class="container">
-  <h2>Licencia MIT.</h2>
-  <p>Úsalo, modifícalo y distribúyelo libremente.</p>
-  <a href="https://github.com/joseqwrtt/Google_auth_extractor" class="cta-button" target="_blank" rel="noopener" data-umami="click-github">Ver repositorio →</a>
+  <h2>{{ t.final_cta.title }}</h2>
+  <p>{{ t.final_cta.text }}</p>
+  <a href="https://github.com/joseqwrtt/Google_auth_extractor" class="cta-button" target="_blank" rel="noopener" data-umami="click-github">{{ t.final_cta.button }}</a>
 </div>
 </section>

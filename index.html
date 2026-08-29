@@ -6,71 +6,6 @@ title: "Plantillas Macro — Expansor de Texto y Plantillas Word para Windows"
 description: "Expansor de texto para Windows que pega plantillas Word y ODT con formato completo. Escribe / y tu DOCX aparece al instante en cualquier aplicación. Sin copiar archivos. Prueba gratis 14 días."
 canonical: "https://flowmaticc.github.io/"
 lemon: true
-schema: |
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Plantillas Macro",
-    "operatingSystem": "Windows",
-    "applicationCategory": "ProductivityApplication",
-    "description": "Expansor de texto y plantillas Word para Windows. Pega plantillas DOCX y ODT con formato completo en cualquier aplicación.",
-    "url": "https://flowmaticc.github.io/",
-    "downloadUrl": "{{ site.links.app_download }}",
-    "softwareVersion": "3.0.0",
-    "offers": [
-      { "@type": "Offer", "name": "Plan Mensual",    "price": "3.90",  "priceCurrency": "EUR" },
-      { "@type": "Offer", "name": "Plan Trimestral", "price": "9.90",  "priceCurrency": "EUR" },
-      { "@type": "Offer", "name": "Plan Anual",      "price": "35.00", "priceCurrency": "EUR" }
-    ],
-    "publisher": { "@type": "Organization", "name": "Flowmatic", "url": "https://flowmaticc.github.io/" }
-  }
-faq_schema: |
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Funciona Plantillas Macro con Microsoft Word y Outlook?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Plantillas Macro funciona en cualquier aplicación de Windows donde puedas escribir: Microsoft Word, Outlook, Excel, Chrome, Firefox, Slack, Teams, CRM web, y cualquier otro programa. No depende de Word: funciona a nivel del sistema operativo." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Puedo usar mis plantillas .docx y .odt existentes?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Simplemente señala la carpeta donde tienes tus archivos .docx, .odt o .txt y Plantillas Macro los detecta automáticamente. No hace falta convertirlos ni importarlos." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Se mantiene el formato completo al pegar — negritas, tablas, imágenes?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Plantillas Macro pega el contenido DOCX u ODT con toda la formatación intacta: negritas, cursivas, tablas, listas, imágenes incrustadas y estilos de párrafo." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Mis plantillas se suben a algún servidor o nube?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. Plantillas Macro funciona 100% en local. Tus archivos nunca salen de tu equipo. Si quieres sincronización entre equipos puedes apuntar la carpeta a OneDrive, Dropbox o Google Drive." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto cuesta y hay prueba gratuita?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Hay 14 días de prueba gratuita con todas las funciones incluidas, sin tarjeta de crédito. Después, los planes empiezan desde 3,90€/mes + IVA. Puedes cancelar en cualquier momento." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué versiones de Windows son compatibles?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Compatible con Windows 10 y Windows 11 de 64 bits. No requiere instalar Microsoft Office. No hay versión para macOS ni Linux por el momento." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿En qué se diferencia de AutoHotkey o Espanso?",
-        "acceptedAnswer": { "@type": "Answer", "text": "AutoHotkey requiere programar scripts y está pensado para usuarios técnicos. Espanso y otros expansores manejan texto plano o markdown. Plantillas Macro está pensado para quienes trabajan con documentos Word reales y quieren pegarlos en cualquier aplicación." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Puedo tener más de un equipo con la misma licencia?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Cada licencia permite una activación simultánea. Puedes desactivar el equipo anterior desde el mismo software para usarla en otro. Para equipos o empresas con 25 o más licencias puedes contactar para un precio personalizado." }
-      }
-    ]
-  }
 extra_js: |
   const VERSION = '1.3';
   const cachedVersion = localStorage.getItem('app_version');
@@ -79,6 +14,45 @@ extra_js: |
     location.reload(true);
   }
 ---
+{% assign t = site.data.i18n[page.lang].home %}
+
+<!-- =====================================================
+     SEO: datos estructurados (Liquid real → nunca texto literal)
+===================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Plantillas Macro",
+  "operatingSystem": "Windows",
+  "applicationCategory": "ProductivityApplication",
+  "description": {{ page.description | jsonify }},
+  "url": "{{ site.url }}{{ page.url }}",
+  "downloadUrl": "{{ site.links.app_download }}",
+  "softwareVersion": "3.0.0",
+  "offers": [
+    { "@type": "Offer", "name": "Plan Mensual",    "price": "3.90",  "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Plan Trimestral", "price": "9.90",  "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Plan Anual",      "price": "35.00", "priceCurrency": "EUR" }
+  ],
+  "publisher": { "@type": "Organization", "name": "Flowmatic", "url": "{{ site.url }}" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in t.faq.items %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a_html | strip_html | jsonify }} }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
 
 <!-- =====================================================
      HERO
@@ -88,34 +62,31 @@ extra_js: |
 <div class="container hero-grid">
 
   <div>
-    <div class="hero-kicker">/ automatización inteligente</div>
+    <div class="hero-kicker">{{ t.hero.kicker }}</div>
 
-    <h1>Escribe / <span>y tu plantilla aparece.</span></h1>
+    <h1>{{ t.hero.title_pre }} <span>{{ t.hero.title_highlight }}</span></h1>
 
-    <div class="hero-copy">
-      <p><strong>Plantillas Macro</strong> es el expansor de texto para Windows que pega tus plantillas Word, ODT y TXT con formato completo en cualquier aplicación.</p>
-      <p>Escribe "/" + el nombre y se pega al instante. Sin copiar, sin abrir archivos, sin interrumpir tu flujo.</p>
-    </div>
+    <div class="hero-copy">{{ t.hero.copy_html }}</div>
 
     <div class="hero-actions">
-      <a href="{{ site.links.app_download }}" class="button-primary" data-umami="click-cta-main">Descargar gratis →</a>
-      <a href="#pricing" class="button-secondary" data-umami="click-ver-precios">Ver precios</a>
+      <a href="{{ site.links.app_download }}" class="button-primary" data-umami="click-cta-main">{{ t.hero.cta_download }}</a>
+      <a href="#pricing" class="button-secondary" data-umami="click-ver-precios">{{ t.hero.cta_pricing }}</a>
     </div>
   </div>
 
   <!-- PRODUCT WINDOW — vídeo real del producto -->
-  <div class="product-window" id="productWindow" role="button" tabindex="0" aria-label="Ampliar vídeo del producto">
+  <div class="product-window" id="productWindow" role="button" tabindex="0" aria-label="{{ t.hero.video_aria_label }}">
     <div class="window-top">
       <span class="window-dot"></span>
       <span class="window-dot"></span>
       <span class="window-dot"></span>
-      <span class="window-title">PLANTILLAS MACRO</span>
-      <button type="button" class="window-expand" id="videoExpandBtn" aria-label="Ampliar vídeo">⤢ Ampliar</button>
+      <span class="window-title">{{ t.hero.video_window_title }}</span>
+      <button type="button" class="window-expand" id="videoExpandBtn" aria-label="{{ t.hero.video_aria_label }}">{{ t.hero.video_expand_label }}</button>
     </div>
     <div class="window-body">
       <video autoplay loop muted playsinline class="demo-video">
         <source src="/videos/Sistema-Macro.webm" type="video/webm">
-        Tu navegador no soporta vídeos HTML5.
+        {{ t.hero.video_fallback }}
       </video>
     </div>
   </div>
@@ -126,10 +97,10 @@ extra_js: |
 <!-- Lightbox: ampliar el vídeo del producto sin salir de la web -->
 <div class="video-lightbox" id="videoLightbox">
   <div class="video-lightbox-inner">
-    <button type="button" class="video-lightbox-close" id="videoLightboxClose" aria-label="Cerrar">×</button>
+    <button type="button" class="video-lightbox-close" id="videoLightboxClose" aria-label="{{ t.hero.video_close_label }}">×</button>
     <video id="videoLightboxPlayer" controls playsinline loop>
       <source src="/videos/Sistema-Macro.webm" type="video/webm">
-      Tu navegador no soporta vídeos HTML5.
+      {{ t.hero.video_fallback }}
     </video>
   </div>
 </div>
@@ -164,12 +135,10 @@ extra_js: |
   expandBtn.addEventListener('click', openLightbox);
   closeBtn.addEventListener('click', closeLightbox);
 
-  // Cerrar al hacer clic fuera del vídeo (en el fondo oscuro)
   lightbox.addEventListener('click', function (e) {
     if (e.target === lightbox) closeLightbox();
   });
 
-  // Cerrar con Escape
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
   });
@@ -181,18 +150,12 @@ extra_js: |
 ===================================================== -->
 <section class="strip">
 <div class="container strip-grid">
+  {% for item in t.strip %}
   <div class="strip-item">
-    <div class="strip-label">01 / velocidad</div>
-    <div class="strip-text">Escribe y pega. Sin menús ni pasos extra.</div>
+    <div class="strip-label">{{ item.label }}</div>
+    <div class="strip-text">{{ item.text }}</div>
   </div>
-  <div class="strip-item">
-    <div class="strip-label">02 / formato</div>
-    <div class="strip-text">DOCX, ODT y TXT conservando el formato.</div>
-  </div>
-  <div class="strip-item">
-    <div class="strip-label">03 / privacidad</div>
-    <div class="strip-text">Tus archivos permanecen en tu equipo.</div>
-  </div>
+  {% endfor %}
 </div>
 </section>
 
@@ -203,29 +166,21 @@ extra_js: |
 <div class="container">
 
   <div class="section-header">
-    <div><div class="section-kicker">/ producto</div></div>
+    <div><div class="section-kicker">{{ t.product.kicker }}</div></div>
     <div>
-      <h2>Diseñado para tu flujo de trabajo.</h2>
-      <p class="section-intro">Sin interrupciones, sin pasos extra. Solo escribe y pega.</p>
+      <h2>{{ t.product.title }}</h2>
+      <p class="section-intro">{{ t.product.intro }}</p>
     </div>
   </div>
 
   <div class="features">
+    {% for f in t.product.features %}
     <article class="feature" data-reveal>
-      <div class="feature-number">01</div>
-      <h3>Instantáneo</h3>
-      <p>Escribe <strong>/nombre</strong> y tu plantilla aparece al instante. Sin menús, sin clics extra.</p>
+      <div class="feature-number">{{ f.number }}</div>
+      <h3>{{ f.title }}</h3>
+      <p>{{ f.text_html }}</p>
     </article>
-    <article class="feature" data-reveal>
-      <div class="feature-number">02</div>
-      <h3>Formato completo</h3>
-      <p>DOCX, ODT y TXT con negrita, tablas, imágenes y estilos. Todo el formato se mantiene.</p>
-    </article>
-    <article class="feature" data-reveal>
-      <div class="feature-number">03</div>
-      <h3>100% local</h3>
-      <p>Tus plantillas están en tu equipo. Sin nubes obligatorias, sin servidores y sin suscripciones ocultas.</p>
-    </article>
+    {% endfor %}
   </div>
 
 </div>
@@ -238,15 +193,15 @@ extra_js: |
 <div class="container">
 
   <div class="section-header">
-    <div><div class="section-kicker">/ la diferencia</div></div>
-    <div><h2>Aquí solo escribes.</h2></div>
+    <div><div class="section-kicker">{{ t.why.kicker }}</div></div>
+    <div><h2>{{ t.why.title }}</h2></div>
   </div>
 
   <div class="why">
     <div class="why-col">
       <div class="why-lead">
-        Otros expansores te obligan a memorizar.
-        <span>Plantillas Macro busca el archivo por ti.</span>
+        {{ t.why.lead_muted }}
+        <span>{{ t.why.lead_highlight }}</span>
       </div>
 
       <div class="why-visual" data-reveal aria-hidden="true">
@@ -255,69 +210,29 @@ extra_js: |
 
           <circle cx="15" cy="20" r="5" fill="var(--bg)" stroke="var(--lime)" stroke-width="1.5"/>
           <text x="34" y="10" fill="var(--muted-2)" font-family="'DM Mono',monospace" font-size="9" letter-spacing="1">01</text>
-          <text x="34" y="26" fill="var(--text)" font-family="Manrope,sans-serif" font-size="13" font-weight="700">Escribe /nombre</text>
+          <text x="34" y="26" fill="var(--text)" font-family="Manrope,sans-serif" font-size="13" font-weight="700">{{ t.why.diagram.step1 }}</text>
 
           <circle cx="15" cy="145" r="5" fill="var(--bg)" stroke="#555" stroke-width="1.5"/>
           <text x="34" y="135" fill="var(--muted-2)" font-family="'DM Mono',monospace" font-size="9" letter-spacing="1">02</text>
-          <text x="34" y="151" fill="var(--text)" font-family="Manrope,sans-serif" font-size="13" font-weight="700">Filtra en tiempo real</text>
+          <text x="34" y="151" fill="var(--text)" font-family="Manrope,sans-serif" font-size="13" font-weight="700">{{ t.why.diagram.step2 }}</text>
 
           <circle cx="15" cy="270" r="5" fill="var(--lime)" stroke="var(--lime)" stroke-width="1.5"/>
           <text x="34" y="260" fill="var(--lime)" font-family="'DM Mono',monospace" font-size="9" letter-spacing="1">03</text>
-          <text x="34" y="276" fill="var(--text)" font-family="Manrope,sans-serif" font-size="13" font-weight="700">Se pega con formato</text>
+          <text x="34" y="276" fill="var(--text)" font-family="Manrope,sans-serif" font-size="13" font-weight="700">{{ t.why.diagram.step3 }}</text>
         </svg>
       </div>
     </div>
 
     <div class="why-list">
-
+      {% for item in t.why.items %}
       <article class="why-item" data-reveal>
-        <div class="why-index">01</div>
+        <div class="why-index">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</div>
         <div>
-          <h3>Sin abreviaturas que memorizar</h3>
-          <p>La mayoría de expansores te obligan a inventarte una abreviatura única para cada plantilla — con 50 plantillas son 50 códigos que no puedes repetir entre sí, y un mes después ya no recuerdas cuál era cuál. Con Plantillas Macro escribes <code>/</code> y cualquier parte del nombre: <code>/presu</code> filtra al instante todo lo que coincide. Nada de memorizar códigos como <code>/prspcl2024v3</code>.</p>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text_html }}</p>
         </div>
       </article>
-
-      <article class="why-item" data-reveal>
-        <div class="why-index">02</div>
-        <div>
-          <h3>Formato Word completo</h3>
-          <p>Pega con negritas, tablas, imágenes y estilos intactos. Los expansores tradicionales suelen trabajar con texto plano — ninguno maneja DOCX ni ODT de verdad.</p>
-        </div>
-      </article>
-
-      <article class="why-item" data-reveal>
-        <div class="why-index">03</div>
-        <div>
-          <h3>Sin cuenta, sin nube obligatoria</h3>
-          <p>Muchos expansores requieren crear una cuenta y almacenan tus plantillas en sus servidores. Tus archivos son tuyos: permanecen en tu carpeta, en tu equipo.</p>
-        </div>
-      </article>
-
-      <article class="why-item" data-reveal>
-        <div class="why-index">04</div>
-        <div>
-          <h3>Funciona en cualquier app</h3>
-          <p>Outlook, Word, CRM, webs, chat y cualquier aplicación de Windows donde puedas escribir — sin excepción.</p>
-        </div>
-      </article>
-
-      <article class="why-item" data-reveal>
-        <div class="why-index">05</div>
-        <div>
-          <h3>Listo en 2 minutos</h3>
-          <p>Instalas, señalas tu carpeta y empiezas a trabajar. Sin configuración técnica ni archivos que editar a mano.</p>
-        </div>
-      </article>
-
-      <article class="why-item" data-reveal>
-        <div class="why-index">06</div>
-        <div>
-          <h3>Sync sin lock-in</h3>
-          <p>Puedes apuntar tu carpeta a OneDrive, Dropbox o Google Drive y se sincroniza sola. Tus documentos siguen siendo archivos .docx normales — si un día cambias de app, no pierdes nada.</p>
-        </div>
-      </article>
-
+      {% endfor %}
     </div>
   </div>
 
@@ -331,71 +246,36 @@ extra_js: |
 <div class="container">
 
   <div class="section-header">
-    <div><div class="section-kicker">/ comparación</div></div>
-    <div><h2>Qué hace diferente a Plantillas Macro.</h2></div>
+    <div><div class="section-kicker">{{ t.comparison.kicker }}</div></div>
+    <div><h2>{{ t.comparison.title }}</h2></div>
   </div>
 
   <div class="comparison-wrapper" data-reveal>
     <table class="comparison">
       <thead>
         <tr>
-          <th>Característica</th>
-          <th class="highlight">Plantillas Macro</th>
-          <th>Expansores con abreviaturas</th>
-          <th>Expansores de navegador</th>
-          <th>Herramientas técnicas</th>
+          {% for h in t.comparison.headers %}
+          <th{% if forloop.index0 == 1 %} class="highlight"{% endif %}>{{ h }}</th>
+          {% endfor %}
         </tr>
       </thead>
       <tbody>
+        {% for row in t.comparison.rows %}
         <tr>
-          <td>Sin abreviaturas a memorizar</td>
-          <td class="highlight yes">✓</td>
-          <td class="no">✕</td>
-          <td class="no">✕</td>
-          <td class="no">✕</td>
+          <td>{{ row.label }}</td>
+          {% for cell in row.cells %}
+          {% assign is_check = false %}
+          {% assign is_cross = false %}
+          {% if cell contains "✓" %}{% assign is_check = true %}{% endif %}
+          {% if cell contains "✕" %}{% assign is_cross = true %}{% endif %}
+          {% if forloop.index0 == 0 %}
+            <td class="highlight {% if is_check %}yes{% endif %}">{{ cell }}</td>
+          {% else %}
+            <td class="{% if is_check %}yes{% elsif is_cross %}no{% endif %}">{{ cell }}</td>
+          {% endif %}
+          {% endfor %}
         </tr>
-        <tr>
-          <td>Formato DOCX / ODT completo</td>
-          <td class="highlight yes">✓</td>
-          <td class="no">✕ texto plano</td>
-          <td class="no">✕</td>
-          <td class="no">✕</td>
-        </tr>
-        <tr>
-          <td>Sin cuenta obligatoria</td>
-          <td class="highlight yes">✓</td>
-          <td>⚠ depende</td>
-          <td class="no">✕</td>
-          <td class="yes">✓</td>
-        </tr>
-        <tr>
-          <td>Funciona en apps de escritorio</td>
-          <td class="highlight yes">✓</td>
-          <td class="yes">✓</td>
-          <td>✕ solo nav.</td>
-          <td class="yes">✓</td>
-        </tr>
-        <tr>
-          <td>Interfaz sin curva de aprendizaje</td>
-          <td class="highlight yes">✓</td>
-          <td>⚠ compleja</td>
-          <td class="yes">✓</td>
-          <td>✕ código</td>
-        </tr>
-        <tr>
-          <td>Tus archivos, tu carpeta</td>
-          <td class="highlight yes">✓</td>
-          <td>⚠ formato propio</td>
-          <td>✕ nube</td>
-          <td class="yes">✓</td>
-        </tr>
-        <tr>
-          <td>14 días de prueba gratuita</td>
-          <td class="highlight yes">✓</td>
-          <td>⚠ limitada</td>
-          <td>⚠ limitada</td>
-          <td class="yes">✓ gratis</td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>
@@ -410,63 +290,29 @@ extra_js: |
 <div class="container">
 
   <div class="section-header">
-    <div><div class="section-kicker">/ precio</div></div>
+    <div><div class="section-kicker">{{ t.pricing.kicker }}</div></div>
     <div>
-      <h2>Elige tu plan.</h2>
-      <p class="section-intro">Sin permanencia. Cancela cuando quieras.</p>
+      <h2>{{ t.pricing.title }}</h2>
+      <p class="section-intro">{{ t.pricing.intro }}</p>
     </div>
   </div>
 
   <div class="pricing-grid">
-
-    <article class="plan" data-reveal>
-      <div class="plan-tag">&nbsp;</div>
-      <h3>Mensual</h3>
-      <div class="price">3,90€<small>/mes</small></div>
-      <div class="plan-description">+ IVA según tu país</div>
+    {% for plan in t.pricing.plans %}
+    <article class="plan{% if plan.popular %} popular{% endif %}" data-reveal>
+      <div class="plan-tag">{% if plan.tag != "" %}{{ plan.tag }}{% else %}&nbsp;{% endif %}</div>
+      <h3>{{ plan.name }}</h3>
+      <div class="price">{{ plan.price }}<small>{{ plan.unit }}</small></div>
+      <div class="plan-description">{{ plan.description }}</div>
       <ul class="plan-features">
-        <li>Todas las funciones</li>
-        <li>Sin compromiso</li>
-        <li>Cancela cuando quieras</li>
+        {% for feat in plan.features %}<li>{{ feat }}</li>{% endfor %}
       </ul>
-      <a href="{{ site.links.buy_mensual }}" class="plan-button lemonsqueezy-button" data-umami="click-buy-mensual">Suscribirme →</a>
+      <a href="{{ site.links[plan.link_key] }}" class="plan-button lemonsqueezy-button" data-umami="{{ plan.umami }}">{{ plan.button }}</a>
     </article>
-
-    <article class="plan popular" data-reveal>
-      <div class="plan-tag">Más popular</div>
-      <h3>Trimestral</h3>
-      <div class="price">9,90€<small>/3 meses</small></div>
-      <div class="plan-description">3,30€/mes · Ahorra 15%</div>
-      <ul class="plan-features">
-        <li>Todas las funciones</li>
-        <li>Renovación trimestral</li>
-        <li>Cancela cuando quieras</li>
-      </ul>
-      <a href="{{ site.links.buy_trimestral }}" class="plan-button lemonsqueezy-button" data-umami="click-buy-trimestral">Elegir Trimestral →</a>
-    </article>
-
-    <article class="plan" data-reveal>
-      <div class="plan-tag">Mejor valor</div>
-      <h3>Anual</h3>
-      <div class="price">35€<small>/año</small></div>
-      <div class="plan-description">2,90€/mes · Ahorra 25%</div>
-      <ul class="plan-features">
-        <li>Todas las funciones</li>
-        <li>Renovación anual</li>
-        <li>Mejor valor</li>
-      </ul>
-      <a href="{{ site.links.buy_anual }}" class="plan-button lemonsqueezy-button" data-umami="click-buy-anual">Elegir Anual →</a>
-    </article>
-
+    {% endfor %}
   </div>
 
-  <div class="pricing-note">
-    🔒 Pago seguro vía Lemon Squeezy · 14 días de prueba gratuita · Cancela cuando quieras.
-    <br><br>
-    Los precios mostrados no incluyen IVA. El IVA aplicable se calcula y añade en el momento del pago según el país de residencia del comprador, y es gestionado íntegramente por Lemon Squeezy como Merchant of Record.
-    <br><br>
-    ¿Necesitas 25 o más licencias para tu equipo o empresa? <a href="mailto:gestiona.optimiza@gmail.com?subject=Consulta%20licencias%20volumen%20(%2B25)">Contáctanos para valorar la mejor solución →</a>
-  </div>
+  <div class="pricing-note">{{ t.pricing.note_html }}</div>
 
 </div>
 </section>
@@ -478,92 +324,22 @@ extra_js: |
 <div class="container">
 
   <div class="section-header">
-    <div><div class="section-kicker">/ preguntas frecuentes</div></div>
-    <div><h2>Antes de empezar.</h2></div>
+    <div><div class="section-kicker">{{ t.faq.kicker }}</div></div>
+    <div><h2>{{ t.faq.title }}</h2></div>
   </div>
 
   <div class="faq">
-
+    {% for item in t.faq.items %}
     <div class="faq-item" data-reveal>
       <button class="faq-question">
-        <span>¿Funciona Plantillas Macro con Microsoft Word y Outlook?</span>
+        <span>{{ item.q }}</span>
         <span class="faq-plus">+</span>
       </button>
       <div class="faq-answer"><div class="faq-answer-inner">
-        Sí. Plantillas Macro funciona en cualquier aplicación de Windows donde puedas escribir: Microsoft Word, Outlook, Excel, Google Chrome, Firefox, Slack, Teams, CRM web y cualquier otro programa. No depende de Word — funciona a nivel del sistema operativo.
+        {{ item.a_html }}
       </div></div>
     </div>
-
-    <div class="faq-item" data-reveal>
-      <button class="faq-question">
-        <span>¿Puedo usar mis plantillas .docx y .odt existentes?</span>
-        <span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer"><div class="faq-answer-inner">
-        Sí. Simplemente señala la carpeta donde tienes tus archivos .docx, .odt o .txt y Plantillas Macro los detecta automáticamente. No hace falta convertirlos ni importarlos — tus archivos Word siguen siendo archivos Word normales.
-      </div></div>
-    </div>
-
-    <div class="faq-item" data-reveal>
-      <button class="faq-question">
-        <span>¿Se mantiene el formato completo al pegar — negritas, tablas, imágenes?</span>
-        <span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer"><div class="faq-answer-inner">
-        Sí, es la principal ventaja frente a otros expansores de texto. Plantillas Macro pega el contenido DOCX u ODT con toda la formatación intacta: negritas, cursivas, tablas, listas, imágenes incrustadas y estilos de párrafo. Los expansores clásicos solo pegan texto plano.
-      </div></div>
-    </div>
-
-    <div class="faq-item" data-reveal>
-      <button class="faq-question">
-        <span>¿Mis plantillas se suben a algún servidor o nube?</span>
-        <span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer"><div class="faq-answer-inner">
-        No. Plantillas Macro funciona 100% en local — tus archivos nunca salen de tu equipo. No hay cuenta de usuario ni servidor propio. Si quieres sincronización entre equipos, simplemente apunta la carpeta a OneDrive, Dropbox o Google Drive.
-      </div></div>
-    </div>
-
-    <div class="faq-item" data-reveal>
-      <button class="faq-question">
-        <span>¿Cuánto cuesta y hay prueba gratuita?</span>
-        <span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer"><div class="faq-answer-inner">
-        Hay 14 días de prueba gratuita con todas las funciones incluidas, sin tarjeta de crédito. Después, los planes empiezan desde 3,90€/mes + IVA. Puedes cancelar en cualquier momento desde el panel de Lemon Squeezy sin penalizaciones.
-      </div></div>
-    </div>
-
-    <div class="faq-item" data-reveal>
-      <button class="faq-question">
-        <span>¿Qué versiones de Windows son compatibles?</span>
-        <span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer"><div class="faq-answer-inner">
-        Plantillas Macro es compatible con Windows 10 y Windows 11 (64 bits). No requiere instalar Microsoft Office — funciona con cualquier aplicación del sistema. No hay versión para macOS ni Linux por el momento.
-      </div></div>
-    </div>
-
-    <div class="faq-item" data-reveal>
-      <button class="faq-question">
-        <span>¿En qué se diferencia de AutoHotkey o de otros expansores como Espanso?</span>
-        <span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer"><div class="faq-answer-inner">
-        AutoHotkey requiere programar scripts — no es para usuarios no técnicos. Espanso y otros expansores manejan texto plano o markdown, pero no pegan archivos DOCX con formato completo. Plantillas Macro está pensado para quienes trabajan con documentos Word reales y quieren pegarlos en cualquier app sin abrir Word.
-      </div></div>
-    </div>
-
-    <div class="faq-item" data-reveal>
-      <button class="faq-question">
-        <span>¿Puedo tener más de un equipo con la misma licencia?</span>
-        <span class="faq-plus">+</span>
-      </button>
-      <div class="faq-answer"><div class="faq-answer-inner">
-        Cada licencia permite una activación simultánea. Si necesitas usarla en varios equipos puedes desactivar el equipo anterior desde el mismo software. Para equipos o empresas con 25 o más licencias, <a href="mailto:gestiona.optimiza@gmail.com">contáctanos</a> para un precio personalizado.
-      </div></div>
-    </div>
-
+    {% endfor %}
   </div>
 
 </div>
@@ -574,9 +350,9 @@ extra_js: |
 ===================================================== -->
 <section class="final-cta" id="cta-final">
 <div class="container">
-  <h2>¿Listo para trabajar más rápido?</h2>
-  <p>Descarga Plantillas Macro gratis y prueba todas las funciones durante 14 días.</p>
-  <a href="{{ site.links.app_download }}" class="cta-button" data-umami="click-cta-main">Descargar Plantillas Macro →</a>
+  <h2>{{ t.final_cta.title }}</h2>
+  <p>{{ t.final_cta.text }}</p>
+  <a href="{{ site.links.app_download }}" class="cta-button" data-umami="click-cta-main">{{ t.final_cta.button }}</a>
 </div>
 </section>
 
