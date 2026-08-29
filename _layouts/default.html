@@ -15,11 +15,19 @@
 </head>
 <body>
 
-  {% include navbar.html %}
+  {% if page.design == 'v2' %}
+    {% include navbar-v2.html %}
+  {% else %}
+    {% include navbar.html %}
+  {% endif %}
 
   {{ content }}
 
-  {% include footer.html %}
+  {% if page.design == 'v2' %}
+    {% include footer-v2.html %}
+  {% else %}
+    {% include footer.html %}
+  {% endif %}
 
   <script src="/js/main.js?v=1.0"></script>
   <script src="/js/umami-tracking.js?v=1.0" defer></script>

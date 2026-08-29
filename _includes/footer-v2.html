@@ -1,0 +1,31 @@
+<footer class="footer-v2">
+  <div class="container footer-v2-grid">
+
+    <div class="footer-brand">
+      <strong>Flowmatic</strong>
+      {% case page.lang %}
+      {% when 'en' %} — Automate your workflow.<br>© <span id="footer-year-v2"></span> — Made with ☕
+      {% when 'fr' %} — Automatisez votre flux.<br>© <span id="footer-year-v2"></span> — Fait avec ☕
+      {% when 'de' %} — Automatisieren Sie Ihren Workflow.<br>© <span id="footer-year-v2"></span> — Gemacht mit ☕
+      {% when 'pt' %} — Automatize seu fluxo.<br>© <span id="footer-year-v2"></span> — Feito com ☕
+      {% when 'zh' %} — 自动化您的工作流程。<br>© <span id="footer-year-v2"></span> — 用 ☕ 制作
+      {% when 'ru' %} — Автоматизируйте рабочий процесс.<br>© <span id="footer-year-v2"></span> — Сделано с ☕
+      {% when 'it' %} — Automatizza il tuo flusso di lavoro.<br>© <span id="footer-year-v2"></span> — Fatto con ☕
+      {% else %} — Automatiza tu flujo de trabajo.<br>© <span id="footer-year-v2"></span> — Hecho con ☕
+      {% endcase %}
+    </div>
+
+    <div class="footer-links-v2">
+      <a href="mailto:gestiona.optimiza@gmail.com">{% if page.lang == 'en' %}Contact{% elsif page.lang == 'fr' %}Contact{% elsif page.lang == 'de' %}Kontakt{% elsif page.lang == 'pt' %}Contato{% elsif page.lang == 'zh' %}联系{% elsif page.lang == 'ru' %}Контакты{% elsif page.lang == 'it' %}Contatto{% else %}Contacto{% endif %}</a>
+      <a href="https://github.com/joseqwrtt" target="_blank" data-umami="click-github">GitHub</a>
+      <a href="{% case page.lang %}{% when 'en' %}/en{% when 'fr' %}/fr{% when 'de' %}/de{% when 'pt' %}/pt{% when 'zh' %}/zh{% when 'ru' %}/ru{% when 'it' %}/it{% endcase %}/utilities/google-auth/" data-umami="use-google-auth">{% if page.lang == 'en' %}Utilities{% elsif page.lang == 'fr' %}Utilitaires{% elsif page.lang == 'de' %}Dienstprogramme{% elsif page.lang == 'pt' %}Utilitários{% elsif page.lang == 'zh' %}工具{% elsif page.lang == 'ru' %}Утилиты{% elsif page.lang == 'it' %}Strumenti{% else %}Utilidades{% endif %}</a>
+      <a href="{% case page.lang %}{% when 'en' %}/en{% when 'fr' %}/fr{% when 'de' %}/de{% when 'pt' %}/pt{% when 'zh' %}/zh{% when 'ru' %}/ru{% when 'it' %}/it{% endcase %}/utilities/extension/" data-umami="use-extension">Position Caret</a>
+      <a href="{% case page.lang %}{% when 'en' %}/en/changelog/{% when 'fr' %}/fr/changelog/{% when 'de' %}/de/changelog/{% when 'pt' %}/pt/changelog/{% when 'zh' %}/zh/changelog/{% when 'ru' %}/ru/changelog/{% when 'it' %}/it/changelog/{% else %}/novedades/{% endcase %}">{% if page.lang == 'en' %}Changelog{% elsif page.lang == 'fr' %}Nouveautés{% elsif page.lang == 'de' %}Neuigkeiten{% elsif page.lang == 'pt' %}Novidades{% elsif page.lang == 'zh' %}更新日志{% elsif page.lang == 'ru' %}Обновления{% elsif page.lang == 'it' %}Novità{% else %}Novedades{% endif %}</a>
+      <a href="/legal/privacidad/">{% if page.lang == 'en' %}Privacy{% elsif page.lang == 'fr' %}Confidentialité{% elsif page.lang == 'de' %}Datenschutz{% elsif page.lang == 'pt' %}Privacidade{% elsif page.lang == 'zh' %}隐私政策{% elsif page.lang == 'ru' %}Конфиденциальность{% elsif page.lang == 'it' %}Privacy{% else %}Privacidad{% endif %}</a>
+      <a href="/legal/aviso-legal/">{% if page.lang == 'en' %}Legal notice{% elsif page.lang == 'fr' %}Mentions légales{% elsif page.lang == 'de' %}Impressum{% elsif page.lang == 'pt' %}Aviso legal{% elsif page.lang == 'zh' %}法律声明{% elsif page.lang == 'ru' %}Юр. информация{% elsif page.lang == 'it' %}Note legali{% else %}Aviso legal{% endif %}</a>
+      <a href="/legal/terminos/">{% if page.lang == 'en' %}Terms{% elsif page.lang == 'fr' %}Conditions{% elsif page.lang == 'de' %}AGB{% elsif page.lang == 'pt' %}Termos{% elsif page.lang == 'zh' %}条款{% elsif page.lang == 'ru' %}Условия{% elsif page.lang == 'it' %}Termini{% else %}Términos{% endif %}</a>
+    </div>
+
+  </div>
+</footer>
+<script>document.getElementById('footer-year-v2').textContent = new Date().getFullYear();</script>

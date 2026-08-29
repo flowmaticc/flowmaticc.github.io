@@ -7,7 +7,7 @@
 <meta name="author" content="Flowmatic">
 
 <!-- hreflang: multilanguage SEO -->
-{% assign base_path = page.url | remove: '/en' | remove: '/fr' | remove: '/de' | remove: '/pt' | remove: '/zh' | remove: '/ru' | replace: '/changelog/', '/novedades/' %}
+{% assign base_path = page.url | remove: '/en' | remove: '/fr' | remove: '/de' | remove: '/pt' | remove: '/zh' | remove: '/ru' | remove: '/it' | replace: '/changelog/', '/novedades/' %}
 <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ base_path }}">
 <link rel="alternate" hreflang="es" href="{{ site.url }}{{ base_path }}">
 <link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ base_path | replace: '/novedades/', '/changelog/' }}">
@@ -16,6 +16,7 @@
 <link rel="alternate" hreflang="pt" href="{{ site.url }}/pt{{ base_path | replace: '/novedades/', '/changelog/' }}">
 <link rel="alternate" hreflang="zh" href="{{ site.url }}/zh{{ base_path | replace: '/novedades/', '/changelog/' }}">
 <link rel="alternate" hreflang="ru" href="{{ site.url }}/ru{{ base_path | replace: '/novedades/', '/changelog/' }}">
+<link rel="alternate" hreflang="it" href="{{ site.url }}/it{{ base_path | replace: '/novedades/', '/changelog/' }}">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -33,15 +34,21 @@
 <meta name="twitter:image" content="{{ site.url }}/img/og-image.png">
 
 <!-- CSS -->
-<link rel="stylesheet" href="/css/style.css?v=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% if page.design == 'v2' %}
+<!-- Diseño v2 (Flowmatic — técnico/editorial): hoja de estilos aislada, no depende de style.css -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style-v2.css?v=1.0">
+{% else %}
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=1.0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+{% endif %}
 
 {% if page.extra_css %}<style>{{ page.extra_css }}</style>{% endif %}
 {% if page.lemon %}<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>{% endif %}
 
-<meta name="theme-color" content="#0a0a0f">
+<meta name="theme-color" content="{% if page.design == 'v2' %}#101010{% else %}#0a0a0f{% endif %}">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="4879f8fb-3949-493c-a64e-83c77bed24ab"></script>

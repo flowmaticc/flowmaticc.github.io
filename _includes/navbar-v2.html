@@ -1,0 +1,151 @@
+<nav class="nav-v2 navbar">
+  <div class="nav-v2-inner">
+
+    <a href="{% case page.lang %}{% when 'en' %}/en/{% when 'fr' %}/fr/{% when 'de' %}/de/{% when 'pt' %}/pt/{% when 'zh' %}/zh/{% when 'ru' %}/ru/{% when 'it' %}/it/{% else %}/{% endcase %}" class="logo-v2">
+      <span class="logo-mark">/</span>
+      Plantillas Macro
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links-v2" id="navLinks">
+      {% if page.lang == 'en' %}
+        <a href="/en/#product" class="nav-link-v2 {% if page.nav_active == 'product' %}active{% endif %}">Product</a>
+        <a href="/en/#pricing" class="nav-link-v2 {% if page.nav_active == 'pricing' %}active{% endif %}">Pricing</a>
+        <div class="dropdown">
+          <button class="dropdown-btn nav-link-v2 {% if page.nav_active == 'utilities' %}active{% endif %}">Utilities <span class="dropdown-icon">▾</span></button>
+          <div class="dropdown-menu">
+            <a href="/en/utilities/google-auth/" class="dropdown-item" data-umami="use-google-auth">Google Auth Extractor</a>
+            <a href="/en/utilities/extension/" class="dropdown-item" data-umami="use-extension">Position Caret</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item" data-umami="click-github">More on GitHub</a>
+          </div>
+        </div>
+        <a href="/en/changelog/" class="nav-link-v2 {% if page.nav_active == 'novedades' %}active{% endif %}">Changelog</a>
+      {% elsif page.lang == 'fr' %}
+        <a href="/fr/#product" class="nav-link-v2 {% if page.nav_active == 'product' %}active{% endif %}">Produit</a>
+        <a href="/fr/#pricing" class="nav-link-v2 {% if page.nav_active == 'pricing' %}active{% endif %}">Tarifs</a>
+        <div class="dropdown">
+          <button class="dropdown-btn nav-link-v2 {% if page.nav_active == 'utilities' %}active{% endif %}">Utilitaires <span class="dropdown-icon">▾</span></button>
+          <div class="dropdown-menu">
+            <a href="/fr/utilities/google-auth/" class="dropdown-item" data-umami="use-google-auth">Google Auth Extractor</a>
+            <a href="/fr/utilities/extension/" class="dropdown-item" data-umami="use-extension">Position Caret</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item" data-umami="click-github">Plus sur GitHub</a>
+          </div>
+        </div>
+        <a href="/fr/changelog/" class="nav-link-v2 {% if page.nav_active == 'novedades' %}active{% endif %}">Nouveautés</a>
+      {% elsif page.lang == 'de' %}
+        <a href="/de/#product" class="nav-link-v2 {% if page.nav_active == 'product' %}active{% endif %}">Produkt</a>
+        <a href="/de/#pricing" class="nav-link-v2 {% if page.nav_active == 'pricing' %}active{% endif %}">Preise</a>
+        <div class="dropdown">
+          <button class="dropdown-btn nav-link-v2 {% if page.nav_active == 'utilities' %}active{% endif %}">Dienstprogramme <span class="dropdown-icon">▾</span></button>
+          <div class="dropdown-menu">
+            <a href="/de/utilities/google-auth/" class="dropdown-item" data-umami="use-google-auth">Google Auth Extractor</a>
+            <a href="/de/utilities/extension/" class="dropdown-item" data-umami="use-extension">Position Caret</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item" data-umami="click-github">Mehr auf GitHub</a>
+          </div>
+        </div>
+        <a href="/de/changelog/" class="nav-link-v2 {% if page.nav_active == 'novedades' %}active{% endif %}">Neuigkeiten</a>
+      {% elsif page.lang == 'pt' %}
+        <a href="/pt/#product" class="nav-link-v2 {% if page.nav_active == 'product' %}active{% endif %}">Produto</a>
+        <a href="/pt/#pricing" class="nav-link-v2 {% if page.nav_active == 'pricing' %}active{% endif %}">Preços</a>
+        <div class="dropdown">
+          <button class="dropdown-btn nav-link-v2 {% if page.nav_active == 'utilities' %}active{% endif %}">Utilitários <span class="dropdown-icon">▾</span></button>
+          <div class="dropdown-menu">
+            <a href="/pt/utilities/google-auth/" class="dropdown-item" data-umami="use-google-auth">Google Auth Extractor</a>
+            <a href="/pt/utilities/extension/" class="dropdown-item" data-umami="use-extension">Position Caret</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item" data-umami="click-github">Mais no GitHub</a>
+          </div>
+        </div>
+        <a href="/pt/changelog/" class="nav-link-v2 {% if page.nav_active == 'novedades' %}active{% endif %}">Novidades</a>
+      {% elsif page.lang == 'zh' %}
+        <a href="/zh/#product" class="nav-link-v2 {% if page.nav_active == 'product' %}active{% endif %}">产品</a>
+        <a href="/zh/#pricing" class="nav-link-v2 {% if page.nav_active == 'pricing' %}active{% endif %}">价格</a>
+        <div class="dropdown">
+          <button class="dropdown-btn nav-link-v2 {% if page.nav_active == 'utilities' %}active{% endif %}">工具 <span class="dropdown-icon">▾</span></button>
+          <div class="dropdown-menu">
+            <a href="/zh/utilities/google-auth/" class="dropdown-item" data-umami="use-google-auth">Google Auth Extractor</a>
+            <a href="/zh/utilities/extension/" class="dropdown-item" data-umami="use-extension">Position Caret</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item" data-umami="click-github">GitHub上更多</a>
+          </div>
+        </div>
+        <a href="/zh/changelog/" class="nav-link-v2 {% if page.nav_active == 'novedades' %}active{% endif %}">更新日志</a>
+      {% elsif page.lang == 'ru' %}
+        <a href="/ru/#product" class="nav-link-v2 {% if page.nav_active == 'product' %}active{% endif %}">Продукт</a>
+        <a href="/ru/#pricing" class="nav-link-v2 {% if page.nav_active == 'pricing' %}active{% endif %}">Цены</a>
+        <div class="dropdown">
+          <button class="dropdown-btn nav-link-v2 {% if page.nav_active == 'utilities' %}active{% endif %}">Утилиты <span class="dropdown-icon">▾</span></button>
+          <div class="dropdown-menu">
+            <a href="/ru/utilities/google-auth/" class="dropdown-item" data-umami="use-google-auth">Google Auth Extractor</a>
+            <a href="/ru/utilities/extension/" class="dropdown-item" data-umami="use-extension">Position Caret</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item" data-umami="click-github">Больше на GitHub</a>
+          </div>
+        </div>
+        <a href="/ru/changelog/" class="nav-link-v2 {% if page.nav_active == 'novedades' %}active{% endif %}">Обновления</a>
+      {% elsif page.lang == 'it' %}
+        <a href="/it/#product" class="nav-link-v2 {% if page.nav_active == 'product' %}active{% endif %}">Prodotto</a>
+        <a href="/it/#pricing" class="nav-link-v2 {% if page.nav_active == 'pricing' %}active{% endif %}">Prezzi</a>
+        <div class="dropdown">
+          <button class="dropdown-btn nav-link-v2 {% if page.nav_active == 'utilities' %}active{% endif %}">Strumenti <span class="dropdown-icon">▾</span></button>
+          <div class="dropdown-menu">
+            <a href="/it/utilities/google-auth/" class="dropdown-item" data-umami="use-google-auth">Google Auth Extractor</a>
+            <a href="/it/utilities/extension/" class="dropdown-item" data-umami="use-extension">Position Caret</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item" data-umami="click-github">Altro su GitHub</a>
+          </div>
+        </div>
+        <a href="/it/changelog/" class="nav-link-v2 {% if page.nav_active == 'novedades' %}active{% endif %}">Novità</a>
+      {% else %}
+        <a href="/#product" class="nav-link-v2 {% if page.nav_active == 'product' %}active{% endif %}">Producto</a>
+        <a href="/#pricing" class="nav-link-v2 {% if page.nav_active == 'pricing' %}active{% endif %}">Precios</a>
+        <div class="dropdown">
+          <button class="dropdown-btn nav-link-v2 {% if page.nav_active == 'utilities' %}active{% endif %}">Utilidades <span class="dropdown-icon">▾</span></button>
+          <div class="dropdown-menu">
+            <a href="/utilities/google-auth/" class="dropdown-item" data-umami="use-google-auth">Google Auth Extractor</a>
+            <a href="/utilities/extension/" class="dropdown-item" data-umami="use-extension">Position Caret</a>
+            <div class="dropdown-divider"></div>
+            <a href="https://github.com/joseqwrtt" target="_blank" class="dropdown-item" data-umami="click-github">Más en GitHub</a>
+          </div>
+        </div>
+        <a href="/novedades/" class="nav-link-v2 {% if page.nav_active == 'novedades' %}active{% endif %}">Novedades</a>
+      {% endif %}
+
+      <a href="https://github.com/joseqwrtt" target="_blank" class="nav-link-v2" data-umami="click-github">GitHub</a>
+
+      <div class="lang-switcher dropdown">
+        <button class="dropdown-btn lang-btn-v2" aria-label="Idioma / Language">
+          {% if page.lang == 'en' %}<img src="https://flagcdn.com/gb.svg" width="18" height="13" alt="EN" class="flag-icon-v2">EN
+          {% elsif page.lang == 'fr' %}<img src="https://flagcdn.com/fr.svg" width="18" height="13" alt="FR" class="flag-icon-v2">FR
+          {% elsif page.lang == 'de' %}<img src="https://flagcdn.com/de.svg" width="18" height="13" alt="DE" class="flag-icon-v2">DE
+          {% elsif page.lang == 'pt' %}<img src="https://flagcdn.com/br.svg" width="18" height="13" alt="PT" class="flag-icon-v2">PT
+          {% elsif page.lang == 'zh' %}<img src="https://flagcdn.com/cn.svg" width="18" height="13" alt="ZH" class="flag-icon-v2">ZH
+          {% elsif page.lang == 'ru' %}<img src="https://flagcdn.com/ru.svg" width="18" height="13" alt="RU" class="flag-icon-v2">RU
+          {% elsif page.lang == 'it' %}<img src="https://flagcdn.com/it.svg" width="18" height="13" alt="IT" class="flag-icon-v2">IT
+          {% else %}<img src="https://flagcdn.com/es.svg" width="18" height="13" alt="ES" class="flag-icon-v2">ES
+          {% endif %}
+          <span class="dropdown-icon">▾</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu--right">
+          <a href="/" class="dropdown-item {% if page.lang == 'es' or page.lang == nil %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')"><img src="https://flagcdn.com/es.svg" width="16" height="12" alt="" class="flag-icon-v2"> Español</a>
+          <a href="/en/" class="dropdown-item {% if page.lang == 'en' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')"><img src="https://flagcdn.com/gb.svg" width="16" height="12" alt="" class="flag-icon-v2"> English</a>
+          <a href="/fr/" class="dropdown-item {% if page.lang == 'fr' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')"><img src="https://flagcdn.com/fr.svg" width="16" height="12" alt="" class="flag-icon-v2"> Français</a>
+          <a href="/de/" class="dropdown-item {% if page.lang == 'de' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')"><img src="https://flagcdn.com/de.svg" width="16" height="12" alt="" class="flag-icon-v2"> Deutsch</a>
+          <a href="/pt/" class="dropdown-item {% if page.lang == 'pt' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')"><img src="https://flagcdn.com/br.svg" width="16" height="12" alt="" class="flag-icon-v2"> Português</a>
+          <a href="/it/" class="dropdown-item {% if page.lang == 'it' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')"><img src="https://flagcdn.com/it.svg" width="16" height="12" alt="" class="flag-icon-v2"> Italiano</a>
+          <a href="/zh/" class="dropdown-item {% if page.lang == 'zh' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')"><img src="https://flagcdn.com/cn.svg" width="16" height="12" alt="" class="flag-icon-v2"> 中文</a>
+          <a href="/ru/" class="dropdown-item {% if page.lang == 'ru' %}dropdown-item--active{% endif %}" onclick="sessionStorage.setItem('lang_chosen','manual')"><img src="https://flagcdn.com/ru.svg" width="16" height="12" alt="" class="flag-icon-v2"> Русский</a>
+        </div>
+      </div>
+
+      <a href="#pricing" class="nav-cta-v2" data-umami="click-ver-precios">PROBAR GRATIS</a>
+    </div>
+
+  </div>
+</nav>
