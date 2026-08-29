@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'es' }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#101010">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style-v2.css?v=1.0">
+
+<!-- Umami Analytics -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="4879f8fb-3949-493c-a64e-83c77bed24ab"></script>
+</head>
+<body>
+
+{% include navbar-v2.html %}
+
+<main class="legal-main">
+  <div class="container legal-doc">
+    {{ content }}
+  </div>
+</main>
+
+{% include footer-v2.html %}
+
+<script src="/js/main.js?v=1.0"></script>
+
+</body>
+</html>

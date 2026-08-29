@@ -104,12 +104,13 @@ extra_js: |
   </div>
 
   <!-- PRODUCT WINDOW — vídeo real del producto -->
-  <div class="product-window">
+  <div class="product-window" id="productWindow" role="button" tabindex="0" aria-label="Ampliar vídeo del producto">
     <div class="window-top">
       <span class="window-dot"></span>
       <span class="window-dot"></span>
       <span class="window-dot"></span>
       <span class="window-title">PLANTILLAS MACRO</span>
+      <button type="button" class="window-expand" id="videoExpandBtn" aria-label="Ampliar vídeo">⤢ Ampliar</button>
     </div>
     <div class="window-body">
       <video autoplay loop muted playsinline class="demo-video">
@@ -121,6 +122,59 @@ extra_js: |
 
 </div>
 </section>
+
+<!-- Lightbox: ampliar el vídeo del producto sin salir de la web -->
+<div class="video-lightbox" id="videoLightbox">
+  <div class="video-lightbox-inner">
+    <button type="button" class="video-lightbox-close" id="videoLightboxClose" aria-label="Cerrar">×</button>
+    <video id="videoLightboxPlayer" controls playsinline loop>
+      <source src="/videos/Sistema-Macro.webm" type="video/webm">
+      Tu navegador no soporta vídeos HTML5.
+    </video>
+  </div>
+</div>
+
+<script>
+(function () {
+  var trigger = document.getElementById('productWindow');
+  var expandBtn = document.getElementById('videoExpandBtn');
+  var lightbox = document.getElementById('videoLightbox');
+  var closeBtn = document.getElementById('videoLightboxClose');
+  var lightboxVideo = document.getElementById('videoLightboxPlayer');
+  if (!trigger || !lightbox) return;
+
+  function openLightbox(e) {
+    if (e) e.stopPropagation();
+    lightbox.classList.add('active');
+    document.body.classList.add('video-lightbox-open');
+    lightboxVideo.currentTime = 0;
+    lightboxVideo.play().catch(function () {});
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.classList.remove('video-lightbox-open');
+    lightboxVideo.pause();
+  }
+
+  trigger.addEventListener('click', openLightbox);
+  trigger.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(); }
+  });
+  expandBtn.addEventListener('click', openLightbox);
+  closeBtn.addEventListener('click', closeLightbox);
+
+  // Cerrar al hacer clic fuera del vídeo (en el fondo oscuro)
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Cerrar con Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+  });
+})();
+</script>
 
 <!-- =====================================================
      STRIP
