@@ -248,10 +248,21 @@ body.menu-open { overflow: hidden; }
   align-items: center;
   border-bottom: 1px solid var(--line);
   position: relative;
-  overflow: hidden;
+  /* Sin overflow:hidden aquí a propósito: el product-window necesita poder
+     ampliarse al hover sin recortarse. El círculo decorativo se recorta
+     en su propia capa (.hero-decor) más abajo. */
 }
 
-.hero::after {
+/* Capa decorativa aislada — así el hover-zoom del vídeo no se recorta */
+.hero-decor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-decor::after {
   content: "";
   position: absolute;
   width: 700px;
@@ -260,8 +271,9 @@ body.menu-open { overflow: hidden; }
   top: -180px;
   border: 1px solid rgba(202, 255, 51, .08);
   border-radius: 50%;
-  pointer-events: none;
 }
+
+.hero-grid { position: relative; z-index: 1; }
 
 /* Variante compacta — usada en Novedades */
 .hero.hero--compact {
@@ -271,8 +283,8 @@ body.menu-open { overflow: hidden; }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .55fr);
-  gap: 90px;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, .72fr);
+  gap: 70px;
   align-items: center;
 }
 
@@ -297,6 +309,7 @@ body.menu-open { overflow: hidden; }
 .hero h1 span { color: var(--lime); }
 
 .hero-copy {
+  margin-top: 26px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.85;
@@ -341,9 +354,25 @@ body.menu-open { overflow: hidden; }
    HERO PRODUCT WINDOW (contiene el vídeo/GIF real del producto)
 ========================================================= */
 .product-window {
+  position: relative;
+  z-index: 5;
   border: 1px solid var(--line);
   background: #151515;
   box-shadow: 30px 30px 80px rgba(0, 0, 0, .35);
+  transition: transform .4s cubic-bezier(.2, .8, .2, 1), box-shadow .4s ease, border-color .4s ease;
+  transform-origin: center center;
+}
+
+/* Ampliar el vídeo/producto al pasar el ratón — solo en dispositivos con hover real */
+@media (hover: hover) and (pointer: fine) {
+  .product-window { cursor: zoom-in; }
+
+  .product-window:hover {
+    z-index: 50;
+    transform: scale(1.32);
+    border-color: rgba(202, 255, 51, .4);
+    box-shadow: 0 45px 110px rgba(0, 0, 0, .6), 0 0 0 1px rgba(202, 255, 51, .15);
+  }
 }
 
 .window-top {
@@ -671,6 +700,32 @@ body.menu-open { overflow: hidden; }
 .toolbar-inner { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
 .toolbar-label { color: var(--muted-2); font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: .12em; }
+
+/* ── Selector Programa / Paquete de idiomas ─────────────── */
+.release-switch { display: flex; border: 1px solid var(--line); }
+
+.switch-btn {
+  padding: 9px 15px;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  letter-spacing: .05em;
+  cursor: pointer;
+  transition: all .18s ease;
+  white-space: nowrap;
+}
+
+.switch-btn:last-child { border-right: 0; }
+.switch-btn:hover { color: white; }
+
+.switch-btn.active {
+  background: var(--lime);
+  color: #111;
+  font-weight: 700;
+}
 
 .github-state { display: flex; align-items: center; gap: 8px; color: var(--muted-2); font-family: "DM Mono", monospace; font-size: 9px; }
 

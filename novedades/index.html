@@ -27,6 +27,12 @@ canonical: "https://flowmaticc.github.io/novedades/"
 <section class="toolbar">
 <div class="container toolbar-inner">
   <div class="toolbar-label">CHANGELOG COMPLETO</div>
+
+  <div class="release-switch" id="releaseSwitch">
+    <button class="switch-btn active" data-repo="app">Programa</button>
+    <button class="switch-btn" data-repo="lang">Paquete de idiomas</button>
+  </div>
+
   <div class="github-state">
     <span class="state-dot"></span>
     GITHUB · ACTUALIZADO
@@ -66,24 +72,50 @@ canonical: "https://flowmaticc.github.io/novedades/"
 (function () {
 
   /* ========================================================
-     CONFIGURACIÓN GITHUB
+     CONFIGURACIÓN GITHUB — dos repos distintos:
+     - "app"  → el programa Plantillas Macro
+     - "lang" → el paquete de idiomas del programa
   ======================================================== */
   const GITHUB_OWNER = "joseqwrtt";
-  const GITHUB_REPOSITORY = "update_app";
-  const GITHUB_API = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPOSITORY}/releases?per_page=20`;
+  const REPOS = {
+    app:  { repo: "update_app",      showDownloads: true  },
+    lang: { repo: "update_language", showDownloads: false },
+  };
+
+  let currentRepo = "app";
 
   marked.setOptions({ gfm: true, breaks: true, headerIds: false, mangle: false });
 
-  loadReleases();
+  document.getElementById("releaseSwitch").addEventListener("click", (e) => {
+    const btn = e.target.closest(".switch-btn");
+    if (!btn || btn.classList.contains("active")) return;
+    document.querySelectorAll(".switch-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentRepo = btn.dataset.repo;
+    loadReleases(currentRepo);
+  });
 
-  async function loadReleases() {
+  loadReleases(currentRepo);
+
+  async function loadReleases(repoKey) {
     const container = document.getElementById("releases");
+    const { repo, showDownloads } = REPOS[repoKey];
+    const apiUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/releases?per_page=20`;
+
+    container.innerHTML = `
+      <div class="loading">
+        <span class="loading-symbol">/</span>
+        Cargando novedades desde GitHub…
+      </div>`;
 
     try {
-      const response = await fetch(GITHUB_API, { headers: { 'Accept': 'application/vnd.github+json' } });
+      const response = await fetch(apiUrl, { headers: { 'Accept': 'application/vnd.github+json' } });
       if (!response.ok) throw new Error(`GitHub respondió con HTTP ${response.status}`);
 
       const releases = await response.json();
+
+      // Si el usuario ya cambió de pestaña mientras esta petición estaba en curso, descartar
+      if (repoKey !== currentRepo) return;
 
       releases.sort((a, b) => {
         const dateA = new Date(a.published_at || a.created_at);
@@ -96,9 +128,10 @@ canonical: "https://flowmaticc.github.io/novedades/"
         return;
       }
 
-      container.innerHTML = releases.map((release, index) => renderRelease(release, index)).join("");
+      container.innerHTML = releases.map((release, index) => renderRelease(release, index, showDownloads)).join("");
 
     } catch (error) {
+      if (repoKey !== currentRepo) return;
       console.error("Error cargando GitHub:", error);
       container.innerHTML = `
         <div class="error">
@@ -106,13 +139,13 @@ canonical: "https://flowmaticc.github.io/novedades/"
           <br><br>
           ${escapeHtml(error.message)}
           <br><br>
-          Puedes ver el historial directamente en <a href="https://github.com/${GITHUB_OWNER}/${GITHUB_REPOSITORY}/releases" target="_blank" rel="noopener">GitHub Releases</a>.
+          Puedes ver el historial directamente en <a href="https://github.com/${GITHUB_OWNER}/${repo}/releases" target="_blank" rel="noopener">GitHub Releases</a>.
         </div>`;
     }
   }
 
   /* Genera dinámicamente cada tarjeta — nada de versión/fecha/texto escrito a mano */
-  function renderRelease(release, index) {
+  function renderRelease(release, index, showDownloads) {
     const version = release.tag_name || release.name || "Sin versión";
     const title   = release.name || version;
     const date    = formatDate(release.published_at || release.created_at);
@@ -138,10 +171,9 @@ canonical: "https://flowmaticc.github.io/novedades/"
           <div class="release-content">
             <h2 class="release-title">${escapeHtml(title)}</h2>
             <div class="github-markdown">${body.trim() ? marked.parse(body) : '<p><em>Sin notas para esta versión.</em></p>'}</div>
-            ${renderDownloads(assets)}
+            ${showDownloads ? renderDownloads(assets) : ""}
             <div class="release-footer">
               <span class="release-source">Publicado en GitHub</span>
-              <a class="github-link" href="${escapeAttribute(release.html_url)}" target="_blank" rel="noopener" data-umami="click-github">Ver release completa →</a>
             </div>
           </div>
         </div>
