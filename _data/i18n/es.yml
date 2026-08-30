@@ -187,6 +187,7 @@ novedades:
     loading: "Cargando novedades desde GitHub…"
     empty_message: "Todavía no hay releases publicadas en GitHub."
     error_title: "No se han podido cargar las novedades."
+    error_http: "GitHub respondió con HTTP %s"
     error_link_text: "Puedes ver el historial directamente en"
     error_link_label: "GitHub Releases"
     latest_badge: "ÚLTIMA VERSIÓN"

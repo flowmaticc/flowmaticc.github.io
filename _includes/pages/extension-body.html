@@ -1,0 +1,114 @@
+{% assign t = site.data.i18n[page.lang].extension %}
+
+<section class="hero hero--compact hero--center">
+<div class="container">
+
+  <div class="breadcrumb-v2">
+    <a href="/">Flowmatic</a><span>/</span><a href="/#product">{{ t.hero.breadcrumb_utilities }}</a><span>/</span><span class="current">{{ t.hero.breadcrumb_current }}</span>
+  </div>
+
+  <div class="chip-row" style="margin-top:0;margin-bottom:22px;">
+    <span class="chip chip-lime"><i class="fas fa-check"></i> {{ t.hero.pill_free }}</span>
+    <span class="chip"><i class="fas fa-puzzle-piece"></i> {{ t.hero.pill_type }}</span>
+  </div>
+
+  <h1>{{ t.hero.title_pre }} <span>{{ t.hero.title_highlight }}</span></h1>
+
+  <div class="hero-copy">
+    <p>{{ t.hero.copy }}</p>
+  </div>
+
+  <div class="hero-actions">
+    <a href="{{ site.links.extension }}" target="_blank" rel="noopener" class="button-primary" data-umami="click-extension-es">{{ t.hero.cta_install }}</a>
+  </div>
+  <p style="margin-top:14px;color:var(--muted-2);font-family:'DM Mono',monospace;font-size:10px;">{{ t.hero.browsers_note }}</p>
+
+  <div class="product-window" style="max-width:380px;margin:50px auto 0;cursor:default;" data-reveal>
+    <div class="window-top">
+      <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
+      <span class="window-title">{{ t.hero.preview_window_title }}</span>
+    </div>
+    <div class="window-body" style="padding:16px;">
+      <div class="util-preview-row">
+        <span class="util-status-dot"></span>
+        <span style="margin-right:auto;padding-left:8px;">{{ t.hero.preview_status }}</span>
+        <span style="color:var(--muted-2);font-family:'DM Mono',monospace;font-size:9px;">v4.0.0</span>
+      </div>
+      <div class="util-preview-row">
+        <span>{{ t.hero.preview_site }}</span>
+        <span style="color:#e07a7a;font-family:'DM Mono',monospace;font-size:9px;">{{ t.hero.preview_exclude }}</span>
+      </div>
+      <div class="util-preview-row">
+        <span>{{ t.hero.preview_toggle_label }}</span>
+        <span class="util-toggle-fake"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="section" id="product">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.how.kicker }}</div></div>
+    <div>
+      <h2>{{ t.how.title }}</h2>
+      <p class="section-intro">{{ t.how.intro }}</p>
+    </div>
+  </div>
+
+  <div class="features">
+    {% for step in t.how.steps %}
+    <article class="feature" data-reveal>
+      <div class="feature-number">{{ step.number }}</div>
+      <h3>{{ step.title }}</h3>
+      <p>{{ step.text }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.compat.kicker }}</div></div>
+    <div><h2>{{ t.compat.title }}</h2></div>
+  </div>
+  <div class="chip-row" style="justify-content:flex-start;" data-reveal>
+    {% for b in t.compat.browsers %}
+    <span class="chip chip-dot">{{ b }}</span>
+    {% endfor %}
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.features.kicker }}</div></div>
+    <div><h2>{{ t.features.title }}</h2></div>
+  </div>
+
+  <div class="why-list">
+    {% for item in t.features.items %}
+    <article class="why-item" data-reveal>
+      <div class="why-index">{{ item.icon }}</div>
+      <div><h3>{{ item.title }}</h3><p>{{ item.text }}</p></div>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+</section>
+
+<section class="final-cta" id="cta-final">
+<div class="container">
+  <h2>{{ t.final_cta.title }}</h2>
+  <p>{{ t.final_cta.text }}</p>
+  <a href="{{ site.links.extension }}" target="_blank" rel="noopener" class="cta-button" data-umami="click-extension-es">{{ t.final_cta.button }}</a>
+  <p style="margin-top:20px;font-size:12px;color:#1a1a1a;">
+    {{ t.final_cta.footer_question }} <a href="/" style="color:#111;font-weight:700;text-decoration:underline;">{{ t.final_cta.footer_link }}</a>
+  </p>
+</div>
+</section>
