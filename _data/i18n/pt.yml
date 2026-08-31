@@ -1,0 +1,391 @@
+# =====================================================================
+# FLOWMATIC — Traduções em português
+# Mesma estrutura de _data/i18n/es.yml. Traduza apenas os VALORES.
+# =====================================================================
+
+home:
+
+  hero:
+    kicker: "/ automação inteligente"
+    title_pre: "Digite /"
+    title_highlight: "e o seu modelo aparece."
+    copy_html: >-
+      <p><strong>Plantillas Macro</strong> é o expansor de texto para
+      Windows que cola seus modelos Word, ODT e TXT com formatação completa
+      em qualquer aplicativo.</p>
+      <p>Digite "/" + o nome e ele é colado instantaneamente. Sem copiar,
+      sem abrir arquivos, sem interromper seu fluxo.</p>
+    cta_download: "Baixar grátis →"
+    cta_pricing: "Ver preços"
+    video_aria_label: "Ampliar vídeo do produto"
+    video_expand_label: "⤢ Ampliar"
+    video_window_title: "PLANTILLAS MACRO"
+    video_close_label: "Fechar"
+    video_fallback: "Seu navegador não suporta vídeo HTML5."
+
+  strip:
+    - label: "01 / velocidade"
+      text: "Digite e cole. Sem menus nem passos extras."
+    - label: "02 / formato"
+      text: "DOCX, ODT e TXT com a formatação preservada."
+    - label: "03 / privacidade"
+      text: "Seus arquivos permanecem no seu computador."
+
+  product:
+    kicker: "/ produto"
+    title: "Projetado para o seu fluxo de trabalho."
+    intro: "Sem interrupções, sem passos extras. Basta digitar e colar."
+    features:
+      - number: "01"
+        title: "Instantâneo"
+        text_html: "Digite <strong>/nome</strong> e o seu modelo aparece instantaneamente. Sem menus, sem cliques extras."
+      - number: "02"
+        title: "Formatação completa"
+        text_html: "DOCX, ODT e TXT com negrito, tabelas, imagens e estilos. Toda a formatação é preservada."
+      - number: "03"
+        title: "100% local"
+        text_html: "Seus modelos ficam no seu computador. Sem nuvem obrigatória, sem servidores e sem assinaturas ocultas."
+
+  why:
+    kicker: "/ a diferença"
+    title: "Aqui você só digita."
+    lead_muted: "Outros expansores obrigam você a memorizar."
+    lead_highlight: "O Plantillas Macro procura o arquivo por você."
+    diagram:
+      step1: "Digite /nome"
+      step2: "Filtra em tempo real"
+      step3: "Cola com formatação"
+    items:
+      - title: "Sem abreviações para memorizar"
+        text_html: "A maioria dos expansores obriga você a inventar uma abreviação única para cada modelo — com 50 modelos são 50 códigos que não podem se repetir, e um mês depois você já não lembra qual era qual. Com o Plantillas Macro você digita <code>/</code> e qualquer parte do nome: <code>/orcamento</code> filtra instantaneamente tudo que corresponde. Nada de memorizar códigos como <code>/orc2024v3final</code>."
+      - title: "Formatação completa do Word"
+        text_html: "Cola com negrito, tabelas, imagens e estilos intactos. Os expansores tradicionais geralmente trabalham com texto simples — nenhum deles realmente lida com DOCX ou ODT."
+      - title: "Sem conta, sem nuvem obrigatória"
+        text_html: "Muitos expansores exigem a criação de uma conta e armazenam seus modelos nos servidores deles. Seus arquivos são seus: permanecem na sua pasta, no seu computador."
+      - title: "Funciona em qualquer aplicativo"
+        text_html: "Outlook, Word, CRM, sites, chat e qualquer aplicativo do Windows onde você possa escrever — sem exceção."
+      - title: "Pronto em 2 minutos"
+        text_html: "Instale, indique sua pasta e comece a trabalhar. Sem configuração técnica nem arquivos para editar manualmente."
+      - title: "Sincronização sem dependência"
+        text_html: "Você pode apontar sua pasta para OneDrive, Dropbox ou Google Drive e ela se sincroniza sozinha. Seus documentos continuam sendo arquivos .docx normais — se um dia você mudar de aplicativo, não perde nada."
+
+  comparison:
+    kicker: "/ comparação"
+    title: "O que torna o Plantillas Macro diferente."
+    headers: ["Característica", "Plantillas Macro", "Expansores com abreviações", "Expansores de navegador", "Ferramentas técnicas"]
+    rows:
+      - label: "Sem abreviações para memorizar"
+        cells: ["✓", "✕", "✕", "✕"]
+      - label: "Formatação DOCX / ODT completa"
+        cells: ["✓", "✕ texto simples", "✕", "✕"]
+      - label: "Sem conta obrigatória"
+        cells: ["✓", "⚠ depende", "✕", "✓"]
+      - label: "Funciona em aplicativos desktop"
+        cells: ["✓", "✓", "✕ só navegador", "✓"]
+      - label: "Interface sem curva de aprendizado"
+        cells: ["✓", "⚠ complexa", "✓", "✕ requer código"]
+      - label: "Seus arquivos, sua pasta"
+        cells: ["✓", "⚠ formato próprio", "✕ nuvem", "✓"]
+      - label: "14 dias de teste grátis"
+        cells: ["✓", "⚠ limitado", "⚠ limitado", "✓ grátis"]
+
+  pricing:
+    kicker: "/ preço"
+    title: "Escolha seu plano."
+    intro: "Sem fidelidade. Cancele quando quiser."
+    plans:
+      - name: "Mensal"
+        tag: ""
+        price: "€3,90"
+        unit: "/mês"
+        description: "+ impostos conforme seu país"
+        features: ["Todas as funções", "Sem compromisso", "Cancele quando quiser"]
+        button: "Assinar →"
+        popular: false
+        link_key: "buy_mensual"
+        umami: "click-buy-mensual-pt"
+      - name: "Trimestral"
+        tag: "Mais popular"
+        price: "€9,90"
+        unit: "/3 meses"
+        description: "€3,30/mês · Economize 15%"
+        features: ["Todas as funções", "Renovação trimestral", "Cancele quando quiser"]
+        button: "Escolher Trimestral →"
+        popular: true
+        link_key: "buy_trimestral"
+        umami: "click-buy-trimestral-pt"
+      - name: "Anual"
+        tag: "Melhor custo-benefício"
+        price: "€35"
+        unit: "/ano"
+        description: "€2,90/mês · Economize 25%"
+        features: ["Todas as funções", "Renovação anual", "Melhor custo-benefício"]
+        button: "Escolher Anual →"
+        popular: false
+        link_key: "buy_anual"
+        umami: "click-buy-anual-pt"
+    note_html: >-
+      🔒 Pagamento seguro via Lemon Squeezy · 14 dias de teste grátis ·
+      Cancele quando quiser.<br><br>Os preços exibidos não incluem impostos.
+      O imposto aplicável é calculado e adicionado no momento do pagamento
+      conforme o país de residência do comprador, e é gerenciado
+      integralmente pela Lemon Squeezy como Merchant of Record.<br><br>Precisa
+      de 25 ou mais licenças para sua equipe ou empresa?
+      <a href="mailto:gestiona.optimiza@gmail.com?subject=Consulta%20de%20licen%C3%A7as%20em%20volume%20(%2B25)">Fale
+      conosco para encontrar a melhor solução →</a>
+
+  faq:
+    kicker: "/ perguntas frequentes"
+    title: "Antes de começar."
+    items:
+      - q: "O Plantillas Macro funciona com Microsoft Word e Outlook?"
+        a_html: "Sim. O Plantillas Macro funciona em qualquer aplicativo do Windows onde você possa escrever: Microsoft Word, Outlook, Excel, Google Chrome, Firefox, Slack, Teams, CRMs web e qualquer outro programa. Não depende do Word — funciona no nível do sistema operacional."
+      - q: "Posso usar meus modelos .docx e .odt existentes?"
+        a_html: "Sim. Basta indicar a pasta onde estão seus arquivos .docx, .odt ou .txt, e o Plantillas Macro os detecta automaticamente. Não é preciso convertê-los nem importá-los — seus arquivos Word continuam sendo arquivos Word normais."
+      - q: "A formatação completa é mantida ao colar — negrito, tabelas, imagens?"
+        a_html: "Sim, essa é a principal vantagem em relação a outros expansores de texto. O Plantillas Macro cola o conteúdo DOCX ou ODT com toda a formatação intacta: negrito, itálico, tabelas, listas, imagens incorporadas e estilos de parágrafo. Os expansores clássicos só colam texto simples."
+      - q: "Meus modelos são enviados para algum servidor ou nuvem?"
+        a_html: "Não. O Plantillas Macro funciona 100% localmente — seus arquivos nunca saem do seu computador. Não há conta de usuário nem servidor próprio. Se quiser sincronização entre computadores, basta apontar a pasta para OneDrive, Dropbox ou Google Drive."
+      - q: "Quanto custa e há teste grátis?"
+        a_html: "Há 14 dias de teste grátis com todas as funções incluídas, sem cartão de crédito. Depois, os planos começam em €3,90/mês + impostos. Você pode cancelar a qualquer momento pelo painel da Lemon Squeezy, sem penalidades."
+      - q: "Quais versões do Windows são compatíveis?"
+        a_html: "O Plantillas Macro é compatível com Windows 10 e Windows 11 (64 bits). Não requer o Microsoft Office — funciona com qualquer aplicativo do sistema. Não há versão para macOS nem Linux no momento."
+      - q: "Qual a diferença em relação ao AutoHotkey ou outros expansores como o Espanso?"
+        a_html: "O AutoHotkey exige escrever scripts — não é para usuários não técnicos. O Espanso e outros expansores lidam com texto simples ou markdown, mas não colam arquivos DOCX com formatação completa. O Plantillas Macro foi criado para quem trabalha com documentos Word reais e quer colá-los em qualquer aplicativo sem abrir o Word."
+      - q: "Posso usar a mesma licença em mais de um computador?"
+        a_html: 'Cada licença permite uma ativação simultânea. Se precisar usá-la em vários computadores, você pode desativar o computador anterior no próprio software. Para equipes ou empresas com 25 ou mais licenças, <a href="mailto:gestiona.optimiza@gmail.com">fale conosco</a> para um preço personalizado.'
+
+  final_cta:
+    title: "Pronto para trabalhar mais rápido?"
+    text: "Baixe o Plantillas Macro grátis e experimente todas as funções por 14 dias."
+    button: "Baixar Plantillas Macro →"
+
+
+novedades:
+
+  locale: "pt-PT"
+
+  hero:
+    kicker: "/ histórico de versões"
+    title_pre: "Novidades do"
+    title_highlight: "Plantillas Macro."
+    copy: "Cada atualização, melhoria e correção publicada — geradas automaticamente a partir do GitHub Releases."
+
+  toolbar:
+    label: "CHANGELOG COMPLETO"
+    switch_app: "Programa"
+    switch_lang: "Pacote de idiomas"
+    github_state: "GITHUB · ATUALIZADO"
+
+  timeline:
+    loading: "Carregando novidades do GitHub…"
+    empty_message: "Ainda não há releases publicadas no GitHub."
+    error_title: "Não foi possível carregar as novidades."
+    error_http: "O GitHub respondeu com HTTP %s"
+    error_link_text: "Você pode ver o histórico diretamente no"
+    error_link_label: "GitHub Releases"
+    latest_badge: "VERSÃO MAIS RECENTE"
+    previous_badge: "VERSÃO ANTERIOR"
+    no_notes: "Sem notas para esta versão."
+    published_on: "Publicado no GitHub"
+
+  final_cta:
+    title: "Pronto para trabalhar mais rápido?"
+    text: "Baixe o Plantillas Macro grátis e experimente todas as funções por 14 dias."
+    button: "Baixar Plantillas Macro →"
+
+
+google_auth:
+
+  hero:
+    breadcrumb_current: "Google Auth Extractor"
+    kicker: "/ ferramenta gratuita · código aberto"
+    title_pre: "Google Auth"
+    title_highlight: "Extractor"
+    copy_es: "Exporta tus cuentas TOTP de Google Authenticator a TXT, Aegis, 2FAS o CSV."
+    copy_en: "Export your Google Authenticator TOTP accounts to TXT, Aegis, 2FAS or CSV."
+    chips: ["Python 3.10+", "Windows", "macOS", "Linux", "MIT"]
+    cta_github: "Ver no GitHub"
+    cta_download: "Baixar ZIP →"
+
+  why:
+    kicker: "/ motivo"
+    title: "Por que essa ferramenta existe?"
+    text_es_html: "Google Authenticator exporta las cuentas en un formato propietario (<code>otpauth-migration://</code>) que ninguna otra app puede leer directamente. Cada código QR contiene hasta 10 cuentas. Esta herramienta decodifica esos QR y extrae las claves TOTP para que puedas importarlas donde quieras."
+    text_en_html: "Google Authenticator exports accounts in a proprietary format (<code>otpauth-migration://</code>) that no other app can read directly. Each QR code holds up to 10 accounts. This tool decodes those QR codes and extracts the TOTP secrets so you can import them anywhere."
+
+  features:
+    kicker: "/ recursos"
+    title: "Tudo o que inclui."
+    items:
+      - "Colar URL otpauth-migration:// diretamente"
+      - "Enviar imagem ou captura do QR"
+      - "Escanear região da tela com o mouse"
+      - "Acumula contas entre escaneamentos"
+      - "Deduplicação automática"
+      - "Copiar Emissor, Nome ou Chave"
+      - "Interface em espanhol e inglês"
+      - "Limpar a lista para começar do zero"
+      - "Exportar para TXT, Aegis, 2FAS, CSV"
+      - "100% local — nenhum dado sai do seu computador"
+
+  screenshots:
+    kicker: "/ capturas de tela"
+    title: "A ferramenta em uso."
+
+  installation:
+    kicker: "/ instalação"
+    title: "Instalação."
+    step1_label: "1. Clone o repositório"
+    requirements_html: '<strong>📌 Requisitos:</strong> Python 3.10 ou superior. Durante a instalação no Windows, marque <strong>"Add Python to PATH"</strong>.'
+    step2_label: "2. Instale as dependências"
+    linux_note_html: "<strong>🐧 Linux / macOS:</strong> Você também precisa da biblioteca nativa zbar:"
+
+  usage:
+    kicker: "/ uso"
+    title: "Como executar."
+    run_label: "Executar"
+    windows_note_html: "<strong>💡 Windows com várias versões de Python:</strong>"
+    batch_note_html: "Ou crie um arquivo <code>executar.bat</code>:"
+
+  guide:
+    kicker: "/ guia"
+    title: "Passo a passo."
+    steps:
+      - title: "Exportar do Google Authenticator"
+        text_html: 'Abra o Google Authenticator → menu (⋮) → <strong>Transferir contas → Exportar contas</strong> → selecione as contas → aparecerá um ou mais QR (máximo 10 contas por QR).'
+      - title: "Importar no aplicativo (escolha um modo)"
+        modes:
+          - icon: "🔗"
+            title: "Modo URL"
+            text_html: 'Escaneie o QR → copie a URL <code>otpauth-migration://offline?data=...</code> → cole-a → Extrair contas'
+          - icon: "🖼️"
+            title: "Modo imagem"
+            text: "Captura de tela do QR → Selecionar imagem → Ler QR e extrair"
+          - icon: "📷"
+            title: "Modo escaneamento de tela"
+            text: "Mostre o QR → Selecionar região → desenhe um retângulo → extração automática"
+        note: "💡 Se você tiver mais de 10 contas, repita o processo para cada QR. As contas se acumulam e os duplicados são ignorados."
+      - title: "Exportar"
+        text: "Com todas as contas na lista, clique no botão do formato que precisar:"
+    formats:
+      - name: "TXT"
+        meta: ".txt"
+      - name: "Aegis"
+        meta: ".json · Android"
+      - name: "2FAS"
+        meta: ".2fas · Android/iOS"
+      - name: "CSV"
+        meta: "Bitwarden, 1Password"
+
+  deps:
+    kicker: "/ dependências"
+    title: "O que usa internamente."
+    items:
+      - name: "customtkinter"
+        text: "interface gráfica"
+      - name: "pillow"
+        text: "leitura de imagens"
+      - name: "pyzbar"
+        text: "decodificação de QR (principal)"
+      - name: "opencv-python"
+        text: "decodificação de QR (alternativa)"
+      - name: "mss"
+        text: "captura multi-monitor"
+
+  troubleshooting:
+    kicker: "/ ajuda"
+    title: "Solução de problemas."
+    items:
+      - icon: "fas fa-camera"
+        title: "O scanner de tela não funciona"
+      - icon: "fab fa-python"
+        title: "Várias versões de Python no Windows"
+      - icon: "fas fa-qrcode"
+        title: "Erro ao importar o pyzbar no Windows"
+        text_html: "O <code>pyzbar</code> requer bibliotecas nativas. Se falhar, o <code>opencv-python</code> é usado automaticamente como alternativa."
+
+  security:
+    kicker: "/ segurança"
+    title: "Sem conexão com a internet."
+    items:
+      - "Sem conexões de rede"
+      - "Chaves TOTP permanecem no seu computador"
+      - "Código-fonte completo disponível para auditoria"
+
+  final_cta:
+    title: "Licença MIT."
+    text: "Use, modifique e distribua livremente."
+    button: "Ver repositório →"
+
+
+extension:
+
+  hero:
+    breadcrumb_utilities: "Utilitários"
+    breadcrumb_current: "Position Caret"
+    pill_free: "Grátis"
+    pill_type: "Extensão para navegador"
+    title_pre: "O popup aparece"
+    title_highlight: "exatamente onde você digita."
+    copy: "Extensão complementar gratuita para o Plantillas Macro. Instale-a no seu navegador e o popup de modelos sempre aparecerá na posição exata do cursor, em qualquer site."
+    cta_install: "🧩 Instalar extensão gratuita"
+    browsers_note: "Chrome · Edge · Brave · Opera · Vivaldi — e outros navegadores Chromium"
+    preview_window_title: "FLOWMATICC · POSITION CARET"
+    preview_status: "Conectado · ativo"
+    preview_site: "mail.google.com"
+    preview_exclude: "🚫 Excluir este site"
+    preview_toggle_label: "Mostrar círculo vermelho ao capturar"
+
+  how:
+    kicker: "/ como funciona"
+    title: "Três passos e pronto."
+    intro: "Sem configuração, sem contas."
+    steps:
+      - number: "01"
+        title: "Instale a extensão"
+        text: "Um clique na Chrome Web Store. Ativa-se automaticamente em todos os navegadores compatíveis."
+      - number: "02"
+        title: "Abra o Plantillas Macro"
+        text: "A extensão se conecta sozinha ao aplicativo desktop. O ícone ficará verde."
+      - number: "03"
+        title: "Digite e pronto"
+        text: "Digite seu gatilho em qualquer site e o popup aparece exatamente onde está o cursor."
+      - number: "04"
+        title: "Controle por site"
+        text: "Exclua qualquer site com um clique a partir do popup. A extensão lembra suas preferências."
+
+  compat:
+    kicker: "/ compatibilidade"
+    title: "Qualquer navegador Chromium."
+    browsers: ["Chrome", "Edge", "Brave", "Opera", "Opera GX", "Vivaldi", "Arc", "Yandex", "Thorium", "Ungoogled"]
+
+  features:
+    kicker: "/ inclui"
+    title: "O que ela faz por você."
+    items:
+      - icon: "🎯"
+        title: "Posição exata do cursor"
+        text: "O popup aparece logo abaixo de onde você está digitando, em qualquer editor web."
+      - icon: "🚫"
+        title: "Excluir sites com um clique"
+        text: "Não quer que funcione em algum site? Desative-a instantaneamente pelo ícone do navegador."
+      - icon: "🔌"
+        title: "Conexão automática"
+        text: "Ela se conecta sozinha ao Plantillas Macro. Se o aplicativo fechar e reabrir, reconecta sem precisar mexer em nada."
+      - icon: "🔒"
+        title: "100% local e privado"
+        text: "Não envia nada para a internet. Ela só comunica coordenadas ao seu aplicativo desktop por conexão local."
+      - icon: "⚡"
+        title: "Sem consumo perceptível"
+        text: "Só age quando detecta o gatilho. Sem polling contínuo, sem impacto no navegador."
+      - icon: "🆓"
+        title: "Totalmente gratuita"
+        text: "Sem anúncios, sem limites de uso, sem conta. Só instalar e funciona."
+
+  final_cta:
+    title: "Já tem o Plantillas Macro?"
+    text: "Adicione a extensão e o popup funcionará perfeitamente em qualquer site."
+    button: "🧩 Instalar extensão gratuita"
+    footer_question: "Ainda não tem o Plantillas Macro?"
+    footer_link: "Baixe grátis →"

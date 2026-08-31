@@ -1,0 +1,386 @@
+# =====================================================================
+# FLOWMATIC — 中文翻译
+# 与 _data/i18n/es.yml 结构相同。只翻译"值"（冒号右边的部分）。
+# =====================================================================
+
+home:
+
+  hero:
+    kicker: "/ 智能自动化"
+    title_pre: "输入 /"
+    title_highlight: "您的模板即刻出现。"
+    copy_html: >-
+      <p><strong>Plantillas Macro</strong> 是一款 Windows
+      文本扩展工具，可将您的 Word、ODT 和 TXT 模板以完整格式粘贴到任何应用程序中。</p>
+      <p>输入"/"+名称即可立即粘贴。无需复制，无需打开文件，不打断您的工作流程。</p>
+    cta_download: "免费下载 →"
+    cta_pricing: "查看价格"
+    video_aria_label: "放大产品视频"
+    video_expand_label: "⤢ 放大"
+    video_window_title: "PLANTILLAS MACRO"
+    video_close_label: "关闭"
+    video_fallback: "您的浏览器不支持 HTML5 视频。"
+
+  strip:
+    - label: "01 / 速度"
+      text: "输入并粘贴。没有菜单，没有多余步骤。"
+    - label: "02 / 格式"
+      text: "DOCX、ODT 和 TXT，保留原始格式。"
+    - label: "03 / 隐私"
+      text: "您的文件始终留在您的电脑上。"
+
+  product:
+    kicker: "/ 产品"
+    title: "为您的工作流程而设计。"
+    intro: "没有中断，没有多余步骤。只需输入并粘贴。"
+    features:
+      - number: "01"
+        title: "即时响应"
+        text_html: "输入 <strong>/名称</strong>，模板立即出现。没有菜单，没有多余点击。"
+      - number: "02"
+        title: "完整格式"
+        text_html: "DOCX、ODT 和 TXT，保留粗体、表格、图片和样式，所有格式完整保留。"
+      - number: "03"
+        title: "100% 本地运行"
+        text_html: "您的模板保存在电脑本地。无需强制使用云端，无需服务器，也没有隐藏订阅。"
+
+  why:
+    kicker: "/ 与众不同"
+    title: "在这里，您只需要打字。"
+    lead_muted: "其他文本扩展工具需要您记住各种代码。"
+    lead_highlight: "Plantillas Macro 会替您找到文件。"
+    diagram:
+      step1: "输入 /名称"
+      step2: "实时筛选"
+      step3: "粘贴并保留格式"
+    items:
+      - title: "无需记忆缩写代码"
+        text_html: "大多数文本扩展工具要求您为每个模板发明一个独特的缩写——50 个模板就是 50 个不能重复的代码，一个月后您就记不清哪个是哪个了。使用 Plantillas Macro，您只需输入 <code>/</code> 加名称的任意部分：<code>/报价</code> 即可立即筛选出所有匹配项。再也不用记住像 <code>/bj2024v3final</code> 这样的代码。"
+      - title: "完整的 Word 格式支持"
+        text_html: "粘贴时保留粗体、表格、图片和样式。传统文本扩展工具通常只能处理纯文本——没有一个能真正支持 DOCX 或 ODT。"
+      - title: "无需账户，无需强制云端"
+        text_html: "许多文本扩展工具要求创建账户，并将您的模板存储在他们的服务器上。您的文件属于您自己：始终保存在您的文件夹、您的电脑中。"
+      - title: "适用于任何应用程序"
+        text_html: "Outlook、Word、CRM、网页、聊天工具，以及任何可以输入文字的 Windows 应用程序——没有例外。"
+      - title: "2 分钟即可上手"
+        text_html: "安装、指定文件夹，即可开始工作。无需技术配置，无需手动编辑任何文件。"
+      - title: "同步无锁定"
+        text_html: "您可以将文件夹指向 OneDrive、Dropbox 或 Google Drive，它会自动同步。您的文档始终是普通的 .docx 文件——即使有一天更换其他应用，也不会丢失任何内容。"
+
+  comparison:
+    kicker: "/ 对比"
+    title: "Plantillas Macro 有何不同。"
+    headers: ["特性", "Plantillas Macro", "缩写型扩展工具", "浏览器扩展工具", "技术工具"]
+    rows:
+      - label: "无需记忆缩写代码"
+        cells: ["✓", "✕", "✕", "✕"]
+      - label: "完整的 DOCX / ODT 格式"
+        cells: ["✓", "✕ 纯文本", "✕", "✕"]
+      - label: "无需强制账户"
+        cells: ["✓", "⚠ 视情况而定", "✕", "✓"]
+      - label: "支持桌面应用程序"
+        cells: ["✓", "✓", "✕ 仅限浏览器", "✓"]
+      - label: "无需学习曲线的界面"
+        cells: ["✓", "⚠ 复杂", "✓", "✕ 需要代码"]
+      - label: "您的文件，您的文件夹"
+        cells: ["✓", "⚠ 专有格式", "✕ 云端", "✓"]
+      - label: "14 天免费试用"
+        cells: ["✓", "⚠ 有限制", "⚠ 有限制", "✓ 免费"]
+
+  pricing:
+    kicker: "/ 价格"
+    title: "选择您的套餐。"
+    intro: "无长期合约，随时可取消。"
+    plans:
+      - name: "月付"
+        tag: ""
+        price: "€3.90"
+        unit: "/月"
+        description: "+ 增值税（依所在国家而定）"
+        features: ["所有功能", "无长期合约", "随时可取消"]
+        button: "订阅 →"
+        popular: false
+        link_key: "buy_mensual"
+        umami: "click-buy-mensual-zh"
+      - name: "季付"
+        tag: "最受欢迎"
+        price: "€9.90"
+        unit: "/3个月"
+        description: "€3.30/月 · 节省 15%"
+        features: ["所有功能", "按季度续订", "随时可取消"]
+        button: "选择季付 →"
+        popular: true
+        link_key: "buy_trimestral"
+        umami: "click-buy-trimestral-zh"
+      - name: "年付"
+        tag: "最超值"
+        price: "€35"
+        unit: "/年"
+        description: "€2.90/月 · 节省 25%"
+        features: ["所有功能", "按年续订", "最超值"]
+        button: "选择年付 →"
+        popular: false
+        link_key: "buy_anual"
+        umami: "click-buy-anual-zh"
+    note_html: >-
+      🔒 通过 Lemon Squeezy 安全支付 · 14 天免费试用 ·
+      随时可取消。<br><br>显示价格不含增值税。适用的增值税将根据购买者所在国家/地区，在付款时计算并加入，并完全由
+      Lemon Squeezy 作为 Merchant of Record（销售记录方）管理。<br><br>您的团队或公司需要 25
+      个或更多授权许可？<a href="mailto:gestiona.optimiza@gmail.com?subject=%E6%89%B9%E9%87%8F%E8%AE%B8%E5%8F%AF%E8%AF%A2%E9%97%AE%20(%2B25)">联系我们，为您找到最合适的方案
+      →</a>
+
+  faq:
+    kicker: "/ 常见问题"
+    title: "开始之前。"
+    items:
+      - q: "Plantillas Macro 能与 Microsoft Word 和 Outlook 配合使用吗？"
+        a_html: "可以。Plantillas Macro 可在任何可输入文字的 Windows 应用程序中使用：Microsoft Word、Outlook、Excel、Google Chrome、Firefox、Slack、Teams、网页版 CRM 以及其他任何程序。它不依赖于 Word——而是在操作系统层面运行。"
+      - q: "我可以使用已有的 .docx 和 .odt 模板吗？"
+        a_html: "可以。只需指定存放 .docx、.odt 或 .txt 文件的文件夹，Plantillas Macro 会自动检测它们。无需转换或导入——您的 Word 文件仍然是普通的 Word 文件。"
+      - q: "粘贴时是否保留完整格式——粗体、表格、图片？"
+        a_html: "是的，这是相较于其他文本扩展工具的主要优势。Plantillas Macro 粘贴 DOCX 或 ODT 内容时会完整保留格式：粗体、斜体、表格、列表、嵌入图片和段落样式。传统扩展工具只能粘贴纯文本。"
+      - q: "我的模板会上传到服务器或云端吗？"
+        a_html: "不会。Plantillas Macro 完全本地运行——您的文件永远不会离开您的电脑。没有用户账户，也没有专用服务器。如果您想在多台电脑间同步，只需将文件夹指向 OneDrive、Dropbox 或 Google Drive。"
+      - q: "费用是多少？有免费试用吗？"
+        a_html: "有 14 天免费试用，包含所有功能，无需信用卡。之后，套餐起价为 €3.90/月 + 增值税。您可以随时通过 Lemon Squeezy 面板取消，无任何违约金。"
+      - q: "支持哪些 Windows 版本？"
+        a_html: "Plantillas Macro 兼容 Windows 10 和 Windows 11（64位）。无需安装 Microsoft Office——可与系统中任何应用程序配合使用。目前暂无 macOS 或 Linux 版本。"
+      - q: "它与 AutoHotkey 或 Espanso 等其他扩展工具有何不同？"
+        a_html: "AutoHotkey 需要编写脚本——不适合非技术用户。Espanso 和其他扩展工具处理纯文本或 Markdown，但无法粘贴带完整格式的 DOCX 文件。Plantillas Macro 专为需要处理真实 Word 文档、并希望在任何应用中粘贴而无需打开 Word 的用户设计。"
+      - q: "同一个授权许可可以在多台电脑上使用吗？"
+        a_html: '每个授权许可允许一次同时激活。如果您需要在多台电脑上使用，可以直接在软件内停用之前的电脑。如果您的团队或公司需要 25 个或更多授权许可，请<a href="mailto:gestiona.optimiza@gmail.com">联系我们</a>获取定制报价。'
+
+  final_cta:
+    title: "准备好更高效地工作了吗？"
+    text: "免费下载 Plantillas Macro，14 天内体验全部功能。"
+    button: "下载 Plantillas Macro →"
+
+
+novedades:
+
+  locale: "zh-CN"
+
+  hero:
+    kicker: "/ 版本历史"
+    title_pre: "更新日志 ·"
+    title_highlight: "Plantillas Macro"
+    copy: "每一次更新、改进和修复——均自动从 GitHub Releases 生成。"
+
+  toolbar:
+    label: "完整更新日志"
+    switch_app: "程序"
+    switch_lang: "语言包"
+    github_state: "GITHUB · 已更新"
+
+  timeline:
+    loading: "正在从 GitHub 加载更新内容…"
+    empty_message: "GitHub 上暂无已发布的版本。"
+    error_title: "无法加载更新内容。"
+    error_http: "GitHub 返回了 HTTP %s"
+    error_link_text: "您可以直接在以下位置查看历史记录："
+    error_link_label: "GitHub Releases"
+    latest_badge: "最新版本"
+    previous_badge: "历史版本"
+    no_notes: "此版本暂无说明。"
+    published_on: "发布于 GitHub"
+
+  final_cta:
+    title: "准备好更高效地工作了吗？"
+    text: "免费下载 Plantillas Macro，14 天内体验全部功能。"
+    button: "下载 Plantillas Macro →"
+
+
+google_auth:
+
+  hero:
+    breadcrumb_current: "Google Auth Extractor"
+    kicker: "/ 免费工具 · 开源"
+    title_pre: "Google Auth"
+    title_highlight: "Extractor"
+    copy_es: "Exporta tus cuentas TOTP de Google Authenticator a TXT, Aegis, 2FAS o CSV."
+    copy_en: "Export your Google Authenticator TOTP accounts to TXT, Aegis, 2FAS or CSV."
+    chips: ["Python 3.10+", "Windows", "macOS", "Linux", "MIT"]
+    cta_github: "在 GitHub 上查看"
+    cta_download: "下载 ZIP →"
+
+  why:
+    kicker: "/ 为什么"
+    title: "为什么会有这个工具？"
+    text_es_html: "Google Authenticator exporta las cuentas en un formato propietario (<code>otpauth-migration://</code>) que ninguna otra app puede leer directamente. Cada código QR contiene hasta 10 cuentas. Esta herramienta decodifica esos QR y extrae las claves TOTP para que puedas importarlas donde quieras."
+    text_en_html: "Google Authenticator exports accounts in a proprietary format (<code>otpauth-migration://</code>) that no other app can read directly. Each QR code holds up to 10 accounts. This tool decodes those QR codes and extracts the TOTP secrets so you can import them anywhere."
+
+  features:
+    kicker: "/ 功能特性"
+    title: "包含的所有功能。"
+    items:
+      - "直接粘贴 otpauth-migration:// 链接"
+      - "上传二维码图片或截图"
+      - "用鼠标扫描屏幕区域"
+      - "多次扫描间可累积账户"
+      - "自动去重"
+      - "复制发行方、名称或密钥"
+      - "西班牙语和英语界面"
+      - "清空列表以重新开始"
+      - "导出为 TXT、Aegis、2FAS、CSV"
+      - "100% 本地运行——不会有任何数据离开您的电脑"
+
+  screenshots:
+    kicker: "/ 截图"
+    title: "工具实际使用效果。"
+
+  installation:
+    kicker: "/ 安装"
+    title: "安装。"
+    step1_label: "1. 克隆代码仓库"
+    requirements_html: '<strong>📌 系统要求：</strong>Python 3.10 或更高版本。在 Windows 上安装时，请勾选 <strong>"Add Python to PATH"</strong>。'
+    step2_label: "2. 安装依赖项"
+    linux_note_html: "<strong>🐧 Linux / macOS：</strong>您还需要原生的 zbar 库："
+
+  usage:
+    kicker: "/ 使用方法"
+    title: "如何运行。"
+    run_label: "运行"
+    windows_note_html: "<strong>💡 Windows 上有多个 Python 版本时：</strong>"
+    batch_note_html: "或者创建一个 <code>run.bat</code> 文件："
+
+  guide:
+    kicker: "/ 使用指南"
+    title: "分步说明。"
+    steps:
+      - title: "从 Google Authenticator 导出"
+        text_html: '打开 Google Authenticator → 菜单 (⋮) → <strong>转移账号 → 导出账号</strong> → 选择账号 → 会出现一个或多个二维码（每个二维码最多 10 个账号）。'
+      - title: "导入到应用程序中（选择一种方式）"
+        modes:
+          - icon: "🔗"
+            title: "链接模式"
+            text_html: '扫描二维码 → 复制 <code>otpauth-migration://offline?data=...</code> 链接 → 粘贴 → 提取账号'
+          - icon: "🖼️"
+            title: "图片模式"
+            text: "截取二维码 → 选择图片 → 读取二维码并提取"
+          - icon: "📷"
+            title: "屏幕扫描模式"
+            text: "显示二维码 → 选择区域 → 画出矩形框 → 自动提取"
+        note: "💡 如果您有超过 10 个账号，请对每个二维码重复此过程。账号会不断累积，重复项会被自动忽略。"
+      - title: "导出"
+        text: "当所有账号都在列表中后，点击您需要的格式对应的按钮："
+    formats:
+      - name: "TXT"
+        meta: ".txt"
+      - name: "Aegis"
+        meta: ".json · Android"
+      - name: "2FAS"
+        meta: ".2fas · Android/iOS"
+      - name: "CSV"
+        meta: "Bitwarden, 1Password"
+
+  deps:
+    kicker: "/ 依赖项"
+    title: "内部使用的技术。"
+    items:
+      - name: "customtkinter"
+        text: "图形界面"
+      - name: "pillow"
+        text: "图片读取"
+      - name: "pyzbar"
+        text: "二维码解码（主要方式）"
+      - name: "opencv-python"
+        text: "二维码解码（备用方式）"
+      - name: "mss"
+        text: "多显示器截屏"
+
+  troubleshooting:
+    kicker: "/ 帮助"
+    title: "故障排除。"
+    items:
+      - icon: "fas fa-camera"
+        title: "屏幕扫描功能无法使用"
+      - icon: "fab fa-python"
+        title: "Windows 上安装了多个 Python 版本"
+      - icon: "fas fa-qrcode"
+        title: "在 Windows 上导入 pyzbar 时出错"
+        text_html: "<code>pyzbar</code> 需要原生库支持。如果失败，系统会自动使用 <code>opencv-python</code> 作为备用方案。"
+
+  security:
+    kicker: "/ 安全性"
+    title: "无需互联网连接。"
+    items:
+      - "无网络连接"
+      - "TOTP 密钥仅保存在您的电脑上"
+      - "完整源代码可供审查"
+
+  final_cta:
+    title: "MIT 开源许可证。"
+    text: "自由使用、修改和分发。"
+    button: "查看代码仓库 →"
+
+
+extension:
+
+  hero:
+    breadcrumb_utilities: "工具"
+    breadcrumb_current: "Position Caret"
+    pill_free: "免费"
+    pill_type: "浏览器扩展"
+    title_pre: "弹窗会精确出现在"
+    title_highlight: "您正在输入的位置。"
+    copy: "Plantillas Macro 的免费配套扩展。在浏览器中安装后，模板弹窗将始终精确显示在光标所在位置，适用于任何网站。"
+    cta_install: "🧩 安装免费扩展"
+    browsers_note: "Chrome · Edge · Brave · Opera · Vivaldi ——以及更多基于 Chromium 的浏览器"
+    preview_window_title: "FLOWMATICC · POSITION CARET"
+    preview_status: "已连接 · 活跃"
+    preview_site: "mail.google.com"
+    preview_exclude: "🚫 排除此网站"
+    preview_toggle_label: "截取时显示红色圆圈"
+
+  how:
+    kicker: "/ 工作原理"
+    title: "三步即可完成。"
+    intro: "无需设置，无需账户。"
+    steps:
+      - number: "01"
+        title: "安装扩展"
+        text: "在 Chrome 网上应用店中点击一下即可。它会在所有受支持的浏览器中自动激活。"
+      - number: "02"
+        title: "打开 Plantillas Macro"
+        text: "扩展会自动连接到桌面应用程序。图标会变为绿色。"
+      - number: "03"
+        title: "输入即可"
+        text: "在任何网站输入您的触发词，弹窗会精确出现在光标所在位置。"
+      - number: "04"
+        title: "按网站控制"
+        text: "在弹窗中一键排除任何网站。扩展会记住您的偏好设置。"
+
+  compat:
+    kicker: "/ 兼容性"
+    title: "任何基于 Chromium 的浏览器。"
+    browsers: ["Chrome", "Edge", "Brave", "Opera", "Opera GX", "Vivaldi", "Arc", "Yandex", "Thorium", "Ungoogled"]
+
+  features:
+    kicker: "/ 包含功能"
+    title: "它能为您做什么。"
+    items:
+      - icon: "🎯"
+        title: "精确的光标位置"
+        text: "弹窗会精确显示在您正在输入的位置下方，适用于任何网页编辑器。"
+      - icon: "🚫"
+        title: "一键排除网站"
+        text: "不希望它在某个网站上运行？通过浏览器图标即可立即关闭。"
+      - icon: "🔌"
+        title: "自动连接"
+        text: "它会自动连接到 Plantillas Macro。即使应用程序关闭后重新打开，也会自动重新连接，无需任何操作。"
+      - icon: "🔒"
+        title: "100% 本地运行且私密"
+        text: "不会向互联网发送任何内容。它只通过本地连接向您的桌面应用程序传递坐标信息。"
+      - icon: "⚡"
+        title: "几乎没有性能开销"
+        text: "只有在检测到触发词时才会运行。没有持续轮询，不会影响浏览器性能。"
+      - icon: "🆓"
+        title: "完全免费"
+        text: "无广告，无使用次数限制，无需账户。安装即可使用。"
+
+  final_cta:
+    title: "已经拥有 Plantillas Macro 了吗？"
+    text: "添加此扩展，弹窗即可在任何网站上完美运行。"
+    button: "🧩 安装免费扩展"
+    footer_question: "还没有 Plantillas Macro？"
+    footer_link: "免费下载 →"
