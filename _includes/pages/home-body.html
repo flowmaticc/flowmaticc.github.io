@@ -326,6 +326,20 @@
     {% endfor %}
   </div>
 
+  <p style="margin-top:26px;text-align:center;">
+    <a href="/ayuda/" style="color:var(--lime);font-family:'DM Mono',monospace;font-size:11px;text-decoration:underline;text-decoration-color:rgba(202,255,51,.35);" data-umami="view-help">
+      {% if page.lang == 'en' %}More questions? See the full help center →
+      {% elsif page.lang == 'fr' %}D'autres questions ? Voir le centre d'aide complet →
+      {% elsif page.lang == 'de' %}Weitere Fragen? Zum vollständigen Hilfebereich →
+      {% elsif page.lang == 'pt' %}Mais dúvidas? Veja a central de ajuda completa →
+      {% elsif page.lang == 'zh' %}还有其他问题？查看完整帮助中心 →
+      {% elsif page.lang == 'ru' %}Остались вопросы? Смотрите полный раздел помощи →
+      {% elsif page.lang == 'it' %}Altre domande? Vai al centro assistenza completo →
+      {% else %}¿Más dudas? Consulta el centro de ayuda completo →
+      {% endif %}
+    </a>
+  </p>
+
 </div>
 </section>
 

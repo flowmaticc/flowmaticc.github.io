@@ -17,6 +17,7 @@
 
     <div class="footer-links-v2">
       <a href="mailto:gestiona.optimiza@gmail.com">{% if page.lang == 'en' %}Contact{% elsif page.lang == 'fr' %}Contact{% elsif page.lang == 'de' %}Kontakt{% elsif page.lang == 'pt' %}Contato{% elsif page.lang == 'zh' %}联系{% elsif page.lang == 'ru' %}Контакты{% elsif page.lang == 'it' %}Contatto{% else %}Contacto{% endif %}</a>
+      <a href="/ayuda/" data-umami="view-help">{% if page.lang == 'en' %}Help{% elsif page.lang == 'fr' %}Aide{% elsif page.lang == 'de' %}Hilfe{% elsif page.lang == 'pt' %}Ajuda{% elsif page.lang == 'zh' %}帮助{% elsif page.lang == 'ru' %}Помощь{% elsif page.lang == 'it' %}Assistenza{% else %}Ayuda{% endif %}</a>
       <a href="https://github.com/joseqwrtt" target="_blank" data-umami="click-github">GitHub</a>
       <a href="{% case page.lang %}{% when 'en' %}/en{% when 'fr' %}/fr{% when 'de' %}/de{% when 'pt' %}/pt{% when 'zh' %}/zh{% when 'ru' %}/ru{% when 'it' %}/it{% endcase %}/utilities/google-auth/" data-umami="use-google-auth">{% if page.lang == 'en' %}Utilities{% elsif page.lang == 'fr' %}Utilitaires{% elsif page.lang == 'de' %}Dienstprogramme{% elsif page.lang == 'pt' %}Utilitários{% elsif page.lang == 'zh' %}工具{% elsif page.lang == 'ru' %}Утилиты{% elsif page.lang == 'it' %}Strumenti{% else %}Utilidades{% endif %}</a>
       <a href="{% case page.lang %}{% when 'en' %}/en{% when 'fr' %}/fr{% when 'de' %}/de{% when 'pt' %}/pt{% when 'zh' %}/zh{% when 'ru' %}/ru{% when 'it' %}/it{% endcase %}/utilities/extension/" data-umami="use-extension">Position Caret</a>

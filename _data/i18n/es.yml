@@ -167,6 +167,97 @@ home:
     button: "Descargar Plantillas Macro →"
 
 
+help_faq:
+
+  seo:
+    title: "Ayuda y preguntas frecuentes · Plantillas Macro"
+    description: "Resuelve tus dudas sobre el funcionamiento de Plantillas Macro: detonante, formato, licencia, sincronización en la nube, extensión de navegador y más."
+
+  hero:
+    kicker: "/ ayuda"
+    title_pre: "Resolvemos"
+    title_highlight: "tus dudas."
+    copy: "Preguntas frecuentes sobre el funcionamiento de Plantillas Macro, organizadas por tema. Iremos ampliando esta sección con más contenido."
+
+  categories:
+
+    - id: "primeros-pasos"
+      label: "Primeros pasos"
+      items:
+        - q: "¿Necesito instalar algo más aparte del programa?"
+          a_html: "No. Plantillas Macro es autónomo — no requiere Microsoft Office, ni .NET, ni ningún otro componente adicional. Descargas el ZIP, lo descomprimes y ejecutas el programa."
+        - q: "¿Dónde se guardan mis plantillas y mis ajustes?"
+          a_html: "Las plantillas viven en la carpeta que tú elijas (por defecto, una carpeta <code>Plantillas</code> junto al programa). Los ajustes y preferencias se guardan aparte, en tu carpeta de usuario de Windows, para que no se pierdan si mueves o reinstalas el programa."
+        - q: "¿El programa se queda ocupando la barra de tareas todo el rato?"
+          a_html: "Puedes minimizarlo a la bandeja del sistema (system tray) para que quede fuera de en medio y siga funcionando en segundo plano, listo para cuando escribas el detonante."
+        - q: "Si abro el programa dos veces por error, ¿se duplica?"
+          a_html: "No. Plantillas Macro detecta que ya hay una instancia abierta y simplemente trae la ventana existente al frente, en vez de abrir una segunda copia."
+
+    - id: "detonante"
+      label: "El detonante y el popup"
+      items:
+        - q: "¿Puedo cambiar el detonante \"/\" por otro símbolo?"
+          a_html: "Sí. El \"/\" es el detonante por defecto, pero puedes cambiarlo desde Ajustes por el que prefieras."
+        - q: "¿Puedo usar un detonante distinto según la carpeta de plantillas?"
+          a_html: "Sí, es posible configurar detonantes personalizados por carpeta — útil si gestionas varios conjuntos de plantillas (por ejemplo, uno para atención al cliente y otro para ventas) y quieres diferenciarlos al escribir."
+        - q: "¿Cómo funciona el filtro cuando voy escribiendo?"
+          a_html: "En cuanto escribes el detonante, se abre un popup con la lista de plantillas. A partir de ahí, cada letra que escribas filtra la lista en tiempo real comparando con el nombre del archivo — no hace falta escribir el nombre completo ni en orden exacto de inicio."
+        - q: "¿Puedo excluir temporalmente una carpeta del detector?"
+          a_html: "Sí, puedes excluir una carpeta de forma temporal para que el detector la ignore sin tener que desconfigurarla del todo — útil si quieres dejar de recibir sugerencias de esa carpeta por un tiempo sin perder la configuración."
+
+    - id: "formato"
+      label: "Formato y plantillas"
+      items:
+        - q: "¿Qué formatos de archivo puedo usar como plantilla?"
+          a_html: "DOCX, ODT y TXT. Los DOCX y ODT conservan el formato completo al pegarse (negrita, tablas, imágenes, estilos); los TXT se pegan como texto plano."
+        - q: "¿Se pierde algo del formato original al pegar?"
+          a_html: "No debería — el objetivo del programa es precisamente que el DOCX/ODT llegue con la misma formatación que tiene el archivo original: negrita, cursiva, tablas, listas, imágenes incrustadas y estilos de párrafo."
+        - q: "¿Puedo tener plantillas con imágenes dentro?"
+          a_html: "Sí, las imágenes incrustadas en el DOCX u ODT se pegan junto con el resto del contenido."
+
+    - id: "licencia"
+      label: "Licencia y prueba gratuita"
+      items:
+        - q: "¿Qué pasa exactamente cuando terminan los 14 días de prueba si no compro?"
+          a_html: "El programa no deja de funcionar de golpe: pasa a un modo con límites — hasta 11 plantillas DOCX, 11 ODT y 5 TXT (27 en total), y el detector automático (el que abre el popup al escribir el detonante) se desactiva. Para recuperar el detector y quitar los límites hace falta activar una licencia."
+        - q: "¿Puedo usar la misma licencia en dos ordenadores a la vez?"
+          a_html: "Cada licencia permite una activación simultánea. Si necesitas cambiarla de equipo, puedes desactivarla desde el propio programa en el equipo anterior y activarla en el nuevo."
+        - q: "¿Necesito conexión a internet para usar el programa a diario?"
+          a_html: "No para el uso diario — la licencia se valida y se guarda en caché localmente. Se revalida periódicamente cuando hay conexión, pero un corte de internet puntual no te deja sin acceso de inmediato."
+
+    - id: "nube"
+      label: "Sincronización en la nube"
+      items:
+        - q: "¿Detecta automáticamente si tengo OneDrive, Dropbox o Google Drive?"
+          a_html: "Sí. El programa detecta si tienes alguna de estas tres aplicaciones instaladas y puede sugerirte guardar ahí tu carpeta de plantillas, para que se sincronice sola entre tus equipos."
+        - q: "Si sincronizo con la nube, ¿mis plantillas pasan por los servidores de Plantillas Macro?"
+          a_html: "No. La sincronización la gestiona directamente el servicio de nube que elijas (OneDrive, Dropbox o Google Drive) sobre tu propia carpeta — Plantillas Macro no sube ni retransmite ese contenido a ningún servidor propio."
+
+    - id: "extension"
+      label: "Extensión de navegador (Position Caret)"
+      items:
+        - q: "Ya tengo el programa instalado, ¿para qué sirve la extensión?"
+          a_html: "El programa por sí solo ya funciona en la mayoría de aplicaciones de escritorio. La extensión mejora la precisión dentro del navegador: le indica al programa la posición exacta del cursor en la página web, para que el popup aparezca justo ahí en vez de en una posición aproximada."
+        - q: "Si cierro y vuelvo a abrir el programa, ¿tengo que reconectar la extensión a mano?"
+          a_html: "No, la extensión reintenta la conexión automáticamente cada pocos segundos hasta reconectar — no hace falta que hagas nada."
+        - q: "¿Funciona si tengo varias pestañas o perfiles de navegador abiertos a la vez?"
+          a_html: "Sí, la extensión soporta varios navegadores/perfiles conectados a la vez y prioriza automáticamente el que tiene la ventana con el foco activo en ese momento."
+
+    - id: "idiomas"
+      label: "Idiomas"
+      items:
+        - q: "¿En qué idiomas está disponible la interfaz del programa?"
+          a_html: "Español, English, Français, Deutsch, Italiano, Português, y además valenciano y catalán. Puedes cambiar el idioma de la interfaz desde Ajustes en cualquier momento."
+        - q: "La web está también en chino y ruso, ¿el programa también?"
+          a_html: "Por ahora no — el programa todavía no incluye esos dos paquetes de idioma. Si los necesitas, contáctanos para que sepamos que hay demanda real y podamos priorizarlo."
+
+    - id: "rendimiento"
+      label: "Multi-monitor y pantalla"
+      items:
+        - q: "¿Funciona bien si tengo varios monitores con distinta escala/DPI?"
+          a_html: "Sí, el programa es consciente del DPI de cada monitor por separado (per-monitor DPI aware), así que el popup aparece en la posición correcta aunque tengas, por ejemplo, un monitor al 100% y otro al 150% de escala."
+
+
 novedades:
 
   locale: "es-ES"
