@@ -167,13 +167,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
-// INICIALIZAR LEMON SQUEEZY
-// ============================================
-if (window.LemonSqueezy) {
-    window.LemonSqueezy.Buttons.init();
-}
-
-// ============================================
 // DETECTAR CAMBIO DE TAMAÑO DE PANTALLA
 // ============================================
 let resizeTimer;

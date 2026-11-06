@@ -14,7 +14,6 @@ home:
       文本扩展工具，可将您的 Word、ODT 和 TXT 模板以完整格式粘贴到任何应用程序中。</p>
       <p>输入"/"+名称即可立即粘贴。无需复制，无需打开文件，不打断您的工作流程。</p>
     cta_download: "免费下载 →"
-    cta_pricing: "查看价格"
     video_aria_label: "放大产品视频"
     video_expand_label: "⤢ 放大"
     video_window_title: "PLANTILLAS MACRO"
@@ -42,7 +41,7 @@ home:
         text_html: "DOCX、ODT 和 TXT，保留粗体、表格、图片和样式，所有格式完整保留。"
       - number: "03"
         title: "100% 本地运行"
-        text_html: "您的模板保存在电脑本地。无需强制使用云端，无需服务器，也没有隐藏订阅。"
+        text_html: "您的模板保存在电脑本地。无需强制使用云端，无需服务器，也无需订阅。"
 
   why:
     kicker: "/ 与众不同"
@@ -84,50 +83,8 @@ home:
         cells: ["✓", "⚠ 复杂", "✓", "✕ 需要代码"]
       - label: "您的文件，您的文件夹"
         cells: ["✓", "⚠ 专有格式", "✕ 云端", "✓"]
-      - label: "14 天免费试用"
+      - label: "免费且无限制"
         cells: ["✓", "⚠ 有限制", "⚠ 有限制", "✓ 免费"]
-
-  pricing:
-    kicker: "/ 价格"
-    title: "选择您的套餐。"
-    intro: "无长期合约，随时可取消。"
-    plans:
-      - name: "月付"
-        tag: ""
-        price: "€3.90"
-        unit: "/月"
-        description: "+ 增值税（依所在国家而定）"
-        features: ["所有功能", "无长期合约", "随时可取消"]
-        button: "订阅 →"
-        popular: false
-        link_key: "buy_mensual"
-        umami: "click-buy-mensual-zh"
-      - name: "季付"
-        tag: "最受欢迎"
-        price: "€9.90"
-        unit: "/3个月"
-        description: "€3.30/月 · 节省 15%"
-        features: ["所有功能", "按季度续订", "随时可取消"]
-        button: "选择季付 →"
-        popular: true
-        link_key: "buy_trimestral"
-        umami: "click-buy-trimestral-zh"
-      - name: "年付"
-        tag: "最超值"
-        price: "€35"
-        unit: "/年"
-        description: "€2.90/月 · 节省 25%"
-        features: ["所有功能", "按年续订", "最超值"]
-        button: "选择年付 →"
-        popular: false
-        link_key: "buy_anual"
-        umami: "click-buy-anual-zh"
-    note_html: >-
-      🔒 通过 Lemon Squeezy 安全支付 · 14 天免费试用 ·
-      随时可取消。<br><br>显示价格不含增值税。适用的增值税将根据购买者所在国家/地区，在付款时计算并加入，并完全由
-      Lemon Squeezy 作为 Merchant of Record（销售记录方）管理。<br><br>您的团队或公司需要 25
-      个或更多授权许可？<a href="mailto:gestiona.optimiza@gmail.com?subject=%E6%89%B9%E9%87%8F%E8%AE%B8%E5%8F%AF%E8%AF%A2%E9%97%AE%20(%2B25)">联系我们，为您找到最合适的方案
-      →</a>
 
   faq:
     kicker: "/ 常见问题"
@@ -141,18 +98,18 @@ home:
         a_html: "是的，这是相较于其他文本扩展工具的主要优势。Plantillas Macro 粘贴 DOCX 或 ODT 内容时会完整保留格式：粗体、斜体、表格、列表、嵌入图片和段落样式。传统扩展工具只能粘贴纯文本。"
       - q: "我的模板会上传到服务器或云端吗？"
         a_html: "不会。Plantillas Macro 完全本地运行——您的文件永远不会离开您的电脑。没有用户账户，也没有专用服务器。如果您想在多台电脑间同步，只需将文件夹指向 OneDrive、Dropbox 或 Google Drive。"
-      - q: "费用是多少？有免费试用吗？"
-        a_html: "有 14 天免费试用，包含所有功能，无需信用卡。之后，套餐起价为 €3.90/月 + 增值税。您可以随时通过 Lemon Squeezy 面板取消，无任何违约金。"
+      - q: "多少钱？"
+        a_html: "免费。Plantillas Macro 提供全部功能，模板数量不限。无需账户、无需信用卡，也无需激活任何许可证。"
       - q: "支持哪些 Windows 版本？"
         a_html: "Plantillas Macro 兼容 Windows 10 和 Windows 11（64位）。无需安装 Microsoft Office——可与系统中任何应用程序配合使用。目前暂无 macOS 或 Linux 版本。"
       - q: "它与 AutoHotkey 或 Espanso 等其他扩展工具有何不同？"
         a_html: "AutoHotkey 需要编写脚本——不适合非技术用户。Espanso 和其他扩展工具处理纯文本或 Markdown，但无法粘贴带完整格式的 DOCX 文件。Plantillas Macro 专为需要处理真实 Word 文档、并希望在任何应用中粘贴而无需打开 Word 的用户设计。"
-      - q: "同一个授权许可可以在多台电脑上使用吗？"
-        a_html: '每个授权许可允许一次同时激活。如果您需要在多台电脑上使用，可以直接在软件内停用之前的电脑。如果您的团队或公司需要 25 个或更多授权许可，请<a href="mailto:gestiona.optimiza@gmail.com">联系我们</a>获取定制报价。'
+      - q: "可以安装在多台电脑上吗？"
+        a_html: "可以，数量不限。无需激活，也没有设备数量限制。如需在各台电脑上使用相同模板，只需将文件夹放在 OneDrive、Dropbox 或 Google Drive 中。"
 
   final_cta:
     title: "准备好更高效地工作了吗？"
-    text: "免费下载 Plantillas Macro，14 天内体验全部功能。"
+    text: "免费下载 Plantillas Macro：全部功能，无限制，无需注册。"
     button: "下载 Plantillas Macro →"
 
 
@@ -186,7 +143,7 @@ novedades:
 
   final_cta:
     title: "准备好更高效地工作了吗？"
-    text: "免费下载 Plantillas Macro，14 天内体验全部功能。"
+    text: "免费下载 Plantillas Macro：全部功能，无限制，无需注册。"
     button: "下载 Plantillas Macro →"
 
 

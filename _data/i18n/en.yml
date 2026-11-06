@@ -17,7 +17,6 @@ home:
       <p>Type "/" + the name and it pastes instantly. No copying, no opening
       files, no interrupting your flow.</p>
     cta_download: "Download for free →"
-    cta_pricing: "View pricing"
     video_aria_label: "Expand product video"
     video_expand_label: "⤢ Expand"
     video_window_title: "PLANTILLAS MACRO"
@@ -45,7 +44,7 @@ home:
         text_html: "DOCX, ODT and TXT with bold, tables, images and styles. All formatting is preserved."
       - number: "03"
         title: "100% local"
-        text_html: "Your templates stay on your computer. No mandatory cloud, no servers, no hidden subscriptions."
+        text_html: "Your templates stay on your computer. No mandatory cloud, no servers, no subscriptions."
 
   why:
     kicker: "/ the difference"
@@ -87,52 +86,8 @@ home:
         cells: ["✓", "⚠ complex", "✓", "✕ requires code"]
       - label: "Your files, your folder"
         cells: ["✓", "⚠ proprietary format", "✕ cloud", "✓"]
-      - label: "14-day free trial"
+      - label: "Free, with no limits"
         cells: ["✓", "⚠ limited", "⚠ limited", "✓ free"]
-
-  pricing:
-    kicker: "/ pricing"
-    title: "Choose your plan."
-    intro: "No commitment. Cancel anytime."
-    plans:
-      - name: "Monthly"
-        tag: ""
-        price: "€3.90"
-        unit: "/month"
-        description: "+ VAT depending on your country"
-        features: ["All features", "No commitment", "Cancel anytime"]
-        button: "Subscribe →"
-        popular: false
-        link_key: "buy_mensual"
-        umami: "click-buy-mensual-en"
-      - name: "Quarterly"
-        tag: "Most popular"
-        price: "€9.90"
-        unit: "/3 months"
-        description: "€3.30/month · Save 15%"
-        features: ["All features", "Quarterly renewal", "Cancel anytime"]
-        button: "Choose Quarterly →"
-        popular: true
-        link_key: "buy_trimestral"
-        umami: "click-buy-trimestral-en"
-      - name: "Annual"
-        tag: "Best value"
-        price: "€35"
-        unit: "/year"
-        description: "€2.90/month · Save 25%"
-        features: ["All features", "Annual renewal", "Best value"]
-        button: "Choose Annual →"
-        popular: false
-        link_key: "buy_anual"
-        umami: "click-buy-anual-en"
-    note_html: >-
-      🔒 Secure payment via Lemon Squeezy · 14-day free trial · Cancel
-      anytime.<br><br>Prices shown do not include VAT. Applicable VAT is
-      calculated and added at checkout based on the buyer's country of
-      residence, and is fully managed by Lemon Squeezy as Merchant of
-      Record.<br><br>Need 25 or more licenses for your team or company?
-      <a href="mailto:gestiona.optimiza@gmail.com?subject=Volume%20license%20inquiry%20(%2B25)">Contact
-      us to find the best solution →</a>
 
   faq:
     kicker: "/ frequently asked questions"
@@ -146,18 +101,18 @@ home:
         a_html: "Yes, this is the main advantage over other text expanders. Plantillas Macro pastes DOCX or ODT content with all formatting intact: bold, italics, tables, lists, embedded images and paragraph styles. Classic expanders only paste plain text."
       - q: "Are my templates uploaded to any server or cloud?"
         a_html: "No. Plantillas Macro runs 100% locally — your files never leave your computer. There's no user account or proprietary server. If you want sync between computers, just point the folder to OneDrive, Dropbox or Google Drive."
-      - q: "How much does it cost and is there a free trial?"
-        a_html: "There's a 14-day free trial with all features included, no credit card required. After that, plans start from €3.90/month + VAT. You can cancel anytime from the Lemon Squeezy panel with no penalties."
+      - q: "How much does it cost?"
+        a_html: "Nothing. Plantillas Macro is free, with every feature and no template limit. No account, no credit card and no license to activate."
       - q: "Which Windows versions are supported?"
         a_html: "Plantillas Macro is compatible with Windows 10 and Windows 11 (64-bit). It doesn't require Microsoft Office — it works with any application on the system. There's no macOS or Linux version at this time."
       - q: "How is it different from AutoHotkey or other expanders like Espanso?"
         a_html: "AutoHotkey requires writing scripts — it's not for non-technical users. Espanso and other expanders handle plain text or markdown, but don't paste DOCX files with full formatting. Plantillas Macro is built for people who work with real Word documents and want to paste them into any app without opening Word."
-      - q: "Can I use the same license on more than one computer?"
-        a_html: 'Each license allows one simultaneous activation. If you need to use it on several computers, you can deactivate the previous one from within the software itself. For teams or companies with 25 or more licenses, <a href="mailto:gestiona.optimiza@gmail.com">contact us</a> for a custom price.'
+      - q: "Can I install it on several computers?"
+        a_html: "Yes, on as many as you like. There are no activations and no device limit. To share the same templates across them, point the folder to OneDrive, Dropbox or Google Drive."
 
   final_cta:
     title: "Ready to work faster?"
-    text: "Download Plantillas Macro for free and try every feature for 14 days."
+    text: "Download Plantillas Macro for free: every feature, no limits, no sign-up."
     button: "Download Plantillas Macro →"
 
 
@@ -191,7 +146,7 @@ novedades:
 
   final_cta:
     title: "Ready to work faster?"
-    text: "Download Plantillas Macro for free and try every feature for 14 days."
+    text: "Download Plantillas Macro for free: every feature, no limits, no sign-up."
     button: "Download Plantillas Macro →"
 
 

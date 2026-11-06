@@ -14,11 +14,7 @@
   "url": "{{ site.url }}{{ page.url }}",
   "downloadUrl": "{{ site.links.app_download }}",
   "softwareVersion": "3.0.0",
-  "offers": [
-    { "@type": "Offer", "name": "Plan Mensual",    "price": "3.90",  "priceCurrency": "EUR" },
-    { "@type": "Offer", "name": "Plan Trimestral", "price": "9.90",  "priceCurrency": "EUR" },
-    { "@type": "Offer", "name": "Plan Anual",      "price": "35.00", "priceCurrency": "EUR" }
-  ],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
   "publisher": { "@type": "Organization", "name": "Flowmatic", "url": "{{ site.url }}" }
 }
 </script>
@@ -54,7 +50,6 @@
 
     <div class="hero-actions">
       <a href="{{ site.links.app_download }}" class="button-primary" data-umami="click-cta-main">{{ t.hero.cta_download }}</a>
-      <a href="#pricing" class="button-secondary" data-umami="click-ver-precios">{{ t.hero.cta_pricing }}</a>
     </div>
   </div>
 
@@ -263,40 +258,6 @@
       </tbody>
     </table>
   </div>
-
-</div>
-</section>
-
-<!-- =====================================================
-     PRECIOS
-===================================================== -->
-<section class="section" id="pricing">
-<div class="container">
-
-  <div class="section-header">
-    <div><div class="section-kicker">{{ t.pricing.kicker }}</div></div>
-    <div>
-      <h2>{{ t.pricing.title }}</h2>
-      <p class="section-intro">{{ t.pricing.intro }}</p>
-    </div>
-  </div>
-
-  <div class="pricing-grid">
-    {% for plan in t.pricing.plans %}
-    <article class="plan{% if plan.popular %} popular{% endif %}" data-reveal>
-      <div class="plan-tag">{% if plan.tag != "" %}{{ plan.tag }}{% else %}&nbsp;{% endif %}</div>
-      <h3>{{ plan.name }}</h3>
-      <div class="price">{{ plan.price }}<small>{{ plan.unit }}</small></div>
-      <div class="plan-description">{{ plan.description }}</div>
-      <ul class="plan-features">
-        {% for feat in plan.features %}<li>{{ feat }}</li>{% endfor %}
-      </ul>
-      <a href="{{ site.links[plan.link_key] }}" class="plan-button lemonsqueezy-button" data-umami="{{ plan.umami }}">{{ plan.button }}</a>
-    </article>
-    {% endfor %}
-  </div>
-
-  <div class="pricing-note">{{ t.pricing.note_html }}</div>
 
 </div>
 </section>

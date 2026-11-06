@@ -16,7 +16,6 @@ home:
       <p>Tippen Sie "/" + den Namen und er wird sofort eingefügt. Kein
       Kopieren, kein Öffnen von Dateien, kein Unterbrechen Ihres Arbeitsflusses.</p>
     cta_download: "Kostenlos herunterladen →"
-    cta_pricing: "Preise ansehen"
     video_aria_label: "Produktvideo vergrößern"
     video_expand_label: "⤢ Vergrößern"
     video_window_title: "PLANTILLAS MACRO"
@@ -44,7 +43,7 @@ home:
         text_html: "DOCX, ODT und TXT mit Fettdruck, Tabellen, Bildern und Formatvorlagen. Die gesamte Formatierung bleibt erhalten."
       - number: "03"
         title: "100 % lokal"
-        text_html: "Ihre Vorlagen bleiben auf Ihrem Computer. Ohne verpflichtende Cloud, ohne Server und ohne versteckte Abonnements."
+        text_html: "Ihre Vorlagen bleiben auf Ihrem Computer. Ohne verpflichtende Cloud, ohne Server und ohne Abonnement."
 
   why:
     kicker: "/ der unterschied"
@@ -86,53 +85,8 @@ home:
         cells: ["✓", "⚠ komplex", "✓", "✕ Code erforderlich"]
       - label: "Ihre Dateien, Ihr Ordner"
         cells: ["✓", "⚠ proprietäres Format", "✕ Cloud", "✓"]
-      - label: "14 Tage kostenlose Testphase"
+      - label: "Kostenlos und ohne Limits"
         cells: ["✓", "⚠ begrenzt", "⚠ begrenzt", "✓ kostenlos"]
-
-  pricing:
-    kicker: "/ preise"
-    title: "Wählen Sie Ihren Plan."
-    intro: "Ohne Vertragsbindung. Jederzeit kündbar."
-    plans:
-      - name: "Monatlich"
-        tag: ""
-        price: "3,90€"
-        unit: "/Monat"
-        description: "+ MwSt. je nach Land"
-        features: ["Alle Funktionen", "Keine Verpflichtung", "Jederzeit kündbar"]
-        button: "Abonnieren →"
-        popular: false
-        link_key: "buy_mensual"
-        umami: "click-buy-mensual-de"
-      - name: "Vierteljährlich"
-        tag: "Am beliebtesten"
-        price: "9,90€"
-        unit: "/3 Monate"
-        description: "3,30€/Monat · 15 % sparen"
-        features: ["Alle Funktionen", "Vierteljährliche Verlängerung", "Jederzeit kündbar"]
-        button: "Vierteljährlich wählen →"
-        popular: true
-        link_key: "buy_trimestral"
-        umami: "click-buy-trimestral-de"
-      - name: "Jährlich"
-        tag: "Bester Wert"
-        price: "35€"
-        unit: "/Jahr"
-        description: "2,90€/Monat · 25 % sparen"
-        features: ["Alle Funktionen", "Jährliche Verlängerung", "Bester Wert"]
-        button: "Jährlich wählen →"
-        popular: false
-        link_key: "buy_anual"
-        umami: "click-buy-anual-de"
-    note_html: >-
-      🔒 Sichere Zahlung über Lemon Squeezy · 14 Tage kostenlose Testphase ·
-      Jederzeit kündbar.<br><br>Die angezeigten Preise verstehen sich zzgl.
-      MwSt. Die anfallende MwSt. wird beim Bezahlvorgang je nach Wohnsitzland
-      des Käufers berechnet und hinzugefügt und wird vollständig von Lemon
-      Squeezy als Merchant of Record verwaltet.<br><br>Benötigen Sie 25 oder
-      mehr Lizenzen für Ihr Team oder Unternehmen?
-      <a href="mailto:gestiona.optimiza@gmail.com?subject=Anfrage%20Volumenlizenzen%20(%2B25)">Kontaktieren
-      Sie uns für die beste Lösung →</a>
 
   faq:
     kicker: "/ häufig gestellte fragen"
@@ -146,18 +100,18 @@ home:
         a_html: "Ja, das ist der Hauptvorteil gegenüber anderen Texterweiterungen. Plantillas Macro fügt DOCX- oder ODT-Inhalte mit vollständig erhaltener Formatierung ein: Fettdruck, Kursivschrift, Tabellen, Listen, eingebettete Bilder und Absatzformate. Klassische Expander fügen nur reinen Text ein."
       - q: "Werden meine Vorlagen auf einen Server oder in die Cloud hochgeladen?"
         a_html: "Nein. Plantillas Macro läuft zu 100 % lokal — Ihre Dateien verlassen niemals Ihren Computer. Es gibt kein Benutzerkonto und keinen eigenen Server. Wenn Sie eine Synchronisierung zwischen Computern wünschen, verweisen Sie den Ordner einfach auf OneDrive, Dropbox oder Google Drive."
-      - q: "Wie viel kostet es und gibt es eine kostenlose Testphase?"
-        a_html: "Es gibt 14 Tage kostenlose Testphase mit allen Funktionen, ohne Kreditkarte. Danach beginnen die Pläne bei 3,90€/Monat + MwSt. Sie können jederzeit über das Lemon-Squeezy-Panel ohne Strafgebühren kündigen."
+      - q: "Was kostet es?"
+        a_html: "Nichts. Plantillas Macro ist kostenlos – mit allen Funktionen und ohne Vorlagenlimit. Kein Konto, keine Kreditkarte, keine Lizenz zum Aktivieren."
       - q: "Welche Windows-Versionen werden unterstützt?"
         a_html: "Plantillas Macro ist mit Windows 10 und Windows 11 (64-Bit) kompatibel. Microsoft Office wird nicht benötigt — es funktioniert mit jeder Anwendung des Systems. Derzeit gibt es keine macOS- oder Linux-Version."
       - q: "Wie unterscheidet es sich von AutoHotkey oder anderen Expandern wie Espanso?"
         a_html: "AutoHotkey erfordert das Schreiben von Skripten — nichts für nicht-technische Nutzer. Espanso und andere Expander verarbeiten reinen Text oder Markdown, fügen aber keine DOCX-Dateien mit vollständiger Formatierung ein. Plantillas Macro ist für Menschen gedacht, die mit echten Word-Dokumenten arbeiten und diese in jede Anwendung einfügen möchten, ohne Word zu öffnen."
-      - q: "Kann ich dieselbe Lizenz auf mehreren Computern nutzen?"
-        a_html: 'Jede Lizenz erlaubt eine gleichzeitige Aktivierung. Wenn Sie sie auf mehreren Computern nutzen müssen, können Sie den vorherigen Computer direkt in der Software deaktivieren. Für Teams oder Unternehmen mit 25 oder mehr Lizenzen <a href="mailto:gestiona.optimiza@gmail.com">kontaktieren Sie uns</a> für einen individuellen Preis.'
+      - q: "Kann ich es auf mehreren Computern installieren?"
+        a_html: "Ja, auf beliebig vielen. Es gibt keine Aktivierung und kein Gerätelimit. Für dieselben Vorlagen auf allen Geräten legen Sie den Ordner in OneDrive, Dropbox oder Google Drive."
 
   final_cta:
     title: "Bereit, schneller zu arbeiten?"
-    text: "Laden Sie Plantillas Macro kostenlos herunter und testen Sie alle Funktionen 14 Tage lang."
+    text: "Laden Sie Plantillas Macro kostenlos herunter: alle Funktionen, ohne Limits, ohne Registrierung."
     button: "Plantillas Macro herunterladen →"
 
 
@@ -191,7 +145,7 @@ novedades:
 
   final_cta:
     title: "Bereit, schneller zu arbeiten?"
-    text: "Laden Sie Plantillas Macro kostenlos herunter und testen Sie alle Funktionen 14 Tage lang."
+    text: "Laden Sie Plantillas Macro kostenlos herunter: alle Funktionen, ohne Limits, ohne Registrierung."
     button: "Plantillas Macro herunterladen →"
 
 
