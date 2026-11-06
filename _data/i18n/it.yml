@@ -67,6 +67,8 @@ home:
         text_html: "Installi, indichi la tua cartella e inizi a lavorare. Senza configurazione tecnica né file da modificare manualmente."
       - title: "Sincronizzazione senza vincoli"
         text_html: "Puoi puntare la tua cartella su OneDrive, Dropbox o Google Drive e si sincronizza da sola. I tuoi documenti restano normali file .docx — se un giorno cambi app, non perdi nulla."
+      - title: "Firme email con immagini"
+        text_html: "Crea le tue firme con loghi e immagini in un editor visuale, oppure incolla quella che usi già nella tua email o nel CRM. Compaiono nella ricerca come «Firma: …» e si incollano con la loro formattazione in Gmail, Outlook o nel tuo strumento di ticketing."
 
   comparison:
     kicker: "/ confronto"
@@ -108,6 +110,8 @@ home:
         a_html: "AutoHotkey richiede di scrivere script — non è per utenti non tecnici. Espanso e altri espansori gestiscono testo semplice o markdown, ma non incollano file DOCX con formattazione completa. Plantillas Macro è pensato per chi lavora con documenti Word reali e vuole incollarli in qualsiasi app senza aprire Word."
       - q: "Posso installarlo su più computer?"
         a_html: "Sì, su tutti quelli che vuoi. Nessuna attivazione e nessun limite di dispositivi. Per avere gli stessi modelli ovunque, imposta la cartella su OneDrive, Dropbox o Google Drive."
+      - q: "Posso salvare le mie firme email con loghi e immagini?"
+        a_html: "Sì. In Impostazioni → Firme crei le tue firme in un editor visuale o incolli quella che usi già (copiala con Ctrl+C dalla tua email o dal CRM). Le immagini vengono salvate con la firma, quindi non dipendono da alcun link. Digita l'attivatore e «firma» per incollarla in qualsiasi applicazione."
 
   final_cta:
     title: "Pronto a lavorare più velocemente?"

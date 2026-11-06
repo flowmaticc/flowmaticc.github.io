@@ -67,6 +67,8 @@ home:
         text_html: "Vous installez, indiquez votre dossier et commencez à travailler. Sans configuration technique ni fichiers à modifier manuellement."
       - title: "Synchronisation sans dépendance"
         text_html: "Vous pouvez pointer votre dossier vers OneDrive, Dropbox ou Google Drive et il se synchronise seul. Vos documents restent des fichiers .docx normaux — si un jour vous changez d'application, vous ne perdez rien."
+      - title: "Signatures d'e-mail avec images"
+        text_html: "Créez vos signatures avec logos et images dans un éditeur visuel, ou collez celle que vous utilisez déjà dans votre messagerie ou votre CRM. Elles apparaissent dans la recherche comme «Firma: …» et se collent avec leur mise en forme dans Gmail, Outlook ou votre outil de tickets."
 
   comparison:
     kicker: "/ comparaison"
@@ -108,6 +110,8 @@ home:
         a_html: "AutoHotkey nécessite d'écrire des scripts — ce n'est pas pour les utilisateurs non techniques. Espanso et d'autres expanseurs gèrent le texte brut ou le markdown, mais ne collent pas de fichiers DOCX avec une mise en forme complète. Plantillas Macro est conçu pour les personnes qui travaillent avec de vrais documents Word et veulent les coller dans n'importe quelle application sans ouvrir Word."
       - q: "Puis-je l'installer sur plusieurs ordinateurs ?"
         a_html: "Oui, sur autant que vous voulez. Aucune activation ni limite d'appareils. Pour partager les mêmes modèles, placez le dossier dans OneDrive, Dropbox ou Google Drive."
+      - q: "Puis-je enregistrer mes signatures d'e-mail avec logos et images ?"
+        a_html: "Oui. Dans Paramètres → Signatures, créez vos signatures dans un éditeur visuel ou collez celle que vous utilisez déjà (copiez-la avec Ctrl+C depuis votre messagerie ou votre CRM). Les images sont enregistrées avec la signature et ne dépendent d'aucun lien. Tapez le déclencheur puis «firma» pour la coller dans n'importe quelle application."
 
   final_cta:
     title: "Prêt à travailler plus vite ?"

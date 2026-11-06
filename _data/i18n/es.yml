@@ -74,6 +74,8 @@ home:
         text_html: "Instalas, señalas tu carpeta y empiezas a trabajar. Sin configuración técnica ni archivos que editar a mano."
       - title: "Sync sin lock-in"
         text_html: "Puedes apuntar tu carpeta a OneDrive, Dropbox o Google Drive y se sincroniza sola. Tus documentos siguen siendo archivos .docx normales — si un día cambias de app, no pierdes nada."
+      - title: "Firmas de correo con imágenes"
+        text_html: "Crea tus firmas con logos e imágenes en un editor visual, o pega la que ya usas en tu correo o CRM. Aparecen en el buscador como «Firma: …» y se pegan con su formato en Gmail, Outlook o tu herramienta de tickets."
 
   comparison:
     kicker: "/ comparación"
@@ -115,6 +117,8 @@ home:
         a_html: "AutoHotkey requiere programar scripts — no es para usuarios no técnicos. Espanso y otros expansores manejan texto plano o markdown, pero no pegan archivos DOCX con formato completo. Plantillas Macro está pensado para quienes trabajan con documentos Word reales y quieren pegarlos en cualquier app sin abrir Word."
       - q: "¿Puedo instalarlo en varios equipos?"
         a_html: "Sí, en todos los que quieras. No hay activaciones ni límite de equipos. Si quieres las mismas plantillas en todos, apunta la carpeta a OneDrive, Dropbox o Google Drive."
+      - q: "¿Puedo guardar mis firmas de correo con logos e imágenes?"
+        a_html: "Sí. En Ajustes → Firmas creas tus firmas en un editor visual o pegas la que ya usas (cópiala con Ctrl+C desde tu correo o CRM). Las imágenes se guardan junto a la firma, así que no dependen de ningún enlace. Escribe el detonante y «firma» para pegarla en cualquier aplicación."
 
   final_cta:
     title: "¿Listo para trabajar más rápido?"
@@ -180,6 +184,18 @@ help_faq:
         - q: "¿Necesito conexión a internet para usar el programa?"
           a_html: "No. El programa funciona sin conexión. Solo se conecta, si hay internet, para comprobar si hay una versión nueva del programa o de los idiomas."
 
+    - id: "firmas"
+      label: "Firmas de correo"
+      items:
+        - q: "¿Cómo creo una firma?"
+          a_html: "En <strong>Ajustes → Firmas</strong> pulsa <strong>Nueva firma</strong>. Se abre un editor en tu navegador: pega la firma que ya usas (cópiala con Ctrl+C desde tu correo o CRM) o créala desde cero con texto, imágenes, enlaces y colores. Ponle un nombre y pulsa <strong>Guardar firma</strong>."
+        - q: "¿Cómo la pego?"
+          a_html: "Igual que una plantilla: escribe el detonante y <code>firma</code> (o parte de su nombre). Las firmas aparecen como «Firma: …» en el buscador."
+        - q: "¿Dónde se guardan y qué pasa con las imágenes?"
+          a_html: "En la carpeta <code>_Firmas</code> dentro de tu carpeta de plantillas, así que se sincronizan si usas OneDrive, Dropbox o Google Drive. Las imágenes se guardan junto a la firma y se incrustan al pegarla: no dependen de ningún enlace externo."
+        - q: "Al pegarla veo líneas en blanco que no quería"
+          a_html: "Lo que se pega es exactamente lo que ves en el editor. Abre la firma con <strong>Editar</strong>, borra las líneas en blanco sobrantes y vuelve a guardarla."
+
     - id: "nube"
       label: "Sincronización en la nube"
       items:
@@ -202,9 +218,9 @@ help_faq:
       label: "Idiomas"
       items:
         - q: "¿En qué idiomas está disponible la interfaz del programa?"
-          a_html: "Español, English, Français, Deutsch, Italiano, Português, y además valenciano y catalán. Puedes cambiar el idioma de la interfaz desde Ajustes en cualquier momento."
-        - q: "La web está también en chino y ruso, ¿el programa también?"
-          a_html: "Por ahora no — el programa todavía no incluye esos dos paquetes de idioma. Si los necesitas, contáctanos para que sepamos que hay demanda real y podamos priorizarlo."
+          a_html: "Español, English, Français, Deutsch, Italiano, Português, Русский (ruso), y además valenciano y catalán. Puedes cambiar el idioma de la interfaz desde Ajustes en cualquier momento."
+        - q: "La web está también en chino, ¿el programa también?"
+          a_html: "Por ahora no — el programa todavía no incluye el paquete de chino. Si lo necesitas, contáctanos para que sepamos que hay demanda real y podamos priorizarlo."
 
     - id: "rendimiento"
       label: "Multi-monitor y pantalla"

@@ -68,6 +68,8 @@ home:
         text_html: "Install, point to your folder and start working. No technical setup, no files to edit by hand."
       - title: "Sync without lock-in"
         text_html: "You can point your folder to OneDrive, Dropbox or Google Drive and it syncs itself. Your documents are still plain .docx files — if you ever switch apps, you lose nothing."
+      - title: "Email signatures with images"
+        text_html: "Create your signatures with logos and images in a visual editor, or paste the one you already use in your email or CRM. They show up in the search as «Firma: …» and paste with their formatting into Gmail, Outlook or your ticketing tool."
 
   comparison:
     kicker: "/ comparison"
@@ -109,6 +111,8 @@ home:
         a_html: "AutoHotkey requires writing scripts — it's not for non-technical users. Espanso and other expanders handle plain text or markdown, but don't paste DOCX files with full formatting. Plantillas Macro is built for people who work with real Word documents and want to paste them into any app without opening Word."
       - q: "Can I install it on several computers?"
         a_html: "Yes, on as many as you like. There are no activations and no device limit. To share the same templates across them, point the folder to OneDrive, Dropbox or Google Drive."
+      - q: "Can I save my email signatures with logos and images?"
+        a_html: "Yes. In Settings → Signatures you create your signatures in a visual editor or paste the one you already use (copy it with Ctrl+C from your email or CRM). Images are saved with the signature, so they don't depend on any link. Type the trigger and «firma» to paste it in any application."
 
   final_cta:
     title: "Ready to work faster?"

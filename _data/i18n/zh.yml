@@ -65,6 +65,8 @@ home:
         text_html: "安装、指定文件夹，即可开始工作。无需技术配置，无需手动编辑任何文件。"
       - title: "同步无锁定"
         text_html: "您可以将文件夹指向 OneDrive、Dropbox 或 Google Drive，它会自动同步。您的文档始终是普通的 .docx 文件——即使有一天更换其他应用，也不会丢失任何内容。"
+      - title: "带图片的邮件签名"
+        text_html: "在可视化编辑器中用徽标和图片创建签名，或粘贴您在邮箱或 CRM 中已有的签名。签名会以「Firma: …」的形式出现在搜索结果中，并保留格式粘贴到 Gmail、Outlook 或您的工单系统中。"
 
   comparison:
     kicker: "/ 对比"
@@ -106,6 +108,8 @@ home:
         a_html: "AutoHotkey 需要编写脚本——不适合非技术用户。Espanso 和其他扩展工具处理纯文本或 Markdown，但无法粘贴带完整格式的 DOCX 文件。Plantillas Macro 专为需要处理真实 Word 文档、并希望在任何应用中粘贴而无需打开 Word 的用户设计。"
       - q: "可以安装在多台电脑上吗？"
         a_html: "可以，数量不限。无需激活，也没有设备数量限制。如需在各台电脑上使用相同模板，只需将文件夹放在 OneDrive、Dropbox 或 Google Drive 中。"
+      - q: "我可以保存带徽标和图片的邮件签名吗？"
+        a_html: "可以。在「设置 → 签名」中，您可以用可视化编辑器创建签名，或粘贴已有的签名（在邮箱或 CRM 中用 Ctrl+C 复制）。图片会与签名一起保存，不依赖任何链接。输入触发符和「firma」即可在任何应用中粘贴签名。"
 
   final_cta:
     title: "准备好更高效地工作了吗？"

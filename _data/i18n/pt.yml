@@ -67,6 +67,8 @@ home:
         text_html: "Instale, indique sua pasta e comece a trabalhar. Sem configuração técnica nem arquivos para editar manualmente."
       - title: "Sincronização sem dependência"
         text_html: "Você pode apontar sua pasta para OneDrive, Dropbox ou Google Drive e ela se sincroniza sozinha. Seus documentos continuam sendo arquivos .docx normais — se um dia você mudar de aplicativo, não perde nada."
+      - title: "Assinaturas de e-mail com imagens"
+        text_html: "Crie suas assinaturas com logos e imagens em um editor visual ou cole a que você já usa no seu e-mail ou CRM. Elas aparecem na pesquisa como «Firma: …» e são coladas com a formatação no Gmail, Outlook ou na sua ferramenta de tickets."
 
   comparison:
     kicker: "/ comparação"
@@ -108,6 +110,8 @@ home:
         a_html: "O AutoHotkey exige escrever scripts — não é para usuários não técnicos. O Espanso e outros expansores lidam com texto simples ou markdown, mas não colam arquivos DOCX com formatação completa. O Plantillas Macro foi criado para quem trabalha com documentos Word reais e quer colá-los em qualquer aplicativo sem abrir o Word."
       - q: "Posso instalá-lo em vários computadores?"
         a_html: "Sim, em quantos quiser. Não há ativações nem limite de dispositivos. Para ter os mesmos modelos em todos, aponte a pasta para o OneDrive, Dropbox ou Google Drive."
+      - q: "Posso salvar minhas assinaturas de e-mail com logos e imagens?"
+        a_html: "Sim. Em Configurações → Assinaturas você cria suas assinaturas em um editor visual ou cola a que já usa (copie com Ctrl+C do seu e-mail ou CRM). As imagens são salvas com a assinatura, então não dependem de nenhum link. Digite o gatilho e «firma» para colá-la em qualquer aplicativo."
 
   final_cta:
     title: "Pronto para trabalhar mais rápido?"

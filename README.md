@@ -26,6 +26,7 @@
 - **🎨 Formato Completo**: Conserva toda la estructura de archivos DOCX, ODT y TXT: negritas, tablas, imágenes y estilos.
 - **🔒 100% Local**: Tus plantillas se almacenan en tu propio equipo. Sin nube, sin servidores y sin suscripciones.
 - **🌐 Funciona en Cualquier App**: Úsalo en Word, Outlook, Excel, Chrome, Slack, Teams o cualquier programa de Windows.
+- **✍️ Firmas de Correo**: Crea tus firmas con logos e imágenes en un editor visual o pega la que ya usas. Se pegan con su formato como cualquier plantilla.
 - **📁 Sin Migraciones**: Solo señala la carpeta donde ya tienes tus archivos. Funciona con tus documentos de siempre.
 
 ## 🚀 Cómo Funciona
@@ -46,7 +47,7 @@
 
 ## 📦 Versiones
 
-**Versión estable actual**: v3.0.0.18
+**Versión estable actual**: v3.0.0.19
 - Novedades: Visita nuestra [página de novedades](https://flowmaticc.github.io/novedades/)
 
 ## 🤝 Contribuciones y Soporte
