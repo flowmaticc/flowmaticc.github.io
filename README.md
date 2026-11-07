@@ -47,7 +47,7 @@
 
 ## 📦 Versiones
 
-**Versión estable actual**: v3.0.0.19
+**Versión estable actual**: v3.0.0.21
 - Novedades: Visita nuestra [página de novedades](https://flowmaticc.github.io/novedades/)
 
 ## 🤝 Contribuciones y Soporte
