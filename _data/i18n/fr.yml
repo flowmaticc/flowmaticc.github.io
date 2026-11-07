@@ -10,7 +10,7 @@ home:
     title_pre: "Tapez /"
     title_highlight: "et votre modèle apparaît."
     copy_html: >-
-      <p><strong>Plantillas Macro</strong> est l'expanseur de texte pour
+      <p><strong>Vexo</strong> est l'expanseur de texte pour
       Windows qui colle vos modèles Word, ODT et TXT avec une mise en forme
       complète dans n'importe quelle application.</p>
       <p>Tapez "/" + le nom et il se colle instantanément. Pas de copie,
@@ -49,14 +49,14 @@ home:
     kicker: "/ la différence"
     title: "Ici, vous tapez, c'est tout."
     lead_muted: "D'autres expanseurs vous obligent à mémoriser."
-    lead_highlight: "Plantillas Macro trouve le fichier pour vous."
+    lead_highlight: "Vexo trouve le fichier pour vous."
     diagram:
       step1: "Tapez /nom"
       step2: "Filtre en temps réel"
       step3: "Colle avec la mise en forme"
     items:
       - title: "Aucune abréviation à mémoriser"
-        text_html: "La plupart des expanseurs vous obligent à inventer une abréviation unique pour chaque modèle — avec 50 modèles, ce sont 50 codes que vous ne pouvez pas répéter, et un mois plus tard vous ne vous souvenez plus lequel était lequel. Avec Plantillas Macro, vous tapez <code>/</code> et n'importe quelle partie du nom : <code>/devis</code> filtre instantanément tout ce qui correspond. Fini de mémoriser des codes comme <code>/dvs2024v3final</code>."
+        text_html: "La plupart des expanseurs vous obligent à inventer une abréviation unique pour chaque modèle — avec 50 modèles, ce sont 50 codes que vous ne pouvez pas répéter, et un mois plus tard vous ne vous souvenez plus lequel était lequel. Avec Vexo, vous tapez <code>/</code> et n'importe quelle partie du nom : <code>/devis</code> filtre instantanément tout ce qui correspond. Fini de mémoriser des codes comme <code>/dvs2024v3final</code>."
       - title: "Mise en forme Word complète"
         text_html: "Colle avec le gras, les tableaux, les images et les styles intacts. Les expanseurs traditionnels travaillent généralement en texte brut — aucun ne gère vraiment le DOCX ou l'ODT."
       - title: "Sans compte, sans cloud obligatoire"
@@ -72,8 +72,8 @@ home:
 
   comparison:
     kicker: "/ comparaison"
-    title: "Ce qui rend Plantillas Macro différent."
-    headers: ["Caractéristique", "Plantillas Macro", "Expanseurs à abréviations", "Expanseurs de navigateur", "Outils techniques"]
+    title: "Ce qui rend Vexo différent."
+    headers: ["Caractéristique", "Vexo", "Expanseurs à abréviations", "Expanseurs de navigateur", "Outils techniques"]
     rows:
       - label: "Aucune abréviation à mémoriser"
         cells: ["✓", "✕", "✕", "✕"]
@@ -94,20 +94,20 @@ home:
     kicker: "/ questions fréquentes"
     title: "Avant de commencer."
     items:
-      - q: "Plantillas Macro fonctionne-t-il avec Microsoft Word et Outlook ?"
-        a_html: "Oui. Plantillas Macro fonctionne dans n'importe quelle application Windows où vous pouvez écrire : Microsoft Word, Outlook, Excel, Google Chrome, Firefox, Slack, Teams, CRM web et tout autre programme. Il ne dépend pas de Word — il fonctionne au niveau du système d'exploitation."
+      - q: "Vexo fonctionne-t-il avec Microsoft Word et Outlook ?"
+        a_html: "Oui. Vexo fonctionne dans n'importe quelle application Windows où vous pouvez écrire : Microsoft Word, Outlook, Excel, Google Chrome, Firefox, Slack, Teams, CRM web et tout autre programme. Il ne dépend pas de Word — il fonctionne au niveau du système d'exploitation."
       - q: "Puis-je utiliser mes modèles .docx et .odt existants ?"
-        a_html: "Oui. Indiquez simplement le dossier où se trouvent vos fichiers .docx, .odt ou .txt et Plantillas Macro les détecte automatiquement. Pas besoin de les convertir ni de les importer — vos fichiers Word restent des fichiers Word normaux."
+        a_html: "Oui. Indiquez simplement le dossier où se trouvent vos fichiers .docx, .odt ou .txt et Vexo les détecte automatiquement. Pas besoin de les convertir ni de les importer — vos fichiers Word restent des fichiers Word normaux."
       - q: "La mise en forme complète est-elle conservée lors du collage — gras, tableaux, images ?"
-        a_html: "Oui, c'est le principal avantage par rapport aux autres expanseurs de texte. Plantillas Macro colle le contenu DOCX ou ODT avec toute la mise en forme intacte : gras, italique, tableaux, listes, images intégrées et styles de paragraphe. Les expanseurs classiques ne collent que du texte brut."
+        a_html: "Oui, c'est le principal avantage par rapport aux autres expanseurs de texte. Vexo colle le contenu DOCX ou ODT avec toute la mise en forme intacte : gras, italique, tableaux, listes, images intégrées et styles de paragraphe. Les expanseurs classiques ne collent que du texte brut."
       - q: "Mes modèles sont-ils envoyés sur un serveur ou dans le cloud ?"
-        a_html: "Non. Plantillas Macro fonctionne à 100 % en local — vos fichiers ne quittent jamais votre ordinateur. Il n'y a ni compte utilisateur ni serveur propriétaire. Si vous voulez une synchronisation entre ordinateurs, il suffit de pointer le dossier vers OneDrive, Dropbox ou Google Drive."
+        a_html: "Non. Vexo fonctionne à 100 % en local — vos fichiers ne quittent jamais votre ordinateur. Il n'y a ni compte utilisateur ni serveur propriétaire. Si vous voulez une synchronisation entre ordinateurs, il suffit de pointer le dossier vers OneDrive, Dropbox ou Google Drive."
       - q: "Combien ça coûte ?"
-        a_html: "Rien. Plantillas Macro est gratuit, avec toutes les fonctionnalités et sans limite de modèles. Pas de compte, pas de carte bancaire, aucune licence à activer."
+        a_html: "Rien. Vexo est gratuit, avec toutes les fonctionnalités et sans limite de modèles. Pas de compte, pas de carte bancaire, aucune licence à activer."
       - q: "Quelles versions de Windows sont prises en charge ?"
-        a_html: "Plantillas Macro est compatible avec Windows 10 et Windows 11 (64 bits). Il ne nécessite pas Microsoft Office — il fonctionne avec n'importe quelle application du système. Il n'y a pas de version macOS ni Linux pour le moment."
+        a_html: "Vexo est compatible avec Windows 10 et Windows 11 (64 bits). Il ne nécessite pas Microsoft Office — il fonctionne avec n'importe quelle application du système. Il n'y a pas de version macOS ni Linux pour le moment."
       - q: "En quoi est-il différent d'AutoHotkey ou d'autres expanseurs comme Espanso ?"
-        a_html: "AutoHotkey nécessite d'écrire des scripts — ce n'est pas pour les utilisateurs non techniques. Espanso et d'autres expanseurs gèrent le texte brut ou le markdown, mais ne collent pas de fichiers DOCX avec une mise en forme complète. Plantillas Macro est conçu pour les personnes qui travaillent avec de vrais documents Word et veulent les coller dans n'importe quelle application sans ouvrir Word."
+        a_html: "AutoHotkey nécessite d'écrire des scripts — ce n'est pas pour les utilisateurs non techniques. Espanso et d'autres expanseurs gèrent le texte brut ou le markdown, mais ne collent pas de fichiers DOCX avec une mise en forme complète. Vexo est conçu pour les personnes qui travaillent avec de vrais documents Word et veulent les coller dans n'importe quelle application sans ouvrir Word."
       - q: "Puis-je l'installer sur plusieurs ordinateurs ?"
         a_html: "Oui, sur autant que vous voulez. Aucune activation ni limite d'appareils. Pour partager les mêmes modèles, placez le dossier dans OneDrive, Dropbox ou Google Drive."
       - q: "Puis-je enregistrer mes signatures d'e-mail avec logos et images ?"
@@ -115,8 +115,8 @@ home:
 
   final_cta:
     title: "Prêt à travailler plus vite ?"
-    text: "Téléchargez Plantillas Macro gratuitement : toutes les fonctionnalités, sans limites ni inscription."
-    button: "Télécharger Plantillas Macro →"
+    text: "Téléchargez Vexo gratuitement : toutes les fonctionnalités, sans limites ni inscription."
+    button: "Télécharger Vexo →"
 
 
 novedades:
@@ -126,7 +126,7 @@ novedades:
   hero:
     kicker: "/ historique des versions"
     title_pre: "Nouveautés de"
-    title_highlight: "Plantillas Macro."
+    title_highlight: "Vexo."
     copy: "Chaque mise à jour, amélioration et correction publiée — générées automatiquement depuis GitHub Releases."
 
   toolbar:
@@ -149,8 +149,8 @@ novedades:
 
   final_cta:
     title: "Prêt à travailler plus vite ?"
-    text: "Téléchargez Plantillas Macro gratuitement : toutes les fonctionnalités, sans limites ni inscription."
-    button: "Télécharger Plantillas Macro →"
+    text: "Téléchargez Vexo gratuitement : toutes les fonctionnalités, sans limites ni inscription."
+    button: "Télécharger Vexo →"
 
 
 google_auth:
@@ -286,7 +286,7 @@ extension:
     pill_type: "Extension de navigateur"
     title_pre: "Le popup apparaît"
     title_highlight: "exactement là où vous écrivez."
-    copy: "Extension complémentaire gratuite pour Plantillas Macro. Installez-la dans votre navigateur et le popup de modèles apparaîtra toujours à la position exacte du curseur, sur n'importe quel site."
+    copy: "Extension complémentaire gratuite pour Vexo. Installez-la dans votre navigateur et le popup de modèles apparaîtra toujours à la position exacte du curseur, sur n'importe quel site."
     cta_install: "🧩 Installer l'extension gratuite"
     browsers_note: "Chrome · Edge · Brave · Opera · Vivaldi — et d'autres navigateurs Chromium"
     preview_window_title: "FLOWMATICC · POSITION CARET"
@@ -304,7 +304,7 @@ extension:
         title: "Installez l'extension"
         text: "Un clic depuis le Chrome Web Store. Elle s'active automatiquement sur tous les navigateurs compatibles."
       - number: "02"
-        title: "Ouvrez Plantillas Macro"
+        title: "Ouvrez Vexo"
         text: "L'extension se connecte seule à l'application de bureau. L'icône passe au vert."
       - number: "03"
         title: "Tapez, c'est prêt"
@@ -330,7 +330,7 @@ extension:
         text: "Vous ne voulez pas qu'elle fonctionne sur un site ? Désactivez-la instantanément depuis l'icône du navigateur."
       - icon: "🔌"
         title: "Connexion automatique"
-        text: "Elle se connecte seule à Plantillas Macro. Si l'application se ferme et se rouvre, elle se reconnecte sans rien toucher."
+        text: "Elle se connecte seule à Vexo. Si l'application se ferme et se rouvre, elle se reconnecte sans rien toucher."
       - icon: "🔒"
         title: "100 % local et privé"
         text: "N'envoie rien sur internet. Elle communique uniquement des coordonnées à votre application de bureau via une connexion locale."
@@ -342,8 +342,8 @@ extension:
         text: "Sans publicité, sans limite d'utilisation, sans compte. Installez-la et c'est tout."
 
   final_cta:
-    title: "Vous avez déjà Plantillas Macro ?"
+    title: "Vous avez déjà Vexo ?"
     text: "Ajoutez l'extension et le popup fonctionnera parfaitement sur n'importe quel site."
     button: "🧩 Installer l'extension gratuite"
-    footer_question: "Vous n'avez pas encore Plantillas Macro ?"
+    footer_question: "Vous n'avez pas encore Vexo ?"
     footer_link: "Téléchargez-le gratuitement →"

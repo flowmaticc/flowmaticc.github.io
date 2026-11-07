@@ -1,10 +1,10 @@
-title: "Flowmatic · Plantillas Macro"
+title: "Flowmaticc · Vexo - Expansor"
 
 # ══════════════════════════════════════════════════════════════════════
 #  ENLACES CENTRALIZADOS — edita solo aquí, cambia en toda la web
 # ══════════════════════════════════════════════════════════════════════
 links:
-  app_download: "https://github.com/joseqwrtt/update_app/releases/latest/download/PlantillasMacro.zip"
+  app_download: "https://github.com/flowmaticc/vexo-releases/releases/latest/download/Vexo.zip"
   extension:    "https://chromewebstore.google.com/detail/flowmaticc-position-caret/faibchhnndpnhmiepnlabiiddpbcckin"
 # ══════════════════════════════════════════════════════════════════════
 description: "Expansor de texto y plantillas Word para Windows. Escribe / y tu plantilla DOCX u ODT se pega al instante en cualquier aplicación, sin abrir archivos ni interrumpir tu flujo."

@@ -1,9 +1,9 @@
 
 🌐 **Web:** [flowmaticc.github.io](https://flowmaticc.github.io/)  
-📥 **Descarga gratuita:** [PlantillasMacro.zip](https://github.com/joseqwrtt/update_app/releases/latest/download/PlantillasMacro.zip)
+📥 **Descarga gratuita:** [Vexo.zip](https://github.com/flowmaticc/vexo-releases/releases/latest/download/Vexo.zip)
 
 
-# Plantillas Macro · Expansor Inteligente de Texto
+# Vexo · Expansor Inteligente de Texto
 
 [![Web](https://img.shields.io/badge/web-flowmaticc.github.io-blue)](https://flowmaticc.github.io/)
 [![Windows](https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white)](#)
@@ -15,7 +15,7 @@
 
 ## 🎬 Demo en acción
 
-![Demostración de Plantillas Macro](/videos/demo.gif)
+![Demostración de Vexo](/videos/demo.gif)
 
 ---
 
@@ -65,4 +65,4 @@ Es un programa gratuito y tu opinión nos ayuda a mejorarlo:
 ---
 
 **¿Listo para optimizar tu flujo de trabajo?**  
-[Descarga Plantillas Macro](https://flowmaticc.github.io/) gratis, sin límites y sin registro.
+[Descarga Vexo](https://flowmaticc.github.io/) gratis, sin límites y sin registro.

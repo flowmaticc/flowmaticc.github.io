@@ -219,4 +219,4 @@ inputs.forEach(input => {
     });
 });
 
-console.log('Flowmatic — Página cargada correctamente');
+console.log('Flowmaticc — Página cargada correctamente');

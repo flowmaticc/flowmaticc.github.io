@@ -10,7 +10,7 @@ home:
     title_pre: "Scrivi /"
     title_highlight: "e il tuo modello appare."
     copy_html: >-
-      <p><strong>Plantillas Macro</strong> è l'espansore di testo per
+      <p><strong>Vexo</strong> è l'espansore di testo per
       Windows che incolla i tuoi modelli Word, ODT e TXT con formattazione
       completa in qualsiasi applicazione.</p>
       <p>Scrivi "/" + il nome e viene incollato all'istante. Senza copiare,
@@ -49,14 +49,14 @@ home:
     kicker: "/ la differenza"
     title: "Qui devi solo scrivere."
     lead_muted: "Altri espansori ti obbligano a memorizzare."
-    lead_highlight: "Plantillas Macro cerca il file al posto tuo."
+    lead_highlight: "Vexo cerca il file al posto tuo."
     diagram:
       step1: "Scrivi /nome"
       step2: "Filtra in tempo reale"
       step3: "Incolla con formattazione"
     items:
       - title: "Nessuna abbreviazione da memorizzare"
-        text_html: "La maggior parte degli espansori ti obbliga a inventare un'abbreviazione unica per ogni modello — con 50 modelli sono 50 codici che non puoi ripetere, e un mese dopo non ricordi più quale fosse quale. Con Plantillas Macro scrivi <code>/</code> e qualsiasi parte del nome: <code>/preventivo</code> filtra all'istante tutto ciò che corrisponde. Niente più memorizzare codici come <code>/prev2024v3final</code>."
+        text_html: "La maggior parte degli espansori ti obbliga a inventare un'abbreviazione unica per ogni modello — con 50 modelli sono 50 codici che non puoi ripetere, e un mese dopo non ricordi più quale fosse quale. Con Vexo scrivi <code>/</code> e qualsiasi parte del nome: <code>/preventivo</code> filtra all'istante tutto ciò che corrisponde. Niente più memorizzare codici come <code>/prev2024v3final</code>."
       - title: "Formattazione Word completa"
         text_html: "Incolla con grassetto, tabelle, immagini e stili intatti. Gli espansori tradizionali lavorano di solito con testo semplice — nessuno gestisce davvero DOCX o ODT."
       - title: "Senza account, senza cloud obbligatorio"
@@ -72,8 +72,8 @@ home:
 
   comparison:
     kicker: "/ confronto"
-    title: "Cosa rende Plantillas Macro diverso."
-    headers: ["Caratteristica", "Plantillas Macro", "Espansori con abbreviazioni", "Espansori da browser", "Strumenti tecnici"]
+    title: "Cosa rende Vexo diverso."
+    headers: ["Caratteristica", "Vexo", "Espansori con abbreviazioni", "Espansori da browser", "Strumenti tecnici"]
     rows:
       - label: "Nessuna abbreviazione da memorizzare"
         cells: ["✓", "✕", "✕", "✕"]
@@ -94,20 +94,20 @@ home:
     kicker: "/ domande frequenti"
     title: "Prima di iniziare."
     items:
-      - q: "Plantillas Macro funziona con Microsoft Word e Outlook?"
-        a_html: "Sì. Plantillas Macro funziona in qualsiasi applicazione Windows in cui puoi scrivere: Microsoft Word, Outlook, Excel, Google Chrome, Firefox, Slack, Teams, CRM web e qualsiasi altro programma. Non dipende da Word — funziona a livello di sistema operativo."
+      - q: "Vexo funziona con Microsoft Word e Outlook?"
+        a_html: "Sì. Vexo funziona in qualsiasi applicazione Windows in cui puoi scrivere: Microsoft Word, Outlook, Excel, Google Chrome, Firefox, Slack, Teams, CRM web e qualsiasi altro programma. Non dipende da Word — funziona a livello di sistema operativo."
       - q: "Posso usare i miei modelli .docx e .odt esistenti?"
-        a_html: "Sì. Basta indicare la cartella in cui si trovano i tuoi file .docx, .odt o .txt e Plantillas Macro li rileva automaticamente. Non serve convertirli né importarli — i tuoi file Word restano normali file Word."
+        a_html: "Sì. Basta indicare la cartella in cui si trovano i tuoi file .docx, .odt o .txt e Vexo li rileva automaticamente. Non serve convertirli né importarli — i tuoi file Word restano normali file Word."
       - q: "La formattazione completa viene mantenuta quando incolli — grassetto, tabelle, immagini?"
-        a_html: "Sì, è il principale vantaggio rispetto ad altri espansori di testo. Plantillas Macro incolla il contenuto DOCX o ODT con tutta la formattazione intatta: grassetto, corsivo, tabelle, elenchi, immagini incorporate e stili di paragrafo. Gli espansori classici incollano solo testo semplice."
+        a_html: "Sì, è il principale vantaggio rispetto ad altri espansori di testo. Vexo incolla il contenuto DOCX o ODT con tutta la formattazione intatta: grassetto, corsivo, tabelle, elenchi, immagini incorporate e stili di paragrafo. Gli espansori classici incollano solo testo semplice."
       - q: "I miei modelli vengono caricati su qualche server o cloud?"
-        a_html: "No. Plantillas Macro funziona al 100% in locale — i tuoi file non lasciano mai il tuo computer. Non c'è account utente né server proprietario. Se vuoi la sincronizzazione tra computer, basta puntare la cartella su OneDrive, Dropbox o Google Drive."
+        a_html: "No. Vexo funziona al 100% in locale — i tuoi file non lasciano mai il tuo computer. Non c'è account utente né server proprietario. Se vuoi la sincronizzazione tra computer, basta puntare la cartella su OneDrive, Dropbox o Google Drive."
       - q: "Quanto costa?"
-        a_html: "Niente. Plantillas Macro è gratuito, con tutte le funzioni e senza limiti di modelli. Nessun account, nessuna carta di credito e nessuna licenza da attivare."
+        a_html: "Niente. Vexo è gratuito, con tutte le funzioni e senza limiti di modelli. Nessun account, nessuna carta di credito e nessuna licenza da attivare."
       - q: "Quali versioni di Windows sono supportate?"
-        a_html: "Plantillas Macro è compatibile con Windows 10 e Windows 11 (64 bit). Non richiede Microsoft Office — funziona con qualsiasi applicazione del sistema. Al momento non esiste una versione per macOS né Linux."
+        a_html: "Vexo è compatibile con Windows 10 e Windows 11 (64 bit). Non richiede Microsoft Office — funziona con qualsiasi applicazione del sistema. Al momento non esiste una versione per macOS né Linux."
       - q: "In cosa si differenzia da AutoHotkey o da altri espansori come Espanso?"
-        a_html: "AutoHotkey richiede di scrivere script — non è per utenti non tecnici. Espanso e altri espansori gestiscono testo semplice o markdown, ma non incollano file DOCX con formattazione completa. Plantillas Macro è pensato per chi lavora con documenti Word reali e vuole incollarli in qualsiasi app senza aprire Word."
+        a_html: "AutoHotkey richiede di scrivere script — non è per utenti non tecnici. Espanso e altri espansori gestiscono testo semplice o markdown, ma non incollano file DOCX con formattazione completa. Vexo è pensato per chi lavora con documenti Word reali e vuole incollarli in qualsiasi app senza aprire Word."
       - q: "Posso installarlo su più computer?"
         a_html: "Sì, su tutti quelli che vuoi. Nessuna attivazione e nessun limite di dispositivi. Per avere gli stessi modelli ovunque, imposta la cartella su OneDrive, Dropbox o Google Drive."
       - q: "Posso salvare le mie firme email con loghi e immagini?"
@@ -115,8 +115,8 @@ home:
 
   final_cta:
     title: "Pronto a lavorare più velocemente?"
-    text: "Scarica Plantillas Macro gratis: tutte le funzioni, senza limiti e senza registrazione."
-    button: "Scarica Plantillas Macro →"
+    text: "Scarica Vexo gratis: tutte le funzioni, senza limiti e senza registrazione."
+    button: "Scarica Vexo →"
 
 
 novedades:
@@ -126,7 +126,7 @@ novedades:
   hero:
     kicker: "/ cronologia versioni"
     title_pre: "Novità di"
-    title_highlight: "Plantillas Macro."
+    title_highlight: "Vexo."
     copy: "Ogni aggiornamento, miglioramento e correzione pubblicati — generati automaticamente da GitHub Releases."
 
   toolbar:
@@ -149,8 +149,8 @@ novedades:
 
   final_cta:
     title: "Pronto a lavorare più velocemente?"
-    text: "Scarica Plantillas Macro gratis: tutte le funzioni, senza limiti e senza registrazione."
-    button: "Scarica Plantillas Macro →"
+    text: "Scarica Vexo gratis: tutte le funzioni, senza limiti e senza registrazione."
+    button: "Scarica Vexo →"
 
 
 google_auth:
@@ -286,7 +286,7 @@ extension:
     pill_type: "Estensione per browser"
     title_pre: "Il popup appare"
     title_highlight: "esattamente dove scrivi."
-    copy: "Estensione gratuita complementare a Plantillas Macro. Installala nel tuo browser e il popup dei modelli apparirà sempre nella posizione esatta del cursore, su qualsiasi sito web."
+    copy: "Estensione gratuita complementare a Vexo. Installala nel tuo browser e il popup dei modelli apparirà sempre nella posizione esatta del cursore, su qualsiasi sito web."
     cta_install: "🧩 Installa l'estensione gratuita"
     browsers_note: "Chrome · Edge · Brave · Opera · Vivaldi — e altri browser basati su Chromium"
     preview_window_title: "FLOWMATICC · POSITION CARET"
@@ -304,7 +304,7 @@ extension:
         title: "Installa l'estensione"
         text: "Un clic dal Chrome Web Store. Si attiva automaticamente su tutti i browser supportati."
       - number: "02"
-        title: "Apri Plantillas Macro"
+        title: "Apri Vexo"
         text: "L'estensione si connette da sola all'app desktop. L'icona diventerà verde."
       - number: "03"
         title: "Scrivi ed è fatta"
@@ -330,7 +330,7 @@ extension:
         text: "Non vuoi che funzioni su un certo sito? Disattivalo all'istante dall'icona del browser."
       - icon: "🔌"
         title: "Connessione automatica"
-        text: "Si connette da sola a Plantillas Macro. Se l'app si chiude e si riapre, si riconnette senza toccare nulla."
+        text: "Si connette da sola a Vexo. Se l'app si chiude e si riapre, si riconnette senza toccare nulla."
       - icon: "🔒"
         title: "100% locale e privato"
         text: "Non invia nulla a internet. Comunica solo le coordinate alla tua app desktop tramite connessione locale."
@@ -342,8 +342,8 @@ extension:
         text: "Senza pubblicità, senza limiti di utilizzo, senza account. Basta installarla e funziona."
 
   final_cta:
-    title: "Hai già Plantillas Macro?"
+    title: "Hai già Vexo?"
     text: "Aggiungi l'estensione e il popup funzionerà perfettamente su qualsiasi sito web."
     button: "🧩 Installa l'estensione gratuita"
-    footer_question: "Non hai ancora Plantillas Macro?"
+    footer_question: "Non hai ancora Vexo?"
     footer_link: "Scaricalo gratis →"

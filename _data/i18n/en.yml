@@ -11,7 +11,7 @@ home:
     title_pre: "Type /"
     title_highlight: "and your template appears."
     copy_html: >-
-      <p><strong>Plantillas Macro</strong> is the Windows text expander that
+      <p><strong>Vexo</strong> is the Windows text expander that
       pastes your Word, ODT and TXT templates with full formatting into any
       application.</p>
       <p>Type "/" + the name and it pastes instantly. No copying, no opening
@@ -50,14 +50,14 @@ home:
     kicker: "/ the difference"
     title: "Here, you just type."
     lead_muted: "Other text expanders force you to memorize."
-    lead_highlight: "Plantillas Macro finds the file for you."
+    lead_highlight: "Vexo finds the file for you."
     diagram:
       step1: "Type /name"
       step2: "Filters in real time"
       step3: "Pastes with formatting"
     items:
       - title: "No abbreviations to memorize"
-        text_html: "Most text expanders force you to invent a unique abbreviation for every template — with 50 templates that's 50 codes you can't repeat, and a month later you no longer remember which was which. With Plantillas Macro you type <code>/</code> and any part of the name: <code>/quote</code> instantly filters everything that matches. No memorizing codes like <code>/qt2024v3final</code>."
+        text_html: "Most text expanders force you to invent a unique abbreviation for every template — with 50 templates that's 50 codes you can't repeat, and a month later you no longer remember which was which. With Vexo you type <code>/</code> and any part of the name: <code>/quote</code> instantly filters everything that matches. No memorizing codes like <code>/qt2024v3final</code>."
       - title: "Full Word formatting"
         text_html: "Pastes with bold, tables, images and styles intact. Traditional text expanders usually work with plain text — none of them handle DOCX or ODT for real."
       - title: "No account, no mandatory cloud"
@@ -73,8 +73,8 @@ home:
 
   comparison:
     kicker: "/ comparison"
-    title: "What makes Plantillas Macro different."
-    headers: ["Feature", "Plantillas Macro", "Abbreviation-based expanders", "Browser expanders", "Technical tools"]
+    title: "What makes Vexo different."
+    headers: ["Feature", "Vexo", "Abbreviation-based expanders", "Browser expanders", "Technical tools"]
     rows:
       - label: "No abbreviations to memorize"
         cells: ["✓", "✕", "✕", "✕"]
@@ -95,20 +95,20 @@ home:
     kicker: "/ frequently asked questions"
     title: "Before you start."
     items:
-      - q: "Does Plantillas Macro work with Microsoft Word and Outlook?"
-        a_html: "Yes. Plantillas Macro works in any Windows application where you can type: Microsoft Word, Outlook, Excel, Google Chrome, Firefox, Slack, Teams, web CRMs, and any other program. It doesn't depend on Word — it works at the operating system level."
+      - q: "Does Vexo work with Microsoft Word and Outlook?"
+        a_html: "Yes. Vexo works in any Windows application where you can type: Microsoft Word, Outlook, Excel, Google Chrome, Firefox, Slack, Teams, web CRMs, and any other program. It doesn't depend on Word — it works at the operating system level."
       - q: "Can I use my existing .docx and .odt templates?"
-        a_html: "Yes. Simply point to the folder where you keep your .docx, .odt or .txt files and Plantillas Macro detects them automatically. No need to convert or import them — your Word files remain normal Word files."
+        a_html: "Yes. Simply point to the folder where you keep your .docx, .odt or .txt files and Vexo detects them automatically. No need to convert or import them — your Word files remain normal Word files."
       - q: "Does it keep full formatting when pasting — bold, tables, images?"
-        a_html: "Yes, this is the main advantage over other text expanders. Plantillas Macro pastes DOCX or ODT content with all formatting intact: bold, italics, tables, lists, embedded images and paragraph styles. Classic expanders only paste plain text."
+        a_html: "Yes, this is the main advantage over other text expanders. Vexo pastes DOCX or ODT content with all formatting intact: bold, italics, tables, lists, embedded images and paragraph styles. Classic expanders only paste plain text."
       - q: "Are my templates uploaded to any server or cloud?"
-        a_html: "No. Plantillas Macro runs 100% locally — your files never leave your computer. There's no user account or proprietary server. If you want sync between computers, just point the folder to OneDrive, Dropbox or Google Drive."
+        a_html: "No. Vexo runs 100% locally — your files never leave your computer. There's no user account or proprietary server. If you want sync between computers, just point the folder to OneDrive, Dropbox or Google Drive."
       - q: "How much does it cost?"
-        a_html: "Nothing. Plantillas Macro is free, with every feature and no template limit. No account, no credit card and no license to activate."
+        a_html: "Nothing. Vexo is free, with every feature and no template limit. No account, no credit card and no license to activate."
       - q: "Which Windows versions are supported?"
-        a_html: "Plantillas Macro is compatible with Windows 10 and Windows 11 (64-bit). It doesn't require Microsoft Office — it works with any application on the system. There's no macOS or Linux version at this time."
+        a_html: "Vexo is compatible with Windows 10 and Windows 11 (64-bit). It doesn't require Microsoft Office — it works with any application on the system. There's no macOS or Linux version at this time."
       - q: "How is it different from AutoHotkey or other expanders like Espanso?"
-        a_html: "AutoHotkey requires writing scripts — it's not for non-technical users. Espanso and other expanders handle plain text or markdown, but don't paste DOCX files with full formatting. Plantillas Macro is built for people who work with real Word documents and want to paste them into any app without opening Word."
+        a_html: "AutoHotkey requires writing scripts — it's not for non-technical users. Espanso and other expanders handle plain text or markdown, but don't paste DOCX files with full formatting. Vexo is built for people who work with real Word documents and want to paste them into any app without opening Word."
       - q: "Can I install it on several computers?"
         a_html: "Yes, on as many as you like. There are no activations and no device limit. To share the same templates across them, point the folder to OneDrive, Dropbox or Google Drive."
       - q: "Can I save my email signatures with logos and images?"
@@ -116,8 +116,8 @@ home:
 
   final_cta:
     title: "Ready to work faster?"
-    text: "Download Plantillas Macro for free: every feature, no limits, no sign-up."
-    button: "Download Plantillas Macro →"
+    text: "Download Vexo for free: every feature, no limits, no sign-up."
+    button: "Download Vexo →"
 
 
 novedades:
@@ -127,7 +127,7 @@ novedades:
   hero:
     kicker: "/ version history"
     title_pre: "What's new in"
-    title_highlight: "Plantillas Macro."
+    title_highlight: "Vexo."
     copy: "Every update, improvement and fix published — generated automatically from GitHub Releases."
 
   toolbar:
@@ -150,8 +150,8 @@ novedades:
 
   final_cta:
     title: "Ready to work faster?"
-    text: "Download Plantillas Macro for free: every feature, no limits, no sign-up."
-    button: "Download Plantillas Macro →"
+    text: "Download Vexo for free: every feature, no limits, no sign-up."
+    button: "Download Vexo →"
 
 
 google_auth:
@@ -287,7 +287,7 @@ extension:
     pill_type: "Browser extension"
     title_pre: "The popup appears"
     title_highlight: "exactly where you type."
-    copy: "Free companion extension for Plantillas Macro. Install it in your browser and the template popup will always appear at the exact cursor position, on any website."
+    copy: "Free companion extension for Vexo. Install it in your browser and the template popup will always appear at the exact cursor position, on any website."
     cta_install: "🧩 Install the free extension"
     browsers_note: "Chrome · Edge · Brave · Opera · Vivaldi — and more Chromium browsers"
     preview_window_title: "FLOWMATICC · POSITION CARET"
@@ -305,7 +305,7 @@ extension:
         title: "Install the extension"
         text: "One click from the Chrome Web Store. It activates automatically on all supported browsers."
       - number: "02"
-        title: "Open Plantillas Macro"
+        title: "Open Vexo"
         text: "The extension connects to the desktop app on its own. The icon will turn green."
       - number: "03"
         title: "Type and you're set"
@@ -331,7 +331,7 @@ extension:
         text: "Don't want it to work on a certain site? Turn it off instantly from the browser icon."
       - icon: "🔌"
         title: "Automatic connection"
-        text: "It connects to Plantillas Macro on its own. If the app closes and reopens, it reconnects without touching anything."
+        text: "It connects to Vexo on its own. If the app closes and reopens, it reconnects without touching anything."
       - icon: "🔒"
         title: "100% local and private"
         text: "Sends nothing to the internet. It only communicates coordinates to your desktop app over a local connection."
@@ -343,8 +343,8 @@ extension:
         text: "No ads, no usage limits, no account. Just install it and it works."
 
   final_cta:
-    title: "Already have Plantillas Macro?"
+    title: "Already have Vexo?"
     text: "Add the extension and the popup will work perfectly on any website."
     button: "🧩 Install the free extension"
-    footer_question: "Don't have Plantillas Macro yet?"
+    footer_question: "Don't have Vexo yet?"
     footer_link: "Download it for free →"

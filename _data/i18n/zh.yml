@@ -10,7 +10,7 @@ home:
     title_pre: "输入 /"
     title_highlight: "您的模板即刻出现。"
     copy_html: >-
-      <p><strong>Plantillas Macro</strong> 是一款 Windows
+      <p><strong>Vexo</strong> 是一款 Windows
       文本扩展工具，可将您的 Word、ODT 和 TXT 模板以完整格式粘贴到任何应用程序中。</p>
       <p>输入"/"+名称即可立即粘贴。无需复制，无需打开文件，不打断您的工作流程。</p>
     cta_download: "免费下载 →"
@@ -47,14 +47,14 @@ home:
     kicker: "/ 与众不同"
     title: "在这里，您只需要打字。"
     lead_muted: "其他文本扩展工具需要您记住各种代码。"
-    lead_highlight: "Plantillas Macro 会替您找到文件。"
+    lead_highlight: "Vexo 会替您找到文件。"
     diagram:
       step1: "输入 /名称"
       step2: "实时筛选"
       step3: "粘贴并保留格式"
     items:
       - title: "无需记忆缩写代码"
-        text_html: "大多数文本扩展工具要求您为每个模板发明一个独特的缩写——50 个模板就是 50 个不能重复的代码，一个月后您就记不清哪个是哪个了。使用 Plantillas Macro，您只需输入 <code>/</code> 加名称的任意部分：<code>/报价</code> 即可立即筛选出所有匹配项。再也不用记住像 <code>/bj2024v3final</code> 这样的代码。"
+        text_html: "大多数文本扩展工具要求您为每个模板发明一个独特的缩写——50 个模板就是 50 个不能重复的代码，一个月后您就记不清哪个是哪个了。使用 Vexo，您只需输入 <code>/</code> 加名称的任意部分：<code>/报价</code> 即可立即筛选出所有匹配项。再也不用记住像 <code>/bj2024v3final</code> 这样的代码。"
       - title: "完整的 Word 格式支持"
         text_html: "粘贴时保留粗体、表格、图片和样式。传统文本扩展工具通常只能处理纯文本——没有一个能真正支持 DOCX 或 ODT。"
       - title: "无需账户，无需强制云端"
@@ -70,8 +70,8 @@ home:
 
   comparison:
     kicker: "/ 对比"
-    title: "Plantillas Macro 有何不同。"
-    headers: ["特性", "Plantillas Macro", "缩写型扩展工具", "浏览器扩展工具", "技术工具"]
+    title: "Vexo 有何不同。"
+    headers: ["特性", "Vexo", "缩写型扩展工具", "浏览器扩展工具", "技术工具"]
     rows:
       - label: "无需记忆缩写代码"
         cells: ["✓", "✕", "✕", "✕"]
@@ -92,20 +92,20 @@ home:
     kicker: "/ 常见问题"
     title: "开始之前。"
     items:
-      - q: "Plantillas Macro 能与 Microsoft Word 和 Outlook 配合使用吗？"
-        a_html: "可以。Plantillas Macro 可在任何可输入文字的 Windows 应用程序中使用：Microsoft Word、Outlook、Excel、Google Chrome、Firefox、Slack、Teams、网页版 CRM 以及其他任何程序。它不依赖于 Word——而是在操作系统层面运行。"
+      - q: "Vexo 能与 Microsoft Word 和 Outlook 配合使用吗？"
+        a_html: "可以。Vexo 可在任何可输入文字的 Windows 应用程序中使用：Microsoft Word、Outlook、Excel、Google Chrome、Firefox、Slack、Teams、网页版 CRM 以及其他任何程序。它不依赖于 Word——而是在操作系统层面运行。"
       - q: "我可以使用已有的 .docx 和 .odt 模板吗？"
-        a_html: "可以。只需指定存放 .docx、.odt 或 .txt 文件的文件夹，Plantillas Macro 会自动检测它们。无需转换或导入——您的 Word 文件仍然是普通的 Word 文件。"
+        a_html: "可以。只需指定存放 .docx、.odt 或 .txt 文件的文件夹，Vexo 会自动检测它们。无需转换或导入——您的 Word 文件仍然是普通的 Word 文件。"
       - q: "粘贴时是否保留完整格式——粗体、表格、图片？"
-        a_html: "是的，这是相较于其他文本扩展工具的主要优势。Plantillas Macro 粘贴 DOCX 或 ODT 内容时会完整保留格式：粗体、斜体、表格、列表、嵌入图片和段落样式。传统扩展工具只能粘贴纯文本。"
+        a_html: "是的，这是相较于其他文本扩展工具的主要优势。Vexo 粘贴 DOCX 或 ODT 内容时会完整保留格式：粗体、斜体、表格、列表、嵌入图片和段落样式。传统扩展工具只能粘贴纯文本。"
       - q: "我的模板会上传到服务器或云端吗？"
-        a_html: "不会。Plantillas Macro 完全本地运行——您的文件永远不会离开您的电脑。没有用户账户，也没有专用服务器。如果您想在多台电脑间同步，只需将文件夹指向 OneDrive、Dropbox 或 Google Drive。"
+        a_html: "不会。Vexo 完全本地运行——您的文件永远不会离开您的电脑。没有用户账户，也没有专用服务器。如果您想在多台电脑间同步，只需将文件夹指向 OneDrive、Dropbox 或 Google Drive。"
       - q: "多少钱？"
-        a_html: "免费。Plantillas Macro 提供全部功能，模板数量不限。无需账户、无需信用卡，也无需激活任何许可证。"
+        a_html: "免费。Vexo 提供全部功能，模板数量不限。无需账户、无需信用卡，也无需激活任何许可证。"
       - q: "支持哪些 Windows 版本？"
-        a_html: "Plantillas Macro 兼容 Windows 10 和 Windows 11（64位）。无需安装 Microsoft Office——可与系统中任何应用程序配合使用。目前暂无 macOS 或 Linux 版本。"
+        a_html: "Vexo 兼容 Windows 10 和 Windows 11（64位）。无需安装 Microsoft Office——可与系统中任何应用程序配合使用。目前暂无 macOS 或 Linux 版本。"
       - q: "它与 AutoHotkey 或 Espanso 等其他扩展工具有何不同？"
-        a_html: "AutoHotkey 需要编写脚本——不适合非技术用户。Espanso 和其他扩展工具处理纯文本或 Markdown，但无法粘贴带完整格式的 DOCX 文件。Plantillas Macro 专为需要处理真实 Word 文档、并希望在任何应用中粘贴而无需打开 Word 的用户设计。"
+        a_html: "AutoHotkey 需要编写脚本——不适合非技术用户。Espanso 和其他扩展工具处理纯文本或 Markdown，但无法粘贴带完整格式的 DOCX 文件。Vexo 专为需要处理真实 Word 文档、并希望在任何应用中粘贴而无需打开 Word 的用户设计。"
       - q: "可以安装在多台电脑上吗？"
         a_html: "可以，数量不限。无需激活，也没有设备数量限制。如需在各台电脑上使用相同模板，只需将文件夹放在 OneDrive、Dropbox 或 Google Drive 中。"
       - q: "我可以保存带徽标和图片的邮件签名吗？"
@@ -113,8 +113,8 @@ home:
 
   final_cta:
     title: "准备好更高效地工作了吗？"
-    text: "免费下载 Plantillas Macro：全部功能，无限制，无需注册。"
-    button: "下载 Plantillas Macro →"
+    text: "免费下载 Vexo：全部功能，无限制，无需注册。"
+    button: "下载 Vexo →"
 
 
 novedades:
@@ -124,7 +124,7 @@ novedades:
   hero:
     kicker: "/ 版本历史"
     title_pre: "更新日志 ·"
-    title_highlight: "Plantillas Macro"
+    title_highlight: "Vexo"
     copy: "每一次更新、改进和修复——均自动从 GitHub Releases 生成。"
 
   toolbar:
@@ -147,8 +147,8 @@ novedades:
 
   final_cta:
     title: "准备好更高效地工作了吗？"
-    text: "免费下载 Plantillas Macro：全部功能，无限制，无需注册。"
-    button: "下载 Plantillas Macro →"
+    text: "免费下载 Vexo：全部功能，无限制，无需注册。"
+    button: "下载 Vexo →"
 
 
 google_auth:
@@ -284,7 +284,7 @@ extension:
     pill_type: "浏览器扩展"
     title_pre: "弹窗会精确出现在"
     title_highlight: "您正在输入的位置。"
-    copy: "Plantillas Macro 的免费配套扩展。在浏览器中安装后，模板弹窗将始终精确显示在光标所在位置，适用于任何网站。"
+    copy: "Vexo 的免费配套扩展。在浏览器中安装后，模板弹窗将始终精确显示在光标所在位置，适用于任何网站。"
     cta_install: "🧩 安装免费扩展"
     browsers_note: "Chrome · Edge · Brave · Opera · Vivaldi ——以及更多基于 Chromium 的浏览器"
     preview_window_title: "FLOWMATICC · POSITION CARET"
@@ -302,7 +302,7 @@ extension:
         title: "安装扩展"
         text: "在 Chrome 网上应用店中点击一下即可。它会在所有受支持的浏览器中自动激活。"
       - number: "02"
-        title: "打开 Plantillas Macro"
+        title: "打开 Vexo"
         text: "扩展会自动连接到桌面应用程序。图标会变为绿色。"
       - number: "03"
         title: "输入即可"
@@ -328,7 +328,7 @@ extension:
         text: "不希望它在某个网站上运行？通过浏览器图标即可立即关闭。"
       - icon: "🔌"
         title: "自动连接"
-        text: "它会自动连接到 Plantillas Macro。即使应用程序关闭后重新打开，也会自动重新连接，无需任何操作。"
+        text: "它会自动连接到 Vexo。即使应用程序关闭后重新打开，也会自动重新连接，无需任何操作。"
       - icon: "🔒"
         title: "100% 本地运行且私密"
         text: "不会向互联网发送任何内容。它只通过本地连接向您的桌面应用程序传递坐标信息。"
@@ -340,8 +340,8 @@ extension:
         text: "无广告，无使用次数限制，无需账户。安装即可使用。"
 
   final_cta:
-    title: "已经拥有 Plantillas Macro 了吗？"
+    title: "已经拥有 Vexo 了吗？"
     text: "添加此扩展，弹窗即可在任何网站上完美运行。"
     button: "🧩 安装免费扩展"
-    footer_question: "还没有 Plantillas Macro？"
+    footer_question: "还没有 Vexo？"
     footer_link: "免费下载 →"
