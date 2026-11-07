@@ -2,9 +2,9 @@
   "version": 1,
   "_nota": "Direcciones que usan los programas de Flowmaticc para actualizarse. Cambiar aquí al mover o renombrar repositorios; solo se aceptan cuentas flowmaticc y joseqwrtt.",
   "productos": {
-    "plantillas-macro": {
-      "version_json": "https://github.com/joseqwrtt/update_app/releases/latest/download/version.json",
-      "idiomas_indice": "https://raw.githubusercontent.com/joseqwrtt/update_language/main/idiomas.json"
+    "vexo": {
+      "version_json": "https://github.com/flowmaticc/vexo-releases/releases/latest/download/version.json",
+      "idiomas_indice": "https://raw.githubusercontent.com/flowmaticc/vexo-translations/main/idiomas.json"
     }
   }
 }
