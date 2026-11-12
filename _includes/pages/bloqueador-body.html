@@ -1,0 +1,315 @@
+{% assign t = site.data.i18n[page.lang].bloqueador %}
+{% if page.lang == 'en' %}{% assign base = '/en' %}{% else %}{% assign base = '' %}{% endif %}
+{% assign repo = 'flowmaticc/bloqueador-android' %}
+
+<section class="hero hero--compact hero--center">
+<div class="container">
+
+  <div class="breadcrumb-v2">
+    <a href="{{ base }}/">Flowmaticc</a><span>/</span><span>{{ t.hero.breadcrumb_utilities }}</span><span>/</span><span class="current">{{ t.hero.breadcrumb_current }}</span>
+  </div>
+
+  <div class="hero-kicker">{{ t.hero.kicker }}</div>
+
+  <h1>{{ t.hero.title_pre }} <span>{{ t.hero.title_highlight }}</span></h1>
+
+  <div class="hero-copy">
+    <p>{{ t.hero.copy }}</p>
+  </div>
+
+  <div class="chip-row">
+    {% for chip in t.hero.chips %}<span class="chip">{{ chip }}</span>{% endfor %}
+  </div>
+
+  <div class="hero-actions">
+    <a href="https://github.com/{{ repo }}" class="button-secondary" target="_blank" rel="noopener" data-umami="click-github" data-umami-tool="bloqueador">{{ t.hero.cta_github }}</a>
+    <a href="https://github.com/{{ repo }}/releases/latest" class="button-primary js-apk-download" data-umami="download-bloqueador" data-umami-tool="bloqueador">{{ t.hero.cta_download }}</a>
+  </div>
+  <p class="bq-note">{{ t.hero.download_note }}</p>
+
+</div>
+</section>
+
+<section class="section" id="product">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.how.kicker }}</div></div>
+    <div><h2>{{ t.how.title }}</h2></div>
+  </div>
+  <div class="info-card" data-reveal>
+    <p>{{ t.how.text_html }}</p>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.features.kicker }}</div></div>
+    <div><h2>{{ t.features.title }}</h2></div>
+  </div>
+  <div class="check-list">
+    {% for item in t.features.items %}<div class="check-item" data-reveal>{{ item }}</div>{% endfor %}
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.screenshots.kicker }}</div></div>
+    <div><h2>{{ t.screenshots.title }}</h2></div>
+  </div>
+  {% assign shots = "inicio|historial|detalle|ver-en-la-web|ajustes|bienvenida" | split: "|" %}
+  <div class="shot-grid bq-shots" data-reveal>
+    {% for s in shots %}
+    <img src="/img/bloqueador/{{ s }}.webp" alt="{{ t.screenshots.alts[forloop.index0] }}" width="540" height="1105" loading="lazy">
+    {% endfor %}
+  </div>
+</div>
+</section>
+
+<section class="section" id="resultados">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.results.kicker }}</div></div>
+    <div><h2>{{ t.results.title }}</h2><p class="section-intro">{{ t.results.intro }}</p></div>
+  </div>
+  <div class="comparison-wrapper" data-reveal>
+    <table class="comparison bq-table">
+      <thead><tr>{% for h in t.results.headers %}<th{% if forloop.index0 == 2 %} class="highlight"{% endif %}>{{ h }}</th>{% endfor %}</tr></thead>
+      <tbody>
+        {% for row in t.results.rows %}
+        <tr>{% for cell in row %}<td{% if forloop.index0 == 2 %} class="highlight"{% endif %}>{{ cell }}</td>{% endfor %}</tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="bq-note" style="text-align:left">{{ t.results.note }}</p>
+
+  <div class="trouble-card" data-reveal>
+    <h3>{{ t.results.cannot_title }}</h3>
+    <ul class="bq-list">{% for c in t.results.cannot %}<li>{{ c }}</li>{% endfor %}</ul>
+    <p>{{ t.results.best }}</p>
+  </div>
+</div>
+</section>
+
+<section class="section" id="permisos">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.permissions.kicker }}</div></div>
+    <div><h2>{{ t.permissions.title }}</h2><p class="section-intro">{{ t.permissions.intro }}</p></div>
+  </div>
+  <div class="comparison-wrapper" data-reveal>
+    <table class="comparison bq-table">
+      <thead><tr>{% for h in t.permissions.headers %}<th>{{ h }}</th>{% endfor %}</tr></thead>
+      <tbody>
+        {% for row in t.permissions.rows %}
+        <tr><td><strong>{{ row[0] }}</strong></td><td>{{ row[1] }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="trouble-card" data-reveal>
+    <h3>{{ t.permissions.not_used_title }}</h3>
+    <p>{{ t.permissions.not_used }}</p>
+  </div>
+
+  <div class="trouble-card" data-reveal>
+    <h3>{{ t.permissions.connections_title }}</h3>
+    <ul class="bq-list">{% for c in t.permissions.connections %}<li>{{ c }}</li>{% endfor %}</ul>
+    <p>{{ t.permissions.connections_note }}</p>
+  </div>
+</div>
+</section>
+
+<section class="section" id="instalacion">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.install.kicker }}</div></div>
+    <div><h2>{{ t.install.title }}</h2></div>
+  </div>
+  {% for step in t.install.steps %}
+  <div class="step-card" data-reveal>
+    <div class="step-number">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</div>
+    <div class="step-content">
+      <h3>{{ step.title }}</h3>
+      <p>{{ step.text_html }}</p>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="info-card"><p>{{ t.install.updates_note }}</p></div>
+</div>
+</section>
+
+<section class="section" id="novedades">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.changelog.kicker }}</div></div>
+    <div><h2>{{ t.changelog.title }}</h2><p class="section-intro">{{ t.changelog.intro }}</p></div>
+  </div>
+
+  <div class="toolbar-inner bq-toolbar">
+    <div class="release-switch" id="bqChannels">
+      <button class="switch-btn active" data-channel="stable">{{ t.changelog.channels.stable }}</button>
+      <button class="switch-btn" data-channel="beta">{{ t.changelog.channels.beta }}</button>
+      <button class="switch-btn" data-channel="nightly">{{ t.changelog.channels.nightly }}</button>
+    </div>
+    <div class="github-state"><span class="state-dot"></span><span id="bqChannelDesc">{{ t.changelog.channel_desc.stable }}</span></div>
+  </div>
+
+  <div class="timeline" id="bqReleases">
+    <div class="loading"><span class="loading-symbol">/</span> {{ t.changelog.loading }}</div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.faq.kicker }}</div></div>
+    <div><h2>{{ t.faq.title }}</h2></div>
+  </div>
+  <div class="faq">
+    {% for item in t.faq.items %}
+    <div class="faq-item" data-reveal>
+      <button class="faq-question"><span>{{ item.q }}</span><span class="faq-plus">+</span></button>
+      <div class="faq-answer"><div class="faq-answer-inner">{{ item.a_html }}</div></div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</section>
+
+<section class="section" id="legal">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.legal.kicker }}</div></div>
+    <div><h2>{{ t.legal.title }}</h2></div>
+  </div>
+  <div class="check-list" data-reveal>
+    {% for item in t.legal.items_html %}<div class="check-item">{{ item }}</div>{% endfor %}
+  </div>
+</div>
+</section>
+
+<section class="final-cta" id="cta-final">
+<div class="container">
+  <h2>{{ t.final_cta.title }}</h2>
+  <p>{{ t.final_cta.text }}</p>
+  <a href="https://github.com/{{ repo }}/releases/latest" class="cta-button js-apk-download" data-umami="download-bloqueador">{{ t.final_cta.button }}</a>
+</div>
+</section>
+
+<style>
+  .bq-note { margin-top: 14px; font-size: 12px; color: var(--muted-2); text-align: center; }
+  .bq-shots { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+  .bq-shots img { border-radius: 14px; }
+  .bq-table { min-width: 0; }
+  .bq-table td, .bq-table th { vertical-align: top; }
+  .bq-list { margin: 10px 0 12px 18px; color: var(--muted); line-height: 1.7; }
+  .bq-toolbar { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; margin-bottom: 26px; }
+</style>
+
+<script src="/js/vendor/marked.min.js"></script>
+<script>
+(function () {
+  const REPO = "{{ repo }}";
+  const LOCALE = "{% if page.lang == 'en' %}en-GB{% else %}es-ES{% endif %}";
+  const T = {
+    loading: {{ t.changelog.loading | jsonify }},
+    empty: {{ t.changelog.empty_msg | jsonify }},
+    error: {{ t.changelog.error | jsonify }},
+    latest: {{ t.changelog.latest | jsonify }},
+    previous: {{ t.changelog.previous | jsonify }},
+    noNotes: {{ t.changelog.no_notes | jsonify }},
+    publishedOn: {{ t.changelog.published_on | jsonify }},
+    download: {{ t.changelog.download | jsonify }},
+    desc: {{ t.changelog.channel_desc | jsonify }},
+  };
+  const list = document.getElementById("bqReleases");
+  let releases = null;
+  let channel = "stable";
+
+  if (window.marked) marked.setOptions({ gfm: true, breaks: true, headerIds: false, mangle: false });
+
+  // Canal de cada publicación, igual que en la app: "nightly" → Nightly; pre-release → Beta; resto → Estable.
+  const channelOf = r => r.tag_name === "nightly" ? "nightly" : (r.prerelease ? "beta" : "stable");
+  const apkOf = r => (r.assets || []).find(a => /\.apk$/i.test(a.name));
+
+  fetch(`https://api.github.com/repos/${REPO}/releases?per_page=30`, { headers: { Accept: "application/vnd.github+json" } })
+    .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(data => {
+      releases = data.filter(r => !r.draft)
+        .sort((a, b) => new Date(b.published_at || b.created_at) - new Date(a.published_at || a.created_at));
+      // Los botones de descarga apuntan directamente al APK estable más reciente.
+      const stable = releases.find(r => channelOf(r) === "stable");
+      const apk = stable && apkOf(stable);
+      if (apk) document.querySelectorAll(".js-apk-download").forEach(a => a.href = apk.browser_download_url);
+      render();
+    })
+    .catch(err => {
+      list.innerHTML = `<div class="error">${T.error} <a href="https://github.com/${REPO}/releases" target="_blank" rel="noopener">GitHub Releases</a>.<br><br>${esc(err.message)}</div>`;
+    });
+
+  document.getElementById("bqChannels").addEventListener("click", e => {
+    const btn = e.target.closest(".switch-btn");
+    if (!btn || btn.classList.contains("active")) return;
+    document.querySelectorAll("#bqChannels .switch-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    channel = btn.dataset.channel;
+    document.getElementById("bqChannelDesc").textContent = T.desc[channel];
+    render();
+  });
+
+  function render() {
+    if (!releases) return;
+    const items = releases.filter(r => channelOf(r) === channel);
+    if (!items.length) { list.innerHTML = `<div class="empty">${T.empty}</div>`; return; }
+    list.innerHTML = items.map((r, i) => {
+      const apk = apkOf(r);
+      const body = (r.body || "").replace(/^Co-Authored-By:.*$/gmi, "").trim();
+      return `
+      <article class="release ${i === 0 ? "latest" : ""} is-visible">
+        <div class="timeline-node">${String(i + 1).padStart(2, "0")}</div>
+        <div class="release-card">
+          <header class="release-header">
+            <div class="version">
+              <span class="version-number">${esc(r.name || r.tag_name)}</span>
+              <span class="version-date">${fmt(r.published_at || r.created_at)}</span>
+            </div>
+            <div class="status"><span class="status-dot"></span>${i === 0 ? T.latest : T.previous}</div>
+          </header>
+          <div class="release-content">
+            <div class="github-markdown">${body ? (window.marked ? marked.parse(body) : `<p>${esc(body)}</p>`) : `<p><em>${T.noNotes}</em></p>`}</div>
+            ${apk ? `<div class="downloads"><a class="download" href="${esc(apk.browser_download_url)}" target="_blank" rel="noopener">↓ ${T.download} ${esc(apk.name)}</a></div>` : ""}
+            <div class="release-footer"><span class="release-source">${T.publishedOn}</span></div>
+          </div>
+        </div>
+      </article>`;
+    }).join("");
+  }
+
+  function fmt(s) {
+    const d = new Date(s);
+    return isNaN(d) ? "" : d.toLocaleDateString(LOCALE, { day: "2-digit", month: "short", year: "numeric" }).toUpperCase();
+  }
+  function esc(v) {
+    return String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  }
+
+  // Preguntas frecuentes: igual que en la portada.
+  document.querySelectorAll(".faq-question").forEach(button => {
+    button.addEventListener("click", () => {
+      const item = button.parentElement;
+      const answer = item.querySelector(".faq-answer");
+      const open = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(o => { if (o !== item) { o.classList.remove("open"); o.querySelector(".faq-answer").style.maxHeight = null; } });
+      item.classList.toggle("open", !open);
+      answer.style.maxHeight = open ? null : answer.scrollHeight + "px";
+    });
+  });
+})();
+</script>

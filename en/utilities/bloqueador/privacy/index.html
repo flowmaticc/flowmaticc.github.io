@@ -1,0 +1,97 @@
+---
+layout: legal-v2
+lang: en
+title: "Bloqueador privacy policy · Flowmaticc"
+---
+
+<div class="doc-badge">Privacy policy · Bloqueador</div>
+<h1>Bloqueador privacy policy</h1>
+<p class="meta">Last updated: 12 November 2026 · Flowmaticc · Bloqueador for Android</p>
+
+<div class="alert">
+  <strong>Summary:</strong> Bloqueador doesn't collect, send or sell any personal data. Everything it does happens inside your phone. No accounts, no usage analytics, no ads.
+</div>
+
+<div class="toc">
+  <div class="toc-title">Contents</div>
+  <ol>
+    <li><a href="#controller">Controller</a></li>
+    <li><a href="#how">What the app does with your traffic</a></li>
+    <li><a href="#data">What data it handles and where it stays</a></li>
+    <li><a href="#connections">The app's internet connections</a></li>
+    <li><a href="#permissions">Permissions</a></li>
+    <li><a href="#third-parties">Third parties</a></li>
+    <li><a href="#rights">Your rights</a></li>
+    <li><a href="#license">License and warranty</a></li>
+    <li><a href="#changes">Changes to this policy</a></li>
+  </ol>
+</div>
+
+<hr class="divider">
+
+<section id="controller">
+  <h2>1. Controller</h2>
+  <p><strong>Flowmaticc</strong><br>
+  Contact: <a href="mailto:gestiona.optimiza@gmail.com">gestiona.optimiza@gmail.com</a><br>
+  Source code: <a href="https://github.com/flowmaticc/bloqueador-android" target="_blank" rel="noopener">github.com/flowmaticc/bloqueador-android</a></p>
+  <p>This policy covers the <strong>Bloqueador</strong> app for Android. The flowmaticc.github.io website has its own <a href="/legal/privacidad/">privacy policy</a> (in Spanish).</p>
+</section>
+
+<section id="how">
+  <h2>2. What the app does with your traffic</h2>
+  <p>Bloqueador uses Android's VPN feature to create a <strong>local VPN</strong> that doesn't connect to any external server. Only <strong>DNS queries</strong> go through it (the domain names apps want to reach, e.g. <code>ads.example.com</code>).</p>
+  <ul>
+    <li>If the domain is on a block list, the app answers that it doesn't exist and the connection never happens.</li>
+    <li>If not, the query is forwarded to your usual DNS server (your carrier's or the one you've set), exactly as without the app.</li>
+    <li>All other traffic (websites, messages, videos…) <strong>doesn't go through the app</strong>. The app can't see the content of what you do.</li>
+  </ul>
+</section>
+
+<section id="data">
+  <h2>3. What data it handles and where it stays</h2>
+  <table>
+    <thead><tr><th>Data</th><th>Purpose</th><th>Where it's stored</th></tr></thead>
+    <tbody>
+      <tr><td>Domain names queried</td><td>Deciding whether to block them</td><td>In memory only, while being resolved</td></tr>
+      <tr><td>History (domain, time, requesting app, result)</td><td>Letting you see what was blocked and allow or block domains</td><td>Only on your phone. Deleted automatically after the time you choose (1 to 24 hours). Can be turned off or cleared in Settings.</td></tr>
+      <tr><td>List of installed apps</td><td>Choosing which apps are filtered and showing names and icons</td><td>Read on the spot; not stored or sent</td></tr>
+      <tr><td>Your settings and rules</td><td>Running the app</td><td>Only on your phone</td></tr>
+    </tbody>
+  </table>
+  <p>None of this data leaves the device. The app includes no analytics, advertising or crash-reporting tools, and excludes its data from Android backups.</p>
+</section>
+
+<section id="connections">
+  <h2>4. The app's internet connections</h2>
+  <ul>
+    <li><strong>GitHub</strong> (<code>raw.githubusercontent.com</code>, <code>api.github.com</code>, <code>github.com</code>): downloading block lists and checking for new app versions.</li>
+    <li><strong>adaway.org</strong>: only if you turn on the optional AdAway layer.</li>
+    <li><strong>The website you choose</strong>, only when you use “View on the web” in the history. It loads in a separate window, without your browser's cookies, and its data is deleted when you close it.</li>
+  </ul>
+  <p>No personal data is sent in these downloads, but, as with any internet connection, those servers can see your IP address. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's privacy statement</a>.</p>
+</section>
+
+<section id="permissions">
+  <h2>5. Permissions</h2>
+  <p>The complete list of permissions and what each is used for is on the <a href="/en/utilities/bloqueador/#permisos">Bloqueador page</a>. The app does <strong>not</strong> ask for location, camera, microphone, contacts, SMS, files, accessibility or screen capture.</p>
+</section>
+
+<section id="third-parties">
+  <h2>6. Third parties</h2>
+  <p>No data is shared with third parties. The block lists are the work of their authors (Hagezi, GoodbyeAds, 1Hosts, AdAway, StevenBlack) and are downloaded directly from their public repositories.</p>
+</section>
+
+<section id="rights">
+  <h2>7. Your rights</h2>
+  <p>Since we don't collect personal data, we hold no data about you to access, correct or delete. Local data (history and settings) is under your control: you can delete it from the app or by uninstalling it. For any question, write to <a href="mailto:gestiona.optimiza@gmail.com">gestiona.optimiza@gmail.com</a>. You can also contact the <a href="https://www.aepd.es" target="_blank" rel="noopener">Spanish Data Protection Agency (AEPD)</a>.</p>
+</section>
+
+<section id="license">
+  <h2>8. License and warranty</h2>
+  <p>Bloqueador is free software under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GNU GPL v3</a>. It is provided <strong>without any warranty</strong>: blocking domains may stop some site or app from working properly. If so, you can allow the domain from the history or turn the filter off.</p>
+</section>
+
+<section id="changes">
+  <h2>9. Changes to this policy</h2>
+  <p>If the way the app handles data changes, we'll update this page and the date above. Code changes can be reviewed publicly on GitHub.</p>
+</section>

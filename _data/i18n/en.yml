@@ -348,3 +348,157 @@ extension:
     button: "🧩 Install the free extension"
     footer_question: "Don't have Vexo yet?"
     footer_link: "Download it for free →"
+
+bloqueador:
+
+  hero:
+    breadcrumb_utilities: "Utilities"
+    breadcrumb_current: "Bloqueador"
+    kicker: "/ free utility · Android · open source"
+    title_pre: "Bloqueador"
+    title_highlight: "ad blocker for Android"
+    copy: "Blocks ads and trackers across your whole phone —in the browser and inside apps— with no root, no accounts and without sending your data to any server. The app is in Spanish for now."
+    chips: ["Android 8 or later", "No root", "100% local", "Open source · GPLv3", "Free, no ads"]
+    cta_download: "Download APK →"
+    cta_github: "View on GitHub"
+    download_note: "Latest stable version · 1.4 MB · Installed outside Google Play (see guide)."
+
+  how:
+    kicker: "/ how it works"
+    title: "A filter on your own phone."
+    text_html: "Bloqueador creates a <strong>local VPN</strong>: there is no server on the other end. Only <strong>DNS queries</strong> go through it — the questions every app asks, like “where is <code>ads.example.com</code>?”. If the domain is on an ad or tracking list, Bloqueador answers that it doesn't exist and the ad never loads. All other traffic goes straight out as usual: Bloqueador <strong>can't see the content</strong> of what you do, only domain names."
+
+  features:
+    kicker: "/ features"
+    title: "Everything it includes."
+    items:
+      - "Phone-wide blocking: browser, apps and games"
+      - "Three levels: Light, Balanced (Hagezi Pro) and Strict (Hagezi Pro++)"
+      - "Your manufacturer's list: Samsung, Xiaomi, Oppo/Realme, Huawei, Vivo…"
+      - "DNS anti-bypass: browsers can't skip the filter"
+      - "Choose which apps are filtered (by default, all except banking and payments)"
+      - "Local history: what was blocked, when and which app asked for it"
+      - "“View on the web”: shows in red what a domain puts on the page"
+      - "Allow or block any domain with one tap"
+      - "Lists update by themselves, only when they change"
+      - "Minimal battery use: 0.1 % to 0.4 % a day"
+      - "Self-updates from GitHub, with Stable, Beta or Nightly channel"
+      - "No accounts, no analytics, no ads of its own"
+
+  screenshots:
+    kicker: "/ screenshots"
+    title: "The app in use."
+    alts: ["Home screen with the filter on", "History of blocked domains", "Details of a blocked domain", "“View on the web” with the ad highlighted in red", "Settings organised by category", "Welcome screen"]
+
+  results:
+    kicker: "/ measured results"
+    title: "What it blocks, with data."
+    intro: "Measured with public ad-blocker test sites and with a Spanish online newspaper (one article: 60 domains and 151 requests). Percentage of ad and tracking domains blocked:"
+    headers: ["Test", "Light", "Balanced", "Strict"]
+    rows:
+      - ["adblock.turtlecute.org (domains)", "88 %", "96 %", "98 %"]
+      - ["obfusgated.com (266 domains)", "70 %", "82 %", "86 %"]
+      - ["adblock-tester.com (third-party scripts)", "50 %", "72 %", "88 %"]
+      - ["Spanish online newspaper", "71 %", "78 %", "81 %"]
+    note: "What no list blocks, on purpose, is what makes the site work: its own domain, images and fonts, and the cookie banner."
+    cannot_title: "What no blocker of this kind can remove"
+    cannot:
+      - "YouTube and Twitch ads: they come from the same servers as the video."
+      - "Promoted posts on Instagram, Facebook, X or TikTok: they come mixed with everything else."
+      - "The empty space an ad leaves inside a web page. For that, also use Brave or Firefox with uBlock Origin; they complement each other."
+    best: "Where it works best: free games and apps, the phone's own system ads and trackers in every app."
+
+  permissions:
+    kicker: "/ transparency"
+    title: "Permissions: what and why."
+    intro: "This is the complete list of permissions in the published APK, nothing left out. None of them can read your messages, photos, location, contacts or what you type."
+    headers: ["Permission", "What it's used for"]
+    rows:
+      - ["VPN connection (Android asks when you turn it on)", "Create the local VPN that only DNS queries go through. Android shows a key icon and a notification while it's on."]
+      - ["Internet access and network state", "Forward allowed queries to your usual DNS, download block lists and check for new versions."]
+      - ["Foreground service (special use)", "Keep the filter running with the screen off. This is what requires the persistent notification."]
+      - ["Notifications", "The filter notification and alerts about new versions or outdated lists."]
+      - ["See installed apps", "Show the list to choose which apps are filtered and put names and icons in the history. The list never leaves the phone."]
+      - ["Install updates", "Install the new versions it downloads from GitHub. Android always asks you to confirm."]
+      - ["Start at boot and stay awake", "Added by Android libraries to schedule list updates (WorkManager)."]
+    not_used_title: "What it doesn't ask for"
+    not_used: "No accessibility, screen capture, location, camera, microphone, contacts, SMS or storage. Early test versions used accessibility for visual blocking; it was removed in 0.2.0 precisely to avoid such sensitive permissions."
+    connections_title: "Who it connects to"
+    connections:
+      - "<strong>GitHub</strong> (raw.githubusercontent.com and api.github.com): downloading block lists and checking for new versions."
+      - "<strong>adaway.org</strong>: only if you turn on the optional AdAway layer."
+      - "<strong>Your usual DNS</strong> (your carrier's or the one you've set): it receives allowed queries, exactly as without Bloqueador."
+      - "<strong>The website you choose</strong>, only when you use “View on the web”."
+    connections_note: "There are no Flowmaticc servers and no usage analytics. GitHub and adaway.org can see your IP when downloading, as with any download."
+
+  install:
+    kicker: "/ installation"
+    title: "How to install it."
+    steps:
+      - title: "Download the APK"
+        text_html: "Tap <strong>Download APK</strong> on your phone. It's the signed file of the latest stable version published on GitHub."
+      - title: "Allow the install"
+        text_html: "Android will ask you to allow installing apps from your browser (or file manager). It's needed because the app isn't on Google Play."
+      - title: "Play Protect"
+        text_html: "Google Play Protect may show an <em>“Unknown app”</em> warning. Tap <strong>More details → Install anyway</strong>. It appears because the app isn't registered on Google Play, not because anything was detected. The code is public and you can review it."
+      - title: "Turn the filter on"
+        text_html: "Open Bloqueador, choose which apps to protect and tap the switch. Accept Android's <strong>Connection request</strong>: that's the local VPN."
+      - title: "Keep Android from closing it"
+        text_html: "On the battery card, tap <strong>Abrir ajustes</strong> (“Open settings”) and choose <strong>Unrestricted</strong> for Bloqueador. On Samsung, Xiaomi and others the app explains the steps for your brand."
+    updates_note: "From then on, the app checks once a day for a new version and lets you know. It never installs anything without your confirmation."
+
+  changelog:
+    kicker: "/ changelog"
+    title: "Versions and channels."
+    intro: "Choose the channel in the app: Ajustes → Actualizaciones de la app (Settings → App updates). Stable only by default. Release notes are in Spanish."
+    channels:
+      stable: "Stable"
+      beta: "Beta"
+      nightly: "Nightly"
+    channel_desc:
+      stable: "Final, tested versions. Recommended."
+      beta: "Test versions before they become stable. May have some bugs."
+      nightly: "Every change as soon as it's made. For those who want the latest."
+    loading: "Loading versions from GitHub…"
+    empty_msg: "There are no versions in this channel yet."
+    error: "Versions couldn't be loaded. You can see them directly on"
+    latest: "Latest"
+    previous: "Previous"
+    no_notes: "No notes for this version."
+    published_on: "Published on GitHub Releases"
+    download: "Download"
+
+  faq:
+    kicker: "/ faq"
+    title: "Before you install."
+    items:
+      - q: "Is it a real VPN? Does my traffic go somewhere else?"
+        a_html: "No. It's a <strong>local</strong> VPN: it's created inside your phone and doesn't connect to any server. Only DNS queries go through it; your data, websites and apps go straight out as usual. That's why it doesn't change your IP or hide your location."
+      - q: "Can it see what I do or type?"
+        a_html: "No. It only sees domain names (for example, <code>doubleclick.net</code>), not pages, messages or passwords, which are encrypted. The history is stored only on your phone, deletes itself after the time you choose and can be turned off."
+      - q: "Does it use a lot of battery?"
+        a_html: "No. In 24-hour tests on two phones, the filter used between 0.1 % and 0.4 % of the battery per day. It sleeps until a query arrives."
+      - q: "Why isn't it on Google Play?"
+        a_html: "Google Play rules don't allow apps that block ads inside other apps, so it's distributed from GitHub, with open source code and a signed APK. That's why Play Protect warns you when installing: it's a generic warning for apps from outside the store."
+      - q: "Does it work with Brave, Firefox or my VPN?"
+        a_html: "Brave and Firefox + uBlock Origin complement it: they remove things inside pages (including the empty ad space) and Bloqueador handles apps and the system. Another VPN, no: Android only allows one active VPN at a time. It's also best not to use the system's “Private DNS” with it, as queries would bypass the filter."
+      - q: "Will anything stop working?"
+        a_html: "It's rare with the Balanced level. If an app or link fails, open the history, find the blocked domain and tap <strong>Permitir siempre</strong> (“Always allow”). Banking and payment apps are excluded from the filter by default."
+      - q: "Does it remove YouTube ads?"
+        a_html: "No, neither this nor any DNS blocker can: YouTube ads come from the same servers as the videos. The same goes for Twitch and promoted posts on social networks."
+      - q: "How much does it cost?"
+        a_html: "Nothing. It's free, with no ads, no accounts and open source (GPLv3 license)."
+
+  legal:
+    kicker: "/ legal"
+    title: "License and privacy."
+    items_html:
+      - "<strong>Privacy:</strong> the app doesn't collect personal data. Full details in the <a href=\"/en/utilities/bloqueador/privacy/\">Bloqueador privacy policy</a>."
+      - "<strong>License:</strong> free software under the <a href=\"https://www.gnu.org/licenses/gpl-3.0.html\" target=\"_blank\" rel=\"noopener\">GNU GPLv3</a>. You can use, study, modify and redistribute it."
+      - "<strong>No warranty:</strong> provided as is. Blocking domains may stop some site or app from working; you can allow it with one tap or turn the filter off."
+      - "<strong>Block lists:</strong> they belong to their authors (Hagezi, GoodbyeAds, 1Hosts, AdAway, StevenBlack), each under its own license. The app downloads them directly from their sources."
+
+  final_cta:
+    title: "Fewer ads. More privacy."
+    text: "Free, no accounts, and nothing leaves your phone."
+    button: "Download Bloqueador →"

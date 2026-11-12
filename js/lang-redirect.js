@@ -24,8 +24,19 @@
   if (browserLang === 'es') return;
 
   // Find a supported match
-  const match = SUPPORTED.find(l => l === browserLang);
+  let match = SUPPORTED.find(l => l === browserLang);
   if (!match) return; // Unknown language → stay on ES (fallback)
+
+  // Pages that only exist in some languages declare them in <meta name="available-langs">.
+  // If the browser language isn't one of them, use English when available; otherwise stay.
+  const meta = document.querySelector('meta[name="available-langs"]');
+  if (meta) {
+    const available = meta.content.split(',').map(s => s.trim());
+    if (!available.includes(match)) {
+      if (!available.includes('en')) return;
+      match = 'en';
+    }
+  }
 
   // Build target URL preserving the current path suffix
   // e.g. /novedades/ → /en/changelog/  (special mapping)

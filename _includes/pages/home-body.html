@@ -305,6 +305,31 @@
 </section>
 
 <!-- =====================================================
+     OTRAS UTILIDADES: Bloqueador (Android)
+     Textos en español en /, en inglés en el resto (la app y su página solo existen en ES/EN).
+===================================================== -->
+{% assign bq_es = false %}{% if page.lang == 'es' or page.lang == nil %}{% assign bq_es = true %}{% endif %}
+<section class="section" id="bloqueador">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{% if bq_es %}/ también de flowmaticc{% else %}/ also by flowmaticc{% endif %}</div></div>
+    <div>
+      <h2>{% if bq_es %}Bloqueador: adiós a los anuncios en tu Android.{% else %}Bloqueador: goodbye to ads on your Android.{% endif %}</h2>
+      <p class="section-intro">{% if bq_es %}Bloquea publicidad y rastreadores en todo el móvil, también dentro de las apps. Sin root, sin cuentas y sin que nada salga del teléfono. Gratis y de código abierto.{% else %}Blocks ads and trackers across your whole phone, including inside apps. No root, no accounts, nothing leaves the phone. Free and open source.{% endif %}</p>
+    </div>
+  </div>
+  <div class="info-card" data-reveal>
+    <div class="util-preview-row"><span>{% if bq_es %}Filtro DNS · Protegido{% else %}DNS filter · Protected{% endif %}</span><span class="util-toggle-fake"></span></div>
+    <div class="util-preview-row"><span>{% if bq_es %}Dominios de anuncios bloqueados en tests públicos{% else %}Ad domains blocked in public tests{% endif %}</span><strong style="color:var(--lime)">96 %</strong></div>
+    <div class="util-preview-row"><span>{% if bq_es %}Batería al día{% else %}Battery per day{% endif %}</span><span>0,1–0,4 %</span><span class="util-status-dot"></span></div>
+    <div class="hero-actions" style="justify-content:flex-start;margin-top:18px">
+      <a href="{% if bq_es %}/utilities/bloqueador/{% else %}/en/utilities/bloqueador/{% endif %}" class="button-primary" data-umami="use-bloqueador">{% if bq_es %}Conocer Bloqueador →{% else %}Discover Bloqueador →{% endif %}</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- =====================================================
      CTA FINAL
 ===================================================== -->
 <section class="final-cta" id="cta-final">

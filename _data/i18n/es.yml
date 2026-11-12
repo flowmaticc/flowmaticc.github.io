@@ -457,3 +457,157 @@ extension:
     button: "🧩 Instalar extensión gratis"
     footer_question: "¿Aún no tienes Vexo?"
     footer_link: "Descárgala gratis →"
+
+bloqueador:
+
+  hero:
+    breadcrumb_utilities: "Utilidades"
+    breadcrumb_current: "Bloqueador"
+    kicker: "/ utilidad gratuita · Android · código abierto"
+    title_pre: "Bloqueador"
+    title_highlight: "de anuncios para Android"
+    copy: "Bloquea publicidad y rastreadores en todo el móvil —en el navegador y dentro de las apps— sin root, sin cuentas y sin enviar tus datos a ningún servidor."
+    chips: ["Android 8 o superior", "Sin root", "100% local", "Código abierto · GPLv3", "Gratis y sin anuncios"]
+    cta_download: "Descargar APK →"
+    cta_github: "Ver en GitHub"
+    download_note: "Versión estable más reciente · 1,4 MB · Se instala fuera de Google Play (ver guía)."
+
+  how:
+    kicker: "/ cómo funciona"
+    title: "Un filtro en tu propio móvil."
+    text_html: "Bloqueador crea una <strong>VPN local</strong>: no hay ningún servidor al otro lado. Por ella solo pasan las <strong>consultas DNS</strong>, es decir, las preguntas que hace cada app del tipo «¿dónde está <code>anuncios.ejemplo.com</code>?». Si el dominio está en una lista de publicidad o rastreo, Bloqueador responde que no existe y el anuncio no llega a cargarse. El resto del tráfico va directo, como siempre: Bloqueador <strong>no ve el contenido</strong> de lo que haces, solo nombres de dominio."
+
+  features:
+    kicker: "/ características"
+    title: "Todo lo que incluye."
+    items:
+      - "Bloqueo en todo el móvil: navegador, apps y juegos"
+      - "Tres niveles: Ligero, Equilibrado (Hagezi Pro) y Estricto (Hagezi Pro++)"
+      - "Lista de tu fabricante: Samsung, Xiaomi, Oppo/Realme, Huawei, Vivo…"
+      - "Anti-evasión DNS: los navegadores no pueden saltarse el filtro"
+      - "Elige qué apps se filtran (por defecto, todas menos banca y pagos)"
+      - "Historial local: qué se bloqueó, cuándo y qué app lo pidió"
+      - "«Ver en la web»: muestra en rojo lo que un dominio pone en la página"
+      - "Permitir o bloquear cualquier dominio con un toque"
+      - "Listas actualizadas solas, solo si han cambiado"
+      - "Consumo mínimo: entre el 0,1 % y el 0,4 % de batería al día"
+      - "Se actualiza sola desde GitHub, con canal Estable, Beta o Nightly"
+      - "Sin cuentas, sin estadísticas, sin anuncios propios"
+
+  screenshots:
+    kicker: "/ capturas"
+    title: "La app en uso."
+    alts: ["Pantalla principal con el filtro activo", "Historial de dominios bloqueados", "Detalle de un dominio bloqueado", "«Ver en la web» con el anuncio resaltado en rojo", "Ajustes organizados por categorías", "Pantalla de bienvenida"]
+
+  results:
+    kicker: "/ resultados medidos"
+    title: "Qué bloquea, con datos."
+    intro: "Medido con webs públicas de test de bloqueadores y con un periódico digital español (una noticia: 60 dominios y 151 peticiones). Porcentaje de dominios de publicidad y rastreo bloqueados:"
+    headers: ["Test", "Ligero", "Equilibrado", "Estricto"]
+    rows:
+      - ["adblock.turtlecute.org (dominios)", "88 %", "96 %", "98 %"]
+      - ["obfusgated.com (266 dominios)", "70 %", "82 %", "86 %"]
+      - ["adblock-tester.com (scripts de terceros)", "50 %", "72 %", "88 %"]
+      - ["Periódico digital español", "71 %", "78 %", "81 %"]
+    note: "Lo que no bloquea ninguna lista a propósito es lo que hace funcionar la web: su propio dominio, sus imágenes y fuentes, y el aviso de cookies."
+    cannot_title: "Lo que ningún bloqueador de este tipo puede quitar"
+    cannot:
+      - "Los anuncios de YouTube y Twitch: llegan por los mismos servidores que el vídeo."
+      - "Las publicaciones promocionadas de Instagram, Facebook, X o TikTok: vienen mezcladas con el resto."
+      - "El hueco que deja un anuncio dentro de una web. Para eso, usa además Brave o Firefox con uBlock Origin; se complementan."
+    best: "Donde mejor funciona: juegos y apps gratuitas, publicidad del propio sistema del móvil y rastreadores en todas las apps."
+
+  permissions:
+    kicker: "/ transparencia"
+    title: "Permisos: qué pide y por qué."
+    intro: "Esta es la lista completa de permisos del APK publicado, sin omitir ninguno. Ninguno sirve para leer tus mensajes, fotos, ubicación, contactos ni lo que escribes."
+    headers: ["Permiso", "Para qué se usa"]
+    rows:
+      - ["Conexión VPN (te la pide Android al activar)", "Crear la VPN local por la que pasan solo las consultas DNS. Android muestra una llave y una notificación mientras está activa."]
+      - ["Acceso a internet y estado de la red", "Reenviar las consultas permitidas a tu DNS habitual, descargar las listas de bloqueo y comprobar si hay versión nueva."]
+      - ["Servicio en primer plano (uso especial)", "Mantener el filtro funcionando con la pantalla apagada. Es lo que obliga a mostrar la notificación fija."]
+      - ["Notificaciones", "La notificación del filtro y los avisos de versión nueva o de listas sin actualizar."]
+      - ["Ver las apps instaladas", "Mostrar la lista para elegir qué apps se filtran y poner nombre e icono en el historial. La lista no sale del móvil."]
+      - ["Instalar actualizaciones", "Instalar las versiones nuevas que descarga desde GitHub. Android siempre te pide confirmación."]
+      - ["Iniciar al encender y mantener activo", "Lo añaden las librerías de Android para programar la actualización de listas (WorkManager)."]
+    not_used_title: "Lo que no pide"
+    not_used: "Ni accesibilidad, ni captura de pantalla, ni ubicación, cámara, micrófono, contactos, SMS o almacenamiento. Las primeras versiones de prueba usaban accesibilidad para un bloqueo visual; se retiró en la 0.2.0 precisamente para no pedir permisos tan sensibles."
+    connections_title: "Con quién se conecta"
+    connections:
+      - "<strong>GitHub</strong> (raw.githubusercontent.com y api.github.com): descarga de las listas de bloqueo y comprobación de versiones nuevas."
+      - "<strong>adaway.org</strong>: solo si activas la capa opcional AdAway."
+      - "<strong>Tu DNS de siempre</strong> (el de tu operador o el que tengas configurado): recibe las consultas permitidas, igual que sin Bloqueador."
+      - "<strong>La web que tú elijas</strong>, solo cuando usas «Ver en la web»."
+    connections_note: "No hay servidores de Flowmaticc ni estadísticas de uso. GitHub y adaway.org pueden ver tu IP al descargar, como en cualquier descarga."
+
+  install:
+    kicker: "/ instalación"
+    title: "Cómo instalarla."
+    steps:
+      - title: "Descarga el APK"
+        text_html: "Pulsa <strong>Descargar APK</strong> desde el móvil. Es el archivo firmado de la última versión estable publicada en GitHub."
+      - title: "Permite la instalación"
+        text_html: "Android te pedirá permitir instalar apps desde tu navegador (o el gestor de archivos). Es necesario porque la app no está en Google Play."
+      - title: "Play Protect"
+        text_html: "Puede aparecer el aviso <em>«App desconocida»</em> de Google Play Protect. Pulsa <strong>Más detalles → Instalar de todas formas</strong>. Sale porque la app no está registrada en Google Play, no porque se haya detectado nada. El código es público y puedes revisarlo."
+      - title: "Activa el filtro"
+        text_html: "Abre Bloqueador, elige qué apps proteger y pulsa el interruptor. Acepta la <strong>Solicitud de conexión</strong> de Android: es la VPN local."
+      - title: "Que Android no lo cierre"
+        text_html: "En la tarjeta de batería, pulsa <strong>Abrir ajustes</strong> y elige <strong>Sin restricciones</strong> para Bloqueador. En Samsung, Xiaomi y otros la app te explica los pasos de tu marca."
+    updates_note: "A partir de ahí, la app comprueba una vez al día si hay versión nueva y te avisa. Nunca instala nada sin tu confirmación."
+
+  changelog:
+    kicker: "/ novedades"
+    title: "Versiones y canales."
+    intro: "Elige el canal en la app: Ajustes → Actualizaciones de la app. Por defecto, solo Estable."
+    channels:
+      stable: "Estable"
+      beta: "Beta"
+      nightly: "Nightly"
+    channel_desc:
+      stable: "Versiones finales, ya probadas. Recomendado."
+      beta: "Versiones de prueba antes de ser estables. Pueden tener algún fallo."
+      nightly: "Cada cambio en cuanto se hace. Para quien quiere probar lo último."
+    loading: "Cargando versiones desde GitHub…"
+    empty_msg: "Todavía no hay versiones en este canal."
+    error: "No se pudieron cargar las versiones. Puedes verlas directamente en"
+    latest: "Última"
+    previous: "Anterior"
+    no_notes: "Sin notas para esta versión."
+    published_on: "Publicado en GitHub Releases"
+    download: "Descargar"
+
+  faq:
+    kicker: "/ preguntas frecuentes"
+    title: "Antes de instalar."
+    items:
+      - q: "¿Es una VPN de verdad? ¿Mi tráfico pasa por otro sitio?"
+        a_html: "No. Es una VPN <strong>local</strong>: se crea dentro de tu móvil y no se conecta a ningún servidor. Solo pasan por ella las consultas DNS; tus datos, webs y apps van directos como siempre. Por eso no cambia tu IP ni sirve para ocultar tu ubicación."
+      - q: "¿Puede ver lo que hago o lo que escribo?"
+        a_html: "No. Solo ve nombres de dominio (por ejemplo, <code>doubleclick.net</code>), no las páginas, mensajes ni contraseñas, que van cifrados. El historial se guarda solo en tu móvil, se borra solo pasado el tiempo que elijas y puedes desactivarlo."
+      - q: "¿Gasta mucha batería?"
+        a_html: "No. En pruebas de 24 horas en dos móviles, el filtro gastó entre el 0,1 % y el 0,4 % de la batería al día. Está dormido hasta que llega una consulta."
+      - q: "¿Por qué no está en Google Play?"
+        a_html: "Las normas de Google Play no permiten apps que bloqueen la publicidad dentro de otras apps, así que se distribuye desde GitHub, con el código abierto y el APK firmado. Por eso Play Protect avisa al instalar: es un aviso genérico para apps de fuera de la tienda."
+      - q: "¿Es compatible con Brave, Firefox o mi VPN?"
+        a_html: "Con Brave y Firefox + uBlock Origin se complementan: ellos quitan lo de dentro de las páginas (incluido el hueco del anuncio) y Bloqueador lo de las apps y el sistema. Con otra VPN no: Android solo permite una VPN activa a la vez. Tampoco conviene usarla junto al «DNS privado» del sistema, porque las consultas se saltarían el filtro."
+      - q: "¿Algo dejará de funcionar?"
+        a_html: "Con el nivel Equilibrado es raro. Si una app o un enlace falla, abre el historial, busca el dominio bloqueado y pulsa <strong>Permitir siempre</strong>. Las apps de banca y pagos se excluyen del filtro por defecto."
+      - q: "¿Quita los anuncios de YouTube?"
+        a_html: "No, ni este ni ningún bloqueador por DNS: los anuncios de YouTube llegan por los mismos servidores que los vídeos. Lo mismo pasa con Twitch y con las publicaciones promocionadas de las redes sociales."
+      - q: "¿Cuánto cuesta?"
+        a_html: "Nada. Es gratis, sin anuncios, sin cuentas y de código abierto (licencia GPLv3)."
+
+  legal:
+    kicker: "/ legal"
+    title: "Licencia y privacidad."
+    items_html:
+      - "<strong>Privacidad:</strong> la app no recoge datos personales. Detalle completo en la <a href=\"/utilities/bloqueador/privacidad/\">política de privacidad de Bloqueador</a>."
+      - "<strong>Licencia:</strong> software libre bajo <a href=\"https://www.gnu.org/licenses/gpl-3.0.html\" target=\"_blank\" rel=\"noopener\">GNU GPLv3</a>. Puedes usarlo, estudiarlo, modificarlo y redistribuirlo."
+      - "<strong>Sin garantía:</strong> se ofrece tal cual. Bloquear dominios puede impedir que alguna web o app funcione; puedes permitirlo con un toque o desactivar el filtro."
+      - "<strong>Listas de bloqueo:</strong> son de sus autores (Hagezi, GoodbyeAds, 1Hosts, AdAway, StevenBlack), cada una con su licencia. La app las descarga directamente de sus fuentes."
+
+  final_cta:
+    title: "Menos anuncios. Más privacidad."
+    text: "Gratis, sin cuentas y sin que nada salga de tu móvil."
+    button: "Descargar Bloqueador →"
