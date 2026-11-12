@@ -209,17 +209,17 @@ layout: null
 
   <!-- ═══ GOOGLE AUTH ═══ -->
   <url>
-    <loc>https://flowmaticc.github.io/utilities/bloqueador/</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/bloqueador/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/bloqueador/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/bloqueador/"/>
+    <loc>https://flowmaticc.github.io/utilities/bloqueador-android/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/bloqueador-android/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/bloqueador-android/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/bloqueador-android/"/>
     <changefreq>weekly</changefreq><priority>0.8</priority>
   </url>
   <url>
-    <loc>https://flowmaticc.github.io/en/utilities/bloqueador/</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/bloqueador/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/bloqueador/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/bloqueador/"/>
+    <loc>https://flowmaticc.github.io/en/utilities/bloqueador-android/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://flowmaticc.github.io/utilities/bloqueador-android/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://flowmaticc.github.io/utilities/bloqueador-android/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://flowmaticc.github.io/en/utilities/bloqueador-android/"/>
     <changefreq>weekly</changefreq><priority>0.8</priority>
   </url>
   <url>

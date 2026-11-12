@@ -30,7 +30,13 @@
 </div>
 </section>
 
-<section class="section" id="product">
+<nav class="bq-index" aria-label="{{ t.nav.label }}">
+  <div class="container bq-index-inner">
+    {% for it in t.nav.items %}<a href="#{{ it[0] }}">{{ it[1] }}</a>{% endfor %}
+  </div>
+</nav>
+
+<section class="section bq-anchor" id="como-funciona">
 <div class="container">
   <div class="section-header">
     <div><div class="section-kicker">{{ t.how.kicker }}</div></div>
@@ -42,7 +48,7 @@
 </div>
 </section>
 
-<section class="section">
+<section class="section bq-anchor" id="caracteristicas">
 <div class="container">
   <div class="section-header">
     <div><div class="section-kicker">{{ t.features.kicker }}</div></div>
@@ -54,7 +60,7 @@
 </div>
 </section>
 
-<section class="section">
+<section class="section bq-anchor" id="capturas">
 <div class="container">
   <div class="section-header">
     <div><div class="section-kicker">{{ t.screenshots.kicker }}</div></div>
@@ -63,13 +69,13 @@
   {% assign shots = "inicio|historial|detalle|ver-en-la-web|ajustes|bienvenida" | split: "|" %}
   <div class="shot-grid bq-shots" data-reveal>
     {% for s in shots %}
-    <img src="/img/bloqueador/{{ s }}.webp" alt="{{ t.screenshots.alts[forloop.index0] }}" width="540" height="1105" loading="lazy">
+    <button type="button" class="bq-shot" data-src="/img/bloqueador/{{ s }}.webp" aria-label="{{ t.screenshots.alts[forloop.index0] }}"><img src="/img/bloqueador/{{ s }}.webp" alt="{{ t.screenshots.alts[forloop.index0] }}" width="540" height="1105" loading="lazy"></button>
     {% endfor %}
   </div>
 </div>
 </section>
 
-<section class="section" id="resultados">
+<section class="section bq-anchor" id="resultados">
 <div class="container">
   <div class="section-header">
     <div><div class="section-kicker">{{ t.results.kicker }}</div></div>
@@ -95,7 +101,7 @@
 </div>
 </section>
 
-<section class="section" id="permisos">
+<section class="section bq-anchor" id="permisos">
 <div class="container">
   <div class="section-header">
     <div><div class="section-kicker">{{ t.permissions.kicker }}</div></div>
@@ -125,7 +131,7 @@
 </div>
 </section>
 
-<section class="section" id="instalacion">
+<section class="section bq-anchor" id="instalacion">
 <div class="container">
   <div class="section-header">
     <div><div class="section-kicker">{{ t.install.kicker }}</div></div>
@@ -144,7 +150,7 @@
 </div>
 </section>
 
-<section class="section" id="novedades">
+<section class="section bq-anchor" id="novedades">
 <div class="container">
   <div class="section-header">
     <div><div class="section-kicker">{{ t.changelog.kicker }}</div></div>
@@ -166,7 +172,7 @@
 </div>
 </section>
 
-<section class="section">
+<section class="section bq-anchor" id="preguntas">
 <div class="container">
   <div class="section-header">
     <div><div class="section-kicker">{{ t.faq.kicker }}</div></div>
@@ -183,7 +189,7 @@
 </div>
 </section>
 
-<section class="section" id="legal">
+<section class="section bq-anchor" id="legal">
 <div class="container">
   <div class="section-header">
     <div><div class="section-kicker">{{ t.legal.kicker }}</div></div>
@@ -203,7 +209,36 @@
 </div>
 </section>
 
+<!-- Visor de capturas y botón de subir -->
+<div class="bq-lightbox" id="bqLightbox" hidden>
+  <button type="button" class="bq-lightbox-close" aria-label="{{ t.nav.close }}">&#10005;</button>
+  <button type="button" class="bq-lightbox-nav bq-prev" aria-label="&lsaquo;">&lsaquo;</button>
+  <img alt="">
+  <button type="button" class="bq-lightbox-nav bq-next" aria-label="&rsaquo;">&rsaquo;</button>
+  <p class="bq-lightbox-caption"></p>
+</div>
+<button type="button" class="bq-top" id="bqTop" aria-label="{{ t.nav.top }}" title="{{ t.nav.top }}">&uarr;</button>
+
 <style>
+  .bq-index { position: sticky; top: var(--bq-nav-h, 64px); z-index: 40; background: rgba(16,16,16,.92); backdrop-filter: blur(8px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .bq-index-inner { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-top: 10px; padding-bottom: 10px; }
+  .bq-index-inner::-webkit-scrollbar { display: none; }
+  .bq-index a { flex: 0 0 auto; padding: 6px 12px; border: 1px solid var(--line); color: var(--muted); font-family: "DM Mono", monospace; font-size: 11px; text-decoration: none; white-space: nowrap; transition: border-color .2s, color .2s; }
+  .bq-index a:hover, .bq-index a.active { border-color: var(--lime); color: var(--lime); }
+  .bq-anchor { scroll-margin-top: calc(var(--bq-nav-h, 64px) + 56px); }
+  .bq-shot { padding: 0; border: 0; background: none; cursor: zoom-in; }
+  .bq-shot img { display: block; width: 100%; height: auto; }
+  .bq-lightbox { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.92); display: flex; align-items: center; justify-content: center; padding: 48px 16px; }
+  .bq-lightbox[hidden] { display: none; }
+  .bq-lightbox img { max-height: 100%; max-width: min(92vw, 520px); border: 1px solid var(--line); border-radius: 14px; }
+  .bq-lightbox-close { position: absolute; top: 14px; right: 16px; }
+  .bq-lightbox-close, .bq-lightbox-nav { width: 42px; height: 42px; border: 1px solid var(--line); background: #111; color: #fff; font-size: 20px; cursor: pointer; }
+  .bq-lightbox-close:hover, .bq-lightbox-nav:hover { border-color: var(--lime); color: var(--lime); }
+  .bq-lightbox-nav { margin: 0 10px; flex-shrink: 0; }
+  .bq-lightbox-caption { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; color: var(--muted); font-size: 12px; }
+  .bq-top { position: fixed; right: 18px; bottom: 18px; z-index: 50; width: 44px; height: 44px; border: 1px solid var(--lime); background: #111; color: var(--lime); font-size: 18px; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .2s; }
+  .bq-top.show { opacity: 1; pointer-events: auto; }
+  @media (max-width: 600px) { .bq-lightbox-nav { position: absolute; bottom: 44px; } .bq-prev { left: 16px; } .bq-next { right: 16px; } }
   .bq-note { margin-top: 14px; font-size: 12px; color: var(--muted-2); text-align: center; }
   .bq-shots { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
   .bq-shots img { border-radius: 14px; }
@@ -299,6 +334,54 @@
   function esc(v) {
     return String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
   }
+
+  // Índice: altura real del menú superior (para que el índice quede justo debajo) y sección activa.
+  const navbar = document.querySelector(".nav-v2");
+  if (navbar) document.documentElement.style.setProperty("--bq-nav-h", navbar.offsetHeight + "px");
+  const links = [...document.querySelectorAll(".bq-index a")];
+  const sections = links.map(a => document.getElementById(a.getAttribute("href").slice(1))).filter(Boolean);
+  const topBtn = document.getElementById("bqTop");
+  function onScroll() {
+    topBtn.classList.toggle("show", window.scrollY > 900);
+    const y = window.scrollY + (navbar ? navbar.offsetHeight : 64) + 90;
+    let current = null;
+    sections.forEach(s => { if (s.offsetTop <= y) current = s.id; });
+    links.forEach(a => {
+      const on = a.getAttribute("href") === "#" + current;
+      if (on && !a.classList.contains("active")) {
+        const bar = a.parentElement;
+        bar.scrollTo({ left: a.offsetLeft - bar.clientWidth / 2 + a.offsetWidth / 2, behavior: "smooth" });
+      }
+      a.classList.toggle("active", on);
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // Visor de capturas: pulsar para ampliar, flechas o teclado para pasar, Esc o clic fuera para cerrar.
+  const shots = [...document.querySelectorAll(".bq-shot")];
+  const box = document.getElementById("bqLightbox");
+  const boxImg = box.querySelector("img");
+  const caption = box.querySelector(".bq-lightbox-caption");
+  let idx = 0;
+  function show(i) {
+    idx = (i + shots.length) % shots.length;
+    boxImg.src = shots[idx].dataset.src;
+    boxImg.alt = caption.textContent = shots[idx].getAttribute("aria-label");
+  }
+  function close() { box.hidden = true; document.body.style.overflow = ""; }
+  shots.forEach((b, i) => b.addEventListener("click", () => { show(i); box.hidden = false; document.body.style.overflow = "hidden"; }));
+  box.querySelector(".bq-prev").addEventListener("click", e => { e.stopPropagation(); show(idx - 1); });
+  box.querySelector(".bq-next").addEventListener("click", e => { e.stopPropagation(); show(idx + 1); });
+  box.querySelector(".bq-lightbox-close").addEventListener("click", close);
+  box.addEventListener("click", e => { if (e.target === box) close(); });
+  document.addEventListener("keydown", e => {
+    if (box.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(idx - 1);
+    if (e.key === "ArrowRight") show(idx + 1);
+  });
 
   // Preguntas frecuentes: igual que en la portada.
   document.querySelectorAll(".faq-question").forEach(button => {

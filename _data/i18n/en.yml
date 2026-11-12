@@ -351,6 +351,21 @@ extension:
 
 bloqueador:
 
+  nav:
+    label: "On this page"
+    top: "Back to top"
+    close: "Close"
+    items:
+      - ["como-funciona", "How it works"]
+      - ["caracteristicas", "Features"]
+      - ["capturas", "Screenshots"]
+      - ["resultados", "Results"]
+      - ["permisos", "Permissions"]
+      - ["instalacion", "Install"]
+      - ["novedades", "Changelog"]
+      - ["preguntas", "FAQ"]
+      - ["legal", "Legal"]
+
   hero:
     breadcrumb_utilities: "Utilities"
     breadcrumb_current: "Bloqueador"
@@ -493,7 +508,7 @@ bloqueador:
     kicker: "/ legal"
     title: "License and privacy."
     items_html:
-      - "<strong>Privacy:</strong> the app doesn't collect personal data. Full details in the <a href=\"/en/utilities/bloqueador/privacy/\">Bloqueador privacy policy</a>."
+      - "<strong>Privacy:</strong> the app doesn't collect personal data. Full details in the <a href=\"/en/utilities/bloqueador-android/privacy/\">Bloqueador privacy policy</a>."
       - "<strong>License:</strong> free software under the <a href=\"https://www.gnu.org/licenses/gpl-3.0.html\" target=\"_blank\" rel=\"noopener\">GNU GPLv3</a>. You can use, study, modify and redistribute it."
       - "<strong>No warranty:</strong> provided as is. Blocking domains may stop some site or app from working; you can allow it with one tap or turn the filter off."
       - "<strong>Block lists:</strong> they belong to their authors (Hagezi, GoodbyeAds, 1Hosts, AdAway, StevenBlack), each under its own license. The app downloads them directly from their sources."
