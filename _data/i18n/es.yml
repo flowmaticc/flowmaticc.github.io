@@ -487,6 +487,7 @@ bloqueador:
     chips: ["Android 8 o superior", "Sin root", "100% local", "Código abierto · GPLv3", "Gratis y sin anuncios"]
     cta_download: "Descargar APK →"
     cta_github: "Ver en GitHub"
+    cta_report: "Reportar una web"
     download_note: "Versión estable más reciente · 1,4 MB · Se instala fuera de Google Play (ver guía)."
 
   how:
