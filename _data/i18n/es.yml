@@ -471,17 +471,19 @@ bloqueador:
       - ["resultados", "Resultados"]
       - ["permisos", "Permisos"]
       - ["instalacion", "Instalación"]
+      - ["reportar", "Reportar una web"]
       - ["novedades", "Novedades"]
       - ["preguntas", "Preguntas"]
       - ["legal", "Legal"]
 
   hero:
     breadcrumb_utilities: "Utilidades"
-    breadcrumb_current: "Bloqueador"
+    breadcrumb_current: "Garbillo"
     kicker: "/ utilidad gratuita · Android · código abierto"
-    title_pre: "Bloqueador"
-    title_highlight: "de anuncios para Android"
-    copy: "Bloquea publicidad y rastreadores en todo el móvil —en el navegador y dentro de las apps— sin root, sin cuentas y sin enviar tus datos a ningún servidor."
+    title_pre: "Garbillo"
+    title_highlight: "anuncios fuera, peligros fuera"
+    copy: "Bloquea publicidad, rastreadores y sitios peligrosos (phishing, malware, estafas) en todo el móvil —en el navegador y dentro de las apps— sin root, sin cuentas y sin enviar tus datos a ningún servidor."
+    origin: "Garbillo: la criba de esparto con la que se limpiaba el grano. Deja pasar lo bueno y retiene lo demás."
     chips: ["Android 8 o superior", "Sin root", "100% local", "Código abierto · GPLv3", "Gratis y sin anuncios"]
     cta_download: "Descargar APK →"
     cta_github: "Ver en GitHub"
@@ -490,29 +492,29 @@ bloqueador:
   how:
     kicker: "/ cómo funciona"
     title: "Un filtro en tu propio móvil."
-    text_html: "Bloqueador crea una <strong>VPN local</strong>: no hay ningún servidor al otro lado. Por ella solo pasan las <strong>consultas DNS</strong>, es decir, las preguntas que hace cada app del tipo «¿dónde está <code>anuncios.ejemplo.com</code>?». Si el dominio está en una lista de publicidad o rastreo, Bloqueador responde que no existe y el anuncio no llega a cargarse. El resto del tráfico va directo, como siempre: Bloqueador <strong>no ve el contenido</strong> de lo que haces, solo nombres de dominio."
+    text_html: "Garbillo crea una <strong>VPN local</strong>: no hay ningún servidor al otro lado. Por ella solo pasan las <strong>consultas DNS</strong>, es decir, las preguntas que hace cada app del tipo «¿dónde está <code>anuncios.ejemplo.com</code>?». Si el dominio está en una lista de publicidad, rastreo o amenazas, Garbillo responde que no existe y la conexión no llega a hacerse. El resto del tráfico va directo, como siempre: Garbillo <strong>no ve el contenido</strong> de lo que haces, solo nombres de dominio."
 
   features:
     kicker: "/ características"
     title: "Todo lo que incluye."
     items:
       - "Bloqueo en todo el móvil: navegador, apps y juegos"
+      - "Protección contra amenazas: phishing, malware, estafas y webs falsas, con aviso cuando se bloquea algo peligroso"
       - "Tres niveles: Ligero, Equilibrado (Hagezi Pro) y Estricto (Hagezi Pro++)"
       - "Lista de tu fabricante: Samsung, Xiaomi, Oppo/Realme, Huawei, Vivo…"
       - "Anti-evasión DNS: los navegadores no pueden saltarse el filtro"
       - "Elige qué apps se filtran (por defecto, todas menos banca y pagos)"
       - "Historial local: qué se bloqueó, cuándo y qué app lo pidió"
       - "«Ver en la web»: muestra en rojo lo que un dominio pone en la página"
-      - "Permitir o bloquear cualquier dominio con un toque"
-      - "Listas actualizadas solas, solo si han cambiado"
+      - "Reportar una web para analizarla, con un toque"
+      - "Ajustes por categorías, con buscador"
       - "Consumo mínimo: entre el 0,1 % y el 0,4 % de batería al día"
-      - "Se actualiza sola desde GitHub, con canal Estable, Beta o Nightly"
-      - "Sin cuentas, sin estadísticas, sin anuncios propios"
+      - "Se actualiza sola desde GitHub; sin cuentas, sin estadísticas, sin anuncios propios"
 
   screenshots:
     kicker: "/ capturas"
     title: "La app en uso."
-    alts: ["Pantalla principal con el filtro activo", "Historial de dominios bloqueados", "Detalle de un dominio bloqueado", "«Ver en la web» con el anuncio resaltado en rojo", "Ajustes organizados por categorías", "Pantalla de bienvenida"]
+    alts: ["Pantalla principal con el filtro activo", "Protección contra amenazas en Ajustes", "Historial con publicidad y amenazas bloqueadas", "Detalle de un dominio bloqueado", "«Ver en la web» con el anuncio resaltado en rojo", "Reportar un dominio para analizarlo", "Ajustes organizados por categorías", "Pantalla de bienvenida"]
 
   results:
     kicker: "/ resultados medidos"
@@ -524,13 +526,13 @@ bloqueador:
       - ["obfusgated.com (266 dominios)", "70 %", "82 %", "86 %"]
       - ["adblock-tester.com (scripts de terceros)", "50 %", "72 %", "88 %"]
       - ["Periódico digital español", "71 %", "78 %", "81 %"]
-    note: "Lo que no bloquea ninguna lista a propósito es lo que hace funcionar la web: su propio dominio, sus imágenes y fuentes, y el aviso de cookies."
+    note: "Lo que no bloquea ninguna lista a propósito es lo que hace funcionar la web: su propio dominio, sus imágenes y fuentes, y el aviso de cookies. Aparte, la protección contra amenazas añade unos 366.000 dominios peligrosos."
     cannot_title: "Lo que ningún bloqueador de este tipo puede quitar"
     cannot:
       - "Los anuncios de YouTube y Twitch: llegan por los mismos servidores que el vídeo."
       - "Las publicaciones promocionadas de Instagram, Facebook, X o TikTok: vienen mezcladas con el resto."
       - "El hueco que deja un anuncio dentro de una web. Para eso, usa además Brave o Firefox con uBlock Origin; se complementan."
-    best: "Donde mejor funciona: juegos y apps gratuitas, publicidad del propio sistema del móvil y rastreadores en todas las apps."
+    best: "Donde mejor funciona: juegos y apps gratuitas, publicidad del propio sistema del móvil, rastreadores en todas las apps y enlaces peligrosos que llegan por SMS, correo o mensajería."
 
   permissions:
     kicker: "/ transparencia"
@@ -539,21 +541,22 @@ bloqueador:
     headers: ["Permiso", "Para qué se usa"]
     rows:
       - ["Conexión VPN (te la pide Android al activar)", "Crear la VPN local por la que pasan solo las consultas DNS. Android muestra una llave y una notificación mientras está activa."]
-      - ["Acceso a internet y estado de la red", "Reenviar las consultas permitidas a tu DNS habitual, descargar las listas de bloqueo y comprobar si hay versión nueva."]
+      - ["Acceso a internet y estado de la red", "Reenviar las consultas permitidas a tu DNS habitual, descargar las listas, comprobar si hay versión nueva y enviar un reporte si tú lo pides."]
       - ["Servicio en primer plano (uso especial)", "Mantener el filtro funcionando con la pantalla apagada. Es lo que obliga a mostrar la notificación fija."]
-      - ["Notificaciones", "La notificación del filtro y los avisos de versión nueva o de listas sin actualizar."]
+      - ["Notificaciones", "La notificación del filtro y los avisos de sitio peligroso bloqueado, versión nueva o listas sin actualizar."]
       - ["Ver las apps instaladas", "Mostrar la lista para elegir qué apps se filtran y poner nombre e icono en el historial. La lista no sale del móvil."]
       - ["Instalar actualizaciones", "Instalar las versiones nuevas que descarga desde GitHub. Android siempre te pide confirmación."]
       - ["Iniciar al encender y mantener activo", "Lo añaden las librerías de Android para programar la actualización de listas (WorkManager)."]
     not_used_title: "Lo que no pide"
-    not_used: "Ni accesibilidad, ni captura de pantalla, ni ubicación, cámara, micrófono, contactos, SMS o almacenamiento. Las primeras versiones de prueba usaban accesibilidad para un bloqueo visual; se retiró en la 0.2.0 precisamente para no pedir permisos tan sensibles."
+    not_used: "Ni accesibilidad, ni captura de pantalla, ni ubicación, cámara, micrófono, contactos, SMS o almacenamiento."
     connections_title: "Con quién se conecta"
     connections:
-      - "<strong>GitHub</strong> (raw.githubusercontent.com y api.github.com): descarga de las listas de bloqueo y comprobación de versiones nuevas."
+      - "<strong>GitHub</strong> (raw.githubusercontent.com y api.github.com): descarga de las listas y comprobación de versiones nuevas."
       - "<strong>adaway.org</strong>: solo si activas la capa opcional AdAway."
-      - "<strong>Tu DNS de siempre</strong> (el de tu operador o el que tengas configurado): recibe las consultas permitidas, igual que sin Bloqueador."
+      - "<strong>Tu DNS de siempre</strong> (el de tu operador o el que tengas configurado): recibe las consultas permitidas, igual que sin Garbillo."
       - "<strong>La web que tú elijas</strong>, solo cuando usas «Ver en la web»."
-    connections_note: "No hay servidores de Flowmaticc ni estadísticas de uso. GitHub y adaway.org pueden ver tu IP al descargar, como en cualquier descarga."
+      - "<strong>El servicio de reportes de Flowmaticc</strong> (en Cloudflare), solo cuando pulsas «Reportar para analizar»: recibe el dominio, el motivo y tu nota."
+    connections_note: "No hay estadísticas de uso ni identificadores. GitHub, adaway.org y Cloudflare pueden ver tu IP al conectar, como en cualquier conexión."
 
   install:
     kicker: "/ instalación"
@@ -566,10 +569,32 @@ bloqueador:
       - title: "Play Protect"
         text_html: "Puede aparecer el aviso <em>«App desconocida»</em> de Google Play Protect. Pulsa <strong>Más detalles → Instalar de todas formas</strong>. Sale porque la app no está registrada en Google Play, no porque se haya detectado nada. El código es público y puedes revisarlo."
       - title: "Activa el filtro"
-        text_html: "Abre Bloqueador, elige qué apps proteger y pulsa el interruptor. Acepta la <strong>Solicitud de conexión</strong> de Android: es la VPN local."
+        text_html: "Abre Garbillo, elige qué apps proteger y pulsa el interruptor. Acepta la <strong>Solicitud de conexión</strong> de Android: es la VPN local."
       - title: "Que Android no lo cierre"
-        text_html: "En la tarjeta de batería, pulsa <strong>Abrir ajustes</strong> y elige <strong>Sin restricciones</strong> para Bloqueador. En Samsung, Xiaomi y otros la app te explica los pasos de tu marca."
+        text_html: "En <strong>Ajustes → Batería y arranque</strong>, quita el ahorro de batería a Garbillo y activa <strong>VPN siempre activa</strong>: así arranca solo al encender el móvil. La app te explica los pasos de tu marca."
     updates_note: "A partir de ahí, la app comprueba una vez al día si hay versión nueva y te avisa. Nunca instala nada sin tu confirmación."
+
+  report:
+    kicker: "/ reportar"
+    title: "¿Una web que debería analizarse?"
+    intro: "Si una web te llena de anuncios, algo deja de funcionar o te parece una estafa, avísanos. Desde la app es un toque (Historial → toca el dominio → Reportar para analizar); aquí lo puedes hacer sin instalar nada."
+    domain_label: "Dirección o dominio"
+    domain_placeholder: "ejemplo.com o https://ejemplo.com/pagina"
+    reason_label: "Qué pasa"
+    reasons:
+      - ["anuncio", "Pasa publicidad o rastreo"]
+      - ["rota", "Algo deja de funcionar"]
+      - ["peligro", "Parece peligroso (phishing, estafa…)"]
+      - ["otro", "Otro"]
+    note_label: "Nota (opcional)"
+    note_placeholder: "Qué ves, en qué página, con qué app…"
+    submit: "Enviar reporte"
+    sending: "Enviando…"
+    ok: "¡Gracias! Lo revisaremos."
+    invalid: "Escribe una dirección o un dominio válido (por ejemplo, ejemplo.com)."
+    limit: "Has enviado muchos reportes hoy. Prueba mañana."
+    error: "No se pudo enviar ahora. Prueba más tarde."
+    privacy: "Solo se guarda el dominio, el motivo y tu nota. No guardamos tu IP ni ningún dato personal."
 
   changelog:
     kicker: "/ novedades"
@@ -600,14 +625,16 @@ bloqueador:
         a_html: "No. Es una VPN <strong>local</strong>: se crea dentro de tu móvil y no se conecta a ningún servidor. Solo pasan por ella las consultas DNS; tus datos, webs y apps van directos como siempre. Por eso no cambia tu IP ni sirve para ocultar tu ubicación."
       - q: "¿Puede ver lo que hago o lo que escribo?"
         a_html: "No. Solo ve nombres de dominio (por ejemplo, <code>doubleclick.net</code>), no las páginas, mensajes ni contraseñas, que van cifrados. El historial se guarda solo en tu móvil, se borra solo pasado el tiempo que elijas y puedes desactivarlo."
+      - q: "¿Me protege del phishing y las estafas?"
+        a_html: "De los dominios peligrosos <strong>conocidos</strong>, sí: Garbillo usa las listas de amenazas de Hagezi (unos 366.000 dominios en el nivel estándar) y te avisa cuando bloquea uno. Una web de phishing recién creada puede tardar unas horas en entrar en las listas, así que desconfía igualmente de enlaces que te piden datos o pagos con prisa."
       - q: "¿Gasta mucha batería?"
         a_html: "No. En pruebas de 24 horas en dos móviles, el filtro gastó entre el 0,1 % y el 0,4 % de la batería al día. Está dormido hasta que llega una consulta."
       - q: "¿Por qué no está en Google Play?"
         a_html: "Las normas de Google Play no permiten apps que bloqueen la publicidad dentro de otras apps, así que se distribuye desde GitHub, con el código abierto y el APK firmado. Por eso Play Protect avisa al instalar: es un aviso genérico para apps de fuera de la tienda."
       - q: "¿Es compatible con Brave, Firefox o mi VPN?"
-        a_html: "Con Brave y Firefox + uBlock Origin se complementan: ellos quitan lo de dentro de las páginas (incluido el hueco del anuncio) y Bloqueador lo de las apps y el sistema. Con otra VPN no: Android solo permite una VPN activa a la vez. Tampoco conviene usarla junto al «DNS privado» del sistema, porque las consultas se saltarían el filtro."
+        a_html: "Con Brave y Firefox + uBlock Origin se complementan: ellos quitan lo de dentro de las páginas (incluido el hueco del anuncio) y Garbillo lo de las apps y el sistema. Con otra VPN no: Android solo permite una VPN activa a la vez. Tampoco conviene usarla junto al «DNS privado» del sistema, porque las consultas se saltarían el filtro."
       - q: "¿Algo dejará de funcionar?"
-        a_html: "Con el nivel Equilibrado es raro. Si una app o un enlace falla, abre el historial, busca el dominio bloqueado y pulsa <strong>Permitir siempre</strong>. Las apps de banca y pagos se excluyen del filtro por defecto."
+        a_html: "Con el nivel Equilibrado es raro. Si una app o un enlace falla, abre el historial, busca el dominio bloqueado y pulsa <strong>Permitir siempre</strong> (y, si quieres, <strong>Reportar para analizar</strong> para que lo revisemos). Las apps de banca y pagos se excluyen del filtro por defecto."
       - q: "¿Quita los anuncios de YouTube?"
         a_html: "No, ni este ni ningún bloqueador por DNS: los anuncios de YouTube llegan por los mismos servidores que los vídeos. Lo mismo pasa con Twitch y con las publicaciones promocionadas de las redes sociales."
       - q: "¿Cuánto cuesta?"
@@ -617,12 +644,12 @@ bloqueador:
     kicker: "/ legal"
     title: "Licencia y privacidad."
     items_html:
-      - "<strong>Privacidad:</strong> la app no recoge datos personales. Detalle completo en la <a href=\"/utilities/bloqueador-android/privacidad/\">política de privacidad de Bloqueador</a>."
+      - "<strong>Privacidad:</strong> la app no recoge datos personales. Detalle completo en la <a href=\"/utilities/bloqueador-android/privacidad/\">política de privacidad de Garbillo</a>."
       - "<strong>Licencia:</strong> software libre bajo <a href=\"https://www.gnu.org/licenses/gpl-3.0.html\" target=\"_blank\" rel=\"noopener\">GNU GPLv3</a>. Puedes usarlo, estudiarlo, modificarlo y redistribuirlo."
       - "<strong>Sin garantía:</strong> se ofrece tal cual. Bloquear dominios puede impedir que alguna web o app funcione; puedes permitirlo con un toque o desactivar el filtro."
       - "<strong>Listas de bloqueo:</strong> son de sus autores (Hagezi, GoodbyeAds, 1Hosts, AdAway, StevenBlack), cada una con su licencia. La app las descarga directamente de sus fuentes."
 
   final_cta:
-    title: "Menos anuncios. Más privacidad."
+    title: "Menos anuncios. Menos peligros. Más privacidad."
     text: "Gratis, sin cuentas y sin que nada salga de tu móvil."
-    button: "Descargar Bloqueador →"
+    button: "Descargar Garbillo →"

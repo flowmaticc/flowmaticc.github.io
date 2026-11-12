@@ -1,15 +1,15 @@
 ---
 layout: legal-v2
 lang: es
-title: "Política de privacidad de Bloqueador · Flowmaticc"
+title: "Política de privacidad de Garbillo · Flowmaticc"
 ---
 
-<div class="doc-badge">Política de privacidad · Bloqueador</div>
-<h1>Política de privacidad de Bloqueador</h1>
-<p class="meta">Última actualización: 12 de noviembre de 2026 · Flowmaticc · Bloqueador para Android</p>
+<div class="doc-badge">Política de privacidad · Garbillo</div>
+<h1>Política de privacidad de Garbillo</h1>
+<p class="meta">Última actualización: 13 de noviembre de 2026 · Flowmaticc · Garbillo para Android</p>
 
 <div class="alert">
-  <strong>Resumen:</strong> Bloqueador no recoge, no envía y no vende ningún dato personal. Todo lo que hace ocurre dentro de tu móvil. No tiene cuentas, ni estadísticas de uso, ni publicidad.
+  <strong>Resumen:</strong> Garbillo no recoge, no envía y no vende ningún dato personal. Todo lo que hace ocurre dentro de tu móvil. No tiene cuentas, ni estadísticas de uso, ni publicidad.
 </div>
 
 <div class="toc">
@@ -34,14 +34,14 @@ title: "Política de privacidad de Bloqueador · Flowmaticc"
   <p><strong>Flowmaticc</strong><br>
   Contacto: <a href="mailto:gestiona.optimiza@gmail.com">gestiona.optimiza@gmail.com</a><br>
   Código fuente: <a href="https://github.com/flowmaticc/bloqueador-android" target="_blank" rel="noopener">github.com/flowmaticc/bloqueador-android</a></p>
-  <p>Esta política se refiere a la app <strong>Bloqueador</strong> para Android. La web flowmaticc.github.io tiene su propia <a href="/legal/privacidad/">política de privacidad</a>.</p>
+  <p>Esta política se refiere a la app <strong>Garbillo</strong> para Android. La web flowmaticc.github.io tiene su propia <a href="/legal/privacidad/">política de privacidad</a>.</p>
 </section>
 
 <section id="funcionamiento">
   <h2>2. Qué hace la app con tu tráfico</h2>
-  <p>Bloqueador usa la función de VPN de Android para crear una <strong>VPN local</strong>, que no se conecta a ningún servidor externo. Por ella pasan únicamente las <strong>consultas DNS</strong> (los nombres de dominio que las apps quieren visitar, por ejemplo <code>ads.ejemplo.com</code>).</p>
+  <p>Garbillo usa la función de VPN de Android para crear una <strong>VPN local</strong>, que no se conecta a ningún servidor externo. Por ella pasan únicamente las <strong>consultas DNS</strong> (los nombres de dominio que las apps quieren visitar, por ejemplo <code>ads.ejemplo.com</code>).</p>
   <ul>
-    <li>Si el dominio está en una lista de bloqueo, la app responde que no existe y la conexión no llega a hacerse.</li>
+    <li>Si el dominio está en una lista de bloqueo (publicidad, rastreo o amenazas como phishing y malware), la app responde que no existe y la conexión no llega a hacerse.</li>
     <li>Si no lo está, la consulta se reenvía a tu servidor DNS habitual (el de tu operador o el que tengas configurado), exactamente como sin la app.</li>
     <li>El resto del tráfico (webs, mensajes, vídeos…) <strong>no pasa por la app</strong>. La app no puede ver el contenido de lo que haces.</li>
   </ul>
@@ -67,18 +67,23 @@ title: "Política de privacidad de Bloqueador · Flowmaticc"
     <li><strong>GitHub</strong> (<code>raw.githubusercontent.com</code>, <code>api.github.com</code>, <code>github.com</code>): descarga de las listas de bloqueo y comprobación de versiones nuevas de la app.</li>
     <li><strong>adaway.org</strong>: solo si activas la capa opcional AdAway.</li>
     <li><strong>La web que tú elijas</strong>, solo cuando usas «Ver en la web» en el historial. Se carga en una ventana propia, sin las cookies de tu navegador, y sus datos se borran al cerrarla.</li>
+    <li><strong>El servicio de reportes de Flowmaticc</strong>, solo cuando pulsas «Reportar para analizar» (en la app) o envías el formulario de la web. Ver el apartado siguiente.</li>
   </ul>
+  <h3>Reportes de webs para analizar</h3>
+  <p>Si decides reportar un dominio, se envía <strong>solo</strong>: el dominio, el motivo que elijas, la nota que escribas (si escribes alguna), si viene de la app o de la web y la versión de la app. No se envía tu historial, tus apps ni ningún identificador.</p>
+  <p>El servicio funciona en <strong>Cloudflare Workers</strong> y guarda el reporte como una incidencia en un repositorio <strong>privado</strong> de GitHub de Flowmaticc, donde lo revisamos para mejorar las listas. <strong>No guardamos tu dirección IP.</strong> Para evitar abusos se limita el número de envíos por conexión y día usando un resumen (hash) de la IP que no permite recuperarla y que se borra solo a las 24 horas. Cloudflare procesa la conexión como cualquier servidor web (ver su <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">política de privacidad</a>).</p>
+  <p>No escribas datos personales en la nota. Los reportes se conservan mientras sean útiles para el análisis; si quieres que borremos uno, escríbenos.</p>
   <p>En estas descargas no se envía ningún dato personal, pero, como en cualquier conexión a internet, esos servidores pueden ver tu dirección IP. Puedes consultar la <a href="https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">declaración de privacidad de GitHub</a>.</p>
 </section>
 
 <section id="permisos">
   <h2>5. Permisos</h2>
-  <p>La lista completa de permisos y para qué se usa cada uno está en la <a href="/utilities/bloqueador-android/#permisos">página de Bloqueador</a>. La app <strong>no</strong> pide acceso a ubicación, cámara, micrófono, contactos, SMS, archivos, accesibilidad ni captura de pantalla.</p>
+  <p>La lista completa de permisos y para qué se usa cada uno está en la <a href="/utilities/bloqueador-android/#permisos">página de Garbillo</a>. La app <strong>no</strong> pide acceso a ubicación, cámara, micrófono, contactos, SMS, archivos, accesibilidad ni captura de pantalla.</p>
 </section>
 
 <section id="terceros">
   <h2>6. Terceros</h2>
-  <p>No se comparte ningún dato con terceros. Las listas de bloqueo son obra de sus autores (Hagezi, GoodbyeAds, 1Hosts, AdAway, StevenBlack) y se descargan directamente de sus repositorios públicos.</p>
+  <p>No se comparte ningún dato con terceros, salvo lo descrito para los reportes (Cloudflare y GitHub como proveedores del servicio). Las listas de bloqueo son obra de sus autores (Hagezi, GoodbyeAds, 1Hosts, AdAway, StevenBlack) y se descargan directamente de sus repositorios públicos.</p>
 </section>
 
 <section id="derechos">
@@ -88,7 +93,7 @@ title: "Política de privacidad de Bloqueador · Flowmaticc"
 
 <section id="licencia">
   <h2>8. Licencia y garantía</h2>
-  <p>Bloqueador es software libre bajo la licencia <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GNU GPL v3</a>. Se ofrece <strong>sin ninguna garantía</strong>: bloquear dominios puede hacer que alguna web o app no funcione correctamente. En ese caso puedes permitir el dominio desde el historial o desactivar el filtro.</p>
+  <p>Garbillo es software libre bajo la licencia <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">GNU GPL v3</a>. Se ofrece <strong>sin ninguna garantía</strong>: bloquear dominios puede hacer que alguna web o app no funcione correctamente. En ese caso puedes permitir el dominio desde el historial o desactivar el filtro.</p>
 </section>
 
 <section id="cambios">

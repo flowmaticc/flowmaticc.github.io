@@ -15,6 +15,7 @@
 
   <div class="hero-copy">
     <p>{{ t.hero.copy }}</p>
+    <p style="color:var(--muted-2);font-style:italic">{{ t.hero.origin }}</p>
   </div>
 
   <div class="chip-row">
@@ -66,7 +67,7 @@
     <div><div class="section-kicker">{{ t.screenshots.kicker }}</div></div>
     <div><h2>{{ t.screenshots.title }}</h2></div>
   </div>
-  {% assign shots = "inicio|historial|detalle|ver-en-la-web|ajustes|bienvenida" | split: "|" %}
+  {% assign shots = "inicio|seguridad|historial|detalle|ver-en-la-web|reportar|ajustes|bienvenida" | split: "|" %}
   <div class="shot-grid bq-shots" data-reveal>
     {% for s in shots %}
     <button type="button" class="bq-shot" data-src="/img/bloqueador/{{ s }}.webp" aria-label="{{ t.screenshots.alts[forloop.index0] }}"><img src="/img/bloqueador/{{ s }}.webp" alt="{{ t.screenshots.alts[forloop.index0] }}" width="540" height="1105" loading="lazy"></button>
@@ -147,6 +148,33 @@
   </div>
   {% endfor %}
   <div class="info-card"><p>{{ t.install.updates_note }}</p></div>
+</div>
+</section>
+
+<section class="section bq-anchor" id="reportar">
+<div class="container">
+  <div class="section-header">
+    <div><div class="section-kicker">{{ t.report.kicker }}</div></div>
+    <div><h2>{{ t.report.title }}</h2><p class="section-intro">{{ t.report.intro }}</p></div>
+  </div>
+  <form class="info-card bq-report" id="bqReport" novalidate data-reveal>
+    <label>{{ t.report.domain_label }}
+      <input type="text" name="dominio" required maxlength="300" autocomplete="off" placeholder="{{ t.report.domain_placeholder }}">
+    </label>
+    <label>{{ t.report.reason_label }}
+      <select name="motivo">{% for r in t.report.reasons %}<option value="{{ r[0] }}">{{ r[1] }}</option>{% endfor %}</select>
+    </label>
+    <label>{{ t.report.note_label }}
+      <textarea name="nota" rows="3" maxlength="300" placeholder="{{ t.report.note_placeholder }}"></textarea>
+    </label>
+    <!-- Campo trampa para robots: las personas no lo ven -->
+    <input type="text" name="web" tabindex="-1" autocomplete="off" class="bq-hp" aria-hidden="true">
+    <div class="bq-report-row">
+      <button type="submit" class="button-primary">{{ t.report.submit }}</button>
+      <span class="bq-report-msg" role="status"></span>
+    </div>
+    <p class="bq-note" style="text-align:left;margin-top:0">{{ t.report.privacy }}</p>
+  </form>
 </div>
 </section>
 
@@ -236,6 +264,15 @@
   .bq-lightbox-close:hover, .bq-lightbox-nav:hover { border-color: var(--lime); color: var(--lime); }
   .bq-lightbox-nav { margin: 0 10px; flex-shrink: 0; }
   .bq-lightbox-caption { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; color: var(--muted); font-size: 12px; }
+  .bq-report { display: grid; gap: 14px; }
+  .bq-report label { display: grid; gap: 6px; font-size: 12px; color: var(--muted); font-family: "DM Mono", monospace; }
+  .bq-report input, .bq-report select, .bq-report textarea { width: 100%; box-sizing: border-box; padding: 10px 12px; background: #0c0c0c; border: 1px solid var(--line); color: #fff; font: 14px "Manrope", sans-serif; }
+  .bq-report input:focus, .bq-report select:focus, .bq-report textarea:focus { outline: none; border-color: var(--lime); }
+  .bq-report .bq-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .bq-report-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .bq-report-msg { font-size: 13px; color: var(--muted); }
+  .bq-report-msg.ok { color: var(--lime); }
+  .bq-report-msg.err { color: #ff6b6b; }
   .bq-top { position: fixed; right: 18px; bottom: 18px; z-index: 50; width: 44px; height: 44px; border: 1px solid var(--lime); background: #111; color: var(--lime); font-size: 18px; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .2s; }
   .bq-top.show { opacity: 1; pointer-events: auto; }
   @media (max-width: 600px) { .bq-lightbox-nav { position: absolute; bottom: 44px; } .bq-prev { left: 16px; } .bq-next { right: 16px; } }
@@ -381,6 +418,34 @@
     if (e.key === "Escape") close();
     if (e.key === "ArrowLeft") show(idx - 1);
     if (e.key === "ArrowRight") show(idx + 1);
+  });
+
+  // Formulario de reportes: envía el dominio, el motivo y la nota al servicio de reportes.
+  const REPORT_URL = "https://garbillo-reportes.flowmaticc.workers.dev/reportar";
+  const R = {
+    sending: {{ t.report.sending | jsonify }}, ok: {{ t.report.ok | jsonify }}, invalid: {{ t.report.invalid | jsonify }},
+    limit: {{ t.report.limit | jsonify }}, error: {{ t.report.error | jsonify }}, submit: {{ t.report.submit | jsonify }},
+  };
+  const form = document.getElementById("bqReport");
+  const msg = form.querySelector(".bq-report-msg");
+  const btn = form.querySelector("button[type=submit]");
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const dominio = String(fd.get("dominio") || "").trim();
+    msg.className = "bq-report-msg";
+    if (!/^(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,}(\/.*)?$/i.test(dominio)) { msg.textContent = R.invalid; msg.classList.add("err"); return; }
+    btn.disabled = true; btn.textContent = R.sending; msg.textContent = "";
+    try {
+      const r = await fetch(REPORT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ dominio, motivo: fd.get("motivo"), nota: fd.get("nota"), origen: "web", web: fd.get("web") }),
+      });
+      if (r.ok) { msg.textContent = R.ok; msg.classList.add("ok"); form.reset(); }
+      else { msg.textContent = r.status === 429 ? R.limit : (r.status === 400 ? R.invalid : R.error); msg.classList.add("err"); }
+    } catch (_) { msg.textContent = R.error; msg.classList.add("err"); }
+    btn.disabled = false; btn.textContent = R.submit;
   });
 
   // Preguntas frecuentes: igual que en la portada.
