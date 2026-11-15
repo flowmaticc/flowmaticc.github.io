@@ -547,7 +547,7 @@ bloqueador:
       - ["Notificaciones", "La notificación del filtro y los avisos de sitio peligroso bloqueado, versión nueva o listas sin actualizar."]
       - ["Ver las apps instaladas", "Mostrar la lista para elegir qué apps se filtran y poner nombre e icono en el historial. La lista no sale del móvil."]
       - ["Instalar actualizaciones", "Instalar las versiones nuevas que descarga desde GitHub. Android siempre te pide confirmación."]
-      - ["Iniciar al encender y mantener activo", "Lo añaden las librerías de Android para programar la actualización de listas (WorkManager)."]
+      - ["Iniciar al encender y mantener activo", "Volver a activar el filtro al encender el móvil si lo tenías activado, y programar la actualización de listas."]
     not_used_title: "Lo que no pide"
     not_used: "Ni accesibilidad, ni captura de pantalla, ni ubicación, cámara, micrófono, contactos, SMS o almacenamiento."
     connections_title: "Con quién se conecta"
@@ -572,7 +572,7 @@ bloqueador:
       - title: "Activa el filtro"
         text_html: "Abre Garbillo, elige qué apps proteger y pulsa el interruptor. Acepta la <strong>Solicitud de conexión</strong> de Android: es la VPN local."
       - title: "Que Android no lo cierre"
-        text_html: "En <strong>Ajustes → Batería y arranque</strong>, quita el ahorro de batería a Garbillo y activa <strong>VPN siempre activa</strong>: así arranca solo al encender el móvil. La app te explica los pasos de tu marca."
+        text_html: "Garbillo se vuelve a activar solo al encender el móvil. Para que Android no lo cierre nunca, en <strong>Ajustes → Batería y arranque</strong> quítale el ahorro de batería y activa <strong>VPN siempre activa</strong>. La app te explica los pasos de tu marca."
     updates_note: "A partir de ahí, la app comprueba una vez al día si hay versión nueva y te avisa. Nunca instala nada sin tu confirmación."
 
   report:

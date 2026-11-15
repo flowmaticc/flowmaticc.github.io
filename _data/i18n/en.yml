@@ -438,7 +438,7 @@ bloqueador:
       - ["Notifications", "The filter notification and alerts about blocked dangerous sites, new versions or outdated lists."]
       - ["See installed apps", "Show the list to choose which apps are filtered and put names and icons in the history. The list never leaves the phone."]
       - ["Install updates", "Install the new versions it downloads from GitHub. Android always asks you to confirm."]
-      - ["Start at boot and stay awake", "Added by Android libraries to schedule list updates (WorkManager)."]
+      - ["Start at boot and stay awake", "Turn the filter back on when the phone starts if you left it on, and schedule list updates."]
     not_used_title: "What it doesn't ask for"
     not_used: "No accessibility, screen capture, location, camera, microphone, contacts, SMS or storage."
     connections_title: "Who it connects to"
@@ -463,7 +463,7 @@ bloqueador:
       - title: "Turn the filter on"
         text_html: "Open Garbillo, choose which apps to protect and tap the switch. Accept Android's <strong>Connection request</strong>: that's the local VPN."
       - title: "Keep Android from closing it"
-        text_html: "In <strong>Ajustes → Batería y arranque</strong> (Settings → Battery and startup), remove battery restrictions for Garbillo and turn on <strong>Always-on VPN</strong> so it starts by itself when the phone boots. The app explains the steps for your brand."
+        text_html: "Garbillo turns itself back on when the phone starts. So that Android never closes it, go to <strong>Ajustes → Batería y arranque</strong> (Settings → Battery and startup), remove battery restrictions and turn on <strong>Always-on VPN</strong>. The app explains the steps for your brand."
     updates_note: "From then on, the app checks once a day for a new version and lets you know. It never installs anything without your confirmation."
 
   report:
