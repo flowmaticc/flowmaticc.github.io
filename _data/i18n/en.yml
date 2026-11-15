@@ -448,6 +448,7 @@ bloqueador:
       - "<strong>Your usual DNS</strong> (your carrier's or the one you've set): it receives allowed queries, exactly as without Garbillo."
       - "<strong>The website you choose</strong>, only when you use “View on the web”."
       - "<strong>Flowmaticc's report service</strong> (on Cloudflare), only when you tap “Report for review”: it receives the domain, the reason and your note."
+      - "<strong>The same service, for anonymous error reports</strong>, only if you turn them on (the app asks you): the kind of failure and where it happened in the code, without websites or identifiers. You can see the report before it leaves."
     connections_note: "No usage analytics or identifiers. GitHub, adaway.org and Cloudflare can see your IP when connecting, as with any connection."
 
   install:

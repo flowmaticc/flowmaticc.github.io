@@ -557,6 +557,7 @@ bloqueador:
       - "<strong>Tu DNS de siempre</strong> (el de tu operador o el que tengas configurado): recibe las consultas permitidas, igual que sin Garbillo."
       - "<strong>La web que tú elijas</strong>, solo cuando usas «Ver en la web»."
       - "<strong>El servicio de reportes de Flowmaticc</strong> (en Cloudflare), solo cuando pulsas «Reportar para analizar»: recibe el dominio, el motivo y tu nota."
+      - "<strong>El mismo servicio, para informes de errores anónimos</strong>, solo si los activas (la app te lo pregunta): el tipo de fallo y dónde ocurrió en el código, sin webs ni identificadores. Puedes ver el informe antes de que salga."
     connections_note: "No hay estadísticas de uso ni identificadores. GitHub, adaway.org y Cloudflare pueden ver tu IP al conectar, como en cualquier conexión."
 
   install:

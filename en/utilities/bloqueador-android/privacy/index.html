@@ -6,10 +6,10 @@ title: "Garbillo privacy policy · Flowmaticc"
 
 <div class="doc-badge">Privacy policy · Garbillo</div>
 <h1>Garbillo privacy policy</h1>
-<p class="meta">Last updated: 13 November 2026 · Flowmaticc · Garbillo for Android</p>
+<p class="meta">Last updated: 15 November 2026 · Flowmaticc · Garbillo for Android</p>
 
 <div class="alert">
-  <strong>Summary:</strong> Garbillo doesn't collect, send or sell any personal data. Everything it does happens inside your phone. No accounts, no usage analytics, no ads.
+  <strong>Summary:</strong> Garbillo doesn't collect, send or sell any personal data. Everything it does happens inside your phone. No accounts, no usage analytics, no ads. Only what you decide leaves it: a site report or, if you turn them on, anonymous error reports.
 </div>
 
 <div class="toc">
@@ -58,7 +58,7 @@ title: "Garbillo privacy policy · Flowmaticc"
       <tr><td>Your settings and rules</td><td>Running the app</td><td>Only on your phone</td></tr>
     </tbody>
   </table>
-  <p>None of this data leaves the device. The app includes no analytics, advertising or crash-reporting tools, and excludes its data from Android backups.</p>
+  <p>None of this data leaves the device. The app includes no analytics or advertising tools, and excludes its data from Android backups. The only technical data that can leave it are <a href="#errors">error reports</a>, and only if you turn them on.</p>
 </section>
 
 <section id="connections">
@@ -68,11 +68,22 @@ title: "Garbillo privacy policy · Flowmaticc"
     <li><strong>adaway.org</strong>: only if you turn on the optional AdAway layer.</li>
     <li><strong>The website you choose</strong>, only when you use “View on the web” in the history. It loads in a separate window, without your browser's cookies, and its data is deleted when you close it.</li>
     <li><strong>Flowmaticc's report service</strong>, only when you tap “Report for review” (in the app) or send the form on the website. See below.</li>
+    <li><strong>The same service, for error reports</strong>, only if you turn them on (the app asks you). See “Error reports”.</li>
   </ul>
+  <p>With “Download only on Wi-Fi” (on by default), automatic downloads and error reports only happen on Wi-Fi or another network without a data cap.</p>
   <h3>Site reports</h3>
   <p>If you choose to report a domain, <strong>only</strong> this is sent: the domain, the reason you pick, the note you write (if any), whether it comes from the app or the website, and the app version. Your history, apps and any identifiers are never sent.</p>
   <p>The service runs on <strong>Cloudflare Workers</strong> and stores the report as an issue in a <strong>private</strong> Flowmaticc GitHub repository, where we review it to improve the lists. <strong>We don't store your IP address.</strong> To prevent abuse, the number of reports per connection and day is limited using a hash of the IP that cannot be reversed and is deleted after 24 hours. Cloudflare processes the connection like any web server (see its <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">privacy policy</a>).</p>
   <p>Please don't put personal data in the note. Reports are kept while useful for analysis; write to us if you want one deleted.</p>
+  <h3 id="errors">Error reports (optional)</h3>
+  <p>The app asks whether you want to send them; nothing is sent by default. If you turn them on, when something fails (the app closes, a list doesn't download, an update doesn't install…) it's noted on the phone and sent <strong>at most once a day</strong>:</p>
+  <ul>
+    <li>the kind of failure (from a fixed list) and, where relevant, a short code such as “HTTP 404”;</li>
+    <li>the place in Garbillo's code where it happened and the technical error type (e.g. <code>java.io.IOException</code>), <strong>without the message text</strong>;</li>
+    <li>how many times it happened and between which days (no times);</li>
+    <li>Garbillo's version and channel, the Android version, the phone brand, the blocking level, how many extra lists you use and whether threat protection is on.</li>
+  </ul>
+  <p>Websites or domains, history, your apps, your network, location and any phone identifier are <strong>never</strong> sent, and there's no way to link two reports from the same phone. Before it leaves you can see the exact report in <em>Ajustes → Informes de errores → Ver qué se enviaría</em> (Settings → Error reports → See what would be sent), delete it or turn reports off. They're stored in the same private repository as site reports, grouped by kind of failure, with the same guarantees: <strong>your IP is not stored</strong>.</p>
   <p>No personal data is sent in these downloads, but, as with any internet connection, those servers can see your IP address. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's privacy statement</a>.</p>
 </section>
 

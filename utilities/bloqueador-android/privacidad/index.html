@@ -6,10 +6,10 @@ title: "Política de privacidad de Garbillo · Flowmaticc"
 
 <div class="doc-badge">Política de privacidad · Garbillo</div>
 <h1>Política de privacidad de Garbillo</h1>
-<p class="meta">Última actualización: 13 de noviembre de 2026 · Flowmaticc · Garbillo para Android</p>
+<p class="meta">Última actualización: 15 de noviembre de 2026 · Flowmaticc · Garbillo para Android</p>
 
 <div class="alert">
-  <strong>Resumen:</strong> Garbillo no recoge, no envía y no vende ningún dato personal. Todo lo que hace ocurre dentro de tu móvil. No tiene cuentas, ni estadísticas de uso, ni publicidad.
+  <strong>Resumen:</strong> Garbillo no recoge, no envía y no vende ningún dato personal. Todo lo que hace ocurre dentro de tu móvil. No tiene cuentas, ni estadísticas de uso, ni publicidad. Solo sale lo que tú decides: un reporte de una web o, si los activas, informes de errores anónimos.
 </div>
 
 <div class="toc">
@@ -58,7 +58,7 @@ title: "Política de privacidad de Garbillo · Flowmaticc"
       <tr><td>Tus ajustes y reglas</td><td>Funcionamiento de la app</td><td>Solo en tu móvil</td></tr>
     </tbody>
   </table>
-  <p>Ninguno de estos datos sale del dispositivo. La app no incluye herramientas de analítica, publicidad ni informes de errores, y excluye sus datos de las copias de seguridad de Android.</p>
+  <p>Ninguno de estos datos sale del dispositivo. La app no incluye herramientas de analítica ni publicidad, y excluye sus datos de las copias de seguridad de Android. Los únicos datos técnicos que pueden salir son los <a href="#errores">informes de errores</a>, y solo si los activas.</p>
 </section>
 
 <section id="conexiones">
@@ -68,11 +68,22 @@ title: "Política de privacidad de Garbillo · Flowmaticc"
     <li><strong>adaway.org</strong>: solo si activas la capa opcional AdAway.</li>
     <li><strong>La web que tú elijas</strong>, solo cuando usas «Ver en la web» en el historial. Se carga en una ventana propia, sin las cookies de tu navegador, y sus datos se borran al cerrarla.</li>
     <li><strong>El servicio de reportes de Flowmaticc</strong>, solo cuando pulsas «Reportar para analizar» (en la app) o envías el formulario de la web. Ver el apartado siguiente.</li>
+    <li><strong>El mismo servicio, para los informes de errores</strong>, solo si los activas (te lo pregunta la app). Ver «Informes de errores».</li>
   </ul>
+  <p>Con la opción «Descargar solo con wifi» (activada por defecto), las descargas automáticas y los informes de errores solo se hacen con wifi u otra red sin límite de datos.</p>
   <h3>Reportes de webs para analizar</h3>
   <p>Si decides reportar un dominio, se envía <strong>solo</strong>: el dominio, el motivo que elijas, la nota que escribas (si escribes alguna), si viene de la app o de la web y la versión de la app. No se envía tu historial, tus apps ni ningún identificador.</p>
   <p>El servicio funciona en <strong>Cloudflare Workers</strong> y guarda el reporte como una incidencia en un repositorio <strong>privado</strong> de GitHub de Flowmaticc, donde lo revisamos para mejorar las listas. <strong>No guardamos tu dirección IP.</strong> Para evitar abusos se limita el número de envíos por conexión y día usando un resumen (hash) de la IP que no permite recuperarla y que se borra solo a las 24 horas. Cloudflare procesa la conexión como cualquier servidor web (ver su <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">política de privacidad</a>).</p>
   <p>No escribas datos personales en la nota. Los reportes se conservan mientras sean útiles para el análisis; si quieres que borremos uno, escríbenos.</p>
+  <h3 id="errores">Informes de errores (opcionales)</h3>
+  <p>La app te pregunta si quieres enviarlos; por defecto no se envía nada. Si los activas, cuando algo falla (la app se cierra, una lista no se descarga, una actualización no se instala…) se anota en el móvil y se envía <strong>como mucho una vez al día</strong>:</p>
+  <ul>
+    <li>el tipo de fallo (de una lista fija) y, si aplica, un código corto como «HTTP 404»;</li>
+    <li>el sitio del código de Garbillo donde ocurrió y el tipo técnico de error (por ejemplo, <code>java.io.IOException</code>), <strong>sin el texto del mensaje</strong>;</li>
+    <li>cuántas veces ha pasado y entre qué días (sin hora);</li>
+    <li>la versión y el canal de Garbillo, la versión de Android, la marca del móvil, el nivel de bloqueo, cuántas listas adicionales tienes y si la protección contra amenazas está activada.</li>
+  </ul>
+  <p><strong>Nunca</strong> se envían webs ni dominios, historial, tus apps, tu red, la ubicación ni ningún identificador del móvil, y no hay forma de relacionar dos informes del mismo móvil. Antes de que salga puedes ver el informe exacto en <em>Ajustes → Informes de errores → Ver qué se enviaría</em>, borrarlo o desactivar los informes. Se guardan en el mismo repositorio privado que los reportes, agrupados por tipo de fallo, con las mismas garantías: <strong>no se guarda tu IP</strong>.</p>
   <p>En estas descargas no se envía ningún dato personal, pero, como en cualquier conexión a internet, esos servidores pueden ver tu dirección IP. Puedes consultar la <a href="https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">declaración de privacidad de GitHub</a>.</p>
 </section>
 
