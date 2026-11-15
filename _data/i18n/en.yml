@@ -373,7 +373,7 @@ bloqueador:
     kicker: "/ free utility · Android · open source"
     title_pre: "Garbillo"
     title_highlight: "ads out, threats out"
-    copy: "Blocks ads, trackers and dangerous sites (phishing, malware, scams) across your whole phone —in the browser and inside apps— with no root, no accounts and without sending your data to any server. The app is in Spanish for now."
+    copy: "Blocks ads, trackers and dangerous sites (phishing, malware, scams) across your whole phone —in the browser and inside apps— with no root, no accounts and without sending your browsing to any server. The app is in Spanish for now."
     origin: "Garbillo is the Spanish name of an old esparto sieve used to clean grain: it lets the good through and keeps the rest out."
     chips: ["Android 8 or later", "No root", "100% local", "Open source · GPLv3", "Free, no ads"]
     cta_download: "Download APK →"
@@ -543,5 +543,5 @@ bloqueador:
 
   final_cta:
     title: "Fewer ads. Fewer threats. More privacy."
-    text: "Free, no accounts, and nothing leaves your phone."
+    text: "Free, no accounts, and your browsing never leaves your phone."
     button: "Download Garbillo →"

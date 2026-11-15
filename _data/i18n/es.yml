@@ -482,7 +482,7 @@ bloqueador:
     kicker: "/ utilidad gratuita · Android · código abierto"
     title_pre: "Garbillo"
     title_highlight: "anuncios fuera, peligros fuera"
-    copy: "Bloquea publicidad, rastreadores y sitios peligrosos (phishing, malware, estafas) en todo el móvil —en el navegador y dentro de las apps— sin root, sin cuentas y sin enviar tus datos a ningún servidor."
+    copy: "Bloquea publicidad, rastreadores y sitios peligrosos (phishing, malware, estafas) en todo el móvil —en el navegador y dentro de las apps— sin root, sin cuentas y sin enviar tu navegación a ningún servidor."
     origin: "Garbillo: la criba de esparto con la que se limpiaba el grano. Deja pasar lo bueno y retiene lo demás."
     chips: ["Android 8 o superior", "Sin root", "100% local", "Código abierto · GPLv3", "Gratis y sin anuncios"]
     cta_download: "Descargar APK →"
@@ -652,5 +652,5 @@ bloqueador:
 
   final_cta:
     title: "Menos anuncios. Menos peligros. Más privacidad."
-    text: "Gratis, sin cuentas y sin que nada salga de tu móvil."
+    text: "Gratis, sin cuentas y sin que tu navegación salga de tu móvil."
     button: "Descargar Garbillo →"
