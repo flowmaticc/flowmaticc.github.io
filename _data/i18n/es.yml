@@ -638,6 +638,8 @@ bloqueador:
         a_html: "Con el nivel Equilibrado es raro. Si una app o un enlace falla, abre el historial, busca el dominio bloqueado y pulsa <strong>Permitir siempre</strong> (y, si quieres, <strong>Reportar para analizar</strong> para que lo revisemos). Las apps de banca y pagos se excluyen del filtro por defecto."
       - q: "¿Quita los anuncios de YouTube?"
         a_html: "No, ni este ni ningún bloqueador por DNS: los anuncios de YouTube llegan por los mismos servidores que los vídeos. Lo mismo pasa con Twitch y con las publicaciones promocionadas de las redes sociales."
+      - q: "Una versión nueva me da problemas, ¿puedo volver a la anterior?"
+        a_html: "Sí. En <a href=\"https://github.com/flowmaticc/bloqueador-android/releases\" target=\"_blank\" rel=\"noopener\">GitHub</a> se mantienen descargables la versión estable actual y la anterior. Android no deja instalar una versión más antigua encima de una nueva, así que primero <strong>desinstala Garbillo</strong> (se pierden tus ajustes y el historial) y luego instala el APK de la versión anterior. Las versiones más antiguas se quedan como historial, sin descarga, para que nadie use una versión con fallos ya corregidos. Si puedes, cuéntanos el problema con «Reportar una web» o en GitHub."
       - q: "¿Cuánto cuesta?"
         a_html: "Nada. Es gratis, sin anuncios, sin cuentas y de código abierto (licencia GPLv3)."
 

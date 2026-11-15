@@ -527,6 +527,8 @@ bloqueador:
         a_html: "Brave and Firefox + uBlock Origin complement it: they remove things inside pages (including the empty ad space) and Garbillo handles apps and the system. Another VPN, no: Android only allows one active VPN at a time. It's also best not to use the system's “Private DNS” with it, as queries would bypass the filter."
       - q: "Will anything stop working?"
         a_html: "It's rare with the Balanced level. If an app or link fails, open the history, find the blocked domain and tap <strong>Permitir siempre</strong> (“Always allow”) — and, if you like, <strong>Reportar para analizar</strong> (“Report for review”) so we can look at it. Banking and payment apps are excluded from the filter by default."
+      - q: "A new version gives me problems, can I go back to the previous one?"
+        a_html: "Yes. On <a href=\"https://github.com/flowmaticc/bloqueador-android/releases\" target=\"_blank\" rel=\"noopener\">GitHub</a> both the current stable version and the previous one stay downloadable. Android doesn't let you install an older version over a newer one, so first <strong>uninstall Garbillo</strong> (you'll lose your settings and history) and then install the previous version's APK. Older versions remain as history, without downloads, so nobody uses a version with bugs that are already fixed. If you can, tell us about the problem with “Report a website” or on GitHub."
       - q: "Does it remove YouTube ads?"
         a_html: "No, neither this nor any DNS blocker can: YouTube ads come from the same servers as the videos. The same goes for Twitch and promoted posts on social networks."
       - q: "How much does it cost?"
