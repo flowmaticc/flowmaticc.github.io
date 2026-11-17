@@ -28,10 +28,6 @@
     <a href="#reportar" class="button-secondary" data-umami="click-report" data-umami-tool="bloqueador">{{ t.hero.cta_report }}</a>
   </div>
   <p class="bq-note">{{ t.hero.download_note }}</p>
-  <details class="bq-verify">
-    <summary>{{ t.hero.verify_summary }}</summary>
-    <p>{{ t.hero.fingerprint_html }}</p>
-  </details>
 
 </div>
 </section>
@@ -281,12 +277,6 @@
   .bq-top.show { opacity: 1; pointer-events: auto; }
   @media (max-width: 600px) { .bq-lightbox-nav { position: absolute; bottom: 44px; } .bq-prev { left: 16px; } .bq-next { right: 16px; } }
   .bq-note { margin-top: 14px; font-size: 12px; color: var(--muted-2); text-align: center; }
-  .bq-verify { margin: 6px auto 0; max-width: 560px; font-size: 12px; color: var(--muted-2); text-align: center; }
-  .bq-verify summary { cursor: pointer; display: inline; text-decoration: underline dotted; text-underline-offset: 3px; }
-  .bq-verify summary::-webkit-details-marker { display: none; }
-  .bq-verify p { margin: 10px 0 0; line-height: 1.6; }
-  .bq-verify code { display: block; margin: 6px 0; word-break: break-all; user-select: all; }
-  .bq-verify a { color: inherit; text-decoration: underline; }
   .bq-shots { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
   .bq-shots img { border-radius: 14px; }
   .bq-table { min-width: 0; }
