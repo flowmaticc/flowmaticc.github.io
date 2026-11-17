@@ -489,7 +489,8 @@ bloqueador:
     cta_github: "Ver en GitHub"
     cta_report: "Reportar una web"
     download_note: "Versión estable más reciente · 1,4 MB · Se instala fuera de Google Play (ver guía)."
-    fingerprint_html: "Huella SHA-256 del certificado de firma (debe coincidir): <code>EE:5B:77:EE:24:58:C5:A6:A4:5E:3B:C6:A3:DA:AC:EE:FB:31:79:19:49:3D:4D:85:8E:4F:46:A9:72:56:83:CE</code> · También con <a href=\"https://github.com/ImranR98/Obtainium\" target=\"_blank\" rel=\"noopener\">Obtainium</a>."
+    verify_summary: "¿Cómo sé que el APK es auténtico?"
+    fingerprint_html: "Todas las versiones van firmadas con el mismo certificado. Su huella SHA-256 (la muestran apps como AppVerifier) debe ser: <code>EE:5B:77:EE:24:58:C5:A6:A4:5E:3B:C6:A3:DA:AC:EE:FB:31:79:19:49:3D:4D:85:8E:4F:46:A9:72:56:83:CE</code> También puedes instalarla y actualizarla con <a href=\"https://github.com/ImranR98/Obtainium\" target=\"_blank\" rel=\"noopener\">Obtainium</a>."
 
   how:
     kicker: "/ cómo funciona"
