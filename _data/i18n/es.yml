@@ -489,11 +489,12 @@ bloqueador:
     cta_github: "Ver en GitHub"
     cta_report: "Reportar una web"
     download_note: "Versión estable más reciente · 1,4 MB · Se instala fuera de Google Play (ver guía)."
+    fingerprint_html: "Huella SHA-256 del certificado de firma (debe coincidir): <code>EE:5B:77:EE:24:58:C5:A6:A4:5E:3B:C6:A3:DA:AC:EE:FB:31:79:19:49:3D:4D:85:8E:4F:46:A9:72:56:83:CE</code> · También con <a href=\"https://github.com/ImranR98/Obtainium\" target=\"_blank\" rel=\"noopener\">Obtainium</a>."
 
   how:
     kicker: "/ cómo funciona"
     title: "Un filtro en tu propio móvil."
-    text_html: "Garbillo crea una <strong>VPN local</strong>: no hay ningún servidor al otro lado. Por ella solo pasan las <strong>consultas DNS</strong>, es decir, las preguntas que hace cada app del tipo «¿dónde está <code>anuncios.ejemplo.com</code>?». Si el dominio está en una lista de publicidad, rastreo o amenazas, Garbillo responde que no existe y la conexión no llega a hacerse. El resto del tráfico va directo, como siempre: Garbillo <strong>no ve el contenido</strong> de lo que haces, solo nombres de dominio."
+    text_html: "Garbillo crea una <strong>VPN local</strong>: no hay ningún servidor al otro lado. Por ella solo pasan las <strong>consultas DNS</strong>, es decir, las preguntas que hace cada app del tipo «¿dónde está <code>anuncios.ejemplo.com</code>?». Si el dominio está en una lista de publicidad, rastreo o amenazas, Garbillo responde con una dirección vacía (<code>0.0.0.0</code>) y la conexión no llega a hacerse. El resto del tráfico va directo, como siempre: Garbillo <strong>no ve el contenido</strong> de lo que haces, solo nombres de dominio."
 
   features:
     kicker: "/ características"
@@ -546,15 +547,16 @@ bloqueador:
       - ["Servicio en primer plano (uso especial)", "Mantener el filtro funcionando con la pantalla apagada. Es lo que obliga a mostrar la notificación fija."]
       - ["Notificaciones", "La notificación del filtro y los avisos de sitio peligroso bloqueado, versión nueva o listas sin actualizar."]
       - ["Ver las apps instaladas", "Mostrar la lista para elegir qué apps se filtran y poner nombre e icono en el historial. La lista no sale del móvil."]
-      - ["Instalar actualizaciones", "Instalar las versiones nuevas que descarga desde GitHub. Android siempre te pide confirmación."]
+      - ["Instalar actualizaciones", "Instalar las versiones nuevas de GitHub, solo cuando tú pulsas «Descargar e instalar». Antes comprueba que el APK está firmado con la clave de Garbillo."]
       - ["Iniciar al encender y mantener activo", "Volver a activar el filtro al encender el móvil si lo tenías activado, y programar la actualización de listas."]
     not_used_title: "Lo que no pide"
     not_used: "Ni accesibilidad, ni captura de pantalla, ni ubicación, cámara, micrófono, contactos, SMS o almacenamiento."
     connections_title: "Con quién se conecta"
     connections:
-      - "<strong>GitHub</strong> (raw.githubusercontent.com y api.github.com): descarga de las listas y comprobación de versiones nuevas."
+      - "<strong>GitHub</strong> (raw.githubusercontent.com, github.com y api.github.com): descarga de las listas y comprobación de versiones nuevas."
       - "<strong>adaway.org</strong>: solo si activas la capa opcional AdAway."
-      - "<strong>Tu DNS de siempre</strong> (el de tu operador o el que tengas configurado): recibe las consultas permitidas, igual que sin Garbillo."
+      - "<strong>Tu DNS de siempre</strong> (el de tu operador o el que tengas configurado): recibe las consultas permitidas, igual que sin Garbillo. Solo si la red no indica ninguno se usa Quad9 (9.9.9.9)."
+      - "<strong>DNS cifrado</strong>, solo si lo activas: las consultas permitidas van cifradas por TLS a Quad9, Cloudflare o Mullvad (el que elijas) en lugar de a tu DNS de siempre."
       - "<strong>La web que tú elijas</strong>, solo cuando usas «Ver en la web»."
       - "<strong>El servicio de reportes de Flowmaticc</strong> (en Cloudflare), solo cuando pulsas «Reportar para analizar»: recibe el dominio, el motivo y tu nota."
       - "<strong>El mismo servicio, para informes de errores anónimos</strong>, solo si los activas (la app te lo pregunta): el tipo de fallo y dónde ocurrió en el código, sin webs ni identificadores. Puedes ver el informe antes de que salga."
@@ -605,11 +607,9 @@ bloqueador:
     channels:
       stable: "Estable"
       beta: "Beta"
-      nightly: "Nightly"
     channel_desc:
       stable: "Versiones finales, ya probadas. Recomendado."
-      beta: "Versiones de prueba antes de ser estables. Pueden tener algún fallo."
-      nightly: "Cada cambio en cuanto se hace. Para quien quiere probar lo último."
+      beta: "Cada cambio en cuanto se hace, antes de ser estable. Para probar lo último; puede fallar."
     loading: "Cargando versiones desde GitHub…"
     empty_msg: "Todavía no hay versiones en este canal."
     error: "No se pudieron cargar las versiones. Puedes verlas directamente en"

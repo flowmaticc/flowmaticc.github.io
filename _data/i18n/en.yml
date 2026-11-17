@@ -380,11 +380,12 @@ bloqueador:
     cta_github: "View on GitHub"
     cta_report: "Report a site"
     download_note: "Latest stable version · 1.4 MB · Installed outside Google Play (see guide)."
+    fingerprint_html: "SHA-256 fingerprint of the signing certificate (must match): <code>EE:5B:77:EE:24:58:C5:A6:A4:5E:3B:C6:A3:DA:AC:EE:FB:31:79:19:49:3D:4D:85:8E:4F:46:A9:72:56:83:CE</code> · Also via <a href=\"https://github.com/ImranR98/Obtainium\" target=\"_blank\" rel=\"noopener\">Obtainium</a>."
 
   how:
     kicker: "/ how it works"
     title: "A filter on your own phone."
-    text_html: "Garbillo creates a <strong>local VPN</strong>: there is no server on the other end. Only <strong>DNS queries</strong> go through it — the questions every app asks, like “where is <code>ads.example.com</code>?”. If the domain is on an ad, tracking or threat list, Garbillo answers that it doesn't exist and the connection never happens. All other traffic goes straight out as usual: Garbillo <strong>can't see the content</strong> of what you do, only domain names."
+    text_html: "Garbillo creates a <strong>local VPN</strong>: there is no server on the other end. Only <strong>DNS queries</strong> go through it — the questions every app asks, like “where is <code>ads.example.com</code>?”. If the domain is on an ad, tracking or threat list, Garbillo answers with an empty address (<code>0.0.0.0</code>) and the connection never happens. All other traffic goes straight out as usual: Garbillo <strong>can't see the content</strong> of what you do, only domain names."
 
   features:
     kicker: "/ features"
@@ -437,15 +438,16 @@ bloqueador:
       - ["Foreground service (special use)", "Keep the filter running with the screen off. This is what requires the persistent notification."]
       - ["Notifications", "The filter notification and alerts about blocked dangerous sites, new versions or outdated lists."]
       - ["See installed apps", "Show the list to choose which apps are filtered and put names and icons in the history. The list never leaves the phone."]
-      - ["Install updates", "Install the new versions it downloads from GitHub. Android always asks you to confirm."]
+      - ["Install updates", "Install new versions from GitHub, only when you tap “Download and install”. It first checks that the APK is signed with Garbillo's key."]
       - ["Start at boot and stay awake", "Turn the filter back on when the phone starts if you left it on, and schedule list updates."]
     not_used_title: "What it doesn't ask for"
     not_used: "No accessibility, screen capture, location, camera, microphone, contacts, SMS or storage."
     connections_title: "Who it connects to"
     connections:
-      - "<strong>GitHub</strong> (raw.githubusercontent.com and api.github.com): downloading lists and checking for new versions."
+      - "<strong>GitHub</strong> (raw.githubusercontent.com, github.com and api.github.com): downloading lists and checking for new versions."
       - "<strong>adaway.org</strong>: only if you turn on the optional AdAway layer."
-      - "<strong>Your usual DNS</strong> (your carrier's or the one you've set): it receives allowed queries, exactly as without Garbillo."
+      - "<strong>Your usual DNS</strong> (your carrier's or the one you've set): it receives allowed queries, exactly as without Garbillo. Only if the network announces none is Quad9 (9.9.9.9) used."
+      - "<strong>Encrypted DNS</strong>, only if you turn it on: allowed queries go encrypted over TLS to Quad9, Cloudflare or Mullvad (your choice) instead of your usual DNS."
       - "<strong>The website you choose</strong>, only when you use “View on the web”."
       - "<strong>Flowmaticc's report service</strong> (on Cloudflare), only when you tap “Report for review”: it receives the domain, the reason and your note."
       - "<strong>The same service, for anonymous error reports</strong>, only if you turn them on (the app asks you): the kind of failure and where it happened in the code, without websites or identifiers. You can see the report before it leaves."
@@ -496,11 +498,9 @@ bloqueador:
     channels:
       stable: "Stable"
       beta: "Beta"
-      nightly: "Nightly"
     channel_desc:
       stable: "Final, tested versions. Recommended."
-      beta: "Test versions before they become stable. May have some bugs."
-      nightly: "Every change as soon as it's made. For those who want the latest."
+      beta: "Every change as soon as it's made, before it becomes stable. For trying the latest; may break."
     loading: "Loading versions from GitHub…"
     empty_msg: "There are no versions in this channel yet."
     error: "Versions couldn't be loaded. You can see them directly on"

@@ -6,7 +6,7 @@ title: "Política de privacidad de Garbillo · Flowmaticc"
 
 <div class="doc-badge">Política de privacidad · Garbillo</div>
 <h1>Política de privacidad de Garbillo</h1>
-<p class="meta">Última actualización: 15 de noviembre de 2026 · Flowmaticc · Garbillo para Android</p>
+<p class="meta">Última actualización: 17 de noviembre de 2026 · Flowmaticc · Garbillo para Android</p>
 
 <div class="alert">
   <strong>Resumen:</strong> Garbillo no recoge, no envía y no vende ningún dato personal. Todo lo que hace ocurre dentro de tu móvil. No tiene cuentas, ni estadísticas de uso, ni publicidad. Solo sale lo que tú decides: un reporte de una web o, si los activas, informes de errores anónimos.
@@ -41,8 +41,9 @@ title: "Política de privacidad de Garbillo · Flowmaticc"
   <h2>2. Qué hace la app con tu tráfico</h2>
   <p>Garbillo usa la función de VPN de Android para crear una <strong>VPN local</strong>, que no se conecta a ningún servidor externo. Por ella pasan únicamente las <strong>consultas DNS</strong> (los nombres de dominio que las apps quieren visitar, por ejemplo <code>ads.ejemplo.com</code>).</p>
   <ul>
-    <li>Si el dominio está en una lista de bloqueo (publicidad, rastreo o amenazas como phishing y malware), la app responde que no existe y la conexión no llega a hacerse.</li>
-    <li>Si no lo está, la consulta se reenvía a tu servidor DNS habitual (el de tu operador o el que tengas configurado), exactamente como sin la app.</li>
+    <li>Si el dominio está en una lista de bloqueo (publicidad, rastreo o amenazas como phishing y malware), la app responde con una dirección vacía (<code>0.0.0.0</code>) y la conexión no llega a hacerse.</li>
+    <li>Si no lo está, la consulta se reenvía a tu servidor DNS habitual (el de tu operador o el que tengas configurado), exactamente como sin la app. Solo si la red no indica ningún servidor DNS se usa <strong>Quad9</strong> (9.9.9.9), un servicio sin ánimo de lucro que no guarda tu IP.</li>
+    <li>Si activas el <strong>DNS cifrado</strong> (Ajustes → DNS cifrado), las consultas permitidas van cifradas por TLS al servicio que elijas (<strong>Quad9</strong>, <strong>Cloudflare</strong> o <strong>Mullvad</strong>) en lugar de a tu DNS habitual. Así nadie en tu red, ni tu operador, ve qué dominios consultas; el servicio elegido sí los recibe, como los recibiría tu DNS habitual. En una wifi con página de acceso se usa el DNS de la red hasta que inicias sesión.</li>
     <li>El resto del tráfico (webs, mensajes, vídeos…) <strong>no pasa por la app</strong>. La app no puede ver el contenido de lo que haces.</li>
   </ul>
 </section>
@@ -65,6 +66,7 @@ title: "Política de privacidad de Garbillo · Flowmaticc"
   <h2>4. Conexiones a internet de la app</h2>
   <ul>
     <li><strong>GitHub</strong> (<code>raw.githubusercontent.com</code>, <code>api.github.com</code>, <code>github.com</code>): descarga de las listas de bloqueo y comprobación de versiones nuevas de la app.</li>
+    <li><strong>Quad9, Cloudflare o Mullvad</strong>: solo el que elijas, y solo si activas el DNS cifrado (ver apartado 2). Quad9 también se usa, sin cifrar, si la red no indica ningún DNS.</li>
     <li><strong>adaway.org</strong>: solo si activas la capa opcional AdAway.</li>
     <li><strong>La web que tú elijas</strong>, solo cuando usas «Ver en la web» en el historial. Se carga en una ventana propia, sin las cookies de tu navegador, y sus datos se borran al cerrarla.</li>
     <li><strong>El servicio de reportes de Flowmaticc</strong>, solo cuando pulsas «Reportar para analizar» (en la app) o envías el formulario de la web. Ver el apartado siguiente.</li>
@@ -73,7 +75,7 @@ title: "Política de privacidad de Garbillo · Flowmaticc"
   <p>Con la opción «Descargar solo con wifi» (activada por defecto), las descargas automáticas y los informes de errores solo se hacen con wifi u otra red sin límite de datos.</p>
   <h3>Reportes de webs para analizar</h3>
   <p>Si decides reportar un dominio, se envía <strong>solo</strong>: el dominio, el motivo que elijas, la nota que escribas (si escribes alguna), si viene de la app o de la web y la versión de la app. No se envía tu historial, tus apps ni ningún identificador.</p>
-  <p>El servicio funciona en <strong>Cloudflare Workers</strong> y guarda el reporte como una incidencia en un repositorio <strong>privado</strong> de GitHub de Flowmaticc, donde lo revisamos para mejorar las listas. <strong>No guardamos tu dirección IP.</strong> Para evitar abusos se limita el número de envíos por conexión y día usando un resumen (hash) de la IP que no permite recuperarla y que se borra solo a las 24 horas. Cloudflare procesa la conexión como cualquier servidor web (ver su <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">política de privacidad</a>).</p>
+  <p>El servicio funciona en <strong>Cloudflare Workers</strong> y guarda el reporte como una incidencia en un repositorio <strong>privado</strong> de GitHub de Flowmaticc, donde lo revisamos para mejorar las listas. <strong>No guardamos tu dirección IP.</strong> Para evitar abusos se limita el número de envíos por conexión y día usando un resumen (hash) de la IP y del día que no permite recuperarla (en IPv6, de tu bloque de red, no de la dirección exacta) y que se borra a los dos días. Cloudflare procesa la conexión como cualquier servidor web (ver su <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">política de privacidad</a>).</p>
   <p>No escribas datos personales en la nota. Los reportes se conservan mientras sean útiles para el análisis; si quieres que borremos uno, escríbenos.</p>
   <h3 id="errores">Informes de errores (opcionales)</h3>
   <p>La app te pregunta si quieres enviarlos; por defecto no se envía nada. Si los activas, cuando algo falla (la app se cierra, una lista no se descarga, una actualización no se instala…) se anota en el móvil y se envía <strong>como mucho una vez al día</strong>:</p>
@@ -94,7 +96,7 @@ title: "Política de privacidad de Garbillo · Flowmaticc"
 
 <section id="terceros">
   <h2>6. Terceros</h2>
-  <p>No se comparte ningún dato con terceros, salvo lo descrito para los reportes (Cloudflare y GitHub como proveedores del servicio). Las listas de bloqueo son obra de sus autores (Hagezi, GoodbyeAds, 1Hosts, AdAway, StevenBlack) y se descargan directamente de sus repositorios públicos.</p>
+  <p>No se comparte ningún dato con terceros, salvo lo descrito para los reportes (Cloudflare y GitHub como proveedores del servicio) y el servicio de DNS cifrado que tú elijas (Quad9, Cloudflare o Mullvad), que recibe las consultas permitidas: consulta sus políticas en <a href="https://quad9.net/privacy/policy/" target="_blank" rel="noopener">quad9.net</a>, <a href="https://developers.cloudflare.com/1.1.1.1/privacy/public-dns-resolver/" target="_blank" rel="noopener">cloudflare.com</a> y <a href="https://mullvad.net/help/privacy-policy" target="_blank" rel="noopener">mullvad.net</a>. Las listas de bloqueo son obra de sus autores (Hagezi, GoodbyeAds, 1Hosts, AdAway, StevenBlack) y se descargan directamente de sus repositorios públicos.</p>
 </section>
 
 <section id="derechos">

@@ -28,6 +28,7 @@
     <a href="#reportar" class="button-secondary" data-umami="click-report" data-umami-tool="bloqueador">{{ t.hero.cta_report }}</a>
   </div>
   <p class="bq-note">{{ t.hero.download_note }}</p>
+  <p class="bq-note bq-fingerprint">{{ t.hero.fingerprint_html }}</p>
 
 </div>
 </section>
@@ -190,7 +191,6 @@
     <div class="release-switch" id="bqChannels">
       <button class="switch-btn active" data-channel="stable">{{ t.changelog.channels.stable }}</button>
       <button class="switch-btn" data-channel="beta">{{ t.changelog.channels.beta }}</button>
-      <button class="switch-btn" data-channel="nightly">{{ t.changelog.channels.nightly }}</button>
     </div>
     <div class="github-state"><span class="state-dot"></span><span id="bqChannelDesc">{{ t.changelog.channel_desc.stable }}</span></div>
   </div>
@@ -306,10 +306,20 @@
   let releases = null;
   let channel = "stable";
 
-  if (window.marked) marked.setOptions({ gfm: true, breaks: true, headerIds: false, mangle: false });
+  if (window.marked) {
+    marked.setOptions({ gfm: true, breaks: true, headerIds: false, mangle: false });
+    // Las notas vienen de GitHub: nada de HTML incrustado ni enlaces que no sean http(s)/mailto.
+    // (Sin esto, quien pudiera editar una publicación podría inyectar código en esta página.)
+    marked.use({ renderer: {
+      html: html => esc(html),
+      link: (href, title, text) => /^(https?:|mailto:)/i.test(href || "")
+        ? `<a href="${esc(href)}" target="_blank" rel="noopener nofollow">${text}</a>` : text,
+      image: (href, title, text) => esc(text || ""),
+    } });
+  }
 
-  // Canal de cada publicación, igual que en la app: "nightly" → Nightly; pre-release → Beta; resto → Estable.
-  const channelOf = r => r.tag_name === "nightly" ? "nightly" : (r.prerelease ? "beta" : "stable");
+  // Canal de cada publicación, igual que en la app: pre-release (la beta, o la antigua "nightly") → Beta; resto → Estable.
+  const channelOf = r => r.prerelease ? "beta" : "stable";
   const apkOf = r => (r.assets || []).find(a => /\.apk$/i.test(a.name));
 
   fetch(`https://api.github.com/repos/${REPO}/releases?per_page=30`, { headers: { Accept: "application/vnd.github+json" } })
