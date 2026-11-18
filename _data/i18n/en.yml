@@ -373,13 +373,18 @@ bloqueador:
     kicker: "/ free utility · Android · open source"
     title_pre: "Garbillo"
     title_highlight: "ads out, threats out"
-    copy: "Blocks ads, trackers and dangerous sites (phishing, malware, scams) across your whole phone —in the browser and inside apps— with no root, no accounts and without sending your browsing to any server. The app is in Spanish for now."
+    copy: "Blocks ads, trackers and dangerous sites (phishing, malware, scams) across your whole phone —in the browser and inside apps— with no root, no accounts and without sending your browsing to any server. The app is in English and Spanish."
     origin: "Garbillo is the Spanish name of an old esparto sieve used to clean grain: it lets the good through and keeps the rest out."
     chips: ["Android 8 or later", "No root", "100% local", "Open source · GPLv3", "Free, no ads"]
     cta_download: "Download APK →"
     cta_github: "View on GitHub"
     cta_report: "Report a site"
-    download_note: "Latest stable version · 1.4 MB · Installed outside Google Play (see guide)."
+    download_note: "Installed outside Google Play (see guide)."
+    cta_obtainium: "Add to Obtainium"
+    cta_obtainium_mobile: "Open in Obtainium"
+    version_label: "Version"
+    qr: "Scan it with your phone"
+    android_only: "Garbillo is for Android phones."
 
   how:
     kicker: "/ how it works"
@@ -465,7 +470,7 @@ bloqueador:
       - title: "Turn the filter on"
         text_html: "Open Garbillo, choose which apps to protect and tap the switch. Accept Android's <strong>Connection request</strong>: that's the local VPN."
       - title: "Keep Android from closing it"
-        text_html: "Garbillo turns itself back on when the phone starts. So that Android never closes it, go to <strong>Ajustes → Batería y arranque</strong> (Settings → Battery and startup), remove battery restrictions and turn on <strong>Always-on VPN</strong>. The app explains the steps for your brand."
+        text_html: "Garbillo turns itself back on when the phone starts. So that Android never closes it, go to <strong>Settings → Battery and startup</strong>, remove battery restrictions and turn on <strong>Always-on VPN</strong>. The app explains the steps for your brand."
     updates_note: "From then on, the app checks once a day for a new version and lets you know. It never installs anything without your confirmation."
 
   report:
@@ -493,7 +498,7 @@ bloqueador:
   changelog:
     kicker: "/ changelog"
     title: "Versions and channels."
-    intro: "Choose the channel in the app: Ajustes → Actualizaciones de la app (Settings → App updates). Stable only by default. Release notes are in Spanish."
+    intro: "Choose the channel in the app: Settings → App updates. Stable only by default. Release notes are in Spanish and English."
     channels:
       stable: "Stable"
       beta: "Beta"
@@ -526,7 +531,7 @@ bloqueador:
       - q: "Does it work with Brave, Firefox or my VPN?"
         a_html: "Brave and Firefox + uBlock Origin complement it: they remove things inside pages (including the empty ad space) and Garbillo handles apps and the system. Another VPN, no: Android only allows one active VPN at a time. It's also best not to use the system's “Private DNS” with it, as queries would bypass the filter."
       - q: "Will anything stop working?"
-        a_html: "It's rare with the Balanced level. If an app or link fails, open the history, find the blocked domain and tap <strong>Permitir siempre</strong> (“Always allow”) — and, if you like, <strong>Reportar para analizar</strong> (“Report for review”) so we can look at it. Banking and payment apps are excluded from the filter by default."
+        a_html: "It's rare with the Balanced level. If an app or link fails, open the history, find the blocked domain and tap <strong>Always allow</strong> — and, if you like, <strong>Report for review</strong> so we can look at it. Banking and payment apps are excluded from the filter by default."
       - q: "A new version gives me problems, can I go back to the previous one?"
         a_html: "Yes. On <a href=\"https://github.com/flowmaticc/bloqueador-android/releases\" target=\"_blank\" rel=\"noopener\">GitHub</a> both the current stable version and the previous one stay downloadable. Android doesn't let you install an older version over a newer one, so first <strong>uninstall Garbillo</strong> (you'll lose your settings and history) and then install the previous version's APK. Older versions remain as history, without downloads, so nobody uses a version with bugs that are already fixed. If you can, tell us about the problem with “Report a website” or on GitHub."
       - q: "Does it remove YouTube ads?"

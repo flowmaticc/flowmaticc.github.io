@@ -488,7 +488,12 @@ bloqueador:
     cta_download: "Descargar APK →"
     cta_github: "Ver en GitHub"
     cta_report: "Reportar una web"
-    download_note: "Versión estable más reciente · 1,4 MB · Se instala fuera de Google Play (ver guía)."
+    download_note: "Se instala fuera de Google Play (ver guía)."
+    cta_obtainium: "Añadir a Obtainium"
+    cta_obtainium_mobile: "Abrir en Obtainium"
+    version_label: "Versión"
+    qr: "Escanéalo con el móvil"
+    android_only: "Garbillo es para móviles Android."
 
   how:
     kicker: "/ cómo funciona"

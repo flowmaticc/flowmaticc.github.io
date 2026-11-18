@@ -22,12 +22,21 @@
     {% for chip in t.hero.chips %}<span class="chip">{{ chip }}</span>{% endfor %}
   </div>
 
-  <div class="hero-actions">
-    <a href="https://github.com/{{ repo }}" class="button-secondary" target="_blank" rel="noopener" data-umami="click-github" data-umami-tool="bloqueador">{{ t.hero.cta_github }}</a>
-    <a href="https://github.com/{{ repo }}/releases/latest" class="button-primary js-apk-download" data-umami="download-bloqueador" data-umami-tool="bloqueador">{{ t.hero.cta_download }}</a>
-    <a href="#reportar" class="button-secondary" data-umami="click-report" data-umami-tool="bloqueador">{{ t.hero.cta_report }}</a>
+  {% comment %}Obtainium: añade Garbillo ya configurado (solo estables y nunca el APK -fdroid, que no tiene actualizador).{% endcomment %}
+  {% capture obtainium %}https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22app.bloqueador%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2F{{ repo | replace: '/', '%2F' }}%22%2C%22author%22%3A%22flowmaticc%22%2C%22name%22%3A%22Garbillo%22%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22fdroid%5C%22%2C%5C%22invertAPKFilter%5C%22%3Atrue%7D%22%7D{% endcapture %}
+  <div class="bq-get">
+    <div class="hero-actions bq-get-actions">
+      <a href="https://github.com/{{ repo }}/releases/latest" class="button-primary js-apk-download" data-umami="download-bloqueador" data-umami-tool="bloqueador">{{ t.hero.cta_download }}</a>
+      <a href="{{ obtainium }}" class="button-secondary js-obtainium" target="_blank" rel="noopener" data-mobile="{{ t.hero.cta_obtainium_mobile }}" data-umami="click-obtainium" data-umami-tool="bloqueador">{{ t.hero.cta_obtainium }}</a>
+      <a href="https://github.com/{{ repo }}" class="button-secondary bq-desktop-only" target="_blank" rel="noopener" data-umami="click-github" data-umami-tool="bloqueador">{{ t.hero.cta_github }}</a>
+      <a href="#reportar" class="button-secondary bq-desktop-only" data-umami="click-report" data-umami-tool="bloqueador">{{ t.hero.cta_report }}</a>
+    </div>
+    <figure class="bq-qr" aria-hidden="true">
+      <img src="/img/bloqueador/qr-{% if page.lang == 'en' %}en{% else %}es{% endif %}.svg" alt="" width="112" height="112">
+      <figcaption>{{ t.hero.qr }}</figcaption>
+    </figure>
   </div>
-  <p class="bq-note">{{ t.hero.download_note }}</p>
+  <p class="bq-note"><span class="js-apk-version"></span>{{ t.hero.download_note }} <span class="bq-ios-note">{{ t.hero.android_only }}</span></p>
 
 </div>
 </section>
@@ -277,6 +286,18 @@
   .bq-top.show { opacity: 1; pointer-events: auto; }
   @media (max-width: 600px) { .bq-lightbox-nav { position: absolute; bottom: 44px; } .bq-prev { left: 16px; } .bq-next { right: 16px; } }
   .bq-note { margin-top: 14px; font-size: 12px; color: var(--muted-2); text-align: center; }
+  /* Descarga: QR solo en ordenador (desde ahí no se instala un APK); en Android, botones grandes. */
+  .bq-get { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 22px; margin-top: 30px; }
+  .bq-get .hero-actions { margin-top: 0; justify-content: center; max-width: 560px; }
+  .bq-qr { margin: 0; text-align: center; }
+  .bq-qr img { display: block; width: 112px; height: 112px; }
+  .bq-qr figcaption { margin-top: 6px; font-size: 11px; color: var(--muted); }
+  .bq-ios-note { display: none; }
+  .bq-touch .bq-qr { display: none; }
+  .bq-ios .bq-ios-note { display: inline; color: var(--muted); }
+  .bq-android .bq-get-actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 360px; margin: 0 auto; }
+  .bq-android .bq-get-actions a { text-align: center; padding-top: 15px; padding-bottom: 15px; font-size: 13px; }
+  .bq-android .bq-desktop-only { display: none; }
   .bq-shots { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
   .bq-shots img { border-radius: 14px; }
   .bq-table { min-width: 0; }
@@ -300,6 +321,7 @@
     publishedOn: {{ t.changelog.published_on | jsonify }},
     download: {{ t.changelog.download | jsonify }},
     desc: {{ t.changelog.channel_desc | jsonify }},
+    version: {{ t.hero.version_label | jsonify }},
   };
   const list = document.getElementById("bqReleases");
   let releases = null;
@@ -319,7 +341,20 @@
 
   // Canal de cada publicación, igual que en la app: pre-release (la beta, o la antigua "nightly") → Beta; resto → Estable.
   const channelOf = r => r.prerelease ? "beta" : "stable";
-  const apkOf = r => (r.assets || []).find(a => /\.apk$/i.test(a.name));
+  // El APK normal (con actualizador). Desde la 0.4.0 cada versión lleva también el "-fdroid", sin
+  // actualizador, para tiendas como F-Droid: ese no se ofrece aquí.
+  const apkOf = r => (r.assets || []).find(a => /\.apk$/i.test(a.name) && !/fdroid/i.test(a.name));
+
+  // Botones según el dispositivo: en Android, descarga y Obtainium a pantalla completa; QR solo con ratón.
+  const ua = navigator.userAgent || "";
+  const root = document.documentElement;
+  if (/Android/i.test(ua)) root.classList.add("bq-android", "bq-touch");
+  else if (/iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) root.classList.add("bq-ios", "bq-touch");
+  else if (window.matchMedia && !matchMedia("(pointer: fine)").matches) root.classList.add("bq-touch");
+  if (root.classList.contains("bq-android")) {
+    document.querySelectorAll(".js-obtainium").forEach(a => { a.textContent = a.dataset.mobile; });
+  }
+  const sizeMB = bytes => (bytes / 1048576).toLocaleString(LOCALE, { maximumFractionDigits: 1 }) + " MB";
 
   fetch(`https://api.github.com/repos/${REPO}/releases?per_page=30`, { headers: { Accept: "application/vnd.github+json" } })
     .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
@@ -329,7 +364,11 @@
       // Los botones de descarga apuntan directamente al APK estable más reciente.
       const stable = releases.find(r => channelOf(r) === "stable");
       const apk = stable && apkOf(stable);
-      if (apk) document.querySelectorAll(".js-apk-download").forEach(a => a.href = apk.browser_download_url);
+      if (apk) {
+        document.querySelectorAll(".js-apk-download").forEach(a => a.href = apk.browser_download_url);
+        document.querySelectorAll(".js-apk-version").forEach(s =>
+          s.textContent = `${T.version} ${stable.tag_name.replace(/^v/, "")} · ${sizeMB(apk.size)} · `);
+      }
       render();
     })
     .catch(err => {
