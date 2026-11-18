@@ -261,7 +261,8 @@ body.menu-open { overflow: hidden; }
   display: block;
 }
 
-.dropdown-menu--right { right: 0; left: auto; }
+.dropdown-menu--right,
+.nav-v2 .dropdown-menu--right { right: 0; left: auto; } /* el selector de idioma se abre hacia la izquierda: sin esto, se sale por la derecha */
 
 /* ── Hamburger (móvil) ───────────────────────────────────── */
 .menu-toggle {
