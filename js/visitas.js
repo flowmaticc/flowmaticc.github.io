@@ -13,6 +13,7 @@
 
   var RECOLECTOR = 'https://vexo-recolector.flowmaticc-web.workers.dev/v';
   if (location.hostname !== 'flowmaticc.github.io') return;   // pruebas en local: no cuentan
+  if (window.__vexoRedirigiendo) return;                      // lang-redirect.js nos lleva a otro idioma
 
   // ── Excluir este navegador ──────────────────────────────────
   try {

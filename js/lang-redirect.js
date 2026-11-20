@@ -50,6 +50,9 @@
     targetPath = targetPath.replace('/novedades/', '/changelog/');
   }
 
+  // Las estadísticas (visitas.js) no cuentan la página de la que se redirige
+  window.__vexoRedirigiendo = true;
+
   // Mark as auto-redirected so we don't loop
   sessionStorage.setItem('lang_chosen', 'auto');
 
