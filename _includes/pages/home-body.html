@@ -49,7 +49,7 @@
     <div class="hero-copy">{{ t.hero.copy_html }}</div>
 
     <div class="hero-actions">
-      <a href="{{ site.links.app_download }}" class="button-primary" data-umami="click-cta-main">{{ t.hero.cta_download }}</a>
+      <a href="{{ site.links.app_download }}" class="button-primary" data-umami="descarga-vexo" data-umami-donde="inicio-principal">{{ t.hero.cta_download }}</a>
     </div>
   </div>
 
@@ -288,7 +288,7 @@
   </div>
 
   <p style="margin-top:26px;text-align:center;">
-    <a href="/ayuda/" style="color:var(--lime);font-family:'DM Mono',monospace;font-size:11px;text-decoration:underline;text-decoration-color:rgba(202,255,51,.35);" data-umami="view-help">
+    <a href="/ayuda/" style="color:var(--lime);font-family:'DM Mono',monospace;font-size:11px;text-decoration:underline;text-decoration-color:rgba(202,255,51,.35);" data-umami="enlace" data-umami-donde="ayuda">
       {% if page.lang == 'en' %}More questions? See the full help center →
       {% elsif page.lang == 'fr' %}D'autres questions ? Voir le centre d'aide complet →
       {% elsif page.lang == 'de' %}Weitere Fragen? Zum vollständigen Hilfebereich →
@@ -323,7 +323,7 @@
     <div class="util-preview-row"><span>{% if bq_es %}Dominios de anuncios bloqueados en tests públicos{% else %}Ad domains blocked in public tests{% endif %}</span><strong style="color:var(--lime)">96 %</strong></div>
     <div class="util-preview-row"><span>{% if bq_es %}Batería al día{% else %}Battery per day{% endif %}</span><span>0,1–0,4 %</span><span class="util-status-dot"></span></div>
     <div class="hero-actions" style="justify-content:flex-start;margin-top:18px">
-      <a href="{% if bq_es %}/utilities/bloqueador-android/{% else %}/en/utilities/bloqueador-android/{% endif %}" class="button-primary" data-umami="use-bloqueador">{% if bq_es %}Conocer Garbillo →{% else %}Discover Garbillo →{% endif %}</a>
+      <a href="{% if bq_es %}/utilities/bloqueador-android/{% else %}/en/utilities/bloqueador-android/{% endif %}" class="button-primary" data-umami="enlace" data-umami-donde="bloqueador">{% if bq_es %}Conocer Garbillo →{% else %}Discover Garbillo →{% endif %}</a>
     </div>
   </div>
 </div>
@@ -336,7 +336,7 @@
 <div class="container">
   <h2>{{ t.final_cta.title }}</h2>
   <p>{{ t.final_cta.text }}</p>
-  <a href="{{ site.links.app_download }}" class="cta-button" data-umami="click-cta-main">{{ t.final_cta.button }}</a>
+  <a href="{{ site.links.app_download }}" class="cta-button" data-umami="descarga-vexo" data-umami-donde="inicio-final">{{ t.final_cta.button }}</a>
 </div>
 </section>
 

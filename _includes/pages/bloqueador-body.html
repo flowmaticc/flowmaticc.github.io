@@ -26,10 +26,10 @@
   {% capture obtainium %}https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22app.bloqueador%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2F{{ repo | replace: '/', '%2F' }}%22%2C%22author%22%3A%22flowmaticc%22%2C%22name%22%3A%22Garbillo%22%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22fdroid%5C%22%2C%5C%22invertAPKFilter%5C%22%3Atrue%7D%22%7D{% endcapture %}
   <div class="bq-get">
     <div class="hero-actions bq-get-actions">
-      <a href="https://github.com/{{ repo }}/releases/latest" class="button-primary js-apk-download" data-umami="download-bloqueador" data-umami-tool="bloqueador">{{ t.hero.cta_download }}</a>
-      <a href="{{ obtainium }}" class="button-secondary js-obtainium" target="_blank" rel="noopener" data-mobile="{{ t.hero.cta_obtainium_mobile }}" data-umami="click-obtainium" data-umami-tool="bloqueador">{{ t.hero.cta_obtainium }}</a>
-      <a href="https://github.com/{{ repo }}" class="button-secondary bq-desktop-only" target="_blank" rel="noopener" data-umami="click-github" data-umami-tool="bloqueador">{{ t.hero.cta_github }}</a>
-      <a href="#reportar" class="button-secondary bq-desktop-only" data-umami="click-report" data-umami-tool="bloqueador">{{ t.hero.cta_report }}</a>
+      <a href="https://github.com/{{ repo }}/releases/latest" class="button-primary js-apk-download" data-umami="bloqueador-descarga" data-umami-donde="inicio" data-umami-tool="bloqueador">{{ t.hero.cta_download }}</a>
+      <a href="{{ obtainium }}" class="button-secondary js-obtainium" target="_blank" rel="noopener" data-mobile="{{ t.hero.cta_obtainium_mobile }}" data-umami="obtainium" data-umami-tool="bloqueador">{{ t.hero.cta_obtainium }}</a>
+      <a href="https://github.com/{{ repo }}" class="button-secondary bq-desktop-only" target="_blank" rel="noopener" data-umami="github" data-umami-donde="bloqueador" data-umami-tool="bloqueador">{{ t.hero.cta_github }}</a>
+      <a href="#reportar" class="button-secondary bq-desktop-only" data-umami="reportar" data-umami-tool="bloqueador">{{ t.hero.cta_report }}</a>
     </div>
     <figure class="bq-qr" aria-hidden="true">
       <img src="/img/bloqueador/qr-{% if page.lang == 'en' %}en{% else %}es{% endif %}.svg" alt="" width="112" height="112">
@@ -242,7 +242,7 @@
 <div class="container">
   <h2>{{ t.final_cta.title }}</h2>
   <p>{{ t.final_cta.text }}</p>
-  <a href="https://github.com/{{ repo }}/releases/latest" class="cta-button js-apk-download" data-umami="download-bloqueador">{{ t.final_cta.button }}</a>
+  <a href="https://github.com/{{ repo }}/releases/latest" class="cta-button js-apk-download" data-umami="bloqueador-descarga" data-umami-donde="final">{{ t.final_cta.button }}</a>
 </div>
 </section>
 
