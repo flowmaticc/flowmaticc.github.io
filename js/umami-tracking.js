@@ -1,35 +1,45 @@
 // ============================================================
-// UMAMI TRACKING — Flowmaticc
+// EVENTOS — Flowmaticc
 // Tracking anónimo, sin datos personales, sin identificadores.
+// Cada evento se envía a Umami y a las estadísticas propias
+// (js/visitas.js → window.vexoEvento). Si una de las dos no está
+// cargada, la otra sigue funcionando.
 // ============================================================
 
 (function () {
   'use strict';
 
-  // Helper: dispara evento Umami si está disponible
-  function track(eventName) {
-    if (typeof umami === 'undefined') return;
+  // Helper: dispara el evento en Umami y en las estadísticas propias
+  function track(eventName, props) {
     try {
-      umami.track(eventName);
-    } catch (e) {
-      // silencio: no interrumpir la experiencia del usuario
-    }
+      if (typeof umami !== 'undefined') {
+        if (props) umami.track(eventName, props); else umami.track(eventName);
+      }
+    } catch (e) { /* silencio: no interrumpir la experiencia del usuario */ }
+    try {
+      if (typeof window.vexoEvento === 'function') window.vexoEvento(eventName, props);
+    } catch (e) {}
   }
 
   // ─── 1. DELEGACIÓN GLOBAL: atributos data-umami en HTML ──────────────────
-  // Cualquier elemento con data-umami="nombre-evento" dispara el track al clic.
-  // No requiere tocar más JS: solo añadir data-umami="evento" al elemento HTML.
+  // data-umami="nombre-evento"  y, opcional, data-umami-donde="lugar"
+  //   menu (donde: destino)     → clic en un enlace del menú o del pie
+  //   enlace (donde: destino)   → clic en un enlace dentro de una página
+  //   descarga-vexo (donde: inicio-principal | inicio-final | novedades | ayuda)
+  //   extension-instalar, google-auth-descarga, bloqueador-descarga,
+  //   github, obtainium, reportar
   document.addEventListener('click', function (e) {
     const el = e.target.closest('[data-umami]');
     if (!el) return;
     const eventName = el.getAttribute('data-umami');
-    if (eventName) track(eventName);
+    if (!eventName) return;
+    const donde = el.getAttribute('data-umami-donde');
+    track(eventName, donde ? { donde: donde } : undefined);
   }, true);
 
   // ─── 2. HUMAN-CONFIRMED — confirma que es un humano real ─────────────────
-  // Los bots no mueven el ratón ni hacen touch. Este evento es la señal
-  // más fiable para distinguir humanos de crawlers en el dashboard.
-  // Se dispara una sola vez con el primer movimiento o toque real.
+  // Los bots no mueven el ratón ni tocan la pantalla. El panel lo usa para
+  // separar personas de robots. Se dispara una sola vez.
   (function () {
     let fired = false;
     function confirm() {
@@ -45,172 +55,83 @@
     document.addEventListener('keydown',    confirm, { once: true, passive: true });
   })();
 
-  // ─── 3. VIEW-PRICING — sección de precios entra en viewport ──────────────
-  (function () {
-    const section = document.getElementById('pricing');
-    if (!section) return;
-    let fired = false;
+  // ─── 3. SECCIONES VISTAS (entran en pantalla) ─────────────────────────────
+  function alVer(id, evento, umbral) {
+    const section = document.getElementById(id);
+    if (!section || !('IntersectionObserver' in window)) return;
     const obs = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting && !fired) {
-        fired = true;
-        track('view-pricing');
+      if (entries[0].isIntersecting) {
+        track(evento);
         obs.disconnect();
       }
-    }, { threshold: 0.3 });
+    }, { threshold: umbral });
     obs.observe(section);
-  })();
+  }
+  alVer('product',   'view-product',   0.3);   // funciones de Vexo
+  alVer('why',       'view-why',       0.3);   // «por qué elegir»
+  alVer('cta-final', 'view-cta-final', 0.5);   // llegó al final de la página
 
-  // ─── 4. VIEW-PRODUCT — sección de producto entra en viewport ─────────────
-  (function () {
-    const section = document.getElementById('product');
-    if (!section) return;
-    let fired = false;
-    const obs = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting && !fired) {
-        fired = true;
-        track('view-product');
-        obs.disconnect();
-      }
-    }, { threshold: 0.3 });
-    obs.observe(section);
-  })();
-
-  // ─── 5. VIEW-WHY — sección "Por qué elegir" entra en viewport ────────────
-  // Indica que el usuario leyó los argumentos de venta, no solo vio el hero.
-  (function () {
-    const section = document.getElementById('why');
-    if (!section) return;
-    let fired = false;
-    const obs = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting && !fired) {
-        fired = true;
-        track('view-why');
-        obs.disconnect();
-      }
-    }, { threshold: 0.3 });
-    obs.observe(section);
-  })();
-
-  // ─── 6. VIEW-CTA-FINAL — CTA de cierre entra en viewport ─────────────────
-  // La última llamada a la acción al final de la página.
-  // Si alguien llega aquí es que ha leído la página entera.
-  (function () {
-    const section = document.getElementById('cta-final');
-    if (!section) return;
-    let fired = false;
-    const obs = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting && !fired) {
-        fired = true;
-        track('view-cta-final');
-        obs.disconnect();
-      }
-    }, { threshold: 0.5 });
-    obs.observe(section);
-  })();
-
-  // ─── 7. VIEW-UTILITIES — páginas de utilidades ───────────────────────────
-  if (window.location.pathname.startsWith('/utilities')) {
+  // ─── 4. VIEW-UTILITIES — páginas de utilidades ───────────────────────────
+  if (window.location.pathname.indexOf('/utilities') !== -1) {
     track('view-utilities');
   }
 
-  // ─── 8. VIDEO-PLAY — usuario interactúa con el vídeo demo ────────────────
-  // Autoplay no cuenta. Solo se dispara si el usuario hace clic en el vídeo
-  // para pausarlo/reproducirlo, lo que indica interés activo.
+  // ─── 5. VIDEO-PLAY — el usuario reproduce el vídeo demo ──────────────────
+  // El autoplay no cuenta: solo un clic o una reproducción iniciada por él.
   (function () {
     const video = document.querySelector('video.demo-video');
     if (!video) return;
     let fired = false;
+    function una() { if (!fired) { fired = true; track('video-play'); } }
     video.addEventListener('play', function () {
-      // Ignorar el autoplay inicial (currentTime ≈ 0 y no fue un clic del usuario)
-      if (fired) return;
       if (video.currentTime < 0.5 && video.autoplay) return;
-      fired = true;
-      track('video-play');
+      una();
     });
-    // También detectar clic directo sobre el vídeo
-    video.addEventListener('click', function () {
-      if (fired) return;
-      fired = true;
-      track('video-play');
-    }, { once: true });
+    video.addEventListener('click', una, { once: true });
   })();
 
-  // ─── 9. SCROLL-50 y SCROLL-90 ────────────────────────────────────────────
+  // ─── 6. SCROLL-50 y SCROLL-90 ────────────────────────────────────────────
   (function () {
     let fired50 = false;
     let fired90 = false;
-
-    function getScrollPercent() {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (docHeight <= 0) return 100;
-      return Math.round((scrollTop / docHeight) * 100);
+    function pct() {
+      const top = window.scrollY || document.documentElement.scrollTop;
+      const alto = document.documentElement.scrollHeight - window.innerHeight;
+      return alto <= 0 ? 100 : Math.round(top / alto * 100);
     }
-
     function onScroll() {
-      const pct = getScrollPercent();
-      if (!fired50 && pct >= 50) {
-        fired50 = true;
-        track('scroll-50');
-      }
-      if (!fired90 && pct >= 90) {
-        fired90 = true;
-        track('scroll-90');
-        window.removeEventListener('scroll', onScroll, { passive: true });
+      const p = pct();
+      if (!fired50 && p >= 50) { fired50 = true; track('scroll-50'); }
+      if (!fired90 && p >= 90) {
+        fired90 = true; track('scroll-90');
+        window.removeEventListener('scroll', onScroll);
       }
     }
-
     window.addEventListener('scroll', onScroll, { passive: true });
   })();
 
-  // ─── 10. ENGAGED-30S — usuario activo ≥ 30 segundos ─────────────────────
+  // ─── 7. ENGAGED-30S — 30 s de uso real ───────────────────────────────────
+  // Solo cuentan los segundos con la pestaña visible y con actividad
+  // (ratón, teclado, scroll, toques) en los últimos 5 s. Antes contaba
+  // cualquier segundo con la página abierta aunque nadie la tocara.
   (function () {
-    let totalActive = 0;
-    let lastActive  = Date.now();
-    let fired       = false;
-    const THRESHOLD = 30000; // 30 segundos
-    const IDLE_GAP  = 5000;  // pausa > 5 s = inactividad
-
-    const ACTIVITY_EVENTS = ['mousemove', 'keydown', 'scroll', 'click', 'touchstart'];
-    ACTIVITY_EVENTS.forEach(function (ev) {
-      document.addEventListener(ev, function () {
-        lastActive = Date.now();
-      }, { passive: true });
+    const UMBRAL   = 30;     // segundos activos
+    const INACTIVO = 5000;   // sin actividad durante más de 5 s = no cuenta
+    let ultimaActividad = 0;
+    let activos = 0;
+    const marcar = function () { ultimaActividad = Date.now(); };
+    ['mousemove', 'keydown', 'scroll', 'click', 'touchstart'].forEach(function (ev) {
+      document.addEventListener(ev, marcar, { passive: true });
     });
-
-    setInterval(function () {
-      if (fired) return;
-      const now   = Date.now();
-      const delta = now - lastActive;
-      if (delta < IDLE_GAP) totalActive += delta;
-      lastActive = now;
-      if (totalActive >= THRESHOLD) {
-        fired = true;
+    const t = setInterval(function () {
+      if (document.visibilityState !== 'visible') return;
+      if (Date.now() - ultimaActividad > INACTIVO) return;
+      activos += 1;
+      if (activos >= UMBRAL) {
+        clearInterval(t);
         track('engaged-30s');
       }
     }, 1000);
   })();
 
 })();
-
-  // ─── 11. PAGE-VIEW con URL exacta como evento (para análisis por sesión) ──
-  // Umami ya trackea pageviews, pero no los incluye en el eventList por sesión
-  // que devuelve la API. Este evento extra registra la URL actual como propiedad,
-  // permitiendo reconstruir el recorrido completo de cada visita desde el script.
-  (function () {
-    function trackPageUrl() {
-      if (typeof umami === 'undefined') return;
-      try {
-        // Normalizar URL: quitar parámetros y hash, conservar pathname limpio
-        const path = window.location.pathname.replace(/\/$/, '') || '/';
-        umami.track('page-visit', { url: path });
-      } catch (e) {}
-    }
-
-    // Disparar en carga inicial
-    trackPageUrl();
-
-    // Disparar en navegación SPA (por si acaso se añaden en el futuro)
-    window.addEventListener('popstate', trackPageUrl);
-  })();
-
